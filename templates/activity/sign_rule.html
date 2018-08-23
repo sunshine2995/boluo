@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>签到规则</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}">
+		<style>
+			/*@media screen and (min-width:960px){
+			    .elephones{ max-width:640px;}
+			}*/
+			body{
+				margin: 0;padding: 0;
+				color:#606060;
+				font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+			}
+			body,html{
+				font-size: 62.5%;
+			}
+			/*.nav{
+				width: 100%;
+				height: 50px;
+				background: #ffcb0f;
+				position: relative;
+				position: fixed;
+				z-index: 100;
+				top: 0;
+				left: 0;
+			}
+			.nav>h1{
+				text-align: center;
+				line-height: 50px;
+				font-size: 1.6rem;
+				color: #fff;
+			}
+			.turn{
+				position: absolute;
+				left: 5%;
+				line-height: 50px;
+			}
+			.turn>img{
+				width: 75%;
+			}*/
+			.pactbox{
+				max-width:64rem;
+				width: 100%;
+				color: #888;
+				background: #fff;
+				font-size: 1.4rem;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+			.dealtop{
+				width: 100%;
+				height: 60px;
+				border-bottom: 1px solid #eee;
+				line-height: 60px;
+				font-size: 4.8vmin; 
+				color: #ff8b0f;
+				background: url(../../static/images/icin_!@2x.png) no-repeat center left 20px;
+				background-size: 6%;
+				padding-left: 10%;
+				margin-bottom: 3%;
+			}
+			.dealtop>span{
+				margin-left: 5%;
+			}
+			.dealbottom{
+				width: 90%;
+				margin:0 auto;
+				line-height: 28px;
+			}
+			.dealbottom>li{
+				text-indent: 26px;
+				line-height: 36px;
+			}
+			.dealbottom>li>img{
+				width: 6%;
+				margin-left: 3%;
+				margin-right: 1%;
+			}
+			.dealbottom>li>span{
+				color: #ff8b0f;
+			}
+			.graph{
+				width: 100%;
+				height:220px;
+				background: url(../../static/images/form@2x.png) no-repeat center;
+				background-size: 100%;
+			}
+			.pdata{
+				padding: 5%;
+				color: #DE2400;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<div class="nav">
+			<a href="###" class="turn"><img src="icon_jiantou@2x.png" /> </a>
+			<h1>签到规则</h1>
+		</div>-->
+		<div class="pactbox">
+			<div class="dealtop">
+				<span>怎么赚菠萝？</span>
+			</div>
+			
+			<ul class="dealbottom">
+				<li>每天登录APP，进入每日签到页面，点击签到按钮，即可领取相应数量的菠萝。</li>
+				<li>（需连续签到才可得，中断需重新计算哦~）</li>
+				<li>签到1天可获得<img src="{{ url_for('static', filename='images/icon_boluo.png') }}"><span>+1</span></li>
+				<li>连续签到2天可获得<img src="{{ url_for('static', filename='images/icon_boluo.png') }}"><span>+3</span></li>
+				<li>连续签到3天可获得<img src="{{ url_for('static', filename='images/icon_boluo.png') }}"><span>+10</span></li>
+				<li>连续签到4天可获得<img src="{{ url_for('static', filename='images/icon_boluo.png') }}"><span>+10</span></li>
+				<li>连续签到5天可获得<img src="{{ url_for('static', filename='images/icon_boluo.png') }}"><span>+10</span></li>
+				<div class="graph"></div>
+			</ul>
+			<p style="text-align: center;">第三天开始每天获得10个菠萝，中断后从头开始计算。</p>
+			<p class="pdata">·现在连续签到5天还可获得1次参加大富翁机会，如中断一天需重新开始（每次签到获得的抽奖机会，需要累计投资2000元）。 </p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,612 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	width: 100%;
+	height: 100%;
+	margin: 0;padding: 0;
+	color:#606060;
+	font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+	-webkit-text-size-adjust: 100%;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body,html{
+	font-size: 62.5%;
+}
+.october{
+	width: 100%;
+	background:#8514be url(../images/october/beijing_img.jpg) no-repeat center top;
+	background-size: 100%;
+	max-width:64rem;
+	margin:0 auto;
+	overflow: hidden;
+	padding-top: 62vmin;
+}
+.popup{
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	display: -webkit-box;
+	-webkit-box-flex: 1;
+}
+.popup>li{
+	-webkit-box-flex: 1;
+}
+.popup>li>img{
+	width: 50%;
+}
+/*抽奖开始*/
+.myBox{
+	width: 80%;
+	height: 90vmin;
+	background: url(../images/october/qiu_img@2x.png) no-repeat center top;
+	background-size: 92%;
+	margin: 0 auto;
+}
+/*.cj>li{*/
+	/*opacity: 0.6;*/
+/*}*/
+
+.cj>li.adcls{
+	opacity: 15 !important;
+}
+.cj>li>img{
+	width: 18vmin;
+}
+.cj>li:first-child>img{
+	position: absolute;
+	top:25vmin;
+	left: 15vmin;
+	z-index: 2;
+}
+.cj>li:nth-child(2)>img{
+	position: absolute;
+	top:11.6vmin;
+}
+.cj>li:nth-child(3)>img{
+	position: absolute;
+	top: 26vmin;
+	left: -21vmin;
+}
+.cj>li:nth-child(4)>img{
+	position: absolute;
+	top: 6vmin;
+	left: 10vmin;
+	z-index: 1;
+}
+.cj>li:nth-child(5)>img{
+	position: absolute;
+	top: 3vmin;
+	left: -44vmin;
+	z-index: 2;
+}
+.cj>li:last-child>img{
+	position: absolute;
+	top:10vmin;
+	left: 10vmin;
+	z-index: 1;
+}
+@media(min-device-width: 414px)and(max-device-width: 736px)and(-webkit-device-pixel-ratio: 3) {
+	/*iphone6plus*/
+	.baik{
+		margin-top: -15vmin !important;
+	}
+
+}
+@media(min-device-width: 375px)and(max-device-width: 667px)and(-webkit-device-pixel-ratio: 2) {
+	/*iphone6*/
+	.baik{
+
+		margin-top: -28.5vmin !important;
+	}
+
+}
+@media only screen and (max-width:375px) {
+	.cj>li:nth-child(2)>img{
+		position: absolute;
+		top:11.6vmin;
+		left: -6vmin;
+	}
+	.cj>li:nth-child(3)>img{
+		position: absolute;
+		top: 26vmin;
+		left: -35vmin;
+	}
+	.cj>li:nth-child(4)>img{
+		position: absolute;
+		top: -3vmin;
+		left: 13vmin;
+		z-index: 1;
+	}
+	.cj>li:nth-child(5)>img{
+		position: absolute;
+		left: -56vmin;
+		z-index: 2;
+	}
+	.cj>li:last-child>img{
+		position: absolute;
+		top:2vmin;
+		left: 1vmin;
+		z-index: 1;
+	}
+	.baik{
+		margin-top: -18vmin !important;
+	}
+}
+@media only screen and (max-width:320px) {
+	.cj>li:nth-child(2)>img{
+		position: absolute;
+		top:11.6vmin;
+		left:-15vmin;
+	}
+	.cj>li:nth-child(3)>img{
+		position: absolute;
+		top: 26vmin;
+		left: -44vmin;
+	}
+	.cj>li:nth-child(4)>img{
+		position: absolute;
+		top: -2.6vmin;
+		left: 13vmin;
+		z-index: 1;
+	}
+	.cj>li:nth-child(5)>img{
+		position: absolute;
+		top: 0;
+		left: -64vmin;
+		z-index: 5;
+	}
+	.cj>li:last-child>img{
+		position: absolute;
+		top:-6vmin;
+		left: 3vmin;
+		z-index: 0;
+	}
+}
+
+.baik{
+	width: 60%;
+	height: 13vmin;
+	background: #fff;
+	border-radius: 8px;
+	margin: 0 auto;
+	position: relative;
+}
+.baik>p{
+	width: 44%;
+	line-height: 18px;
+	text-align: center;
+	float: left;
+	font-size:3.2vmin;
+	margin-top: 1.2vmin;
+}
+.baik>p>b{
+	font-size: 4.4vmin;
+	color: #91008a;
+}
+.btttt{
+	font-weight:bold;
+	width:46%;
+	height:11vmin;
+	line-height:11vmin;
+	background: url("../images/october/choujiang_btn@2x.png") no-repeat center;
+	background-size: 100%;
+	font-size:3.6vmin;
+	text-align:center;
+	color:#7e3e00;
+	cursor:pointer;
+	margin-top: 1.6vmin;
+}
+.zhihui{
+	font-weight:bold;
+	width:46%;
+	height:11vmin;
+	line-height:11vmin;
+	background: url("../images/october/zhihui@2x.png") no-repeat center;
+	background-size: 100%;
+	font-size:3.6vmin;
+	text-align:center;
+	color:#fff;
+	cursor:pointer;
+	margin-top: 1.6vmin;
+}
+#cj-a{margin:0 auto ;}
+.zt{
+	text-align:center;
+	color:#fff;
+	line-height: 30px;
+	font-size: 3.6vmin;
+}
+.zt{top:10%;}
+
+/*抽奖结束*/
+
+.huojiang{
+	width: 90%;
+	height: 73vmin;
+	background: url(../images/october/mingdan_img@2x.png) no-repeat center top;
+	background-size: 100%;
+	margin: 5% auto;
+	padding-top: 20vmin;
+	overflow: hidden;
+}
+.huoj{
+	width: 80%;
+	height: 38vmin !important;
+	margin: 0 auto;
+	text-align: center;
+	overflow: hidden;
+}
+.huoj>li{
+	width: 100%;
+	color: #fff;
+	font-size: 3.2vmin;
+	line-height: 32px;
+}
+.huoj>li>span{
+	margin: 5%;
+}
+.huod{
+	width: 80%;
+	margin-left: 10%;
+}
+.song{
+	width: 90%;
+	margin-left: 5%;
+}
+.yure{
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 5%;
+}
+.cent{
+	width: 100%;
+	text-align: center;
+	margin: 3% 0;
+}
+.cent>p{
+	font-size: 3.8vmin;
+	color: #fff;
+	margin-bottom: -6px;
+}
+.cent>p>b{
+	font-size: 4.6vmin;
+	color: #ffd636;
+}
+.cent>a{
+	font-size: 3.4vmin;
+	color: #ffd636;
+	border-bottom: 1px solid #ffd636;
+}
+.touzi{
+	width: 90%;
+	background: url(../images/october/paiming_img@2x.png) no-repeat center top;
+	background-size: 100%;
+	margin: 0 auto;
+	padding-top: 15vmin;
+	margin-top: 5%;
+}
+.touzipm{
+	width: 83%;
+	margin: 0 auto;
+	display: -webkit-box;
+	-webkit-box-flex: 1;
+	overflow: hidden;
+	background: #79129f;
+
+}
+.touzipm>li{
+	width: 33.33%;
+	text-align: center;
+	color: #fff;
+}
+.touzipm>li>span{
+	font-size: 3.6vmin;
+	line-height: 42px;
+}
+
+.lower-screen{
+	width: 90%;
+	clear: both;
+	margin: 0 auto;
+}
+.lower-screen>ul{
+	width: 93%;
+	margin: 0 auto;
+	display: -webkit-box;
+	-webkit-box-flex: 1;
+}
+.lower-screen>ul>li{
+	width: 33.33%;
+	text-align: center;
+	font-size: 3.2vmin;
+	line-height: 36px;
+	color: #fff;
+}
+.gang{
+	width: 100%;
+	height:10vmin;
+}
+
+.arrowa{
+	width: 100%;
+	text-align: center;
+	margin: 2.2vmin auto;
+}
+.arrowa>img{
+	width: 30%;
+}
+.entical{
+	width: 80%;
+	margin: 0 auto;
+	display:none;
+	padding-top: 5%;
+}
+.entical>li{
+	color: #fff;
+	font-size: 3.4vmin;
+	line-height: 32px;
+}
+.arrowb{
+	display: none;
+	width: 100%;
+	text-align: center;
+	margin: 2.2vmin auto;
+}
+.arrowb>img{
+	width: 30%;
+}
+.foot{
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	font-size: 3.6vmin;
+	padding-bottom: 3vmin;
+}
+/*弹窗*/
+
+/*中奖记录*/
+.zjjl{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+	z-index: 999;
+}
+.erjizj{
+	position:fixed;
+	width:80%;
+	background: url(../images/october/jilu-img@2x.png) no-repeat center top;
+	background-size: 100%;
+	top: 22%;
+	left: 10%;
+	padding: 18vmin 0;
+}
+.jiacu{
+	width: 100%;
+	display: -webkit-box;
+	-webkit-box-flex: 1;
+}
+.jiacu>li{
+	width: 50%;
+	text-align: center;
+	-webkit-box-flex: 1;
+	font-size: 3.6vmin;
+	color: #7315aa;
+	margin-top: 3vmin;
+}
+.lower_screen{
+	width: 80%;
+	height: 38vmin;
+	margin: 0 auto;
+	margin-top: 1.2vmin;
+	overflow: hidden;
+}
+.lower_screen>div>p{
+	line-height: 32px;
+	color: #333;
+	padding: 0 5%;
+	font-size: 3vmin;
+	padding-left: 4.4vmin;
+}
+.lower_screen>div>p>span{
+	float: right;
+}
+.gbzj{
+	width: 20%;
+	height: 44px;
+	background: url(../images/october/close_icon@2x.png) no-repeat center top;
+	background-size: 50%;
+	position: absolute;
+	bottom: 33vmin;
+	left: 40%;
+}
+
+/*活动规则*/
+.hdgz{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+	z-index: 999;
+}
+.hdgz>img{
+	position:fixed;
+	width:80%;
+	top: 26%;
+	left: 10%;
+}
+.guanb{
+	width: 20%;
+	height: 44px;
+	background: url(../images/october/close_icon@2x.png) no-repeat center top;
+	background-size: 50%;
+	position: absolute;
+	bottom: 32vmin;
+	left: 40%;
+}
+
+/*奖品*/
+.jiangp{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+	z-index: 999;
+}
+/*.jieguo{*/
+	/*width:80%;*/
+	/*height:65vmin;*/
+	/*background: url("../images/october/1.88xianjin@2x.png") no-repeat center top;*/
+	/*background-size: 100%;*/
+	/*position:fixed;*/
+	/*top: 26%;*/
+	/*left: 10%;*/
+	/*color: #fff;*/
+	/*padding-top: 13vmin;*/
+	/*font-size: 6.8vmin;*/
+/*}*/
+.cash1{
+	width:80%;
+	height:65vmin;
+	background: url("../images/october/0.88xianjin@2x.png") no-repeat center top;
+	background-size: 100%;
+	position:fixed;
+	top: 26%;
+	left: 10%;
+	color: #fff;
+	padding-top: 13vmin;
+	font-size: 6.8vmin;
+	display: none;
+}
+.cash2{
+	width:80%;
+	height:65vmin;
+	background: url("../images/october/1.88xianjin@2x.png") no-repeat center top;
+	background-size: 100%;
+	position:fixed;
+	top: 26%;
+	left: 10%;
+	color: #fff;
+	padding-top: 13vmin;
+	font-size: 6.8vmin;
+	display: none;
+}
+.cash3{
+	width:80%;
+	height:65vmin;
+	background: url("../images/october/8.88xianjin@2x.png") no-repeat center top;
+	background-size: 100%;
+	position:fixed;
+	top: 26%;
+	left: 10%;
+	color: #fff;
+	padding-top: 13vmin;
+	font-size: 6.8vmin;
+	display: none;
+}
+.cash4{
+	width:80%;
+	height:65vmin;
+	background: url("../images/october/18.88xianjin@2x.png") no-repeat center top;
+	background-size: 100%;
+	position:fixed;
+	top: 26%;
+	left: 10%;
+	color: #fff;
+	padding-top: 13vmin;
+	font-size: 6.8vmin;
+	display: none;
+}
+.cash5{
+	width:80%;
+	height:65vmin;
+	background: url("../images/october/88.88xianjin@2x.png") no-repeat center top;
+	background-size: 100%;
+	position:fixed;
+	top: 26%;
+	left: 10%;
+	color: #fff;
+	padding-top: 13vmin;
+	font-size: 6.8vmin;
+	display: none;
+}
+.cash6{
+	width:80%;
+	height:65vmin;
+	background: url("../images/october/188.88xianjin@2x.png") no-repeat center top;
+	background-size: 100%;
+	position:fixed;
+	top: 26%;
+	left: 10%;
+	color: #fff;
+	padding-top: 13vmin;
+	font-size: 6.8vmin;
+	display: none;
+}
+
+.gbjp{
+	width: 20%;
+	height: 44px;
+	background: url(../images/october/close_icon@2x.png) no-repeat center top;
+	background-size: 50%;
+	position: absolute;
+	bottom: 36vmin;
+	left: 40%;
+}
+
+/*如何获得积分*/
+.huode{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+	z-index: 999;
+}
+.huode>img{
+	position:fixed;
+	width:80%;
+	top: 15%;
+	left: 10%;
+}
+.gbhd{
+	width: 20%;
+	height: 44px;
+	background: url(../images/october/close_icon@2x.png) no-repeat center top;
+	background-size: 50%;
+	position: absolute;
+	bottom: 23vmin;
+	left: 40%;
+}
+
+/*理财红包*/
+.licai{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+	z-index: 999;
+}
+.licai>img{
+	position:fixed;
+	width:80%;
+	top: 10%;
+	left: 10%;
+}
+.gblc{
+	width: 20%;
+	height: 44px;
+	background: url(../images/october/close_icon@2x.png) no-repeat center top;
+	background-size: 50%;
+	position: absolute;
+	bottom: 20vmin;
+	left: 40%;
+}

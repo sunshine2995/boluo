@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>我的骰子</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/xinnian.css') }}"/>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}"></script>
+	</head>
+	<body>
+		<div>
+			<p class="lingtop">领取记录</p>
+
+			<div class="details">
+				{% for p in renderData['zill_list'] %}
+				<ul class="tail-ul">
+					<li>{{p.description}}</li>
+					<li>{{p.time|lower|truncate(13)}}</li>
+					<li><img src="{{ url_for('static', filename='images/dice.png')}}" /><span class="tone">+{{p.num}}</span> </li>
+				</ul>
+				{% endfor %}
+			</div>
+		</div>
+		<script type="text/javascript">
+		</script>
+	</body>
+</html>

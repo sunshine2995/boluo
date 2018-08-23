@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>同意担保函</title>
+		<!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/> -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/media.css') }}">
+		<style>
+			/*@media screen and (min-width:960px){
+			    .elephones{ max-width:640px;}
+			}*/
+			body{
+				margin: 0;padding: 0;
+				color:#606060;
+				font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+			}
+			body,html{
+				font-size: 62.5%;
+			}
+			.pactbox{
+				max-width:64rem;
+				color: #888;
+				background: #fff;
+				font-size: 1.4rem;
+				margin: 0 auto;
+			}
+			.dealtop{
+				width: 90%;
+				margin:0 auto;
+				padding-top: 2.5%;
+				line-height: 32px;
+			}
+			.dealbottom{
+				width: 90%;
+				margin:0 auto;
+				line-height: 28px;
+				padding-bottom: 120px;
+			}
+			.dealbottom>li{
+				text-indent: 26px;
+				line-height: 28px;
+			}
+			.dealbottom>li>strong{
+				border-bottom: 1px solid #666;
+				padding-bottom: 3px;
+			}
+			.tablook{
+				width: 100%;
+				height: 100px;
+				border: 1px solid #eee;
+				text-align: center;
+				margin: 10px auto;
+			}
+			.tablook tr th{
+				border-bottom: 1px solid #eee;
+				border-right: 1px solid #eee;
+				font-weight: normal;
+			}
+			.tablook tr td{
+				border-right: 1px solid #eee;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="pactbox">
+			<ul class="dealtop">
+				<li style="text-align: center;"><b style="font-size: 4vmin;">同意担保函</b></li>
+				<li>编号：<b>{{render_data['product_name']}}</b></li>
+				<li>致菠萝理财平台上的出借人：</li>
+			</ul>
+			
+			<ul class="dealbottom">
+				<li>本人同意为借款人 <strong>{{render_data.borrower_name}}</strong> （以下简称“借款人”）通过北京朴素磐石投资管理有限公司旗下的“菠萝理财平台”（以下简称“菠萝理财”）向出借人（出借人最终以菠萝理财提供的一份或多份《出借信息确认单》中所列明的出借人为准）借款融资提供连带责任保证担保如下：</li>
+				<li>1、本人同意为借款人在《借款协议》（编号： <strong>{{render_data.contract_no}}</strong> ）（以下简称“借款协议”）项下向出借人所借的最高不超过【 <strong>{{render_data.total_mount_chinese}}</strong> 】借款本金金额提供不可撤销的连带保证担保。</li>
+				<li>2、借款人未按照借款协议及相关文件规定向出借人兑付全部本金及收益时，即视为还款逾期。出借人或其债权受让人或其委托人菠萝理财凭本担保函和相关凭证向本人索款时，本人将在3日内无条件垫付代偿，代付款项将支付至菠萝理财指定的如下银行账户：</li>
+				<li>账户名称	北京朴素磐石投资管理有限公司</li>
+				<li>开户银行	招商银行</li>
+				<li>一般户银行账号	****************</li>
+				<li>3、本担保函保证的范围为借款协议项下本金及利息、募集期资金占用费、罚息、违约金和债权人实现债权而发生的费用（包括但不限于催收费用、诉讼费或仲裁费、保全费、公告费、执行费、律师费、差旅费、公证费等）以及其它到期应付的款项。</li>
+				<li>4、若借款协议项下同时存在多个担保方式（包括保证、抵押、质押等担保方式）的，出借方有权选择其中一项或者几项来实现债权，实现担保的方式不以物的担保为绝对优先，而由出借方根据实现债权的最大可能来选择，本人对此不提出异议、不以此作为抗辩理由。</li>
+				<li>5、债权人转让债权的，本人同意仍承担本担保函载明的连带担保责任。</li>
+				<li>6、本担保函自本人签字之日起生效。保证期间为借款人债务履行期限届满之日起二年。</li>
+				<li>7、本担保函独立于借款协议，借款协议或其有关条款无效时不影响本担保函效力。对债务人在借款协议无效后应承担的返还责任或赔偿责任，保证人承诺仍承担连带责任。</li>
+				<li>8、本人同意，若发生争议，任何一方均可向菠萝理财所在地（北京市海淀区）人民法院提起诉讼。</li>
+				<li>保证人：***</li>
+				<li>身份证号码：******************</li>
+				<li>****年 ** 月 ** 日</li>
+			</ul>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>激活成功</title>
+	<link rel="stylesheet" type="text/css" href="../../public/css/media.css"/>
+	<script src="../../public/js/jquery-3.1.1.min.js"></script>
+	<style>
+		body{
+			width: 100%;
+			height: 100%;
+			margin: 0;padding: 0;
+			color:#606060;
+			font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+			-webkit-text-size-adjust: 100%;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		}
+		body,html{
+			font-size: 62.5%;
+			background: #fff;
+		}
+
+		.tixian{
+			max-width:64rem;
+			margin:0 auto;
+			overflow: hidden;
+			font-size: 3.6vmin;
+		}
+		.gongxi{
+			text-align: center;
+			padding: 6vmin;
+			margin-top: 5%;
+		}
+		.gongxi>dt>img{
+			width: 16%;
+			padding-bottom: 10px;
+		}
+		.gongxi>dd{
+			font-size: 4.2vmin;
+		}
+
+		.zhidian{
+			width: 80%;
+			margin: 0 auto;
+			text-align: center;
+		}
+		.zhidian>p:first-child{
+			line-height: 28px;
+			color: #888;
+			margin: 3%;
+		}
+		.zhidian>p>img{
+			width: 8%;
+			margin-right: 5px;
+		}
+		.zhidian>p:last-child{
+			color: #ffcb0f;
+			font-weight: bold;
+		}
+
+		.confirm{
+			width: 90%;
+			background: #fdc32f;
+			border-radius: 5px;
+			color: #fff;
+			line-height: 12vmin;
+			margin-left: 5%;
+			margin-top: 10%;
+			font-size: 4.2vmin;
+		}
+	</style>
+</head>
+<body>
+<div class="tixian">
+	<dl class="gongxi">
+		<dt><img src="../../public/images/chengg.png"> </dt>
+		<dd>恭喜您！激活成功</dd>
+	</dl>
+
+	<div class="zhidian">
+		<p class="service"><img src="../../public/images/phone@2x.png"> 400-032-0596</p>
+	</div>
+
+	<button class="confirm">确认</button>
+</div>
+<script>
+    $(function(){
+        $(".confirm").click(function(){
+            buySuc();
+        });
+        $(".service").click(function(){
+            telePhone();
+        });
+    });
+
+    //确认
+    function buySuc() {
+        window.jsObj.HtmlcallJava7();
+    }
+    //客服电话
+    function telePhone() {
+        window.jsObj.HtmlcallJava8();
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	width: 100%;
+	height: 100%;
+	margin: 0;padding: 0;
+	color:#606060;
+	font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+}
+body,html{
+	font-size: 62.5%;
+}
+.yibao{
+	max-width:64rem;
+	margin:0 auto;
+	background: #fff;
+	overflow: hidden;
+}
+.center{
+	width:100%;
+	background: url(../images/yibaoquan/bj1.jpg) no-repeat center top;
+	background-size: 100%;
+}
+.shou{
+	width: 90%;
+	margin:0 auto;
+	background: url(../images/yibaoquan/h.png) no-repeat center bottom;
+	background-size: 15%;
+	text-indent: 28px;
+	font-size: 3.2vmin;
+	line-height: 28px;
+	padding: 70vmin 5% 10% 5%;
+}
+
+.yuanone{
+	width: 100%;
+	margin:0 auto;
+	background: #ffc62e url(../images/yibaoquan/6.png) no-repeat center top 5%;
+	background-size: 80%;
+	text-align: center;
+	display: -webkit-box;
+	-webkit-box-flex: 1;
+	padding-top: 10%;
+}
+.yuanone>dl{
+	width: 50%;
+	color: #a24121;
+}
+.yuanone>dl>dt>img{
+	width: 60%;
+	margin-bottom: 3%;
+}
+.yuanone>dl>dd{
+	width: 80%;
+	margin: 0 auto;
+	line-height: 28px;
+	font-size: 3.2vmin;
+	margin-bottom: 3%;
+}
+
+.yuantwo{
+	width: 100%;
+	margin:0 auto;
+	background: #ffc62e url(../images/yibaoquan/l.png) no-repeat center bottom;
+	background-size: 15%;
+	text-align: center;
+	display: -webkit-box;
+	-webkit-box-flex: 1;
+}
+.yuantwo>dl{
+	width: 50%;
+	color: #a24121;
+}
+.yuantwo>dl>dt>img{
+	width: 60%;
+	margin-bottom: 3%;
+}
+.yuantwo>dl>dd{
+	width: 80%;
+	margin: 0 auto;
+	line-height: 28px;
+	font-size: 3.2vmin;
+	margin-bottom: 10%;
+}
+
+.het{
+	width: 100%;
+	background: #7de2ff url(../images/yibaoquan/7.png) no-repeat center top 3%;
+	background-size: 80%;
+	clear: both;
+}
+.hetong{
+	background: url(../images/yibaoquan/b.png) no-repeat center bottom;
+	background-size: 15%;
+	padding: 10% 0;
+}
+.hetong>li{
+	line-height: 28px;
+	font-size: 3.2vmin;
+	padding-top: 3%;
+}
+.hetong>li>b{
+	font-size: 3.6vmin;
+	margin-left: 30vmin;
+}
+.hetong>img{
+	width: 35%;
+	margin: 3%;
+	margin-left: 31%;
+}
+.hetong>li:nth-child(3){
+	background: url(../images/yibaoquan/1.png) no-repeat center left;
+	background-size: 6.6%;
+	padding: 3% 0 0 10%;
+	margin: 0 3%;
+}
+.hetong>li:nth-child(4){
+	background: url(../images/yibaoquan/2.png) no-repeat center left;
+	background-size: 6.6%;
+	padding: 0 0 0 10%;
+	margin: 3% 3%;
+}
+.hetong>li:nth-child(5){
+	background: url(../images/yibaoquan/3.png) no-repeat center left;
+	background-size: 6.6%;
+	padding: 0 0 0 10%;
+	margin: 0 3%;
+}
+.four{
+	width: 6.6%;
+	float: left;
+	margin-left: 3%;
+	padding-right: 3%;
+}
+.baoquan{
+	width: 100%;
+	background: url(../images/yibaoquan/hui.png) no-repeat center bottom;
+	background-size: 15%;
+}
+.baoquan>img{
+	width: 80%;
+	padding: 5% 10%;
+}
+.picimg{
+	width: 90%;
+	background: url(../images/yibaoquan/tp4.png) no-repeat center top;
+	background-size: 100%;
+	padding: 22vmin 0;
+	margin: 0 auto;
+}
+.jieda{
+	width: 100%;
+	background: #f7f7f7 url(../images/yibaoquan/9.png) no-repeat center top 2%;
+	background-size: 60%;
+}
+.dati{
+	width: 90%;
+	margin:0 auto;
+	background: url(../images/yibaoquan/5.png) no-repeat center bottom;
+	background-size: 15%;
+	line-height: 28px;
+	font-size: 3.2vmin;
+	color: #888;
+	padding: 10% 0;
+}
+.dati>li>b{
+	line-height: 13vmin;
+}
+.foot{
+	width: 100%;
+	background:#ff5e54 url(../images/yibaoquan/bj6.png) no-repeat center top 5%;
+	background-size: 90%;
+}
+.zhuce{
+	width: 36vmin;
+	height: 35px;
+	background: #fdde4d;
+	box-shadow: 0 3px 0 #ce830e;
+	border-radius: 6px;
+	text-align: center;
+	font-size: 3.2vmin;
+	font-weight: bold;
+	margin: 50vmin 0 5% 32vmin;
+}
+.zhuce>a{
+	color: #ff2012;
+	
+}

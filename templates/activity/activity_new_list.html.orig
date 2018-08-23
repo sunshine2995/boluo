@@ -1,0 +1,295 @@
+<!--<include file="public:header" /> -->
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<title>活动</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/media.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}"></script>
+    <style>
+    body{
+    	max-width:64rem;
+    	background: #fff;
+    	margin: 0 auto;
+    }
+	.acwords{
+		padding:0 0.5rem;
+		color:#666;
+	}
+	.activity-img img{
+		width:100%;
+	}
+	.acwords span{
+		float:right;
+		color:#666;
+	}
+	.jinx{
+		color:#ffcb0f !important;
+	}
+	.activitys{
+		margin:1rem 1.5rem;
+	}
+	.activitys li{
+		margin-bottom:1rem;
+		border-bottom: 1px solid #eee;
+		padding-bottom: 5%;
+	}
+    </style>
+</head>
+<body>
+<div class="mincontent f-cf">
+	<div class="activitys">
+    	<ul>
+            <!--<li>
+                <a href="javascript:;">
+                	<div class="acwords f-cf"><span>已结束</span><p><em>迎双蛋</em>活动时间:12月24日12时-20时</p></div>
+                   <div class="activity-img"><img src="__PUBLIC__/images/banner.png"/>
+                        <span class="covers"></span>
+                        <span class="covers-words">
+                            <span>迎双蛋</span>
+                        </span>
+                   </div>
+                
+                </a>
+            </li>-->
+            <li id="dkh" style="display: none">
+                <a href="/static/h5/december/december.html?phone={{renderData.phone}}&token={{renderData.token}}">
+                    <div class="acwords f-cf"><span class="jinx" id="time">进行中</span><p>双12大狂欢</p></div>
+                    <div class="activity-img">
+                        <img src="{{ url_for('static', filename='images/sse.jpg')}}"/>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="/v1/activity/zill/index?phone={{renderData.phone}}&token={{renderData.token}}">
+                	<div class="acwords f-cf"><span class="jinx">进行中</span><p>豪礼大富翁</p></div>
+	                <div class="activity-img">
+	               		<img src="{{ url_for('static', filename='images/xinn.jpg')}}"/>
+	                </div>
+                </a>
+            </li>
+            <li>
+                <a href="/static/h5/november/november.html">
+                    <div class="acwords f-cf"><span>已结束</span><p>菠萝理财三周年庆</p></div>
+                    <div class="activity-img">
+                        <img src="{{ url_for('static', filename='images/hdnovember.jpg')}}"/>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="/v1/activity/winners_sj?phone={{renderData.phone}}&token={{renderData.token}}">
+                    <div class="acwords f-cf"><span>已结束</span><p>双节获奖名单</p></div>
+                    <div class="activity-img">
+                        <img src="{{ url_for('static', filename='images/sj_hdhjmd.jpg')}}"/>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="/v1/activity/yure?phone={{renderData.phone}}&token={{renderData.token}}">
+                    <div class="acwords f-cf"><span>已结束</span><p>国庆中秋有余热</p></div>
+                    <div class="activity-img">
+                        <img src="{{ url_for('static', filename='images/hdyure.jpeg')}}"/>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="/v1/activity/mdkshj?phone={{renderData.phone}}&token={{renderData.token}}">
+                    <div class="acwords f-cf"><span>已结束</span><p>开学季！获奖名单</p></div>
+                    <div class="activity-img">
+                        <img src="{{ url_for('static', filename='images/mdkshjmd.png')}}"/>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="/v1/activity/schoolstarts?phone={{renderData.phone}}&token={{renderData.token}}">
+                    <div class="acwords f-cf"><span>已结束</span><p>开学季！菠萝</p></div>
+                    <div class="activity-img">
+                        <img src="{{ url_for('static', filename='images/hdkxj.png')}}"/>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="/v1/activity/qixi/h5?phone={{renderData.phone}}&token={{renderData.token}}">
+                	<div class="acwords f-cf"><span>已结束</span><p>相约七夕</p></div>
+	                <div class="activity-img">
+	               		<img src="{{ url_for('static', filename='images/hdqixi.jpg')}}"/>
+	                </div>
+                </a>
+            </li>
+            <li>
+                <a href="/v1/html5/dazhuanpan?phone={{renderData.phone}}&token={{renderData.token}}">
+                	<div class="acwords f-cf"><span>已结束</span><p>大转盘获奖名单</p></div>
+	                <div class="activity-img">
+	               		<img src="{{ url_for('static', filename='images/dzpjs.jpg')}}"/>
+	                </div>
+                </a>
+            </li>
+            <li>
+                <a href="/v1/activity/dzp?phone={{renderData.phone}}&token={{renderData.token}}">
+                	<div class="acwords f-cf"><span>已结束</span><p>财富大转盘</p></div>
+	                <div class="activity-img">
+	               		<img src="{{ url_for('static', filename='images/cfdzp.png')}}"/>
+	                </div>
+                </a>
+            </li>
+            <li>
+                <a href="/v1/activity/hegui/h5?phone={{renderData.phone}}&token={{renderData.token}}">
+                	<div class="acwords f-cf"><span>已结束</span><p>合规再升级</p></div>
+	                <div class="activity-img">
+	               		<img src="{{ url_for('static', filename='images/hdzxhg.jpg')}}"/>
+	                </div>
+                </a>
+            </li>
+            <li>
+                <a href="/v1/activity/fathersday?phone={{renderData.phone}}&token={{renderData.token}}">
+                	<div class="acwords f-cf"><span>已结束</span><p>父亲节活动</p></div>
+	                <div class="activity-img">
+	               		<img src="{{ url_for('static', filename='images/fqj.jpg')}}"/>
+	                </div>
+                </a>
+            </li>
+            <li><!--/v1/activity/mothersday?phone={{renderData.phone}}&token={{renderData.token}}-->
+                <a href="http://apitest.boluolicai.com:8012/v1/activity/mothersday/winner">
+                	<div class="acwords f-cf"><span>已结束</span><p>母亲节活动</p></div>
+	                <div class="activity-img">
+	               		<img src="{{ url_for('static', filename='images/hdmay.jpg')}}"/>
+	                </div>
+                </a>
+            </li>
+            <li>
+                <a href="https://api.boluolc.com:8014/v1/activity/labour">
+                	<div class="acwords f-cf"><span>已结束</span><p>五一七天乐</p></div>
+	                <div class="activity-img">
+	               		<img src="{{ url_for('static', filename='images/qtl.jpg')}}"/>
+	                </div>
+                </a>
+            </li>
+            <li>
+                <a href="/v1/html5/4yue/gehk">
+                	<div class="acwords f-cf"><span>已结束</span><p>4月感恩回馈</p></div>
+	                <div class="activity-img">
+	               		<img src="{{ url_for('static', filename='images/four.jpg')}}"/>
+	                </div>
+                </a>
+            </li>
+            <li>
+                <a href="/v1/html5/sanbahj">
+                	<div class="acwords f-cf"><span>已结束</span><p>3.8女人节</p></div>
+	                <div class="activity-img">
+	               		<img src="{{ url_for('static', filename='images/nvr.jpg')}}"/>
+	                </div>
+                </a>
+            </li>
+            <li>
+                <a href="https://m.boluolc.com/jiaxi">
+                	<div class="acwords f-cf"><span>已结束</span><p>菠萝加息狂欢月</p></div>
+	                <div class="activity-img">
+	               		<img src="{{ url_for('static', filename='images/jiax.png')}}"/>
+	                </div>
+                </a>
+            </li>
+            <!--<li>
+                <a href="https://www.boluolc.com/Home/noviceactivity">
+                	<div class="acwords f-cf"><span>已结束</span><p>“注册就送100元现金大奖”</p></div>
+	                <div class="activity-img">
+	               		<img src="{{ url_for('static', filename='images/chouj.png')}}"/>
+	                </div>
+                </a>
+            </li>
+            <li> 
+               <a href="###">
+               		<div class="acwords f-cf"><span>已结束</span><p>新手专享</p></div>           
+                    <div class="activity-img">
+                    	<img src="{{ url_for('static', filename='images/activitys9.jpg')}}"/>
+                    </div>
+                </a>
+            </li>-->
+            <li> 
+                <a href="http://mp.weixin.qq.com/s?__biz=MzAxMTcwOTk3Nw==&mid=426480691&idx=1&sn=75d61c84b62b154f85bce1ff87c9716f#rd">   
+                	<div class="acwords f-cf"><span>已结束</span><p>金融风控微沙龙报名ing！快！快！快！ <br />2016年2月25日20：30-21：00</p></div>                 
+    			    <div class="activity-img">
+    			    	<img src="{{ url_for('static', filename='images/activitys8.jpg')}}"/>
+    				</div>
+                </a>    
+            </li>
+            <li> 
+                <a href="http://mp.weixin.qq.com/s?__biz=MzAxMTcwOTk3Nw==&mid=426226014&idx=1&sn=941a933fe8cf48b0bc0f89db179349e2#rd">   
+                	<div class="acwords f-cf"><span>已结束</span><p>猜灯谜，闹元宵，欢欢喜喜赢红包 </p></div>                 
+    			    <div class="activity-img">
+    			    	<img src="{{ url_for('static', filename='images/activitys7.jpg')}}"/>
+    				</div>
+                </a>    
+            </li>
+            <li> 
+                <a href="http://mp.weixin.qq.com/s?__biz=MzAxMTcwOTk3Nw==&mid=425620826&idx=1&sn=55c88ad61dd0115ef6b5c6c1b111dfe1#rd">   
+                	<div class="acwords f-cf"><span>已结束</span><p>【开年大礼】88元红包疯狂送！！！<br />2016年2月17日-2016年2月24日</p></div>                 
+    			    <div class="activity-img">
+    			    	<img src="{{ url_for('static', filename='images/activitys6.jpg')}}"/>
+    				</div>
+                </a>    
+            </li>
+			<li> 
+                <a href="http://mp.weixin.qq.com/s?__biz=MzAxMTcwOTk3Nw==&mid=423998837&idx=1&sn=3c8c084a6fb949e864adedf78c4195db#rd">   
+                	<div class="acwords f-cf"><span>已结束</span><p>猴年壕礼到，现金送不停！！！<br />2016年2月3日-2016年2月22日</p></div>                 
+    			    <div class="activity-img">
+    			    	<img src="{{ url_for('static', filename='images/activitys5.jpg')}}"/>
+    				</div>
+                </a>    
+            </li>
+        	<li> 
+                <a href="http://mp.weixin.qq.com/s?__biz=MzAxMTcwOTk3Nw==&mid=421000395&idx=1&sn=f7339a0c42867736a677e2f0159a9b5b#rd">   
+                	<div class="acwords f-cf"><span>已结束</span><p>菠萝理财与罗胖一起跨年<br />2015年12月23日-2016年1月3日</p></div>                 
+    			    <div class="activity-img">
+    			    	<img src="{{ url_for('static', filename='images/activitys4.jpg')}}"/>
+    				</div>
+                </a>    
+            </li>
+            <li>
+                <a href="http://mp.weixin.qq.com/s?__biz=MzAxMTcwOTk3Nw==&mid=418252296&idx=1&sn=0b01933099e10b8c32427da9e04b24d3#rd">   
+                	<div class="acwords f-cf"><span>已结束</span><p>双蛋感恩季 2015年12月23日12时-20时</p></div>  
+    			    <div class="activity-img">
+    			    	<img src="{{ url_for('static', filename='images/activitys3.jpg')}}"/>
+    					<span class="covers-words">
+    						
+    					</span>
+    			    </div>
+                 </a>       
+            </li>
+			<li>
+                <a href="http://mp.weixin.qq.com/s?__biz=MzAxMTcwOTk3Nw==&mid=416041689&idx=1&sn=ad2dc5c7ce398603942bc6a81e859692#rd"> 
+                	<div class="acwords f-cf"><span>已结束</span><p>投资交流会 2015年12月12日8时-18时</p></div>   
+                    <div class="activity-img">
+                    	<img src="{{ url_for('static', filename='images/activitys2.jpg')}}"/>
+    				</div>
+                </a>    
+            </li>
+            <li>
+                <a href="http://mp.weixin.qq.com/s?__biz=MzAxMTcwOTk3Nw==&mid=407632133&idx=1&sn=a45bf07821e192ab786ba75d1dff7291#rd"> 
+                	<div class="acwords f-cf"><span>已结束</span><p>菠萝理财“企业VIP定制理财计划”上线了</p></div>   
+                    <div class="activity-img">
+                    	<img src="{{ url_for('static', filename='images/activitys1.jpg')}}"/>
+    				</div>
+                </a>    
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    /*var s ='2017-11-18 00:01:00';
+    s = s.replace(/-/g,"/");
+    var date = new Date(s);
+    var now = new Date();
+    if (now>date){
+        $("#time").html("已结束").css("color","#666").removeClass("jinx");
+    }*/
+    var s ='2017-12-8 00:00:00';
+    s = s.replace(/-/g,"/");
+    var date = new Date(s);
+    var now = new Date();
+    if (now>date){
+        $("#dkh").css("display","block");
+    }
+</script>
+</body>
+</html>

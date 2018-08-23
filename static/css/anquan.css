@@ -1,0 +1,146 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	width: 100%;
+	height: 100%;
+	margin: 0;padding: 0;
+	color:#606060;
+	background:#fff;
+	font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+}
+body,html{
+	font-size: 62.5%;
+}
+.anqbz{
+	max-width:64rem;
+	margin:0 auto;
+	overflow: hidden;
+}
+.tab_menu{overflow:hidden;}
+.tab_menu li{
+	width:33.33%;
+	height:50px;
+	line-height:50px;
+	float:left;
+	color:#333;
+	text-align:center;
+	/*cursor:pointer;*/
+	font-size:3.8vmin;
+}
+.tab_menu li.current{color:#FFB000;border-bottom: 1px solid #FFB000;}
+
+.tab_menu li a{color:#fff;text-decoration:none;}
+
+.tab_menu li.current a{color:#333;}
+
+.tab_box .hide{display:none;}
+.safe{
+	width: 100%;
+}
+.ap-style>ul{
+	width: 100%;
+	padding: 2% 0 2% 5%;
+	border-bottom: 1px solid #eee;
+}
+.ap-style>ul>p>img{
+	width: 5%;
+}
+.ap-style>ul>p{
+	font-size: 3.5vmin;
+	
+}
+.ap-style>ul>li{
+	width: 90%;
+	font-size: 3.4vmin;
+	text-indent: 24px;
+	line-height: 32px;
+}
+/*收益保障*/
+.look1{
+	width: 100%;
+	background: #ebf6ff url(../images/anqbz/01.png) no-repeat center right 8%;
+	background-size: 20%;
+}
+.look1>p{
+	width: 60%;
+	line-height: 26px;
+	background: url(../images/anqbz/11.png) no-repeat top 10% left 5vmin;
+	background-size: 60%;
+	padding: 12% 0 3% 5%;
+	text-indent: 24px;
+	font-size: 3.2vmin;
+	color: #888;
+}
+.look2{
+	width: 100%;
+	background: #fff1f1 url(../images/anqbz/02.png) no-repeat center left 8%;
+	background-size: 15%;
+}
+.look2>p{
+	width: 60%;
+	line-height: 26px;
+	background: url(../images/anqbz/22.png) no-repeat top 10% right;
+	background-size: 45%;
+	padding: 12% 0 3% 33%;
+	text-indent: 24px;
+	font-size: 3.2vmin;
+	color: #888;
+}
+.look3{
+	width: 100%;
+	background: #fffdf1 url(../images/anqbz/03.png) no-repeat center right 8%;
+	background-size: 20%;
+}
+.look3>p{
+	width: 60%;
+	line-height: 26px;
+	background: url(../images/anqbz/33.png) no-repeat top 10% left 5vmin;
+	background-size: 50%;
+	padding: 12% 0 3% 5%;
+	text-indent: 24px;
+	font-size: 3.2vmin;
+	color: #888;
+}
+.look4{
+	width: 100%;
+	background: #f4faff url(../images/anqbz/04.png) no-repeat center left 8%;
+	background-size: 16%;
+}
+.look4>p{
+	width: 60%;
+	line-height: 26px;
+	background: url(../images/anqbz/44.png) no-repeat top 10% right;
+	background-size: 45%;
+	padding: 12% 0 3% 33%;
+	text-indent: 24px;
+	font-size: 3.2vmin;
+	color: #888;
+}
+/*战略合作*/
+.zhanl>p{
+	width: 90%;
+	margin: 0 auto;
+	border-bottom: 1px solid #eee;
+	font-size: 3.2vmin;
+	padding: 2% 5% 5% 5%;
+	line-height: 32px;
+	text-indent: 24px;
+}
+.qiye{
+	width: 100%;
+	margin: 0 auto;
+}
+.qiye>li{
+	width: 49.8%;
+	height: 60px;
+	line-height: 60px;
+	float: left;
+	text-align: center;
+	border-bottom: 1px solid #eee;
+}
+.qiye>li:nth-child(odd){
+	border-right: 1px solid #eee;
+}
+.qiye>li>img{
+	width: 55%;
+}

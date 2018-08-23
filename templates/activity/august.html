@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>大转盘</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/august.css') }}?v=2"/>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/awardRotate.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/august.js') }}"></script>
+		<script type="text/javascript">
+		var turnplate={
+				restaraunts:[],
+				colors:[],
+				outsideRadius:192,
+				textRadius:150,
+				insideRadius:60,
+				startAngle:0,
+
+				bRotate:false
+		};
+
+		$(document).ready(function(){
+			turnplate.restaraunts = ["18元 理财红包", "88元 现金红包", "28元 理财红包", "1.0% 加息券", "188元 现金红包", "58元 理财红包", "2.0% 加息券", "8元 现金红包",  "128元 理财红包","88个 菠萝币"];
+			turnplate.colors = ["#fffbe8", "#f4f4fe", "#fffbe8", "#f4f4fe","#fffbe8", "#f4f4fe", "#fffbe8","#f4f4fe", "#fffbe8","#f4f4fe"];
+            turnplate.sb = ['恭喜您获得 18元 理财红包      可在"我的账户-我的优惠券"中查看', '恭喜您获得 88元 现金红包      可在"我的账户-资金记录"中查看', '恭喜您获得 28元 理财红包      可在"我的账户-我的优惠券"中查看'
+                , '恭喜您获得 1.0% 加息券      可在"我的账户-我的优惠券"中查看', '恭喜您获得 188元 现金红包       可在"我的账户-资金记录"中查看', '恭喜您获得 58元 理财红包      可在"我的账户-我的优惠券"中查看', '恭喜您获得 2.0% 加息券      可在"我的账户-我的优惠券"中查看',
+                '恭喜您获得 8元 现金红包      可在"我的账户-资金记录"中查看', '恭喜您获得 128元 理财红包      可在"我的账户-我的优惠券"中查看', "恭喜您获得 88个 菠萝币 "];
+			var rotateTimeOut = function (){
+				$('#wheelcanvas').rotate({
+					angle:0,
+					animateTo:2160,
+					duration:8000,
+					callback:function (){
+						alert('网络超时，请检查您的网络设置！');
+					}
+				});
+			};
+			var rotateFn = function (item, txt){
+				var angles = item * (360 / turnplate.restaraunts.length) - (360 / (turnplate.restaraunts.length*2));
+				if(angles<270){
+					angles = 270 - angles;
+				}else{
+					angles = 360 - angles + 270;
+				}
+				$('#wheelcanvas').stopRotate();
+				$('#wheelcanvas').rotate({
+					angle:0,
+					animateTo:angles+1800,
+					duration:3600,
+					callback:function (){
+						$(".prize").css("display","block");
+						turnplate.bRotate = !turnplate.bRotate;
+					}
+				});
+			};
+
+			$('.pointer').click(function (){
+				$(".over").css("display","block");
+				
+				$(".end_qd").click(function(){
+					
+					$(".over").hide();
+					
+				});
+				if(turnplate.bRotate)return;
+				turnplate.bRotate = !turnplate.bRotate;
+				var item = 6;
+				/*var ttttt = turnplate.restaraunts[item-1];*/
+				var txt0 = ttttt.split(' ')[0];
+				var txt1 = ttttt.split(' ')[1];
+				$('#txt0').text(txt0);
+				$('#txt1').text(txt1);
+				rotateFn(item, turnplate.restaraunts[item-1]);
+
+				console.log(item);
+			});
+			
+			/*$('.pointer').click(function (){
+			    if ('{{renderData.login_in}}' === 'True') {
+					if ('{{renderData.is_paybind}}' === 'True') {
+                        if ('{{renderData.enabled}}' === 'True') {
+                            if (turnplate.bRotate) return;
+                            turnplate.bRotate = !turnplate.bRotate;
+                            $.ajax({
+                                url: '/v1/activity/dzp/ajax/{{renderData.phone}}/{{renderData.token}}',
+                                type: 'GET',
+                                cache: false,
+                                success: function (response_data) {
+                                    var item = response_data['result'];
+                                    var score = response_data['use_number'];
+                                    var ttttt = turnplate.restaraunts[item - 1];
+                                    var info = turnplate.sb[item - 1]
+                                    var txt0 = ttttt.split(' ')[0];
+                                    var txt1 = ttttt.split(' ')[1];
+                                    $('#txt0').text(txt0);
+                                    $('#txt1').text(txt1);
+                                    $('#info').text(info);
+                                    $('#score').text(score);
+
+                                    rotateFn(item, turnplate.restaraunts[item - 1]);
+
+                                }
+                            });
+                        } else {
+								$(".cozy").css("display","block");
+								$(".invest").click(function(){
+								    qutouzi();
+								});
+								$(".tc_info").click(function(){
+								    $(".cozy").hide();
+								});
+						}
+                    } else {
+                    	$(".bangk").css("display","block");
+						$(".bk-info").click(function(){
+							hd_bangk();
+						});
+						$(".bk-qx").click(function(){
+						    $(".bangk").hide();
+						});
+					}
+                } else {
+                	$(".denglu").css("display","block");
+						$(".dl-info").click(function(){
+			        		hd_dengl();
+						});
+						$(".dl-qx").click(function(){
+						    $(".denglu").hide();
+						});
+                }
+
+			});*/
+		});
+
+
+		function qutouzi() {
+            window.jsObj.HtmlcallJava3();
+        }
+		
+		function hd_dengl() {
+    		window.jsObj.HtmlcallJava2();
+        }
+		
+		function hd_bangk() {
+    		window.jsObj.HtmlcallJava8();
+        }
+
+		function rnd(n, m){
+			var random = Math.floor(Math.random()*(m-n+1)+n);
+			return random;
+
+		}
+		
+		function zhoucong() {
+
+        }
+
+		window.onload=function(){
+			drawRouletteWheel();
+		};
+
+		function drawRouletteWheel() {
+		  var canvas = document.getElementById("wheelcanvas");
+		  if (canvas.getContext) {
+			  var arc = Math.PI / (turnplate.restaraunts.length/2);
+			  var ctx = canvas.getContext("2d");
+			  ctx.clearRect(0,0,422,422);
+			  ctx.strokeStyle = "#fff";
+			  ctx.font = '16px Microsoft YaHei';
+			  for(var i = 0; i < turnplate.restaraunts.length; i++) {
+				  var angle = turnplate.startAngle + i * arc;
+				  ctx.fillStyle = turnplate.colors[i];
+				  ctx.beginPath();
+				  ctx.arc(211, 211, turnplate.outsideRadius, angle, angle + arc, false);
+				  ctx.arc(211, 211, turnplate.insideRadius, angle + arc, angle, true);
+				  ctx.stroke();
+				  ctx.fill();
+				  ctx.save();
+
+				  ctx.fillStyle = "#4d5ba7";
+				  var text = turnplate.restaraunts[i];
+				  var line_height = 26;
+				  ctx.translate(211 + Math.cos(angle + arc / 2) * turnplate.textRadius, 211 + Math.sin(angle + arc / 2) * turnplate.textRadius);
+				  ctx.rotate(angle + arc / 2 + Math.PI / 2);
+
+				  if(text.indexOf(" ")>0){
+					  var texts = text.split(" ");
+					  for(var j = 0; j<texts.length; j++){
+						  ctx.font = j == 0?'bold 18px Microsoft YaHei':'18px Microsoft YaHei';
+						  if(j == 0){
+							  ctx.fillText(texts[j]+" ", -ctx.measureText(texts[j]+" ").width / 2, j * line_height);
+						  }else{
+							  ctx.fillText(texts[j], -ctx.measureText(texts[j]).width / 2, j * line_height);
+						  }
+					  }
+				  }else if(text.indexOf(":") == -1 && text.length>6){
+					  text = text.substring(0,6)+"||"+text.substring(6);
+					  var texts = text.split("||");
+					  for(var j = 0; j<texts.length; j++){
+						  ctx.fillText(texts[j], -ctx.measureText(texts[j]).width / 2, j * line_height);
+					  }
+				  }else{
+					  ctx.fillText(text, -ctx.measureText(text).width / 2, 0);
+				  }
+
+				  ctx.restore();
+			  }
+		  }
+		}
+		$(function(){
+			$('.myscroll').myScroll({
+				speed: 40,
+				rowHeight: 26
+			});
+		});
+		</script>
+	</head>
+	<body>
+		<div class="more turnt">
+			<!--百分百中奖-->
+			<img src="{{ url_for('static', filename='images/august/zj@2x.png') }}" class="bfb" />
+			<div class="bfenb">
+				<ul class="two">
+					<li class="fenxright">抽奖规则</li>
+					<li class="award">我的奖品</li>
+				</ul>
+				<div class="turnplate">
+					<canvas class="item" id="wheelcanvas" width="422px" height="422px"></canvas>
+					<button class="pointer" onclick="zhoucong()">
+						还剩{{renderData.use_number}}次
+					</button>
+				</div>
+				<div class="myscroll">
+					<div>
+						<ul>
+							{% for i in renderData.memberPrizeInfoList %}
+								<li>{{i.0}}<a>获得</a><span>{{i.1}}</span></li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--投资送清凉-->
+			<div class="qingl">
+				<p>您的活动累计投资金额已达{{renderData.activity_invest}}元</p>
+			</div>
+			<div class="songql">
+				<img src="{{ url_for('static', filename='images/august/hdgz@2x.png') }}" />
+				<div class="xiangq">
+					<ul>
+						<li>1.活动期间累计投资额满足要求即可获得相应的奖品，每位用户只能领取一个奖品。</li>
+						<li>活动期间累计投资额=30天标累计投资额/2+90天标累计投资额+180天标累计投资额*2</li>
+						<li>2.理财红包和加息券有效期为活动期间，可在“我的账户—我的优惠券”中查看；现金红包可在“我的账户—资金记录”中查看；菠萝币可在“积分商城—我的菠萝”中查看。</li>
+						<li>3.获奖用户可在APP上填写收货地址：<b>填写途径：我的账户—点击左上角菠萝头像—收货地址管理,</b>奖品会在8月31日前寄出（8月25日还联系不上的获奖者视为放弃）。</li>
+						<li>4.奖品图片仅展示作用，所有奖品颜色随机，请以实物为准。</li>
+						<li>5.活动只在APP端进行，新手标不参与此活动。</li>
+						<li>6.如有疑问可咨询在线客服或者拨打客服热线：400-032-0596。</li>
+					</ul>
+				</div>
+			</div>
+			<p class="banq">本次活动最终解释权归菠萝理财所有</p>
+		</div>
+		<!--恭喜-->
+		<div class="prize">
+			<div class="raunts">
+				<ul class="wallet">
+					<li>
+						<p id="txt0">1000</p>
+						<p id="txt1">现金红包</p>
+					</li>
+					<li id="info">
+						恭喜您获得188元现金红包<br />
+						可在“我的账户-资金记录”中查看
+					</li>
+				</ul>
+				<button class="shut">确定</button>
+			</div>
+		</div>
+		
+		<!--<ul class="wallet">
+			<li>
+				<p id="txt0">1000元</p>
+				<p id="txt1">现金红包</p>
+			</li>
+		</ul>-->
+		
+		<!--规则-->
+		<div class="explain">
+			<div class="rule">
+				<p>活动规则</p>
+				<div class="rulecent">
+					<ul>
+						<li>1.单笔投资30天的标满6000元有一次转盘机会，</li>
+						<li>2.单笔投资90天的标满4000元有一次转盘机会，</li>
+						<li>3.单笔投资180天的标满3000元有一次转盘机会</li>
+						<li>注：若单笔投资是6000元、4000元、3000元的倍数，即可得相应倍数的转盘机会。</li>
+					</ul>
+				</div>
+			</div>
+			<div class="fanh"></div>
+		</div>
+		<!--奖励-->
+		<div class="get">
+			<div class="minget">
+				<div id="content">
+					<div>
+					{% for p in renderData['PersonalList']%}
+						<p>{{p[0]}}<span>{{p[1]}}</span></p>
+						{% endfor %}
+					</div>
+				</div>
+				<div class="noget"></div>
+			</div>
+		</div>
+		
+		<!--温馨提示-->
+		<div class="cozy">
+			<div class="prompt">
+				<p>温馨提示</p>
+				<p>当前暂无抽奖机会</p>
+				<button class="invest">去投资</button>
+			</div>
+			<div class="tc_info"></div>
+		</div>
+		
+		<!--登录-->
+		<div class="denglu">
+			<div class="dl_info">
+				<p>提示</p>
+				<p>您还没有登录，快去登录参与活动吧！</p>
+				<button class="dl-info">登录</button>
+				<button class="dl-qx">取消</button>
+			</div>
+		</div>
+		
+		<!--绑卡-->
+		<div class="bangk">
+			<div class="bk_info">
+				<p>提示</p>
+				<p>您还没有绑卡，快去绑卡参与活动吧！</p>
+				<button class="bk-info">绑卡</button>
+				<button class="bk-qx">取消</button>
+			</div>
+		</div>
+		
+		<!--温馨提示-->
+		<div class="over">
+			<div class="end">
+				<p>温馨提示</p>
+				<p>活动已结束</p>
+				<button class="end_qd">确定</button>
+			</div>
+		</div>
+		
+		<script src="{{ url_for('static', filename='js/iscroll.js') }}"></script>
+		<script>
+			$(".fenxright").click(function(){
+				$(".explain").show();
+				document.body.style.overflow = "hidden";
+			});
+				$(".fanh").click(function(){
+					$(".explain").hide();
+					document.body.style.overflow = "auto";
+				});
+			$(".award").click(function(){
+				$(".get").css("display","block");
+				var my=new IScroll("#content");
+				document.body.style.overflow = "hidden";
+			});
+				$(".noget").click(function(){
+					$(".get").hide();
+					document.body.style.overflow = "auto";
+				});
+				
+				$(".shut").click(function(){
+					$(".prize").hide();
+					window.location.href = ''
+				});
+		</script>
+	</body>
+</html>

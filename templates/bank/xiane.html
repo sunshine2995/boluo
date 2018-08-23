@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>限额说明</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bank.css') }}"/>
+	</head>
+	<body style="background:#b52132;">
+		<div class="quota">
+			<div class="quota_top">
+				<img src="{{ url_for('static', filename='images/title1@2x.png')}}" class="logoa" />
+				<div class="quota-up">
+					<dl class="quota-bank">
+						<dt><img src="/static/images/bank/{{render_data['bank_img']}}" /> </dt>
+						<dd>
+							<p><span>借记卡</span>{{render_data.bank_name}}</p>
+							<p>{{render_data.card_number}}</p>
+						</dd>
+					</dl>
+				</div>
+				
+				<ul class="quota-down">
+					<li>
+						<b>单笔限额(元)</b><br />
+						<a>{{render_data.signle_amt}}万</a>
+					</li>
+					<li>
+						<b>单日限额(元)</b><br />
+						<a>{{render_data.day_amt}}万</a>
+					</li>
+					<li>
+						<b>单月限额(元)</b><br />
+						<a>{{render_data.month_amt}}万</a>
+					</li>
+				</ul>
+			</div>
+			<div class="quota_bottom">
+				<img src="{{ url_for('static', filename='images/title2@2x.png')}}" class="logob" />
+				<ol class="quota-large">
+					<li style="margin-bottom: 3%;"><b>1. </b> 开通网银，准备U盾</li>
+					<li><b>2. </b> 用浏览器打开 <a> www.boluolc.com</a></li>
+					<li>&nbsp;&nbsp;&nbsp;&nbsp;登录电脑版菠萝理财进行大额投资</li>
+				</ol>
+			</div>
+		</div>
+	</body>
+</html>

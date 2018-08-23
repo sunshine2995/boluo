@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>新手帮助</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bangz.css') }}?v=1"/>
+		<script src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.tabs.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/xsbz.js') }}"></script>
+	</head>
+	<body>
+		<div class="xsbz demo2">
+
+			<ul class="tab_menu">
+				<li class="current"><img src="{{ url_for('static', filename='images/xsbangzhu/wenti@2x.png') }}" /><br /> 常见问题</li>
+				<li><img src="{{ url_for('static', filename='images/xsbangzhu/zhuce@2x.png') }}" /><br />注册认证</li>
+				<li><img src="{{ url_for('static', filename='images/xsbangzhu/touzi@2x.png') }}" /><br />投资赎回</li>
+				<li><img src="{{ url_for('static', filename='images/xsbangzhu/chongzhi@2x.png') }}" /><br />充值提现</li>
+				<li><img src="{{ url_for('static', filename='images/xsbangzhu/anquan@2x.png') }}" /><br />账户安全</li>
+			</ul>
+
+			<div class="tab_box">
+				<div>
+					<ul id="accordion" class="accordion">
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								1、菠萝理财的利息是怎么计算的？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>计算公式是这样的：利息=投资金额*年化收益/360*天数。<br />
+假如您的本金是10000元，预期年化收益率是8％，锁定期为90天（3个月定期产品），本金收益=（10000*8％/360）*90。</li>
+							</ul>
+						</li>
+				
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								2、现在注册有什么奖励么？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>新注册用户获得平台的150元投资红包。投资红包为一个10元，两个20元，1个100元，起投金额分别为1000元，2000元，5000元和10000元。</li>
+							</ul>
+						</li>
+						
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								3、投资新手标有什么要求？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>新手标目的是为了让新手用户享受第一次体验平台的机会。所以对于新手标，用户只能投资一次，并且限额为一万元，不能使用红包。新手标一般不会参与菠萝理财的大部分活动。</li>
+							</ul>
+						</li>
+				
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								4、邀请好友有什么奖励么？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>每成功邀请一位好友注册并充值即可获得50元红包。同时，还会获取1%的好友投资奖励（新手标除外）。被邀请人也可以获得150元新用户注册红包。</li>
+							</ul>
+						</li>
+				
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								5、为什么绑定银行卡要充值1元？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>连连支付为菠萝理财的三方支付合作伙伴。他们的公司要求用户注册时，必须充值1元钱。但是充值金额会保存在用户账户中，可用于之后的投资，也可同其他投资资金一起提现。</li>
+							</ul>
+						</li>
+						
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								6、如何更换绑定银行卡号？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>
+									为保障您资金安全，更换绑定银行卡一定要通过客服才能操作：<br />
+									如果您账户资金为0或者是原银行卡挂失、注销、变更可以联系理财顾问400-032-0596变更绑定银行卡，其他情况暂不受理变更银行卡业务。<br />
+									变更银行卡所需材料：<br />
+									1、用户名、姓名<br />
+									2、网上电子银行充值记录截图<br />
+									3、银行挂失、注销、变更证明<br />
+									4、身份证正反面<br />
+									5、手持身份证的正反面全脸照片
+								</li>
+							</ul>
+						</li>
+						
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								7、怎么更换银行预留的手机号码？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>
+									1、关注官方认证的微信公众号“连连支付”；关注“连连支付”官方认证的微信公众号；<br />
+									2、关注后在左下角“自助服务”点击“更换手机号”，进入更换手机号界面；<br />
+									3、按提示填写正确的信息，滑动验证通过后输入新手机号接收的验证码即可更换成功<br />
+									温馨提示：<br />
+									1.如用户未在银行修改过预留手机号码，无需进行此操作；<br />
+									2.一个微信号仅支持更换同一人名下银行卡的预留手机号；
+								</li>
+							</ul>
+						</li>
+						
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								8、冻结金额是什么意思？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>冻结金额指用户账户内不能自由支配的资金部分，包含投标冻结、提现冻结等类型。投标冻结是指用户投标成功但该项目标未满的情况；提现冻结则是指用户申请提现至提现成功期间的状态。</li>
+							</ul>
+						</li>
+						
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								9、项目投资后的计息及项目到期回款时间？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>
+									新手标当天投资当天计息，到期后次日8：30 本息返还到客户账户余额并给客户发送短信提醒通知；其他标投资满标后次日审核，次日计息，到期后次日8：30 本息返还到客户账户余额并给客户发送短信提醒通知。
+								</li>
+							</ul>
+						</li>
+						
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								10、充值/提现有手续费吗？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>
+									客户在平台充值的手续费由菠萝理财支付。<br />
+									客户在平台提现：<br />
+									1. 已投资金额的手续费由菠萝理财支付。<br />
+									2. 未投资金额的手续费，会从用户的账户余额中按1%收取。
+								</li>
+							</ul>
+						</li>
+						
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								11、提现要多久到账？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>每天如果提交时间在工作日的14：00之前，会在当天到账，如果在14：00之后，会在第二个工作日内到账，周五提现一般是周一到账，节假日以网站公告为准。</li>
+							</ul>
+						</li>
+						
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								12、手机验证时收不到短信怎么办？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>
+									您可先检查手机是否安装拦截软件，如果有，您可以卸载后重新尝试一下。<br />
+									如果确实无法收到，您可以联系菠萝理财客服。<br />
+									联系方式：客服电话400-032-0596（周一至周五9:30-18:30）、在线咨询或者客服中心留言。
+								</li>
+							</ul>
+						</li>
+						
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								13、如何解绑银行卡？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>
+									为保障您资金安全，解绑银行卡一定要通过客服才能操作：<br />
+									联系理财顾问400-032-0596解绑银行卡<br />
+									1、查询到用户账户没有钱，可以直接解绑<br />
+									2、解绑客户认识或者内部员工朋友，可以直接解绑<br />
+									3、账户有余额，需要联系客服传资料解绑
+								</li>
+							</ul>
+						</li>
+				
+					</ul>
+				</div>
+
+				<div class="hide">
+					<ul id="bccordion" class="accordion">
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								1、实名认证成功后能修改吗？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>实名认证成功后不能修改，不能注销。每个人（同一身份证）仅可以实名认证一个账号。为确保用户更好的管理自己的账户资产，建议您谨慎填写您的认证信息。</li>
+							</ul>
+						</li>
+				
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								2、如何进行身份认证？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>
+									刚注册的新用户，在【我的账户】页面，点击绑定银行卡，即可跳转身份认证页面。相应输入’您的真实姓名‘、’您的身份证号‘、您的银行卡’。
+									<img src="{{ url_for('static', filename='images/xsbangzhu/bangk.jpg') }}" />
+								</li>
+							</ul>
+						</li>
+				
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								3、为什么绑定银行卡要充值1元？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>连连支付为菠萝理财的三方支付合作伙伴。他们的公司要求用户注册时，必须充值1元钱。但是充值金额会保存在用户账户中，可用于之后的投资，也可同其他投资资金一起提现。</li>
+							</ul>
+						</li>
+				
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								4、实名认证无法通过是什么原因？怎么解决？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>
+									菠萝理财实名认证与公安系统联网，如果信息不一致，就会导致无法通过。<br />
+									以下几种情况，将无法自行完成实名认证：<br />
+									1、名字中带有生僻字<br />
+									2、曾经改过名字<br />
+									3、军人身份证<br />
+									4、做过户籍变动<br />
+									5、最后一位大写X错写成小写x
+								</li>
+							</ul>
+						</li>
+						
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								5、如何更换绑定银行卡号？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>
+									如果您账户资金为0或者是原银行卡挂失、注销、变更可以联系理财顾问400-032-0596解绑银行卡，其他情况暂不受理变更银行卡业务。<br />
+									变更银行卡所需材料：<br />
+									1、用户名、姓名<br />
+									2、网上电子银行充值记录截图<br />
+									3、银行挂失、注销、变更证明<br />
+									4、身份证正反面<br />
+									5、手持身份证的正反面全脸照片
+								</li>
+							</ul>
+						</li>
+						
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								6、注册账号后可以注销么？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>账号注册后不能申请注销。</li>
+							</ul>
+						</li>
+						
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								7、怎么更换银行预留的手机号码？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>
+									1、关注官方认证的微信公众号“连连支付”；<br />
+									2、关注后在左下角“自助服务”点击“更换手机号”，进入更换手机号界面；<br />
+									3、按提示填写正确的信息，滑动验证通过后输入新手机号接收的验证码即可更换成功<br />
+									温馨提示：<br />
+									1.如用户未在银行修改过预留手机号码，无需进行此操作；<br />
+									2.一个微信号仅支持更换同一人名下银行卡的预留手机号；
+								</li>
+							</ul>
+						</li>
+				
+					</ul>
+				</div>
+				
+				<div class="hide">
+					<ul id="cccordion" class="accordion">
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								1、投标计息后，如何查看合同协议？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>【我的账户】中，【我的投资】找到相应的标，必须是开始计息后的项目才会生成相应合同。点击项目后，在最下列会看到“合同协议”。</li>
+							</ul>
+						</li>
+				
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								2、投标后是否可以取消？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>项目一旦购买成功是不可以取消的。若此标流标，则您账户上的冻结金额自动转为用户可用金额。</li>
+							</ul>
+						</li>
+				
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								3、冻结金额是什么意思？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>冻结金额指用户账户内不能自由支配的资金部分，包含投标冻结、提现冻结等类型。投标冻结是指用户投标成功但该项目标未满的情况；提现冻结则是指用户申请提现至提现成功期间的状态。</li>
+							</ul>
+						</li>
+				
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								4、项目投资后的计息及项目到期回款时间？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>新手标当天投资当天计息，到期后次日8：30 本息返还到客户账户余额并给客户发送短信提醒通知；其他标上线后次日审核，次日计息，到期后次日8：30 本息返还到客户账户余额并给客户发送短信提醒通知。</li>
+							</ul>
+						</li>
+						
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								5、 项目最后一笔满标有什么奖励？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>项目剩余金额小于等于一万元时，用户一笔投资满标后，可额外获得1%的满标加息奖励。</li>
+							</ul>
+						</li>
+						
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								6、 项目最后一笔投资满标后红包使用规则？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>满标加息奖励可以与红包同时使用，但投标时红包不能直接抵扣本金也不计息，项目到期后，本息+红包+本金1%一同返至用户账户中。</li>
+							</ul>
+						</li>
+						
+					</ul>
+				</div>
+				
+				<div class="hide">
+					<ul id="dccordion" class="accordion">
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								1、充值/提现有手续费吗？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>
+									客户在平台充值的手续费由菠萝理财支付。<br />
+									客户在平台提现：<br />
+									1. 已投资金额的手续费由菠萝理财支付。<br />
+									2. 未投资金额的手续费，会从用户的账户余额中按1%收取。
+								</li>
+							</ul>
+						</li>
+				
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								2、充值/提现是否有限额？是否有次数限制？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>
+									菠萝理财对于客户充值金额最小为1元没有次数限制，但客户在充值时的单笔限额取决于充值银行和第三方支付公司，如大额充值中，出现无法充值，可去银行提高自己银行卡网银额度，或使用PC端网银充值。<br />
+菠萝理财对客户提现最低金额为100元，没有上限。对于提现次数没有任何限制。
+								</li>
+							</ul>
+						</li>
+				
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								3、充值没有按时到账怎么办？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>
+									充值成功后，资金会立即到账，请确认是否支付成功。<br />
+									没有立刻到账，是怎么回事？原因可能是：<br />
+									银行已扣款，但是可能由于银行系统原因，资金没有同步到第三方支付平台，第三方支付平台没有收到扣款，您的菠萝理财账户余额就不会增加，这种情况请您不用担心，银行会在发现问题之后和第三方支付平台对接，第三支付平台收到资金之后，您的菠萝理财账户余额就会增加，如银行没有把钱对接给第三方支付平台，会在2个工作日之内把钱退回您的银行卡。如果您在2个小时还没有到帐，请联系理财顾问400-032-0596协助解决。
+								</li>
+							</ul>
+						</li>
+				
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								4、提现要多久到账？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>每天如果提交时间在工作日的14：00之前，会在当天到账，如果在14：00之后，会在第二个工作日内到账，周五提现一般是周一到账，节假日以网站公告为准。</li>
+							</ul>
+						</li>
+						
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								5、提现不到账怎么办？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>
+									建议您通过ATM机、银行柜台或银行客服电话确认是否到账。<br />
+									如果在提现等待时间范围内，请您耐心等待下；如果已经超出提现等待时间范围，您可联系菠萝理财客服咨询。
+								</li>
+							</ul>
+						</li>
+						
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								6、为什么申请提现失败了？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>
+									造成您取现失败的原因可能有以下几种：<br />
+									（1）银行开户行信息错误。
+									<br />
+									（2）银行账号/户名错误，或是账号和户名不符。
+									<br />
+									（3）使用信用卡提现。
+									<br />
+									（4）银行账户冻结或正在办理挂失。
+									<br />
+									（5）如遇到其他问题，请联系菠萝理财客服。
+									<br />
+									联系方式：客服电话400-032-0596（周一至周五9:30-18:30）、在线咨询或者客服中心留言。
+								</li>
+							</ul>
+						</li>
+						
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								7、菠萝理财上有哪些充值通道？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>现在菠萝理财的充值有快捷支付和网银充值（只针对pc端）两种充值通道，在充值之前需要先进行快捷的验证。</li>
+							</ul>
+						</li>
+						
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								8、菠萝理财能用信用卡充值么？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>菠萝理财暂时不支持信用卡充值。</li>
+							</ul>
+						</li>
+						
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								9、周末能到账吗？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>目前支持以下银行周六日14点之前提现当日到账，14点之后提现次日到账：中国银行、工商银行、农业银行、建设银行、招商银行。注：以上银行一般情况下都会当日到账，具体时间已三方支付为准。</li>
+							</ul>
+						</li>
+				
+					</ul>
+				</div>
+				
+				<div class="hide">
+					<ul id="eccordion" class="accordion">
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								1、登录时忘记登录密码怎么办？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>
+									登录输入手机号，在页面点击“找回密码”，跳转至找回密码界面。输入短信验证码即可修改登录密码。同时也可以考虑用验证码登录方式登录您的账户。
+									<img src="{{ url_for('static', filename='images/xsbangzhu/zhaohui.jpg') }}" />
+								</li>
+							</ul>
+						</li>
+				
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								2、如何登录账号？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>点击【我的账户】或【发现】会弹出登录页面。点击【立即登录】即可进入登录页面。</li>
+							</ul>
+						</li>
+				
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								3、忘记账号怎么办？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>您可以直接联系菠萝理财客服咨询。<br />
+联系方式：客服电话400-032-0596（周一至周五9:30-18:30）、在线咨询或者客服中心留言。</li>
+							</ul>
+						</li>
+				
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								4、注册后能否修改用户名？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>很抱歉，一旦注册通过身份认证后，用户名是无法修改的。</li>
+							</ul>
+						</li>
+						
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								5、如何修改交易密码？忘记交易密码怎么办？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>
+									【我的账户】页面，点击【安全管理】，进入修改交易密码页面。<br />
+									<img src="{{ url_for('static', filename='images/xsbangzhu/xiugaijy.jpg') }}" />
+								</li>
+							</ul>
+						</li>
+						
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								6、手机验证时收不到短信怎么办？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>
+									您可先检查手机是否安装拦截软件，如果有，您可以卸载后重新尝试一下。<br />
+									如果确实无法收到，您可以联系菠萝理财客服。<br />
+									联系方式：客服电话400-032-0596（周一至周五9:30-18:30）、在线咨询或者客服中心留言。
+								</li>
+							</ul>
+						</li>
+						
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								7、如何让我的账户密码更安全？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>平时注意上网环境以及注意更换密码。</li>
+							</ul>
+						</li>
+						
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								8、初始交易密码是什么？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>绑定银行卡时，输入完个人信息弹出输入密码，即初始交易密码。</li>
+							</ul>
+						</li>
+						
+						<li>
+							<div class="link">
+								<i class="fa-code"></i>
+								9、如何解绑银行卡？
+								<i class="fa-down"></i>
+							</div>
+							<ul class="submenu">
+								<li>
+									1、查询到用户账户没有钱，可以直接解绑<br />
+									2、解绑客户认识或者内部员工朋友，可以直接解绑<br />
+									3、账户有余额，需要联系客服传资料解绑
+								</li>
+							</ul>
+						</li>
+				
+					</ul>
+				</div>
+				
+			</div>
+
+		</div>
+		<script type="text/javascript">
+		$(function(){
+			$('.demo2').Tabs({
+				event:'click'
+			});
+		});
+		</script>
+	</body>
+</html>

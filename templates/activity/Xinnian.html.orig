@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Widow-target" Content="_top">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>豪礼大富翁</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/xinnian.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+		<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/luckDraw.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/iscroll.js') }}"></script>
+		<!--<script type="text/javascript" src="{{ url_for('static', filename='js/common.js') }}"></script>-->
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="box_cet">
+			<!--抽奖转盘-->
+			<div class="myBox">
+				<ul class="cj1">
+					<div class='text'>
+						<div class="bt1">
+							<img src="{{ url_for('static', filename='images/wenzi@2x.png') }}" />
+							<img src="{{ url_for('static', filename='images/anniu2@2x.png') }}" />
+
+							<div class="look-head">
+								<dl class="look-dla">
+									<dt></dt>
+									<dd>{{renderData.score}}个</dd>
+								</dl>
+								<dl class="look-dlb">
+									<dt></dt>
+									<dd>{{renderData.use_number}}次</dd>
+								</dl>
+							</div>
+
+						</div>
+					</div>
+					<li class="on"><img src="{{ url_for('static', filename='images/1-0.png') }}" /> </li>
+					<li><img src="{{ url_for('static', filename='images/9@2x.png') }}" /> </li>
+					<li><img src="{{ url_for('static', filename='images/3@2x.png') }}" /> </li>
+					<li><img src="{{ url_for('static', filename='images/8boluo_@2x.png') }}" /> </li>
+					<li>
+						<img src="{{ url_for('static', filename='images/5@2x.png') }}" />
+					</li>
+					<li><img src="{{ url_for('static', filename='images/6@2x.png') }}" /> </li>
+					<li><img src="{{ url_for('static', filename='images/7@2x.png') }}" /> </li>
+					<li><img src="{{ url_for('static', filename='images/188boluo_@2x.png') }}" /> </li>
+					<li><img src="{{ url_for('static', filename='images/14@2x.png') }}" /> </li>
+					<li><img src="{{ url_for('static', filename='images/1boluo_@2x.png') }}" /> </li>
+					<li><img src="{{ url_for('static', filename='images/12@2x.png') }}" /> </li>
+					<li><img src="{{ url_for('static', filename='images/50huafei_@2x.png') }}" /> </li>
+					<li><img src="{{ url_for('static', filename='images/1888boluo_@2x.png') }}" /> </li>
+					<li>
+						<img src="{{ url_for('static', filename='images/13@2x.png') }}" />
+					</li>
+					<li><img src="{{ url_for('static', filename='images/15@2x.png') }}" /> </li>
+					<li><img src="{{ url_for('static', filename='images/2@2x.png') }}" /> </li>
+					<li><img src="{{ url_for('static', filename='images/10@2x.png') }}" /> </li>
+					<li><img src="{{ url_for('static', filename='images/18boluo_@2x.png') }}" /> </li>
+				</ul>
+			</div>
+
+			<!--骰子-->
+			<div class="demo">
+		   		<div class="wrab">
+		   			<div id="dice_0" class="dice"></div>
+		   			<div id="dice_1" class="dice"></div>
+		   			<div id="dice_2" class="dice"></div>
+		        </div>
+		        <p id="result"></p>
+				<input type="hidden" id="dice_num" value={{renderData["rollResult"]}}>
+				<input type="hidden" id="prize_id" value={{renderData["prize_id"]}}>
+		   </div>
+				<img src="{{ url_for('static', filename='images/icon_jiangli@2x.png') }}" class="award" />
+			<div class="get">
+				<div class="minget">
+					<div class="get-top">
+						<img src="{{ url_for('static', filename='images/icon_x2x.png') }}" class="noget" />
+					</div>
+					<div id="content">
+						<div>
+							{% for p in renderData['PersonalList']%}
+						<p>{{p[0]}}<span>{{p[1]}}</span></p>
+							{% endfor %}
+						</div>
+					</div>
+					<div id='page_navigation'></div>
+				</div>
+			</div>
+
+			<h2 class="look-nab">
+				<img src="{{ url_for('static', filename='images/icon_mingdan@2x.png') }}" />
+			</h2>
+			<div class="look-cent">
+				<ul class="scrol">
+					{% for m in renderData['memberPrizeInfoList'] %}
+					<li><span>{{m[1]}}</span>恭喜{{m[0]}}获得</li>
+					{% endfor %}
+				</ul>
+			</div>
+
+			<p class="fenxright"></p>
+			</div>
+		</div>
+		<div class="explain">
+			<div class="rulecent">
+				<div class="lower-screen">
+					<ul>
+						<li><b>签到得菠萝，抽奖获大礼：</b></li>
+						<li>菠萝理财为您准备了“豪礼大富翁”活动，您可以通过投资、签到、分享等方式获得掷骰子抽奖的机会以及菠萝积分，我们准备了话费券、理财红包、现金红包、菠萝积分、iPhone7、iPad Mini4等供您抽取，您获得的菠萝还可以在积分商城兑换红包、话费、iPhone等奖品哦！</li>
+						<li><b>活动时间：</b></li>
+						<li>2017年1月22日00：00开始，结束时间以菠萝理财公告为准。</li>
+						<li><b>怎么获得抽奖机会？</b></li>
+						<li>各位大富翁可以通过以下方式获得掷骰子抽奖的机会</li>
+						<li>1、每连续签到5天获得1次抽奖机会，签到中断后需重新计算签到天数（每次签到获得的抽奖机会，需要累计投资2000元才能使用, 假如5天签到后投资够资格但没送抽奖机会, 次日签到补发）。</li>
+						<li>2、在“豪礼大富翁”活动页面右上角点击分享，将活动分享至您的微信朋友圈，可获得1次抽奖机会（每个账号仅限一次且该账号需在活动开始后累计投资满10000元）。</li>
+						<li>3、每投资5000元任何期限（180天项目也参与此活动，新手标不参与此活动）的项目都可获得一次抽奖机会。</li>
+						<li><b>我该怎么样收获菠萝？</b></li>
+						<li>各位大富翁们可以通过以下方式获得菠萝</li>
+						<li>1、签到：连续签到第1天可获得1个菠萝，第2天可获得3个菠萝，第三天开始每天获得10个菠萝，中断后从头开始计算。</li>
+						<li>2、摇骰子抽奖获得菠萝。</li>
+						<li>3、每投资10元可获得1个菠萝，不满10元部分不提供菠萝。 </li>
+						<li><b>抽奖机会如何使用？菠萝如何兑换奖品？</b></li>
+						<li>1、各位大富翁们获得的抽奖机会可以在“豪礼大富翁”活动页面通过点击掷骰子的方式使用，并获得相应数值位置的奖励。</li>
+						<li>2、获得的菠萝统一在积分商城进行兑换，根据奖励的不同消耗相应的菠萝数量。</li>
+						<li><b>温馨提示：</b></li>
+						<li>1、活动期间获得理财红包和现金红包的系统自动发放至用户菠萝理财账户中，当天16:00前抽奖所得话费券当天充值，16:00之后的次日充值，周末和节假日顺延至假后第一个工作日。（如需更换充值手机号需在兑换当天16:00前联系客服人员予以备注，否则默认充值在注册手机号）。</li>
+						<li>2、活动期间获得实物奖品，工作人员会在3个工作日内联系到您，并且在7个工作日内完成奖品发放。</li>
+						<li>3、节假日期间奖品发放将会顺延。（1月27日—2月2日为春节假期时间，话费和现金红包将延迟至2月3日上班后统一处理）。</li>
+						<li>4、新手标投资不参与本次活动。</li>
+
+						<li>5、PC端不参与本次活动。</li>
+						<li>6、本活动可能会进行调整或终止，届时会提前另行通知。活动期间已获得的菠萝积分仍然可以在积分商城兑换。</li>
+						<li>7、所有产品抽奖活动与苹果公司（Apple Inc）无关。</li>
+						<li>本次活动最终解释权归菠萝理财所有</li>
+						<li>如有任何疑问请拨打在线客服热线：<br />400-032-0596</li>
+					</ul>
+				</div>
+			</div>
+			<div class="fanh"></div>
+		</div>
+		<div class="prize">
+			<div class="hidden">
+				<div class="prize1"><img src="{{ url_for('static', filename='images/btn@2x.png') }}" class="quer" /> </div>
+				<div class="prize2"><img src="{{ url_for('static', filename='images/btn@2x.png') }}" class="quer" /> </div>
+				<div class="prize3"><img src="{{ url_for('static', filename='images/btn@2x.png') }}" class="quer" /> </div>
+				<div class="prize4"><img src="{{ url_for('static', filename='images/btn@2x.png') }}" class="quer" /> </div>
+				<div class="prize5"><img src="{{ url_for('static', filename='images/btn@2x.png') }}" class="quer" /> </div>
+				<div class="prize6"><img src="{{ url_for('static', filename='images/btn@2x.png') }}" class="quer" /> </div>
+				<div class="prize7"><img src="{{ url_for('static', filename='images/btn@2x.png') }}" class="quer" /></div>
+				<div class="prize8"><img src="{{ url_for('static', filename='images/btn@2x.png') }}" class="quer" /> </div>
+				<div class="prize9"><img src="{{ url_for('static', filename='images/btn@2x.png') }}" class="quer" /> </div>
+				<div class="prize10"><img src="{{ url_for('static', filename='images/btn@2x.png') }}" class="quer" /> </div>
+				<div class="prize11"><img src="{{ url_for('static', filename='images/btn@2x.png') }}" class="quer" /> </div>
+				<div class="prize12"><img src="{{ url_for('static', filename='images/btn@2x.png') }}" class="quer" /> </div>
+				<div class="prize13"><img src="{{ url_for('static', filename='images/btn@2x.png') }}" class="quer" /> </div>
+				<div class="prize14"><img src="{{ url_for('static', filename='images/btn@2x.png') }}" class="quer" /> </div>
+				<div class="prize15"><img src="{{ url_for('static', filename='images/btn@2x.png') }}" class="quer" /> </div>
+				<div class="prize16"><img src="{{ url_for('static', filename='images/btn@2x.png') }}" class="quer" /> </div>
+			</div>
+		</div>
+
+		<!--温馨提示-->
+		<div class="cozy">
+			<div class="prompt">
+				<p>温馨提示</p>
+				<p>活动已结束</p>
+				<button class="invest">确定</button>
+			</div>
+		</div>
+		<script type="text/javascript">
+			window.onload=function(){
+				var odiv = document.getElementById('roll');
+				var oul = odiv.getElementsByTagName('p')[0];
+				var ali = oul.getElementsByTagName('span');
+				var spa = -2;
+				oul.innerHTML=oul.innerHTML+oul.innerHTML;
+				oul.style.width=ali[0].offsetWidth*ali.length+'px';
+				function move(){
+					if(oul.offsetLeft<-oul.offsetWidth/2){
+						oul.style.left='0';
+					}
+					if(oul.offsetLeft>0){
+						oul.style.left=-oul.offsetWidth/2+'px'
+					}
+					oul.style.left=oul.offsetLeft+spa+'px';
+				}
+				var timer = setInterval(move,50);
+			};
+
+
+			var num_tt = Number($('#dice_num').val());
+			var to_num_tt = num_tt;
+			function showHtmlcallJava2(){
+				var str = window.jsObj.HtmlcallJava2();
+			}
+		//	var dice = $("#dice"+String(i));
+			function show111(){
+				$('.wrab').trigger("click");
+			}
+			$(".bt1").click(function(){
+				if ('{{renderData.login_in}}'=='True'){
+					if ('{{renderData.enabled}}' == 'True' ) {
+//                    $('.bt1').hide();
+					var prize_id = $('#prize_id').val();
+                    $.ajax({
+                        url: '/v1/activity/zill/ajax/{{renderData.phone}}/{{renderData.token}}?prize_id=' + prize_id,
+                        type: 'GET',
+                        cache: false,
+                        success: function (response_data) {
+							if(response_data['data'] == 'success'){
+								to_num_tt = Number(response_data['dice_num']);
+								num_tt = Number(response_data['dice_num']);
+								$(".wrab").show();
+								$(".demo").show();
+								click_use_number();
+								setTimeout("show111()",1000);
+							}
+                        }
+                    });
+					}else{
+						alert('赶快去投资,获得更多的摇奖机会吧!')
+					}
+				}else{
+
+                    var u = navigator.userAgent;
+                    if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {
+                        window.jsObj.HtmlcallJava2();
+                    } else if (u.indexOf('iPhone') > -1) {
+                        window.webkit.messageHandlers.hd_dengl.postMessage({body: 'call js alert in js'});
+                    }
+						/*try{
+							showHtmlcallJava2();
+						}catch(err){
+
+						}*/
+				}
+
+			});
+
+			 $(".fenxright").click(function(){
+				$(".explain").show();
+//				var my=new IScroll(".rulecent");
+
+			});
+			 $(".fanh").click(function(){
+				$(".explain").hide();
+			});
+			$(".award").click(function(){
+				$(".get").css("display","block");
+				var my=new IScroll("#content");
+			});
+			$(".noget").click(function(){
+				$(".get").hide()
+			});
+			$(".jiang").click(function(){
+				window.location.href = '/v1/activity/store/{{renderData.phone}}/{{renderData.token}}'
+			});
+
+	function click_use_number(){
+		var wqsj = false;
+		for (var i=0;i<30;i++){
+			math00 = parseInt(Math.random()*6+1);
+			math01 = parseInt(Math.random()*6+1);
+			math02 = parseInt(Math.random()*6+1);
+			math_total = math00 + math01 + math02;
+			if(math_total == num_tt) {
+				wqsj = true;
+				break;
+			}
+		}
+		if(wqsj == true){
+			var mycars=new Array(math00, math01, math02);
+		}else{
+			mm = num_tt % 3;
+			p = (num_tt-mm)/3;
+			if(num_tt==17){
+				var mycars=new Array(p, p+1, p+1);
+			}else{
+				var mycars=new Array(p, p, p+mm);
+			}
+		}
+		for (var i=0;i<3;i++){
+			caa(i, mycars[i], num_tt)
+		}
+	}
+	function caa(i, y, num_tt){
+		var dice = $("#dice_"+String(i));
+			$(".wrab").append("<div id='dice_mask'></div>");//加遮罩
+			dice.attr("class","dice");//清除上次动画后的点数
+			dice.css('cursor','default');
+			var num = Math.floor(y);//产生随机数1-6
+			dice.animate({left: '+2px'}, 100,function(){
+				dice.addClass("dice_t");
+			}).delay(230).animate({top:'-2px'},100,function(){
+				dice.removeClass("dice_t").addClass("dice_s");
+			}).delay(230).animate({opacity: 'show'},600,function(){
+				dice.removeClass("dice_s").addClass("dice_e");
+			}).delay(230).animate({left:'-2px',top:'2px'},100,function(){
+				dice.removeClass("dice_e").addClass("dice_"+num);
+				$("#result").html("点数是<span>"+num_tt+"</span>");
+				dice.css('cursor','pointer');
+				$("#dice_mask").remove();//移除遮罩
+			});
+	}
+	$(".fenxright").click(function(){
+		$(".explain").show()
+	});
+	$(".fanh").click(function(){
+		$(".explain").hide()
+	});
+
+	var quer_lock =false;//锁作为全局变量
+
+	$(".quer").click(function(){
+		//如果用户提交了一次，lock被置为true，锁开启。后续在锁被关闭之前，用户都不能提交数据。
+		if(quer_lock)
+		{
+			//锁已经开启，在提交只会被阻断
+			return  false;
+		}else{
+			window.location.href = '';
+			quer_lock = true;
+		}
+		$(".prize").hide();
+		$(".demo").hide()
+	});
+	$('.cj1').myLuckDraw({
+		row : 6, //行
+		column : 5, //列
+		spacing: 3, //空隙
+		click : '.wrab', //点击触发
+		time: 2 ,//匀速运动的时间
+		end:function(e){
+			//抽奖执行完毕的回调函数,参数e为获奖编号
+			//因为这里是指定的，所以e == 12
+			$('.jg1 em').text(e);
+			$(".wrab").hide();
+			$('.prize').show();
+			$('.prize'+ (to_num_tt-2)).show();
+		}
+	},to_num_tt); //这里tar是确定想要抽奖的目标是几号
+
+            var doscroll = function(){
+                var $parent = $('.scrol');
+                var $first = $parent.find('li:first');
+                var height = $first.height();
+                $first.animate({
+                    marginTop: -height + 'px'
+                }, 500, function() {
+                    $first.css('marginTop', 0).appendTo($parent);
+                });
+            };
+            setInterval(function(){doscroll()}, 1000);
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="{{XW_URI_HTML}}" method="POST">
+        <h2 style="color: red">{{ desc }}</h2>
+        <table>
+            <tr>
+                <td>serviceName:</td>
+                <td>
+                    <input name="serviceName" value="{{ serviceName }}">
+                </td>
+            </tr>
+        <tr>
+            <td>platformNo:</td>
+            <td>
+                <input name="platformNo" value="{{ platformNo }}">
+            </td>
+        </tr>
+        <tr>
+            <td>reqData:</td>
+            <td>
+                <textarea name="reqData"  cols="50" rows="10">{{ reqData }}</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>respData:</td>
+            <td>
+                <textarea cols="50" rows="10">{{ respData }} </textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>keySerial:</td>
+            <td>
+                <input name="keySerial" value="{{ keySerial }}">
+            </td>
+        </tr>
+        <tr>
+            <td>sign:</td>
+            <td>
+                <input name="sign" value="{{ sign }}">
+            </td>
+        </tr>
+            <tr>
+            <td>userDevice:</td>
+            <td>
+                <input name="userDevice" value="{{ userDevice }}">
+            </td>
+        </tr>
+            <tr>
+                <td></td>
+                <td>
+            <input type="submit" value="提交">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,70 @@
+@charset "utf-8";
+body{
+	width: 100%;
+	height: 100%;
+	margin: 0;padding: 0;
+	color:#606060;
+	font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+}
+body,html{
+	font-size: 62.5%;
+}
+.may{
+	max-width:64rem;
+	margin:0 auto;
+	overflow: hidden;
+	background: #f7e4e9 url(../images/may/beijing.png) no-repeat center top;
+	background-size: 100%;
+}
+.toppic{
+	width: 100%;
+	height: 50px;
+	margin: 0 auto;
+	margin-top: 72.6vmin;
+	background: url(../images/may/gongbu.png) no-repeat center top;
+	background-size: 90%;
+}
+.topbtn{
+	width: 90%;
+	margin: 10px auto;
+	background: #f95c8b;
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+.baik{
+	width: 90%;
+	margin: 0 auto;
+	background: #fff;
+	border-radius: 10px;
+	display: -webkit-box;
+	-webkit-box-flex: 1;
+	color: #f95c8b;
+	margin: 3% 5%;
+	font-size: 3.6vmin;
+}
+.baik>dl{
+	width: 30%;
+	border-right: 1px solid #f95c8b;
+	margin: 6% 0 3% 0;
+	-webkit-box-flex: 1;
+	text-align: center;
+}
+.baik>dl>dt{
+	margin: 0 auto;
+	text-align: center;
+}
+.baik>dl>dt>img{
+	width: 60%;
+}
+.baik>ul{
+	-webkit-box-flex: 1;
+	text-align: center;
+	margin-top: 6%;
+}
+.dibu{
+	width: 80%;
+	margin: 3% auto;
+	font-size: 3.2vmin;
+	color: #f95c8b;
+	line-height: 32px;
+}

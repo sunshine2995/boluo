@@ -1,0 +1,1 @@
+var mypath = 'http://apitest.boluolicai.com:8012'

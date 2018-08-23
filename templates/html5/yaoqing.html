@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>邀请好友</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/yaoqing.css') }}?v=1"/>
+		<script src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}"></script>
+	</head>
+	<body>
+		<div class="yaoqing">
+			<div class="percentage">
+				<div class="fom">
+					<input type="text" id="phone" class="elesInput" placeholder="请输入您的手机号" />
+					<button onclick="yaoqing_ajax('{{render_data.code}}')" class="lingq">立即领取红包</button>
+				</div>
+				<dl class="sweep">
+					<dt><img src="{{ url_for('static', filename='images/yaoqing/erweima.png') }}" /> </dt>
+					<dd>长按二维码<br />关注菠萝理财公众号</dd>
+				</dl>
+				<ul class="guiz">
+					<li>1、凡通过此页面注册为菠萝理财用户即可参加本次活动。</li>
+		            <li>2、被邀请人成功注册，即可获得150元投资抵扣红包，可在“我的账户>我的优惠券”中查看红包使用详情。</li>
+		            <li>3、每成功邀请好友（被邀请人实名绑卡），邀请人即可获得50元投资抵扣红包，好友投资金额不限，邀请好友无上限。</li>
+		            <li>4、邀请好友成功注册并投资还可获得好友投资奖励，邀请好友投资奖励=被邀请好友投资本金*1%*投资期限/360天。（被邀请好友的每笔投资都可获得奖励）</li>
+		            <li>5、红包需在有效期内使用，有效期为30天，30天后将失效。</li>
+				</ul>
+				<ol class="hongb">
+					<li class="hong" style="color: #fff;"><span>红包类型</span>投资条件</li>
+					<li><span>10元红包</span>单笔投资金额：1000元</li>
+					<li><span>20元红包</span>单笔投资金额：2000元</li>
+					<li><span>20元红包</span>单笔投资金额：5000元</li>
+					<li><span>100元红包</span>单笔投资金额：10,000元</li>
+				</ol>
+				<dl class="boluo">
+					<dt><img src="{{ url_for('static', filename='images/yaoqing/dianhua.png') }}" /> </dt>
+					<dd>服务热线:400-032-0596（9:00-22:30为您服务）</dd>
+					<dt><img src="{{ url_for('static', filename='images/yaoqing/dizhi.png') }}" /> </dt>
+					<dd>北京市海淀区高梁桥斜街59号中坤大厦13层1301室</dd>
+					<dt><img src="{{ url_for('static', filename='images/yaoqing/youjian.png') }}" /> </dt>
+					<dd>service@boluolc.com</dd>
+					<dd style="font-size: 3.2vmin;">*投资有风险，理财需谨慎</dd>
+				</dl>
+			</div>
+		</div>
+		<div class="gongxi">
+			<div class="gongx">
+				<img src="{{ url_for('static', filename='images/yaoqing/xiazai.png') }}" class="xiaz"
+					 onclick="javascript:window.location.href='http://m.boluolc.com/home/appdown'" />
+				<div class="tuic"></div>
+			</div>
+		</div>
+		<div class="explain">
+			<div class="togg">
+				<p class="reset"><img src="{{ url_for('static', filename='images/yaoqing/shangx.png') }}" /> </p>
+				<p id="pppppp">注册失败</p>
+				<button class="bttn">取消</button>
+			</div>
+		</div>
+	<script src="{{ url_for('static', filename='js/swiper.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+	<script>
+		function yaoqing_ajax(code) {
+			var phone = $('#phone').val();
+			$.ajax({
+				url: '/v1/html5/invate/ajax?phone='+phone+'&code='+code,
+				type:'GET',
+				cache: false,
+				success: function(response_data){
+					if(response_data['code'] == '10000'){
+						$(".gongxi").css("display","block");
+						$(".tuic").click(function(){
+							$(".gongxi").hide();
+						})
+					}else{
+						$(".explain").css("display","block");
+						$(".bttn").click(function(){
+							$(".explain").hide();
+						})
+						$('#pppppp').html(response_data['desc'])
+					}
+				}
+			});
+		}
+	</script>
+	</body>
+</html>

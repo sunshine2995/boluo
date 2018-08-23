@@ -1,0 +1,176 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	width: 100%;
+	height: 100%;
+	margin: 0;padding: 0;
+	color:#606060;
+	font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+}
+body,html{
+	font-size: 62.5%;
+}
+.april{
+	max-width:64rem;
+	margin:0 auto;
+	background:#5d269e url(../images/april/bg.jpg) no-repeat center top;
+	background-size: 100%;
+	overflow: hidden;
+}
+.april_demo{
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 52%;
+}
+.gehk{
+	width: 100%;
+	height: 66vmin;
+	background: url(../images/april/kuang1@2x.png) no-repeat center top;
+	background-size: 100%;
+	border-bottom: 1px dashed #8f6bb9;
+	padding-top: 2%;
+}
+.gehk>b{
+	font-size: 3.2vmin;
+	color: #851993;
+	margin-left: 25%;
+}
+.gehk>p{
+	line-height: 24px;
+	text-indent: 24px;
+	color: #851993;
+	padding: 0 6%;
+	font-size: 3.2vmin;
+}
+.huod{
+	width: 60%;
+	margin: 5% 20%;
+}
+.hdsj{
+	width: 100%;
+	height: 33vmin;
+	background: url(../images/april/x2@2x.png) no-repeat center top;
+	background-size: 100%;
+	border-bottom: 1px dashed #8f6bb9;
+	padding-top: 2%;
+}
+.hdsj>p{
+	line-height: 26px;
+	font-size: 3vmin;
+	text-indent: 24px;
+	color: #851993;
+	text-align: center;
+	margin-top: 6%;
+}
+.huod_one{
+	font-size: 3.6vmin;
+	color: #fff;
+	line-height: 26px;
+	background: url(../images/april/1@2x.png) no-repeat top left;
+	background-size: 8%;
+	padding-left: 13%;
+}
+.huod_one>span{
+	color: #fad625;
+}
+.huod_two{
+	font-size: 3.6vmin;
+	color: #fff;
+	line-height: 26px;
+	background: url(../images/april/2@2x.png) no-repeat top left;
+	background-size: 8%;
+	padding-left: 13%;
+}
+.huod_three{
+	font-size: 3.6vmin;
+	color: #fff;
+	line-height: 50px;
+	background: url(../images/april/3@2x.png) no-repeat center left;
+	background-size: 8%;
+	padding-left: 13%;
+}
+.huod_top{
+	width: 100%;
+	background: #fff;
+	border-radius: 10px;
+	margin: 5% 0;
+}
+.huod_top>ul{
+	display: -webkit-box;
+	-webkit-box-flex: 1;
+	border-bottom: 1px solid #eee;
+}
+.huod_top>ul:first-child li{
+	color: #fff;
+	
+}
+.huod_top>ul:first-child{
+	background: #4d1a89;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+.huod_top>ul:last-child{
+	border: none;
+}
+.huod_top>ul>li{
+	-webkit-box-flex: 1;
+	text-align: center;
+	-webkit-box-align: center;
+	line-height: 50px;
+	color: #4d1a89;
+	font-size: 3.6vmin;
+}
+/*立即领取*/
+.ljlq{
+	width: 100%;
+	background: url(../images/april/lijiliangqu@2x.png) no-repeat center top;
+	background-size: 50%;
+	padding: 5% 0;
+	margin-bottom: 5%;
+}
+/*版权*/
+.quanx{
+	width: 100%;
+	text-align: center;
+	line-height: 26px;
+	font-size: 3.4vmin;
+	color: #fff;
+	margin: 3% 0;
+}
+.quanx>li>span{
+	color: #fff;
+}
+.explain{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+}
+.hongb{
+	position:fixed;
+	width:80%;
+	height: 150px;
+	border-radius: 5px;
+	top: 35%;
+	left: 10%;
+	background:#fff;
+	text-align: center;
+}
+.hongb>p{
+	text-align: center;
+	font-size: 5vmin;
+	line-height: 80px;
+}
+.haode{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	border-top: 1px solid #eee;
+	font-size: 5vmin;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: #E14D4D;
+}

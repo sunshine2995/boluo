@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>新红包攻略</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/hbgl.css') }}"/>
+		<script src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}"></script>
+	</head>
+	<body>
+		<div class="yaoq">
+			<header class="step1">
+				<h1>注册就送150元红包</h1>
+				<div class="step">
+					<dl class="stepdl">
+						<dd>注册给150元红包组合,其中包含1个10元红包，2个20元红包和1个100元红包~！</dd>
+						<dt><img src="{{ url_for('static', filename='images/hb_03.png') }}" /> </dt>
+					</dl>
+					<button class="lingqu" onClick='hello()'>立即注册</button>
+				</div>
+
+			</header>
+			<section class="step2">
+				<h1>识别二维码，关注菠萝理财</h1>
+				<div class="step">
+					<dl class="stepdl">
+						<dd>关注菠萝理财微信公众号，及时了解菠萝理财活动。</dd>
+						<dt class="dta"><img src="{{ url_for('static', filename='images/changa.png') }}" /> </dt>
+					</dl>
+				</div>
+			</section>
+			<footer class="step3">
+				<h1>邀请好友送现金</h1>
+				<div class="step">
+					<dl class="stepyaoq">
+						<dd>
+							邀请好友并且好友投资成功，50元理财红包再来一份！！<br />
+							<button class="yaoqing" onClick='hi()'>立即邀请</button>
+						</dd>
+						<dt><img src="{{ url_for('static', filename='images/yaoq.png') }}" /> </dt>
+					</dl>
+				</div>
+			</footer>
+			
+			<p class="fourgz">
+				<span>注册/邀请规则:</span>
+				<br />
+			    1、所有注册菠萝理财用户即可获取150元投资红包。投资红包为一个10元，两个20元，1个100元，起投金额分别为1000元，2000元，5000元和10000元。(新手标除外)；<br />
+				2、每成功邀请一位好友注册并充值即可获得50元红包。同时，还会获取1%的好友投资奖励(新手标除外)。被邀请人也可以获得150元新用户注册红包。
+			</p>
+			<div class="explain">
+				<div class="registered">
+					<p>您已注册并登录</p>
+					<button class="bttn">我知道了</button>
+				</div>
+				<div class="invitation">
+					<p>您还没有登录，登录后才能邀请好友加入我们哦！</p>
+					<button class="denglu">登录</button>
+					<button class="quxiao">取消</button>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function(){
+//				$(".lingqu").click(function(){
+//					$(".explain,.registered").css("display","block");
+//					$(".invitation").hide();
+//					$(".bttn").click(function(){
+//						$(".explain").hide();
+//					});
+//				});
+//				$(".yaoqing").click(function(){
+//					$(".explain,.invitation").css("display","block");
+//					$(".registered").hide();
+//					$(".quxiao").click(function(){
+//						$(".explain").hide();
+//					});
+//				});
+			});
+
+			function hello() {
+			    if ('{{response_data.islogin}}' === '0'){
+					    window.jsObj.HtmlcallJava2()
+				} else {
+			        $(".explain,.registered").css("display","block");
+					$(".invitation").hide();
+					$(".bttn").click(function(){
+						$(".explain").hide();
+					});
+				}
+            }
+            function hi() {
+                if ('{{response_data.islogin}}' === '0') {
+                    $(".explain,.invitation").css("display", "block");
+                    $(".registered").hide();
+                    $(".quxiao").click(function () {
+                        $(".explain").hide();
+                    });
+                    $(".denglu").click(function () {
+                        window.jsObj.HtmlcallJava2()
+                    });
+                } else {
+                    window.jsObj.HtmlcallJava4()
+                }
+            }
+		</script>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>维护中</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<style>
+			body{
+				margin: 0;padding: 0;
+				color:#606060;
+				background: #fff;
+				font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+			}
+			body,html{
+				font-size: 62.5%;
+			}
+			.maint{
+				max-width:64rem;
+				margin: 0 auto;
+			}
+			.error{
+				width: 80%;
+				margin: 40% auto;
+				text-align: center;
+			}
+			.error>dl>dt>img{
+				width: 50%;
+			}
+			.error>dl>dd{
+				line-height: 26px;
+				margin-top: 26px;
+				font-size: 3.8vmin;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="maint">
+			<div class="error">
+				<dl>
+					<dt><img src="{{ url_for('static', filename='images/weih.png') }}" /> </dt>
+					<dd>
+						系统正在维护中、<br />
+						感谢您的支持与配合！
+					</dd>
+				</dl>
+				
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,70 @@
+1./v1/project/list
+{
+   code:""
+   content:{
+        [
+            {
+                 "title":"xx",
+                 "rate":"xxx".
+                 "limit_time":"xxx",
+                 "total":"xxx",
+                 "limit_invest":"xxx",
+                 "jingdu":"xxx", #计算进度 查询订单表计算
+                 "time":"xxxx",
+                 "status":""
+            },
+            {
+            }
+        ]
+   }
+}
+2./v1/project/list/<id>
+{
+   code:""
+   content:{
+        [
+            {
+                 "title":"xx",
+                 "rate":"xxx".
+                 "limit_time":"xxx",
+                 "total":"xxx",
+                 "limit_invest":"xxx",
+                 "jingdu":"xxx", #计算进度 查询订单表计算
+                 "time":"xxxx",
+                 "status":""
+                 ......
+            },
+            {
+            }
+        ]
+   }
+}
+
+3./v1/news/list/
+{
+     code:"".
+     content:{
+         [
+             {
+                 "img":"xx",
+                 "title":"xxx",
+                 "content":"xxx"
+             }.{
+
+             }
+         ]
+     }
+}
+
+4./v1/news/list/<id>
+
+5./v1/member/login
+
+6./v1/member/<name>/status
+
+7./v1/member/verify/real_info
+
+8./v1/member/verify/bank_info
+
+9./v1/membaer/verify/email
+

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<title>项目概况</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link href="{{ url_for('static', filename='css/survey/photoswipe.css') }}" rel="stylesheet" />
+	<link href="{{ url_for('static', filename='css/survey/default-skin.css') }}" rel="stylesheet" />
+	<script src="{{ url_for('static', filename='js/survey/jquery-1.11.2.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/survey/photoswipe.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/survey/photoswipe-ui-default.min.js') }}"></script>
+
+	<script src="{{ url_for('static', filename='js/survey/jquery.transit.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/survey/hammer.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/survey/jquery.hammer.js') }}"></script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/survey/reset.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/survey/project.css') }}?v=1">
+	<script>
+		//设置rem所需的html字号大小
+		var docEl = document.documentElement,
+    	resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+    	recalc = function() {
+        	document.getElementsByTagName("html")[0].style.fontSize = docEl.clientWidth / 10 + "px";
+   		 };
+		window.addEventListener(resizeEvt, recalc, false);
+		document.addEventListener('DOMContentLoaded', recalc, false);
+	</script>
+	<style type="text/css">
+		.gallery img{
+			width: 2.0rem;
+			height: 2.0rem;
+			margin:0 0.30rem 0.266667rem 0;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<span class="tab_btn active">项目信息</span>
+		<hr class="nav_line">
+		<span class="tab_btn">已购记录</span>
+	</nav> 
+	<div class="cont_box">
+		<div class="tab_box pro_box">
+			<!--<div class="pro_name">-->
+				<!--<span>产品名称：</span>-->
+				<!--<p>汽车宝12888期</p>-->
+			<!--</div>-->
+			<div class="pro_intro same_pro">
+				<span>产品特点：</span>
+				<p>兼顾投资收益与流动性、收益稳健</p>
+			</div>
+			<div class="pro_buy same_pro">
+				<span>产品简介：</span>
+				<p>{{response_data.product_detail}}</p>
+			</div>
+			
+			<div class="pro_lc same_pro">
+				<span>购买规则：</span>
+				<p>单次购买起点100元。单人投资上限为{{response_data.limit_mount}}元。</p>
+			</div>
+			<!--<div class="pro_qx same_pro">-->
+				<!--<span>起息日：</span>-->
+				<!--<p>下午6:00点以前满标当日计息，下午6:00之后满标次日计息。</p>-->
+			<!--</div>-->
+			<div class="pro_shuh same_pro">
+				<span>还款规则：</span>
+				<p>到期后还本付息，于次日8：30回款至账户余额。</p>
+			</div>
+			<div class="pro_fanben same_pro">
+				<span>合同范本：</span>
+				<p>
+					<span class="hetong">《<a href="{{response_data.borrow_demo}}">借款合同</a>》</span>
+				</p>
+				<p id="tongyi">
+					<span class="hetong">《<a href="{{response_data.guarantee}}">同意担保函</a>》</span>
+				</p>
+				<p id="zhiya">
+					<span class="hetong">《<a href="{{response_data.pledge}}">质押反担保合同</a>》</span>
+				</p>
+			</div>
+
+			<div class="pro_zhengzhao same_pro">
+				<span>相关文件：</span>
+				<div class="gallery"  style="padding-left: 0.4rem;">
+					{% for i in response_data.images %}
+					<a href="{{i}}" data-size="100x100" data-med="{{i}}" data-med-size="1920x1200">
+						<img src="{{i}}" alt="" >
+					</a>
+					{% endfor %}
+				</div>
+		
+			</div>
+
+		</div>
+
+		<div class="tab_box inform_box inform_hid">
+			
+				 <table class="inform_table" border="0" cellpadding="0" cellspacing="0" >
+	                 <tr id="show_tab_one">
+	                   <td>投资人</td>
+	                   <td>投资金额</td>
+	                   <td>投资时间</td>
+	                 </tr>
+					 {% for result in response_data.borrower_list %}
+					 <tr>
+						 <td>{{result[0]}}</td>
+						 <td>{{result[1]}}</td>
+						 <td>{{result[2]}}</td>
+					 </tr>
+					 {% endfor %}
+	            </table>
+				
+				<div class="chose_page">
+					<a href="javascript:;" class="prev">上一页</a>
+					<p>
+						<span class="current_page">1</span>/<span class="title_page"></span>
+					</p>
+					<a href="javascript:;" class="next page_btn_active">下一页</a>
+				</div>	
+		</div>
+	</div>
+	
+	
+	
+	
+	<!-- 图片弹出模态框 -->
+	<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true"  >
+		<div class="pswp__bg" ></div>
+		<div class="pswp__scroll-wrap">
+			<div class="pswp__container">
+				<div class="pswp__item"></div>
+				<div class="pswp__item"></div>
+				<div class="pswp__item"></div>
+			</div>
+			<div class="pswp__ui pswp__ui--hidden">
+				<div class="pswp__top-bar" style="opacity:0;">
+					<div class="pswp__counter"></div>
+					<div class="pswp__preloader">
+						<div class="pswp__preloader__icn">
+							<div class="pswp__preloader__cut">
+								<div class="pswp__preloader__donut"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pswp__loading-indicator">
+					<div class="pswp__loading-indicator__line"></div>
+				</div>
+				<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+					<div class="pswp__share-tooltip">
+						<a href="#" class="pswp__share--facebook"></a>
+						<a href="#" class="pswp__share--twitter"></a>
+						<a href="#" class="pswp__share--pinterest"></a>
+						<a href="#" download class="pswp__share--download"></a>
+					</div>
+				</div>
+				<!-- <div class="Myclose" style="width: 0.866667rem;height: 0.866667rem;">
+					<img src="./static/images/fd_gb.png" alt="" style="width: 0.866667rem;height: 0.866667rem;position:fixed;right: 0.4rem;top:0.4rem;">
+				</div> -->
+				<div class="pswp__caption">
+					<div class="pswp__caption__center"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            if ('{{response_data.product_type}}' === '信贷宝') {
+                $("#tongyi").css("display","none");
+                $("#zhiya").css("display","none");
+
+            } else {
+                $("#tongyi").css("display","block");
+                $("#zhiya").css("display","block");
+            }
+        });
+
+	    (function() {//获取图片原始尺寸
+	    	// 读取尺寸大小
+	    	var imgReady = (function () {
+	    		var list = [], intervalId = null,
+	    		// 用来执行队列
+	    		tick = function () {
+	    			var i = 0;
+	    			for (; i < list.length; i++) {
+	    				list[i].end ? list.splice(i--, 1) : list[i]();
+	    			};
+	    			!list.length && stop();
+	    		},
+	    		// 停止所有定时器队列
+	    		stop = function () {
+	    			clearInterval(intervalId);
+	    			intervalId = null;
+	    		};
+	    		return function (url, ready, load, error) {
+	    			var onready, width, height, newWidth, newHeight,img = new Image();
+	    			img.src = url;
+	    			// 如果图片被缓存，则直接返回缓存数据
+	    			if (img.complete) {
+	    				ready.call(img);
+	    				load && load.call(img);
+	    				return;
+	    			};
+	    			width = img.width;
+	    			height = img.height;
+	    			img.onerror = function () {
+	    				error && error.call(img);
+	    				onready.end = true;
+	    				img = img.onload = img.onerror = null;
+	    			};
+	    			// 图片尺寸就绪
+	    			onready = function () {
+	    				newWidth = img.width;
+	    				newHeight = img.height;
+	    				if (newWidth !== width || newHeight !== height || newWidth * newHeight > 1024){
+	    					// 如果图片已经在其他地方加载可使用面积检测
+	    					ready.call(img);
+	    					onready.end = true;
+	    				};
+	    			};
+	    			onready();
+	    			// 完全加载完毕的事件
+	    			img.onload = function () {
+	    				// onload在定时器时间差范围内可能比onready快
+	    				// 这里进行检查并保证onready优先执行
+	    				!onready.end && onready();
+	    				load && load.call(img);
+	    				// IE gif动画会循环执行onload，置空onload即可
+	    				img = img.onload = img.onerror = null;
+	    			};
+	    			// 加入队列中定期执行
+	    			if (!onready.end) {
+	    				list.push(onready);
+	    				// 无论何时只允许出现一个定时器，减少浏览器性能损耗
+	    				if (intervalId === null) intervalId = setInterval(tick, 40);
+	    			};
+	    		};
+	    	})();
+			$(".article img").each(function(index, el) {//自定义——将其他图片做成这种形式
+				var self = $(this);
+				imgReady($(this).attr("src"), function () {
+					$(self).wrap('<div class="gallery"><a href="'+$(self).attr("src")+'" data-size="'+this.width+"x"+this.height+'" data-med="'+$(self).attr("src")+'" data-med-size="'+this.width+"x"+this.height+'"></div>');
+				});
+			});
+		})();
+
+
+		
+		// TAB
+		$(function() {
+
+
+			$(".pro_box").show();
+			$("nav>span:first-child").click(function() {
+				$(".pro_box").show().siblings().hide();
+				$(this).addClass("active").siblings("span").removeClass("active")
+			});
+
+			$("nav>span:last-child").click(function() {
+				$(".inform_box").show().siblings().hide();
+				$(this).addClass("active").siblings("span").removeClass("active")
+			})
+
+		});
+
+
+		// 分页
+		var pageSize=9;  //每页显示的记录条数
+        var curPage=0;   //显示第curPage页
+        var len;         //总行数
+        var page;        //总页数
+       $(function(){    
+	        len =$(".inform_table tr").length-1;   //去掉表头     
+	        page=len % pageSize==0 ? len/pageSize : Math.floor(len /pageSize)+1;//根据记录条数，计算页数
+	        console.log(len+"   "+page);
+	        // 显示总页数
+	        $(".title_page").html(page);
+	        curPage=1;
+	        displayPage();//显示第一页
+	      $(".prev").click(function(){
+	          if(curPage>1){
+	              curPage-=1;
+	          }
+	          $(this).addClass("page_btn_active").siblings().removeClass("page_btn_active");
+	         console.log(curPage);
+	         $(".current_page").html(curPage);
+	          displayPage();
+	          });
+	      $(".next").click(function(){
+	          if(curPage<page){
+	              curPage+=1;
+	          }
+	           $(this).addClass("page_btn_active").siblings().removeClass("page_btn_active");
+	          // console.log(curPage)
+	           $(".current_page").html(curPage);
+	         displayPage();
+	         });
+ 	});
+ 
+	 function displayPage(){  
+	     var begin=(curPage-1)*pageSize;//起始记录号
+	     var end = begin + pageSize;
+	  if(end > len ) end=len;
+	     $(".inform_table tr").hide();
+	     $(".inform_table tr").each(function(i){
+	         if(i-1>=begin && i-1<end)//显示第page页的记录
+	             {
+	             $("#show_tab_one").show();
+	             $(this).show();
+	             }         
+	     });
+
+	 }	
+
+	</script>
+	<script src="{{ url_for('static', filename='js/survey/initPhotoSwipeFromDOM.js') }}"></script>
+	<script>initPhotoSwipeFromDOM('.gallery');</script>
+</html>

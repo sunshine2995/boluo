@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>重新登录</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<script src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}"></script>
+		<style>
+			body{
+				margin: 0;padding: 0;
+				color:#606060;
+				background: #fff;
+				font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+			}
+			body,html{
+				font-size: 62.5%;
+			}
+			.dengl{
+				max-width:64rem;
+				margin: 0 auto;
+			}
+			.error{
+				width: 80%;
+				margin: 40% auto;
+				text-align: center;
+			}
+			.error>dl>dt>img{
+				width: 50%;
+			}
+			.error>dl>dd{
+				line-height: 28px;
+				margin-top: 10px;
+			}
+			.deng{
+				width: 60%;
+				height: 40px;
+				line-height: 40px;
+				border: 1px solid #5f85b5;
+				border-radius: 50px;
+				margin: 0 auto;
+				text-align: center;
+				font-size: 4vmin;
+				color: #5f85b5;
+				margin-top: 20%;
+			}
+
+			/*.cancel{*/
+				/*width: 60%;*/
+				/*height: 40px;*/
+				/*line-height: 40px;*/
+				/*border: 1px solid #5f85b5;*/
+				/*border-radius: 50px;*/
+				/*margin: 0 auto;*/
+				/*text-align: center;*/
+				/*font-size: 4vmin;*/
+				/*color: #5f85b5;*/
+				/*margin-top: 20%;*/
+			/*}*/
+		</style>
+	</head>
+	<body>
+		<div class="dengl">
+			<div class="error">
+				<dl>
+					<dt><img src="{{ url_for('static', filename='images/deng.png') }}" /> </dt>
+					<!--<dd>
+						哎呀！出错啦~<br />
+						<span>失败原因：链接跳转失效</span>
+					</dd>-->
+				</dl>
+				<button class="deng" onclick="login()">重新登录</button>
+				<!--<button class="cancel"onclick="goon()" ></button>-->
+			</div>
+
+		</div>
+		<!--<script>
+			function login() {
+				window.jsObj.HtmlcallJava6();
+            }
+			function login() {
+        			window.webkit.messageHandlers.AppModel.postMessage({body: 'call js alert in js'});
+			}
+		</script>-->
+		
+		<script type="text/javascript">
+			function login() {
+				var u = navigator.userAgent;
+				if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {
+					window.jsObj.HtmlcallJava6();
+				} else if (u.indexOf('iPhone') > -1) {
+					window.webkit.messageHandlers.AppModel.postMessage({body: 'call js alert in js'});
+				}
+			}
+		</script> 
+		
+	</body>
+</html>
+

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>摸底考试</title>
+        <!--<script>   var a = Math.random();  </script>-->
+
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/sept.css') }}?v=11"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/sept/swiper.min.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}?v=1"/>
+		<script src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/sept/jquery.easing.1.3.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/sept/stepBar.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/sept/swiper.min.js') }}"></script>
+	</head>
+	<body>
+		<div class="sept">
+			<div class="jindut">
+				<div class="requ"></div>
+				<img src="{{ url_for('static', filename='images/sept/xsm@2x.png') }}" />
+				
+				<div id="stepBar" class="ui-stepBar-wrap">
+					<div class="fenzhi">我的分值成绩：<span id="achie">{{response_data.my_score.total_score}}</span></div>
+					<div class="ui-stepBar">
+						<div class="ui-stepProcess"></div>
+					</div>
+					<div class="ui-stepInfo-wrap">
+						<table class="ui-stepLayout" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td class="ui-stepInfo">
+									<a class="ui-stepSequence"></a>
+									<p class="ui-stepName">30</p>
+								</td>
+								<td class="ui-stepInfo">
+									<a class="ui-stepSequence"></a>
+									<p class="ui-stepName">60</p>
+								</td>
+								<td class="ui-stepInfo">
+									<a class="ui-stepSequence"></a>
+									<p class="ui-stepName">80</p>
+								</td>
+								<td class="ui-stepInfo">
+									<a class="ui-stepSequence"></a>
+									<p class="ui-stepName">100</p>
+								</td>
+								<td class="ui-stepInfo">
+									<a class="ui-stepSequence"></a>
+									<p class="ui-stepName">150</p>
+								</td>
+								<td class="ui-stepInfo">
+									<a class="ui-stepSequence"></a>
+									<p class="ui-stepName">230</p>
+								</td>
+								<td class="ui-stepInfo">
+									<a class="ui-stepSequence"></a>
+									<p class="ui-stepName">300</p>
+								</td>
+								<td class="ui-stepInfo">
+									<a class="ui-stepSequence"></a>
+									<p class="ui-stepName">400</p>
+								</td>
+								<td class="ui-stepInfo">
+									<a class="ui-stepSequence"></a>
+									<p class="ui-stepName">400+</p>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				
+			</div>
+			<img src="{{ url_for('static', filename='images/sept/nlzjf-nzljl@2x.png') }}" class="hent" />
+			<div class="swiper-container">
+		        <div class="swiper-wrapper">
+		            <div class="swiper-slide">
+		            		<ul class="sanf">
+
+								{% if response_data.is_login == 'True' %}
+                                {% for x,y in response_data.my_score.leftstatus %}
+								<li class="{{x}}">
+									{% if y.1 == '1' %}
+		            				<button class="already">已领取</button>
+									{% elif y.1 == '0' %}
+									<button class="receive" onclick="requestToAjax('{{response_data.phone}}','{{y[0]}}','{{response_data.token}}')">立即领取</button>
+									{% elif y.1 == '2' %}
+                                    <!--<li>{{y.1}}</li>-->
+                                    <button class="disable">立即领取</button>
+                                    {% else %}
+									{% endif %}
+		            			</li>
+								{% endfor %}
+                                {% else %}
+                                <li class="hongb1">
+                                    <button class="disable">立即领取</button
+                                </li>
+                                 <li class="hongb2">
+                                    <button class="disable">立即领取</button
+                                </li>
+                                 <li class="hongb3">
+                                    <button class="disable">立即领取</button
+                                </li>
+                                 <li class="hongb4">
+                                    <button class="disable">立即领取</button
+                                </li>
+                                {% endif %}
+		            		</ul>
+		            </div>
+		            <div class="swiper-slide">
+		            		<ul class="sanf">
+		            			{% if response_data.is_login == 'True' %}
+                                {% for x,y in response_data.my_score.rightstatus %}
+								<li class="{{x}}">
+									{% if y.1 == '1' %}
+		            				<button class="already">已领取</button>
+									{% elif y.1 == '0' %}
+									<button class="receive" onclick="requestToAjax('{{response_data.phone}}','{{y[0]}}','{{response_data.token}}')">立即领取</button>
+									{% elif y.1 == '2' %}
+                                    <!--<li>{{y.1}}</li>-->
+                                    <button class="disable">立即领取</button>
+                                    {% else %}
+									{% endif %}
+		            			</li>
+								{% endfor %}
+                                {% else %}
+                                <li class="hongb5">
+                                    <button class="disable">立即领取</button
+                                </li>
+                                 <li class="hongb6">
+                                    <button class="disable">立即领取</button
+                                </li>
+                                 <li class="hongb7">
+                                    <button class="disable">立即领取</button
+                                </li>
+                                 <li class="hongb8">
+                                    <button class="disable">立即领取</button
+                                </li>
+                                {% endif %}
+                            </ul>
+		            </div>
+		            <div class="swiper-slide">
+		            	<img src="{{ url_for('static', filename='images/sept/4009@2x.png') }}" class="jiu" />
+		            		<!--<ul class="sanf">
+		            			<li class="hongb9">
+		            				<button class="lingq">立即领取</button>
+		            			</li>
+		            		</ul>-->
+		            </div>
+		        </div>
+		        <!-- Add Pagination -->
+		        <div class="swiper-pagination"></div>
+		    </div>
+		    <img src="{{ url_for('static', filename='images/sept/mdks@2x.png') }}" class="hent" />
+		    <!--榜上有名-->
+		    <!--<img src="{{ url_for('static', filename='images/sept/tz@2x.png') }}" class="tz" />-->
+				<p class="modi">
+					摸底考试大冲刺实时成绩单<br />
+					积分相同时，先达到该积分者排名靠前
+				</p>
+		    <div class="lower-screen">
+				<div class="paim">
+					<ul>
+						<li><span>排名</span></li>
+						<li><span>手机号</span></li>
+						<li><span>获得积分</span></li>
+					</ul>
+
+					{% for i,j,k in response_data.rank %}
+				{% if k == '1' %}
+				<ul>
+					<li><img src="{{ url_for('static', filename='images/sept/1@2x.png') }}" /> </li>
+					<li>{{i}}</li>
+					<li>{{j}}分</li>
+				</ul>
+
+				{% elif k == '2' %}
+				<ul>
+					<li><img src="{{ url_for('static', filename='images/sept/2@2x.png') }}" /> </li>
+					<li>{{i}}</li>
+					<li>{{j}}分</li>
+				</ul>
+
+				{% elif k == '3' %}
+				<ul>
+					<li><img src="{{ url_for('static', filename='images/sept/3@2x.png') }}" /> </li>
+					<li>{{i}}</li>
+					<li>{{j}}分</li>
+				</ul>
+				{% else %}
+				<ul>
+					<li class="yuan">{{k}}</li>
+					<li>{{i}}</li>
+					<li>{{j}}分</li>
+				</ul>
+				{% endif %}
+				{% endfor %}
+					<!--<ul>-->
+						<!--<li><img src="{{ url_for('static', filename='images/sept/1@2x.png') }}" /> </li>-->
+						<!--<li>130******80</li>-->
+						<!--<li>620837元</li>-->
+					<!--</ul>-->
+					<!--<ul>-->
+						<!--<li><img src="{{ url_for('static', filename='images/sept/2@2x.png') }}" /> </li>-->
+						<!--<li>130******80</li>-->
+						<!--<li>620837元</li>-->
+					<!--</ul>-->
+					<!--<ul>-->
+						<!--<li><img src="{{ url_for('static', filename='images/sept/3@2x.png') }}" /> </li>-->
+						<!--<li>130******80</li>-->
+						<!--<li>620837元</li>-->
+					<!--</ul>-->
+					<!--<ul>-->
+						<!--<li class="yuan">4</li>-->
+						<!--<li>130******80</li>-->
+						<!--<li>620837元</li>-->
+					<!--</ul>-->
+					<!--<ul>-->
+						<!--<li class="yuan">5</li>-->
+						<!--<li>130******80</li>-->
+						<!--<li>620837元</li>-->
+					<!--</ul>-->
+					<!--<ul>-->
+						<!--<li class="yuan">6</li>-->
+						<!--<li>130******80</li>-->
+						<!--<li>620837元</li>-->
+					<!--</ul>-->
+					<!--<ul>-->
+						<!--<li class="yuan">7</li>-->
+						<!--<li>130******80</li>-->
+						<!--<li>620837元</li>-->
+					<!--</ul>-->
+					<!--<ul>-->
+						<!--<li class="yuan">8</li>-->
+						<!--<li>130******80</li>-->
+						<!--<li>620837元</li>-->
+					<!--</ul>-->
+					<!--<ul>-->
+						<!--<li class="yuan">9</li>-->
+						<!--<li>130******80</li>-->
+						<!--<li>620837元</li>-->
+					<!--</ul>-->
+					<!--<ul>-->
+						<!--<li class="yuan">10</li>-->
+						<!--<li>130******80</li>-->
+						<!--<li>620837元</li>-->
+					<!--</ul>-->
+				</div>
+			</div>
+		    <ul class="huodsm">
+		    		<p class="acti">活动说明</p>
+		    		<li>1.抵扣红包和加息券有效期为活动期间，现金红包在活动结束后9月22日统一发放至账户余额；</li>
+		    		<li>2.获奖用户请在9月27日前在APP上填写收货地址。填写途径：我的账户—点击左上角菠萝头像—收货地址管理，奖品会在10月1日前将奖品发放完毕（9月27日还联系不上的获奖者视为放弃）；</li>
+		    		<li>3.奖品图片仅展示作用，所有奖品颜色随机，请以实物为准；</li>
+				<li>4.活动只在APP端进行，新手标不参与此活动；</li>
+				<li>5.如有疑问可咨询在线客服或者拨打客服热线：<span style="color: #fff;">400-032-0596</span>。</li>
+		    </ul>
+		    <footer class="foot">本次活动最终解释权归菠萝理财所有</footer>
+		</div>
+		
+		<!--积分攻略-->
+		<div class="gongl">
+			<div class="gongl_info">
+				<img src="{{ url_for('static', filename='images/sept/jggl@2x.png') }}" />
+			</div>
+			<div class="qx_one"></div>
+		</div>
+		
+		<!--积分详情-->
+		<div class="xiangq">
+			<div class="xiangq_info">
+				<div class="jinfen">
+					<div class="qiand">
+						<dl>
+							<dt>{{response_data.my_score.sign_store}}</dt>
+						</dl>
+					</div>
+					<div class="yaoq">
+						<dl>
+							<dt>{{response_data.my_score.invate_store}}</dt>
+						</dl>
+					</div>
+					<div class="ljtouz">
+						<dl>
+							<dt>{{response_data.my_score.invest_total}}</dt>
+						</dl>
+					</div>
+				</div>
+				<ul class="leiji">
+					<li>
+						30天
+						<p>{{response_data.my_score.invest_30}}分</p>
+					</li>
+					<li>
+						90天
+						<p>{{response_data.my_score.invest_90}}分</p>
+					</li>
+					<li>
+						180天
+						<p>{{response_data.my_score.invest_180}}分</p>
+					</li>
+				</ul>
+			</div>
+			<div class="qx_two"></div>
+		</div>
+		
+		<!--领取成功-->
+		<div class="cheng">
+			<div class="cheng_info">
+				<img src="{{ url_for('static', filename='images/sept/wxts@2x.png') }}" />
+			</div>
+			<div class="qx_three"></div>
+		</div>
+		
+		<!--<script src="{{ url_for('static', filename='js/sept/iscroll.js') }}"></script>-->
+		<script>
+//			var my=new IScroll("#content");
+			var swiper = new Swiper('.swiper-container', {
+		        pagination: '.swiper-pagination',
+		        paginationClickable: true,
+		        spaceBetween: 30,
+		   });
+
+			function requestToAjax(phone,prize_id,token) {
+				$.ajax({
+						url: '/v1/activity/schoolstarts/ajax/'+ phone +'/' + prize_id + '/' + token,
+						type:'GET',
+						cache: false,
+						success: function(response_data){
+							if (response_data['success'] === 'True'){
+								$(".cheng").css("display","block");
+								$(".qx_three").click(function(){
+									$(".cheng").css("display","none");
+								})
+								window.location.reload();
+							} else {
+								alert('活动还未开始')
+							}
+
+						}
+					});
+            }
+
+			$(function(){
+				stepBar.init("stepBar", {
+					step : '{{response_data.my_score.layer}}',
+					change : true,
+					animation : true
+				});
+				$(".requ").click(function(){
+					$(".gongl").css("display","block");
+					$(".qx_one").click(function(){
+						$(".gongl").css("display","none");
+					})
+				});
+				$("#achie").click(function(){
+					$(".xiangq").css("display","block");
+					$(".qx_two").click(function(){
+						$(".xiangq").css("display","none");
+					})
+				});
+
+
+				/*$("").click(function(){
+					$(".cheng").css("display","block");
+					$(".qx_three").click(function(){
+						$(".cheng").css("display","none");
+					})
+				});*/
+			});
+		</script>
+	</body>
+</html>

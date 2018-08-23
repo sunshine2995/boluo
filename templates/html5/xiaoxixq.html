@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>消息详情</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<style>
+			/*@media screen and (min-width:960px){
+			    .elephones{ max-width:640px;}
+			}*/
+			body{
+				margin: 0;padding: 0;
+				color:#606060;
+				font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+			}
+			body,html{
+				font-size: 62.5%;
+			}
+			.pactbox{
+				max-width:64rem;
+				color: #888;
+				font-size: 1.4rem;
+				margin: 0 auto;
+			}
+			.dealtop{
+				width: 90%;
+				margin:0 auto;
+				text-align: center;
+				padding-top: 2.5%;
+			}
+			.dealtop>li{
+				line-height: 30px;
+				font-size: 5.2vmin;
+				font-weight: bold;
+			}
+			.dealtop>span{
+				color: #666;
+				font-size: 3.4vmin;
+			}
+			.dealbottom{
+				width: 90%;
+				margin:0 auto;
+				padding-bottom: 23%;
+			}
+			.dealbottom>li{
+				text-indent: 26px;
+				line-height: 28px;
+				font-size: 3.6vmin;
+			}
+		</style>
+	</head>
+	<body style="background: #fff;">
+		<div class="pactbox">
+			<ul class="dealtop">
+				<li>{{response_data.title}}</li>
+				<span>{{response_data.date}}</span>
+			</ul>
+			
+			<ul class="dealbottom">
+				<!--<li>{{response_data.date}}</li>-->
+				<li>{{response_data.content}}</li>
+			</ul>
+		</div>
+	</body>
+</html>

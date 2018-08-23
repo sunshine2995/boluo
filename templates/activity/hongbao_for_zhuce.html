@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>新手红包</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/newhb.css') }}?v=1"/>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="newbox">
+				<h2 class="loan">红包已放账户，赶紧去理财吧!</h2>
+				<dl class="packet">
+					<dt><span>10</span>元</dt>
+					<dd>限投1000元以上起用</dd>
+				</dl>
+				<dl class="packet">
+					<dt><span>20</span>元</dt>
+					<dd>限投2000元以上起用</dd>
+				</dl>
+				<dl class="packet">
+					<dt><span>20</span>元</dt>
+					<dd>限投5000元以上起用</dd>
+				</dl>
+				<dl class="packet">
+					<dt><span>100</span>元</dt>
+					<dd>限投10000元以上起用</dd>
+				</dl>
+			</div>
+		</div>
+		<button type="button" class="newfot" onclick="newfot()">立即使用红包</button>
+	</body>
+</html>
+<script>
+	function showHtmlcallJava2(){
+		var str = window.jsObj.HtmlcallJava2("{{renderData.app_code}}");
+	}
+	function newfot(){
+		try{
+			showHtmlcallJava2();
+		}catch(err){}
+	}
+</script>
+

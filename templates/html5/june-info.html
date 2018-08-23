@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>父亲节活动</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/june.css') }}"/>
+		<script src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}"></script>
+	</head>
+	<body>
+		<div class="june">
+			<div class="fruits">
+				<span class="cherry">x{{response_data.small_pineapple_num.0}}</span>
+				<span class="pineapple">x{{response_data.big_pineapple_num.0}}</span>
+			</div>
+			<div class="seamless">
+				<div id="roll">
+					<ul>
+                        {%for i in response_data.top_3%}
+                        <li>{{i.0}}<span>  获得{{i.1}}</span></li>
+                        {%endfor%}
+
+					</ul>
+				</div>
+			</div>
+				<em class="empic"><img src="{{ url_for('static', filename='images/june/icon4.png') }}" /> </em>
+			<div class="xiaoboluo">
+				<ul>
+					<li><img src="{{ url_for('static', filename='images/june/licai20.png') }}" /> </li>
+					<li><img src="{{ url_for('static', filename='images/june/licai38.png') }}" /> </li>
+					<li><img src="{{ url_for('static', filename='images/june/jiaxi0.6.png') }}" /> </li>
+				</ul>
+				<ul>
+					<li><img src="{{ url_for('static', filename='images/june/icon9.png') }}" /> </li>
+					<li><img src="{{ url_for('static', filename='images/june/boluo18.png') }}" /> </li>
+					<li><img src="{{ url_for('static', filename='images/june/boluo88.png') }}" /></li>
+				</ul>
+				<button class="receive-a"></button>
+				<button class="receive_a"></button>
+				<p class="suiji">随机抽取奖品哦 ！</p>
+			</div>
+				<em class="empic"><img src="{{ url_for('static', filename='images/june/icon2.png') }}" /> </em>
+			<div class="xiaoboluo">
+				<ul>
+					<li><img src="{{ url_for('static', filename='images/june/licai58.png') }}" /> </li>
+					<li><img src="{{ url_for('static', filename='images/june/licai88.png') }}" /> </li>
+					<li><img src="{{ url_for('static', filename='images/june/jiaxi1.png') }}" /> </li>
+				</ul>
+				<ul>
+					<li><img src="{{ url_for('static', filename='images/june/icon9.png') }}" /> </li>
+					<li><img src="{{ url_for('static', filename='images/june/boluo68.png') }}" /> </li>
+					<li><img src="{{ url_for('static', filename='images/june/boluo288.png') }}" /></li>
+				</ul>
+				<button class="receive-b"></button>
+				<button class="receive_b"></button>
+				<p class="suiji">随机抽取奖品哦 ！</p>
+			</div>
+				<em class="empic"><img src="{{ url_for('static', filename='images/june/icon3.png') }}" /> </em>
+			<ul class="shuom">
+				<li>1. 活动期间，用户单笔投资满足条件即可获得相应的菠萝。不同的菠萝获得奖品不同。投资项目的期限越长获得的奖励越好。</li>
+				<li>2. 单笔投资满10000元90天的标可获得一个小菠萝，且可以在小菠萝奖品展示区抽奖一次。</li>
+				<li>3. 单笔投资满10000元180天的标可获得一个大菠萝，且可以在大菠萝奖品展示区抽奖一次。</li>
+				<li>4. 单笔投资满10000元的倍数，即可获得相应倍数的菠萝。例：单笔投资30000元180天的标，可获得3个大菠萝。理财红包、加息卷、菠萝币都会即时到账，剃须刀会在6月30日前全部寄出。</li>
+				<li>5. 新手标和PC端不参与此次活动，活动仅限APP端。</li>
+				<li>6. 如有任何疑问，请咨询菠萝理财APP在线客服或者拨打客服热线：400-032-0596。</li>
+				<li>7. 本次活动最终解释权归菠萝理财所有。</li>
+			</ul>
+		</div>
+		<div class="getcp">
+			<div class="mingetcp">
+				<div class="get_top">
+					<img src="{{ url_for('static', filename='images/june/icon_x2x.png') }}" class="nogetcp" />
+				</div>
+				<div id="content">
+					<div>
+                        {%for item in response_data.my_prize%}
+                        <p>{{item.0}}<span>{{item.1}}</span></p>
+                        {%endfor%}
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="boluo">
+			<div class="boluo_a"><img src="{{ url_for('static', filename='images/june/queren@2x.png') }}" class="quer" /> </div>
+			<div class="boluo_b"><img src="{{ url_for('static', filename='images/june/queren@2x.png') }}" class="quer" /> </div>
+			<div class="boluo_c"><img src="{{ url_for('static', filename='images/june/queren@2x.png') }}" class="quer" /> </div>
+			<div class="boluo_d"><img src="{{ url_for('static', filename='images/june/queren@2x.png') }}" class="quer" /> </div>
+			<div class="boluo_e"><img src="{{ url_for('static', filename='images/june/queren@2x.png') }}" class="quer" /> </div>
+			<div class="boluo_f"><img src="{{ url_for('static', filename='images/june/queren@2x.png') }}" class="quer" /> </div>
+			<div class="boluo_g"><img src="{{ url_for('static', filename='images/june/queren@2x.png') }}" class="quer" /> </div>
+			<div class="boluo_h"><img src="{{ url_for('static', filename='images/june/queren@2x.png') }}" class="quer" /> </div>
+			<div class="boluo_r"><img src="{{ url_for('static', filename='images/june/queren@2x.png') }}" class="quer" /> </div>
+			<div class="boluo_j"><img src="{{ url_for('static', filename='images/june/queren@2x.png') }}" class="quer" /> </div>
+			<div class="boluo_k"><img src="{{ url_for('static', filename='images/june/queren@2x.png') }}" class="quer" /> </div>
+		</div>
+		
+		<div class="eject">
+			<div class="participate">
+				<p>亲、您尚未登录！</p>
+				<button class="denglu" onclick="login()">登录</button>
+				<button class="quxiao">取消</button>
+			</div>
+		</div>
+		
+		<!--知道了-->
+		<div class="insuf">
+			<div class="ficient">
+				<p>您的菠萝不足！</p>
+				<button class="know">知道了</button>
+			</div>
+		</div>
+		
+		<!--您已在其他设备登录，请重新登录-->
+		<div class="sign">
+			<div class="sign_two">
+				<p>您已在其他设备登录<br />请重新登录</p>
+				<button class="sign_know">知道了</button>
+			</div>
+		</div>
+		
+		<img src="{{ url_for('static', filename='images/june/icon1.png') }}" class="record" />
+		<script src="{{ url_for('static', filename='js/iscroll.js') }}"></script>
+		<script type="text/javascript">
+			window.onload=function(){
+				var odiv = document.getElementById('roll');
+				var oul = odiv.getElementsByTagName('ul')[0];
+				var ali = oul.getElementsByTagName('li');
+				var spa = -2;				
+				oul.innerHTML=oul.innerHTML+oul.innerHTML;
+				oul.style.width=ali[0].offsetWidth*ali.length+'px';
+				function move(){
+					if(oul.offsetLeft<-oul.offsetWidth/2){
+						oul.style.left='0';
+					}
+					if(oul.offsetLeft>0){
+						oul.style.left=-oul.offsetWidth/2+'px'
+					}
+					oul.style.left=oul.offsetLeft+spa+'px';
+				}
+				var timer = setInterval(move,30);
+				
+			};
+			var time_type='{{response_data.time_type}}';
+			if(time_type==='1' || time_type==='2'){
+				$(".receive-a").css("display","none");
+				$(".receive-b").css("display","none");
+				$(".receive_a").css("display","block");
+				$(".receive_b").css("display","block");
+				$(".receive_a").prop({"disabled":"disabled"});
+				$(".receive_b").prop({"disabled":"disabled"});
+			}
+			else{
+				$(".receive-a").css("display","block");
+				$(".receive-b").css("display","block");
+				$(".receive_a").css("display","none");
+				$(".receive_b").css("display","none");
+				$(".receive-a").removeAttr("disabled");
+				$(".receive-b").removeAttr("disabled");
+			}
+
+			//领取记录
+			$(".record").click(function(){
+				$(".getcp").css("display","block");
+				var my=new IScroll("#content");
+				$(".nogetcp").click(function(){
+					$(".getcp").hide();
+				});
+			});
+
+			
+			$(".receive-a").click(function(){
+
+			    var login = '{{response_data.is_login}}';
+			    var time_type='{{response_data.time_type}}';
+			    if(login==='True'){
+			        $(".receive-a").hide();
+                    $.ajax({
+							url: '/v1/activity/fathersday/ajax/'+'{{response_data.phone}}'+'/'+ '{{response_data.token}}' +'/'+ '0',
+							type: 'GET',
+							cache: false,
+							success: function (response_data) {
+                                if(response_data['status']==='1'){
+									b=response_data.small_pineapple_prize;
+                                    $(".boluo").show();
+				                    $("."+b).css("display","block");
+				                    $(".quer").click(function(){
+					                    $(".boluo").hide();
+					                    $("."+b).css("display","none");
+					                    window.location.reload();
+				                    });
+                                }
+								else if(response_data['status']==='5'){
+									$(".sign").css("display","block");
+									$(".sign_know").click(function(){
+                                    	$(".sign").hide();
+                                    	window.location.reload();
+                                    });
+								}
+                                else{
+                                    $(".insuf").css("display","block");
+                                    $(".know").click(function(){
+                                    	$(".insuf").hide();
+                                    	window.location.reload();
+                                    });
+								}
+							}
+                    });
+			    }
+                else{
+					 $(".eject").show();
+                }
+
+			});
+			$(".receive-b").click(function(){
+
+                var login = '{{response_data.is_login}}';
+                var time_type='{{response_data.time_type}}';
+			    if(login==='True'){
+			        $(".receive-b").hide();
+					     $.ajax({
+							url: '/v1/activity/fathersday/ajax/'+'{{response_data.phone}}'+'/'+ '{{response_data.token}}' +'/'+ '1',
+							type: 'GET',
+							cache: false,
+							success: function (response_data) {
+                                if(response_data['status']==='1'){
+									p=response_data.big_pineapple_prize;
+                                    $(".boluo").show();
+				                    $("."+p).css("display","block");
+				                    $(".quer").click(function(){
+					                    $(".boluo").hide();
+					                    $("."+p).css("display","none");
+					                    window.location.reload();
+				                    });
+                                }
+								else if(response_data['status']==='5'){
+									$(".sign").css("display","block");
+									$(".sign_know").click(function(){
+                                    	$(".sign").hide();
+                                    	window.location.reload();
+                                    });
+								}
+                                else{
+                                    $(".insuf").css("display","block");
+                                    $(".know").click(function(){
+                                    	$(".insuf").hide();
+                                    	window.location.reload();
+                                    });
+								}
+							}
+                    });
+                }
+                else{
+			        $(".eject").show();
+                }
+
+
+			});
+
+			$(".quxiao").click(function(){
+				$(".eject").hide();
+			});
+			
+			function login() {
+				window.jsObj.HtmlcallJava2();
+           };
+		</script>
+	</body>
+</html>

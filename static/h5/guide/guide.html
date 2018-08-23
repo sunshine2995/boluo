@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>操作指南</title>
+		<link rel="stylesheet" type="text/css" href="../public/css/media.css"/>
+		<link rel="stylesheet" type="text/css" href="css/zhinan.css"/>
+		<script src="../public/js/jquery-3.1.1.min.js"></script>
+		<script src="js/jquery.touchSlider.js"></script>
+		<script src="js/lunbo.js"></script>
+	</head>
+	<body>
+		<div class="zhinan">
+			<div class="lunbo">
+				<img src="images/jihuo_biaoti@2x.png">
+
+				<div class="img_gallery">
+					<div class="main_img" id="a">
+						<ul>
+							<li><span class="img_1 on"></span></li>
+							<li><span class="img_2"></span></li>
+							<li><span class="img_3"></span></li>
+						</ul>
+						<span class="btn_prev"></span>
+						<span class="btn_next"></span>
+					</div>
+				</div>
+
+			</div>
+			<div class="lunbo">
+				<img src="images/chongzhi_biaoti@2x.png">
+
+				<div class="img_gallery">
+					<div class="main_img" id="b">
+						<ul>
+							<li><span class="img_4 on"></span></li>
+							<li><span class="img_5"></span></li>
+							<li><span class="img_6"></span></li>
+						</ul>
+						<span class="btn_prev"></span>
+						<span class="btn_next"></span>
+					</div>
+				</div>
+
+			</div>
+			<div class="lunbo">
+				<img src="images/chujie_biaoti@2x.png">
+
+				<div class="img_gallery">
+					<!--<div class="point">
+						<a href="#"></a>
+						<a href="#"></a>
+						<a href="#"></a>
+						<a href="#"></a>
+					</div>-->
+					<div class="main_img" id="c">
+						<ul>
+							<li><span class="img_7 on"></span></li>
+							<li><span class="img_8"></span></li>
+							<li><span class="img_9"></span></li>
+							<li><span class="img_10"></span></li>
+						</ul>
+						<span class="btn_prev"></span>
+						<span class="btn_next"></span>
+					</div>
+				</div>
+
+			</div>
+			<div class="lunbo">
+				<img src="images/tixian_biaoti@2x.png">
+
+				<div class="img_gallery">
+					<!--<div class="point">
+						<a href="#"></a>
+						<a href="#"></a>
+						<a href="#"></a>
+					</div>-->
+					<div class="main_img" id="d">
+						<ul>
+							<li><span class="img_11 on"></span></li>
+							<li><span class="img_12"></span></li>
+							<li><span class="img_13"></span></li>
+						</ul>
+						<span class="btn_prev"></span>
+						<span class="btn_next"></span>
+					</div>
+				</div>
+
+			</div>
+		<div class="wenti">
+			<p>常见问题</p>
+			<ul>
+				<b>Q1什么是银行存管?</b>
+				<li>银行资金存管是指银行对合作平台出借人与借款人开立和使用的资金存管账户进行管理和监督，依照出借人与借款人向平台发出的指令，对两者资金进行存管、划付、核算和监督，平台作为纯粹的信息中介参与到交易之中，全程不触碰资金，所有资金流动均在银行体系内进行，从而真正做到了平台与用户资金完全隔离，有效杜绝了平台支配和挪用用户资金的风险。</li>
+				<b>Q2银行存管对用户有什么好处?</b>
+				<li>1.资金安全隔离 投资更放心<br>
+					用户在存管银行有专门的独立存管子帐户，有效实现平台资金和用户资金隔离由存管银行对资金进行管理与监督，平台无法触碰用户资金。
+				</li>
+				<li>2.用户授权操作 资金交易真实透明<br>
+					用户需要单独设立交易密码保障账户安全，账户信息由存管银行管理，银行划拨用户资金必须通过用户的授权操作指令，银行根据合同约定及用户发出的交易指令，对交易流程进行管理并记录用户资金流水，交易真实可查，真实透明更安心。
+				</li>
+				<li>3.监管硬标准  合规更安心<br>
+					银行存管上线后，挪用资金、设立资金池、卷款跑路等危害用户资金安全的行为将受到强力监管，合规更安心。
+				</li>
+				<b>Q3 银行存管开户支持哪些银行?</b>
+				<li>目前新网银行支持个人开户的银行名称:中国银行、交通银行、中国农业银行、中国工商银行、中国建设银行、中国邮政储蓄银行、招商银行、平安银行、中信银行、华夏银行、中国民生银行、广发银行、浦发银行、兴业银行、中国光大银行、北京银行;
+					企业用户开户银行: 中国银行、中国农业银行、中国工商银行、中国建设银行、兴业银行、平安银行、北京银行、中国民生银行、广发银行、中信银行、平安银行。</li>
+				<b>Q4 存管上线前账户余额中的钱未进行体现,存管上线后这笔钱去哪了?</b>
+				<li>存管上线前,如果您账户中有余额未进行体现,那么不必担心,存管成功上线后,这笔钱已经存入了您在存管银行的资金账户里。您只要按指导进行存管账户开户并迁移成功后,就可以自由支配这笔资金,资金金额不会有任何变化。</li>
+				<b>Q5 升级为银行存管,充值/体现收取手续费吗?</b>
+				<li>充值手续费对出借人免费,手续费由菠萝理财平台全部垫付;提现手续费收取未投资金的1%;</li>
+				<b>Q6 提现什么时候到账?</b>
+				<li>申请提现成功后T+0日到账；</li>
+				<b>Q7存管上线后,平台理财产品收益率会不会发生变化?</b>
+				<li>平台上线银行存管与平台产品是否加息或者降息,没有直接关系。平台上线银行存管,是为了让平台运作更规范、更符合国家监管要求,也是为了给用户提供更安全、更便捷的信息服务。</li>
+				<b>Q8 根据提示未成功开通存管账户怎么办?</b>
+				<li>首先请您再核对一遍相关信息是否输入正确,比如银行卡号、身份证号是否正确,银行卡预留手机号是否为本人的手机号等。如果确认无误,请您联系我们的客服。(客服电话: 400-032-0596)</li>
+				<b>Q9 开通存管后,能否在新网银行查询到自己的虚拟账户?</b>
+				<li>根据中国人民银行“银发[2106]261号文”指导,银行存管账户属于II类账户,不能存取现金,也不能向非绑定账户转账,没有实体卡片,亦不能进行其他消费支付操作。目前用户不能查询到自己新网银行的虚拟账户。</li>
+			</ul>
+		</div>
+		</div>
+	</body>
+</html>

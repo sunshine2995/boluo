@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>3.8女人节</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/women.css') }}?v=15"/>
+		<script src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/iscroll.js') }}"></script>
+		
+	</head>
+	<body>
+		<div class="women">
+			<div class="navlook">
+				<a class="jiangl"><img src="{{ url_for('static', filename='images/women/jiangpin.png') }}" /> </a>
+				<a class="paih"><img src="{{ url_for('static', filename='images/women/paihang.png') }}" /> </a>
+			</div>
+			<!--我的奖品-->
+			<div class="reward">
+				<div class="re-ward">
+					<div id="content">
+						<div>
+							{% for p in render_data['my_prize'] %}
+							<p>{{p.time}}<span>{{p.prize_name}}</span></p>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="raturn"></div>
+				</div>
+			</div>
+			<!--排行榜-->
+			<div class="ranking">
+				<div class="ran-king">
+					<div id="rank">
+						<div class="renk">
+							<ul class="paim">
+								<li><b>排名</b></li>
+								<li><img src="{{ url_for('static', filename='images/women/jinpai.png') }}" /> </li>
+								<li><img src="{{ url_for('static', filename='images/women/yinpai.png') }}" /></li>
+								<li><img src="{{ url_for('static', filename='images/women/tongpai.png') }}" /></li>
+								{% for i in render_data.rank_range %}
+								<li>{{i}}</li>
+								{% endfor %}
+
+							</ul>
+							<ul>
+								<li><b>用户名</b></li>
+								{% for i in render_data['rank']%}
+								<li>{{i[0]}}</li>
+								{% endfor %}
+
+							</ul>
+							<ul>
+								<li><b>投资金额</b></li>
+								{% for i in render_data['rank']%}
+								<li>{{i[1]}}</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+					<div class="renking"></div>
+				</div>
+			</div>
+			<dl class="ten">
+				<dd>挑战天长地久十重天<br /><a>累计999999元</a></dd>
+				<dt>
+					<img src="{{ url_for('static', filename='images/women/xiangz.png') }}" onclick="javascript:$('.treasure').show();$('.awards').show()"/> 
+					<!--<img src="{{ url_for('static', filename='images/women/faguang.png') }}"/> 
+					<img src="{{ url_for('static', filename='images/women/dakai.png') }}"/> -->
+				</dt>
+			</dl>
+			<img src="{{ url_for('static', filename='images/women/yun.png') }}" class="yun" />
+			<header>
+				{% if render_data.login_required=='1' %}
+					{% for i, y in render_data.prolist %}
+					<dl class="treasure{{i}}">
+						<dd>{{y.0}}<br /><a>{{y.1}}</a></dd>
+						<dt>
+							{% if y.2 == '0' %}
+								<img onclick="women_ajax('{{render_data.phone}}', '{{i}}'  , '{{render_data.token}}')" src="{{ url_for('static', filename='images/women/faguang.png') }}" />
+							{% endif %}
+							{% if y.2 == '1' %}
+								<img onclick="javascript:treasureshow02()" src="{{ url_for('static', filename='images/women/dakai.png') }}" />
+							{% endif %}
+							{% if y.2 == '2' %}
+								<img onclick="javascrpit:$('.treasure,.sorry').css('display','block');" src="{{ url_for('static', filename='images/women/xiangz.png') }}" />
+
+
+							{% endif %}
+						</dt>
+					</dl>
+					{% endfor %}
+				{% else %}
+					{% for i, y, z in render_data.prolist %}
+					<dl class="treasure{{i}}">
+						<dd>{{y}}<br /><a>{{z}}</a></dd>
+						<dt>
+							<img onclick="javascrpit:$('.treasure,.login').css('display','block');" src="{{ url_for('static', filename='images/women/xiangz.png') }}" />
+						</dt>
+					</dl>
+					{% endfor %}
+				{% endif %}
+				<h1 class="total">累计投资:<a>{{render_data.total}}</a>元</h1>
+			</header>
+			<!--宝箱弹窗-->
+			<div class="treasure">
+			{% if render_data.login_required=='1' %}
+					<div class="sorry">
+						<a class="investment" style="margin-left: 3.6vmin;">您还没有达到投资金额</a><br />
+						<img src="{{ url_for('static', filename='images/women/haode.png') }}" class="get" />
+					</div>
+				{% for i, y in render_data.prolist %}
+					<div class="popupk" id="popupk{{i}}">
+						<p class="discount">￥ <b>{{y.3}}</b> 折扣红包</p>
+						<a class="investment">（单笔投资满{{y.4}}元使用）</a><br />
+						<img src="{{ url_for('static', filename='images/women/lingqu.png') }}" class="get" onclick="treasureshow()" />
+					</div>
+				{% endfor %}
+			{% else %}
+				<div class="login">
+					<a class="investment" style="margin-left: 3.6vmin;">亲,登录后才能参与活动呦！</a><br />
+					<img src="{{ url_for('static', filename='images/women/denglu.png') }}" class="get" id="login"/>
+				</div>
+			{% endif %}
+			</div>
+
+			<div class="prize"></div>
+			<footer>
+				<div class="foot">
+					<dl class="prize-left">
+						<dt><img src="{{ url_for('static', filename='images/women/yi.png') }}" /> </dt>
+						<dd>参与此活动就可打开宝箱<br />3.8元抵扣红包（单笔投资满3800使用）</dd>
+					</dl>
+					<dl class="prize-right">
+						<dd>累计投资8000元定期产品<br />18元抵扣红包（单笔投资满10000使用）</dd>
+						<dt><img src="{{ url_for('static', filename='images/women/er.png') }}" /> </dt>
+					</dl>
+					<dl class="prize-left">
+						<dt><img src="{{ url_for('static', filename='images/women/san.png') }}" /> </dt>
+						<dd>累计投资20000元定期产品<br />28元抵扣红包（单笔投资满20000使用）</dd>
+					</dl>
+					<dl class="prize-right">
+						<dd>累计投资50000元定期产品<br />58元抵扣红包（单笔投资满30000使用）</dd>
+						<dt><img src="{{ url_for('static', filename='images/women/si.png') }}" /> </dt>
+					</dl>
+					
+					<dl class="prize-left">
+						<dt><img src="{{ url_for('static', filename='images/women/wu.png') }}" /> </dt>
+						<dd>累计投资100000元定期产品<br />128元抵扣红包（单笔投资满50000使用）</dd>
+					</dl>
+					<div class="btn">
+						<button class="bttn btn-five">奖品预览</button>
+					</div>
+					<dl class="prize-right">
+						<dd>累计投资150000元定期产品<br />188元抵扣红包（单笔投资满50000使用）</dd>
+						<dt><img src="{{ url_for('static', filename='images/women/liu.png') }}" /> </dt>
+					</dl>
+					<div class="btn">
+						<button class="bttn btn-six">奖品预览</button>
+					</div>
+					<dl class="prize-left">
+						<dt><img src="{{ url_for('static', filename='images/women/qi.png') }}" /> </dt>
+						<dd>累计投资150000元定期产品<br />268元抵扣红包（单笔投资满50000使用）</dd>
+					</dl>
+					<div class="btn">
+						<button class="bttn btn-seven">奖品预览</button>
+					</div>
+					<dl class="prize-right">
+						<dd>累计投资250000元定期产品<br />388抵扣红包（单笔投资满100000使用）</dd>
+						<dt><img src="{{ url_for('static', filename='images/women/ba.png') }}" /> </dt>
+					</dl>
+					<div class="btn">
+						<button class="bttn btn-eight">奖品预览</button>
+					</div>
+					<dl class="prize-left">
+						<dt><img src="{{ url_for('static', filename='images/women/jiu.png') }}" /> </dt>
+						<dd>累计投资380000元定期产品<br />520抵扣红包（单笔投资满100000使用）</dd>
+					</dl>
+					<div class="btn">
+						<button class="bttn btn-nine">奖品预览</button>
+					</div>
+					<dl class="prize-right">
+						<dd>累计投资999999元定期产品<br />价值8888元定制黄金、美图手机M6（64G）888元现金</dd>
+						<dt><img src="{{ url_for('static', filename='images/women/shi.png') }}" /> </dt>
+					</dl>
+					<div class="btn">
+						<button class="bttn btn-ten">奖品预览</button>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<div class="explain"></div>
+		<div class="awards"><!--大奖-->
+			<a class="investment daj">投资满999999<br>即可领取大奖</a><br />
+			<img src="{{ url_for('static', filename='images/women/haode.png') }}" class="get" style="margin-top: 5vmin;" onclick="javascript:$('.awards').hide();"/>
+		</div>
+		<div class="activity">
+			<div class="act-bj">
+				<ul class="act-wenz">
+					<div>
+					<li><b>活动时间：</b></li>
+					<li>3月6日-3月20日</li>
+					<li><b>活动主题：</b></li>
+					<li>在3.8女人节即将来临之际，菠萝理财推出“闯关九重天，关关有好礼”活动，为她拿定制黄金、自拍神器、888元现金等大奖！</li>
+					<li>如果你是“他”，你可以为生命中最重要的她，创造一个奇迹。</li>
+					<li>如果你是“她”，好好爱自己，送自己一份礼物，因为你最珍贵！</li>
+					<li><b>活动内容：</b></li>
+					<li>根据投资人在活动期间的累计投资额为准，只要累计投资额满足打开该层宝箱的要求，就可以打开宝箱并得到相应的奖品。每个宝箱包含不同价值的奖品，越接近九重天奖励也越高。宝箱里的终极实物奖品需同时满足该层数的累计投资额和进入总排名方可获得。</li>
+					<li>1、从第五重天开始每层会有实物奖品，需在活动结束后同时满足排名和累计投资额条件的才可获得，每层的实物奖品数量有限。</li>
+					<li>2、排名奖只限于活动期间累计投资额小于999999元的用户，到达十重天累计投资额满999999元的用户可得价值8888元的定制黄金、美图手机M6、888元现金红包，不限名额。</li>
+					<li>3、当累计投资额相同时，先达到该额度的用户排名靠前。</li>
+					<li>4、当达到该重天的人数多于奖品数量时，排名靠前的得该重天奖品，排名靠后的得上重天奖品。</li>
+					<li>5、实物奖品不累计，每个用户限领一个奖品。</li>
+					<li><b>活动说明：</b></li>
+					<li>活动期间所有实物奖品在活动结束后七个工作日内会有客服回访确认您的收货地址信息，并在4月10日陆续将奖品寄出。（4月10日还联系不上获奖者的视为放弃）</li>
+					<li>此活动仅限APP,PC端不参与此活动</li>
+					<li style="color: #DE2400;"><b>*新手标不参与本次活动</b></li>
+					<li><b>*本次活动最终解释权归菠萝理财所有</b></li>
+					<li><b>*如有任何疑问请拨打客服热线：<br />400-032-0596</b></li>
+					</div>
+				</ul>
+				<div class="return"></div>
+			</div>
+		</div>
+		
+		<!--提示-->
+		<div class="yiling" id="yiling01">
+			<div class="yil">
+				<a id="yiling01a" class="invest">您已领取奖品</a>
+				<img src="{{ url_for('static', filename='images/women/haode.png') }}" class="get" onclick="javascript:window.location.href=''"/>
+			</div>
+		</div>
+		<div class="yiling" id="yiling02">
+			<div class="yil">
+				<a id="yiling02a" class="invest">您已领取奖品</a>
+				<img src="{{ url_for('static', filename='images/women/haode.png') }}" class="get" onclick="$('#yiling02').hide();"/>
+			</div>
+		</div>
+		
+		<!--第五重天弹出框-->
+		<div class="five-heavy">
+			<div class="daylook">
+				<dl class="goods">
+					<dd>魅族充电宝</dd>
+					<dt><img src="{{ url_for('static', filename='images/women/chongdianbao.png') }}" style="width: 20%;margin-top: 3vmin;margin-bottom: 3vmin;" /> </dt>
+					<dd>前200名到达第五重天<br />（累计投资大于等于100000）<br />获奖名额：120人</dd>
+				</dl>
+				<div class="fhlook0"></div>
+			</div>
+		</div>
+		
+		<!--第六重天弹出框-->
+		<div class="six-heavy">
+			<div class="daylook">
+				<dl class="goods">
+					<dd>小米盒子3s</dd>
+					<dt><img src="{{ url_for('static', filename='images/women/xiaomihezi.png') }}" style="width: 44%;margin-top: 3vmin;margin-bottom: 3vmin;" /> </dt>
+					<dd>前80名到达第六重天<br />（累计投资大于等于150000）<br />获奖名额：38人</dd>
+				</dl>
+				<div class="fhlook1"></div>
+			</div>
+		</div>
+		
+		<!--第七重天弹出框-->
+		<div class="seven-heavy">
+			<div class="daylook">
+				<dl class="goods">
+					<dd>小米空气净化器</dd>
+					<dt><img src="{{ url_for('static', filename='images/women/jinghuaqi.png') }}" style="width: 20%;margin-top: 3vmin;margin-bottom: 3vmin;" /> </dt>
+					<dd>前42名到达第七重天<br />（累计投资大于等于200000）<br />获奖名额：26人</dd>
+				</dl>
+				<div class="fhlook2"></div>
+			</div>
+		</div>
+		
+		<!--第八重天弹出框-->
+		<div class="eight-heavy">
+			<div class="daylook">
+				<dl class="goods">
+					<dd>魅族MX6（32G）</dd>
+					<dt><img src="{{ url_for('static', filename='images/women/meizu.png') }}" style="width: 36%;margin-top: 3vmin;margin-bottom: 3vmin;" /> </dt>
+					<dd>前16名到达第八重天<br />（累计投资大于等于250000）<br />获奖名额：10人</dd>
+				</dl>
+				<div class="fhlook3"></div>
+			</div>
+		</div>
+		
+		<!--第九重天弹出框-->
+		<div class="nine-heavy">
+			<div class="daylook">
+				<dl class="goods">
+					<dd>美图手机M6（64G）</dd>
+					<dt><img src="{{ url_for('static', filename='images/women/meitu.png') }}" style="width: 36%;margin-top: 3vmin;margin-bottom: 3vmin;" /> </dt>
+					<dd>前6名到达第九重天<br />（累计投资大于等于380000）<br />获奖名额：6人</dd>
+				</dl>
+				<div class="fhlook4"></div>
+			</div>
+		</div>
+		
+		<!--第十重天弹出框-->
+		<div class="ten-heavy">
+			<div class="daylook">
+				<dl class="goods">
+					<dd style="line-height: 22px;">价值8888元定制黄金<br />美图手机M6（64G）<br />888元现金</dd>
+					<dt><img src="{{ url_for('static', filename='images/women/dajiang.png') }}" style="width: 60%;margin-top: 3vmin;margin-bottom: 5vmin;" /> </dt>
+					<dd>十重天（累计投资大于等于999999）<br />名额不限</dd>
+				</dl>
+				<div class="fhlook5"></div>
+			</div>
+		</div>
+		
+		<script>
+			function showHtmlcallJava2(){
+				var str = window.jsObj.HtmlcallJava2();
+			}
+			function treasureshow() {
+				$('#yiling01,.yil').show();
+				$('#yiling01a').html('领取成功!');
+            }
+
+			function treasureshow02() {
+				$('#yiling02,.yil').show();
+				$('#yiling02a').html('您已领取过此奖品!');
+            }
+			function tohref(type){
+
+			}
+			function women_ajax(phone, layer, token) {
+					$.ajax({
+//						url: '/v1/activity/women/index/ajax?phone='+phone+'&layer='+layer,
+						url: '/v1/activity/women/index/ajax?phone='+phone+'&layer='+layer+'&token='+token,
+						type:'GET',
+						cache: false,
+						success: function(response_data){
+								if (response_data['code'] == '1'){
+									$(".treasure").show()
+									$("#popupk"+layer).show();
+
+								} else{
+
+								}
+						}
+					});
+            }
+			$(function(){
+				$("#login").click(function(){
+					if ('{{render_data.login_required}}'=='0'){
+						try{
+							showHtmlcallJava2();
+						}catch(err){
+							window.location.href = 'https://www.boluolc.com/Home/activitys/zhuce3/invite_code/{{render_data.code}}'
+						}
+					}
+				});
+				$(".explain").click(function(){
+					$(".activity").show();
+					var my=new IScroll(".act-wenz");
+					$(".return").click(function(){
+						$(".activity").hide();
+					})
+				})
+				$(".get").click(function(){
+					$(".treasure").hide()
+				})
+				
+
+				
+				$(".jiangl").click(function(){
+					$(".reward").css("display","block");
+					var my=new IScroll("#content");
+					$(".raturn").click(function(){
+						$(".reward").hide();
+					})
+				})
+				
+				$(".paih").click(function(){
+					$(".ranking").css("display","block");
+					var my=new IScroll("#rank");
+					$(".renking").click(function(){
+						$(".ranking").hide();
+					})
+				})
+				
+				$(".btn-five").click(function(){
+					$(".five-heavy").css("display","block");
+					$(".fhlook0").click(function(){
+						$(".five-heavy").hide()
+					})
+				})
+				
+				$(".btn-six").click(function(){
+					$(".six-heavy").css("display","block");
+					$(".fhlook1").click(function(){
+						$(".six-heavy").hide()
+					})
+				})
+				
+				$(".btn-seven").click(function(){
+					$(".seven-heavy").css("display","block");
+					$(".fhlook2").click(function(){
+						$(".seven-heavy").hide()
+					})
+				})
+				
+				$(".btn-eight").click(function(){
+					$(".eight-heavy").css("display","block");
+					$(".fhlook3").click(function(){
+						$(".eight-heavy").hide()
+					})
+				})
+				
+				$(".btn-nine").click(function(){
+					$(".nine-heavy").css("display","block");
+					$(".fhlook4").click(function(){
+						$(".nine-heavy").hide()
+					})
+				})
+				
+				$(".btn-ten").click(function(){
+					$(".ten-heavy").css("display","block");
+					$(".fhlook5").click(function(){
+						$(".ten-heavy").hide()
+					})
+				})
+				
+			})
+		</script>
+	</body>
+</html>

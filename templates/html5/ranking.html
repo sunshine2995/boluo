@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>排行榜</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/ranking.css') }}"/>
+	</head>
+	<body>
+		<div class="ranking">
+			<img src="{{ url_for('static', filename='images/banner@2x.png') }}" class="logo" />
+			<div class="paim">
+				<ul>
+					<li><b>排名</b></li>
+					<li><b>手机号</b></li>
+					<li><b>投资金额</b></li>
+				</ul>
+				{% for i in response_data.rank %}
+				{% if i[1]== '1' %}
+				<ul>
+					<li><img src="{{ url_for('static', filename='images/jinpai.png') }}" /> </li>
+					<li>{{i[0][1]}}</li>
+					<li>{{i[0][0]}}元</li>
+				</ul>
+
+				{% elif i[1]== '2' %}
+				<ul>
+					<li><img src="{{ url_for('static', filename='images/yinpai.png') }}" /> </li>
+					<li>{{i[0][1]}}</li>
+					<li>{{i[0][0]}}元</li>
+				</ul>
+				{% elif i[1]== '3' %}
+				<ul>
+					<li><img src="{{ url_for('static', filename='images/tongpai.png') }}" /> </li>
+					<li>{{i[0][1]}}</li>
+					<li>{{i[0][0]}}元</li>
+				</ul>
+				{% else %}
+				<ul>
+					<li class="yuan">{{i[1]}}</li>
+					<li>{{i[0][1]}}</li>
+					<li>{{i[0][0]}}元</li>
+				</ul>
+				{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	</body>
+</html>

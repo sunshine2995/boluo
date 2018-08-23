@@ -1,0 +1,263 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	width: 100%;
+	height: 100%;
+	margin: 0;padding: 0;
+	color:#606060;
+	font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+}
+body,html{
+	font-size: 62.5%;
+}
+.labor{
+	max-width:64rem;
+	margin:0 auto;
+	overflow: hidden;
+	background:#ffb341 url(../images/labor/beijing.jpg) no-repeat center top;
+	background-size: 100%;
+}
+.quan{
+	width: 88%;
+	color: #4d2c02;
+	margin: 0 auto;
+	padding: 3%;
+	text-indent: 24px;
+	line-height: 28px;
+    font-size: 3.2vmin;
+    margin-top: 72%;
+}
+.onetop{
+	background: url(../images/labor/renwsm.png) no-repeat center top;
+	background-size: 95% 100%;
+	line-height: 26px;
+	font-size: 3.2vmin;
+	color: #4d2c02;
+	padding: 10vmin 0 12vmin 24vmin;
+}
+.dejl{
+	text-align: center;
+	font-size: 4.6vmin;
+	color: #ae5110;
+	margin: 2% 0;
+	background: url(../images/labor/5.png) no-repeat center;
+	background-size: 90%;
+}
+.seven{
+	width: 90%;
+	margin: 0 auto;
+	border-bottom: 1px dashed #fff;
+}
+.orange{
+	width: 100%;
+	background: #eb6100;
+	border-radius: 10px;
+	color: #fff;
+	font-size: 3.2vmin;
+	margin: 5% 0;
+	clear: both;
+	display: -webkit-box;
+	-webkit-box-flex: 1;
+	/*display: none;*/
+}
+.orange>li{
+	-webkit-box-flex: 1;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+	margin-top: 5%;
+}
+.orange>li:first-child{
+	width: 30%;
+	text-align: center;
+	border-right: 1px dashed #fff;
+	line-height: 4;
+	margin: 5% 0;
+	margin-right: 3%;
+}
+.orange>li>b{
+	font-size: 6vmin;
+}
+.orange>li:nth-child(2){
+	width: 66%;
+	line-height: 24px;
+	font-size: 3vmin;
+	margin-right: 2%;
+}
+.orange>li:last-child{
+	width: 30%;
+	margin-right: 2%;
+	margin-top: 12vmin;
+}
+.qu{
+	width: 100%;
+	height: 36px;
+	background: #fff;
+	border-radius: 20px;
+	text-align: center;
+}
+.qu>button{
+	color: #eb6100;
+}
+.quyaoqing{
+	width: 100%;
+	height: 36px;
+	background: #fff;
+	border-radius: 20px;
+	text-align: center;
+}
+.quyaoqing>button{
+	color: #eb6100;
+}
+.state{
+	width: 100%;
+	height: 36px;
+	background: #ae5110;
+	border-radius: 20px;
+	text-align: center;
+}
+.state>button{
+	color: #fff;
+}
+/*.orange>li:last-child>button{*/
+	/*color: #ae5110;*/
+/*}*/
+.orange_copy{
+	width: 100%;
+	background: #ffd79d;
+	border-radius: 10px;
+	color: #fff;
+	font-size: 3.2vmin;
+	margin: 5% 0;
+	clear: both;
+	color: #bb5a17;
+	display: -webkit-box;
+	-webkit-box-flex: 1;
+}
+.orange_copy>li:first-child{
+	width: 19%;
+	text-align: center;
+	border-right: 1px dashed #bb5a17;
+	margin: 6% 0;
+	margin-right: 3%;
+}
+.orange_copy>li:first-child>b{
+	font-size: 6vmin;
+}
+.orange_copy>li:last-child{
+	width: 75%;
+	line-height: 26px;
+	margin-top: 3%;
+	font-size: 3vmin;
+}
+.orange_cotwo{
+	width: 100%;
+	background: #ffd79d;
+	border-radius: 10px;
+	color: #bb5a17;
+	font-size: 3.2vmin;
+	margin: 5% 0;
+	clear: both;
+	display: -webkit-box;
+	-webkit-box-flex: 1;
+}
+.orange_cotwo>li{
+	-webkit-box-flex: 1;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+	margin-top: 3%;
+}
+.orange_cotwo>li:first-child{
+	width: 30%;
+	text-align: center;
+	border-right: 1px dashed #bb5a17;
+	line-height: 3.6;
+	margin: 2% 0;
+	margin-right: 3%;
+}
+.orange_cotwo>li>b{
+	font-size: 6vmin;
+}
+.orange_cotwo>li:nth-child(2){
+	width: 66%;
+	line-height: 24px;
+	font-size: 3vmin;
+	margin-right: 2%;
+}
+.orange_cotwo>li:last-child{
+	width: 30%;
+	margin-right: 2%;
+	margin-top: 8vmin;
+}
+.picwz{
+	width: 60%;
+	height: 30px;
+	background: url(../images/labor/huodongshuoming.png) no-repeat center;
+	background-size: 80%;
+	margin: 3% auto;
+}
+.activities{
+	width: 90%;
+	margin: 3% auto;
+	clear: both;
+}
+.activities>li{
+	line-height: 32px;
+	font-size: 3.4vmin;
+	color: #4d2c02;
+}
+.activities>li:first-child{
+	margin-bottom: 3%;
+}
+.activities>li:nth-child(3){
+	margin: 3% 0;
+}
+.activities>li>span{
+	color: #DE2400;
+}
+
+/*弹窗*/
+.explain{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+}
+.invitation{
+	position:fixed;
+	width:80%;
+	height: 160px;
+	border-radius: 5px;
+	top: 35%;
+	left: 10%;
+	background:#fff;
+	text-align: center;
+	display: none;
+}
+.invitation>p{
+	color: #666;
+	font-size: 1.6rem;
+	padding: 10% 0;
+}
+.denglu{
+	width: 50%;
+	height: 50px;
+	border-top: 1px solid #eee;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: #ffcb0f;
+	font-size: 1.8rem;
+	border-right: 1px solid #eee;
+}
+.quxiao{
+	width: 50%;
+	height: 50px;
+	border-top: 1px solid #eee;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	color: #ffcb0f;
+	font-size: 1.8rem;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>积分商城</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/xinnian.css') }}?v=16"/>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}"></script>
+	</head>
+	<body>
+		<div class="sign">
+			<!--<div class="nav">-->
+				<!--<a href="###" class="turn"><img src="{{ url_for('static', filename='images/icon_jiantou@2x.png') }}" /> </a>-->
+				<!--<h1>积分商城</h1>-->
+			<!--</div>-->
+			<a href="/v1/activity/zill/index?phone={{renderData.phone}}&token={{renderData.token}}">
+				<img src="{{ url_for('static', filename='images/summer_dfw.png') }}" class="ban-b" />
+			</a>
+			<div class="qhead">
+				<dl class="qdl">
+					<dt><img src="{{ url_for('static', filename='images/icon_boluo2@2x.png')}}" /> </dt>
+					<dd>{{renderData.score}}个</dd>
+				</dl>
+				<ul class="qp">
+					<li><a href="/v1/activity/prize/order/zill/{{renderData.phone}}/{{renderData.token}}">我的骰子</a></li>
+				</ul>
+				<ul class="qp">
+					<li><a href="/v1/activity/prize/order/{{renderData.phone}}/{{renderData.token}}">我的菠萝</a></li>
+				</ul>
+			</div>
+
+
+			<div class="commodity">
+				<em class="icons_rook"></em>
+				<h2 class="int">限量活动区</h2>
+				<div class="int_jifen">
+					{% for i in renderData['xiangou_list']%}
+					<dl class="intgral">
+						<dt><img src="{{i.images}}" /> </dt>
+						<dd>
+							<div class="xianl">
+								<p><a>{{i.name}}</a></p>
+								<dl class="jif gpic">
+									<dt><img src="{{ url_for('static', filename='images/icon_boluo2@2x.png')}}" /> </dt>
+									<dd>{{i.score}}</dd>
+								</dl>
+							</div>
+
+							<div class="xianl">
+								<p>剩余库存<a>{{i.stock}}</a></p>
+								<button class="exchange" onclick="convert('{{i.id}}')">兑换</button>
+							</div>
+						</dd>
+					</dl>
+					{% endfor %}
+
+					<p class="quan">注：10月30日起,话费券兑换每个工作日14:00开放</p>
+				</div>
+			</div>
+
+
+
+			<div class="commodity">
+				<em class="icons_rook"></em>
+				<h2 class="int">积分商城</h2>
+				<div class="int_jifen">
+
+					{% for p in renderData['prize_list'] %}
+					<dl class="int_gral" onclick="mduih('{{p.id}}')">
+						<dt><img src="{{p.images.0}}"/></dt>
+						<dd>
+							<p>{{p.name}}</p>
+							<dl class="jif">
+								<dt><img src="{{ url_for('static', filename='images/icon_boluo2@2x.png')}}" /> </dt>
+								<dd>{{p.score}}</dd>
+							</dl>
+							<div class="duih" >
+								<a href="/v1/activity/store/detail/{{renderData.phone}}/{{p.id}}/{{renderData.token}}">兑换</a>
+							</div>
+						</dd>
+					</dl>
+					{%endfor%}
+
+				</div>
+			</div>
+
+		</div>
+
+
+
+
+		<script>
+
+			function mduih(d){
+					window.location.href= "/v1/activity/store/detail/{{renderData.phone}}/"+d+"/{{renderData.token}}"
+				}
+
+			function convert(id) {
+					location.href = "/v1/activity/store/detail/{{renderData.phone}}/"+id+"/{{renderData.token}}"
+                }
+		</script>
+	</body>
+</html>

@@ -1,0 +1,182 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	width: 100%;
+	height: 100%;
+	margin: 0;padding: 0;
+	color:#606060;
+	font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+}
+body,html{
+	font-size: 62.5%;
+}
+.yaoqing{
+	max-width:64rem;
+	margin:0 auto;
+	background: url(../images/yaoqing/beijing.jpg) no-repeat center top;
+	background-size: 100% 100%;
+	overflow: hidden;
+}
+.percentage{
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 58%;
+}
+.fom{
+	width: 100%;
+	text-align: center;
+}
+.fom input{
+	width: 95%;
+	height: 50px;
+	background: #fff;
+	border-radius: 5px;
+	margin: 5% 0;
+	color: #666;
+	font-size: 4vmin;
+	padding-left: 5%;
+}
+.lingq{
+	width: 100%;
+	height: 12vmin;
+	background: url(../images/yaoqing/icon.png) no-repeat center top;
+	background-size: 100%;
+	color: #fff;
+	font-size: 4.6vmin;
+}
+.sweep{
+	clear: both;
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+.sweep dt img{
+	width: 60%;
+	margin-bottom: 5%;
+}
+.sweep dd{
+	line-height: 23px;
+	color: #5a1a10;
+	font-size: 3.6vmin;
+}
+.guiz{
+	width: 100%;
+	background: url(../images/yaoqing/guize.png) no-repeat center top;
+	background-size: 100%;
+	margin-top: 5%;
+	padding-top: 8%;
+	font-size: 3.4vmin;
+	line-height: 28px;
+	color: #ff1c45;
+}
+.hongb{
+	width: 100%;
+	background: #fff;
+	border-radius: 10px;
+	margin: 5% 0;
+}
+.hong{
+	background: #ff1c45;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.hongb li{
+	text-align: center;
+	border-bottom: 1px solid #ff1c45;
+	font-size: 3.4vmin;
+	color: #ff1c45;
+}
+.hongb li:last-child{
+	border: none;
+}
+.hongb li span{
+	float: right;
+	padding-right: 10%;
+}
+.boluo{
+	width: 100%;
+	background: url(../images/yaoqing/guanzhu.png) no-repeat center top;
+	background-size: 100%;
+	margin-top: 5%;
+	padding-top: 8%;
+	font-size: 3.4vmin;
+	line-height: 28px;
+	color: #ff1c45;
+	padding-bottom: 25vmin;
+}
+.boluo dt{
+	float: left;
+}
+.boluo dt img{
+	width: 60%;
+}
+.boluo dd{
+	font-size: 3.4vmin;
+}
+/*弹窗*/
+.gongxi{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+}
+.gongx{
+	position:fixed;
+	width:90%;
+	height: 85vmin;
+	border-radius: 5px;
+	top: 20%;
+	left: 5%;
+	background: url(../images/yaoqing/beijign.png) no-repeat center top;
+	background-size: 100%;
+	text-align: center;
+}
+.xiaz{
+	width: 36%;
+	position: absolute;
+	bottom: 50px;
+	left: 26%;
+}
+.tuic{
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	float: right;
+	margin-right: 11%;
+}
+
+/*失败*/
+.explain{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+}
+.togg{
+	position:fixed;
+	width:80%;
+	height: 180px;
+	border-radius: 5px;
+	top: 35%;
+	left: 10%;
+	background:#fff;
+	text-align: center;
+	font-size: 3.8vmin;
+}
+.reset{
+	margin-top: 1.5rem;
+}
+.bttn{
+	width: 100%;
+	height: 50px;
+	border-top: 1px solid #eee;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: #ffcb0f;
+	font-size: 1.8rem;
+}

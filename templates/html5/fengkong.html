@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>风险评估</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fengkong.css') }}" />
+		<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/quiz.js') }}?v=2"></script>
+<script type="text/javascript">
+var init={'questions':[
+	{'question':'1.您的年龄是 ？',
+	'answers':[
+		'A：18—30',
+		'B：31—40',
+		'C：41—50',
+		'D：50以上'
+	],
+	'correctAnswer':2
+},
+	{'question':'2、您的学历：',
+	'answers':[
+		'A：高中以下',
+		'B：专科',
+		'C：本科',
+		'D：研究生或研究生以上'
+	],
+	'correctAnswer':2
+},
+	{'question':'3.您目前的职业：',
+	'answers':[
+		'A：待业或退休',
+		'B：无固定工作',
+		'C：企事业单位固定工作',
+		'D：私营业主'
+	],
+	'correctAnswer':3
+},
+{'question':'4.您的家庭年收入折合人民币为？',
+	'answers':[
+		'A：5万元以下 ',
+		'B：5—10万元',
+		'C：10—20万元',
+		'D：20万以上'
+	],
+	'correctAnswer':1
+},
+{'question':'5.您每年可用于金融投资的比例为？',
+	'answers':[
+		'A：小于10%',
+		'B：10%至25%',
+		'C：25%至50%',
+		'D：大于50%'
+	],
+	'correctAnswer':1
+},
+{'question':'6、您进行投资的主要目的是：',
+	'answers':[
+		'A：确保资产的安全性，同时获得固定收益',
+		'B：希望投资能获得一定的增值，同时获得波动适度的回报 ',
+		'C：倾向于长期的成长，较少关心短期的回报和波动 ',
+		'D：只关心长期的高回报，能够接受短期的资产价值波动'
+	],
+	'correctAnswer':1
+},
+{'question':'7．您的投资知识：',
+	'answers':[
+		'A：缺乏投资基本常识',
+		'B：略有了解，但不懂投资技巧',
+		'C：有一定了解，懂一些的投资技巧',
+		'D：认识充分，并懂得投资技巧'
+	],
+	'correctAnswer':3
+},
+{'question':'8.以下哪项描述最符合您的投资态度？',
+	'answers':[
+		'A：厌恶风险，不希望本金损失，希望获得稳定回报',
+		'B：保守投资，不希望本金损失，愿意承担一定幅度的收益波动',
+		'C：寻求资金的较高收益和成长性，愿意为此承担有限本金损失',
+		'D：希望赚取高回报，愿意为此承担较大本金损失'
+	],
+	'correctAnswer':2
+},
+{'question':'9.您的投资目的是？',
+	'answers':[
+		'A：资产保值',
+		'B：高于同期存款',
+		'C：资产稳健增长',
+		'D：资产迅速增长'
+	],
+	'correctAnswer':3
+},
+{'question':'10.您是否有过以下投资经验？',
+	'answers':[
+		'A：银行存款 ',
+		'B：基金证券',
+		'C：股票期货 ',
+		'D：黄金外汇'
+	],
+	'correctAnswer':1
+}
+	]};
+
+function showHtmlcallJava3(){
+	var str = window.jsObj.HtmlcallJava3();
+}
+$(function(){
+	$('#quiz-container').jquizzy({
+        questions: init.questions
+    });
+	$('.qulc').click(function(){
+		showHtmlcallJava3();
+	})
+});
+function getscore(score) {
+		$.ajax({
+		url: '/v1/html5/risk_evaluation?phone='+'{{response_data.phone}}'+'&score='+score,
+		type:'GET',
+		cache: false,
+		success: function(response_data){
+		}
+		});
+}
+</script>
+</head>
+
+<body>
+
+<div class="demo">
+	<div id='quiz-container'></div>
+</div>
+
+</body>
+</html>

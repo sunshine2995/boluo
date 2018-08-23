@@ -1,0 +1,423 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	width: 100%;
+	height: 100%;
+	margin: 0;padding: 0;
+	color:#606060;
+	font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+}
+body,html{
+	font-size: 62.5%;
+}
+.may{
+	max-width:64rem;
+	margin:0 auto;
+	overflow: hidden;
+	background: #f7e4e9 url(../images/may/beijing.jpg) no-repeat center top;
+	background-size: 100%;
+}
+.topbtn{
+	width: 93%;
+	margin: 0 auto;
+	margin-top: 72vmin;
+}
+.topbtn>button{
+	width: 30%;
+	background: url(../images/may/anniu@2x.png) no-repeat center top;
+	background-size: 100%;
+	color: #fff;
+	line-height: 13vmin;
+	font-size: 3.6vmin;
+}
+.topbtn>h2{
+	float: right;
+	font-size: 3.8vmin;
+	margin-top: 2vmin;
+}
+.topbtn>h2>img{
+	width: 15px;
+	margin-top: -5px;
+	margin-right: 1vmin;
+}
+.drop-down{
+	width:100%;
+}
+.entical{
+	width: 85%;
+	background: #fff;
+	margin: 3% auto;
+	border-radius: 8px;
+	padding: 2% 5%;
+}
+.onetop{
+	margin: 0 auto;
+	font-size: 3.6vmin;
+}
+.onetop>span{
+	float: right;
+}
+.oncent{
+	display: -webkit-box;
+	-webkit-box-flex: 1;
+	margin: 3% auto;
+}
+.oncent>li{
+	-webkit-box-flex: 1;
+}
+.oncent>li:first-child{
+	width: 40%;
+}
+.oncent>li>img{
+	width: 80%;
+}
+.oncent>li:nth-child(2){
+	width: 50%;
+}
+.oncent>li:last-child{
+	width: 38%;
+	height: 86px;
+	background: url(../images/may/anniu@2x.png) no-repeat center right;
+	background-size: 100%;
+	text-align: center;
+	line-height: 86px;
+}
+.oncent>li>button{
+	font-size: 3.6vmin;
+	color: #fff;
+}
+/*进度条*/
+.progress_bar .pro-bar {
+	background: #eef2f5;
+	height:4px;
+	margin-bottom: 6px;
+	margin-top: 50px;
+	position: relative;
+}
+.progress_bar .progress_number{
+	float: left;
+	margin-top: -36px;
+	font-size: 3.6vmin;
+}
+.progress_bar .progress-bar-inner {
+	background-color: hsl(0, 0%, 88%);
+	display: block;
+	width: 0;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: width 1s linear 0s;
+	animation: animate-positive 2s;
+	border-radius: 50px;
+}
+@-webkit-keyframes animate-positive{
+	0% { width: 0%; }
+}
+@keyframes animate-positive{
+	0% { width: 0%; }
+}
+.onbot{
+	margin: 0 auto;
+}
+.onbot>span{
+	font-size: 3.2vmin;
+}
+.onbot>span>a{
+	color: #e83136;
+}
+.onbot>span:last-child{
+	float: right;
+}
+.flip{
+	width: 8%;
+	margin: 0 auto;
+	text-align:center;
+	clear: both;
+}
+.flip>img{
+	width: 60%;
+	margin: 0 auto;
+	text-align:center;
+}
+.panel{
+	display:none;
+}
+.arrowb{
+	display: none;
+}
+.fopink{
+	width: 88%;
+	background: #ffb5c6;
+	margin: 3% auto;
+	border-radius: 10px;
+	padding: 3%;
+}
+.fopink>h1{
+	text-align: center;
+	font-size: 4.6vmin;
+	color: #c72942;
+	background: url(../images/may/tm.png) no-repeat center bottom;
+	background-size: 20%;
+	margin-bottom: 3%;
+}
+.fopink>ul>li{
+	font-size: 3.6vmin;
+	color: #c72942;
+}
+/*弹出层*/
+.eject{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+}
+.participate{
+	position:fixed;
+	width:80%;
+	height: 150px;
+	border-radius: 5px;
+	top: 35%;
+	left: 10%;
+	background:#fff;
+	text-align: center;
+}
+.participate>p{
+	text-align: center;
+	font-size: 4vmin;
+	line-height: 100px;
+}
+.denglu{
+	width: 50%;
+	height: 50px;
+	border-top: 1px solid #eee;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: #f3475f;
+	font-size: 3.8vmin;
+	border-right: 1px solid #eee;
+}
+.quxiao{
+	width: 50%;
+	height: 50px;
+	border-top: 1px solid #eee;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	color: #bbb;
+	font-size: 3.8vmin;
+}
+/*立即参与*/
+.toggls{
+	position:fixed;
+	width:100%;
+	height: 230px;
+	bottom: 0;
+	background:#fff;
+}
+.resets>p{
+	float: left;
+	margin: 3% 0 3% 40%;
+	font-size: 3.6vmin;
+	color: #333;
+}
+.resets_tag{
+	width: 3%;
+	float: right;
+	margin: 1rem;
+}
+/*参与次数*/
+.surepay_tab{
+	width: 80%;
+	height: 44px;
+	line-height: 44px;
+	border: 1px solid #ccc;
+	margin: 0 auto;
+	margin-bottom: 3%;
+}
+.min{
+	width: 15%;
+	height: 44px;
+	line-height: 44px;
+	background: url(../images/may/jian@2x.png) no-repeat center;
+	background-size: 30%;
+	float: left;
+	border-right: 1px solid #ccc;
+	border-radius: inherit;
+}
+.text_box{
+	width: 70%;
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	font-size: 4vmin;
+	color: #f3465e;
+}
+.add{
+	width: 15%;
+	height: 44px;
+	line-height: 44px;
+	background: url(../images/may/jia@2x.png) no-repeat center;
+	background-size: 30%;
+	float: right;
+	border-left: 1px solid #ccc;
+	border-radius: inherit;
+}
+.surepay_tab label{
+	color: #de2400;
+}
+.balance{
+	width: 100%;
+	text-align: center;
+	font-size: 3.4vmin;
+	clear: both;
+	line-height: 36px;
+	color: #aaa;
+}
+.balance>span{
+	margin-left: 1%;
+}
+.sum{
+	width: 68%;
+	height: 44px;
+	border-radius: 8px;
+	background: #f3475f;
+	position: absolute;
+	left: 16%;
+	bottom: 8%;
+	font-size: 3.8vmin;
+	color: #fff;
+}
+/*获奖公布...获奖公布*/
+.publish{
+	width: 86%;
+	background: #fff;
+	margin: 33% auto;
+	border-radius: 8px;
+}
+.awardtop{
+	width: 100%;
+	background: #f3475f;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	text-align: center;
+}
+.awardtop>dt>img{
+	width: 20%;
+	margin-top: 3%;
+}
+.awardtop>dd{
+	color: #fff;
+	font-size: 4vmin;
+	padding: 2.6% 0;
+}
+/*弹窗tab*/
+.award{
+	width: 100%;
+	height: 226px;
+	overflow: hidden;
+}
+.ward{
+	width: 100%;
+	height: 226px;
+	overflow: hidden;
+}
+.fixed{
+	width: 100%;
+	display: -webkit-box;
+	-webkit-box-flex: 1;
+}
+.fixed>li{
+	-webkit-box-flex: 1;
+	text-align: center;
+	font-size: 3.6vmin;
+}
+.hemox{
+	width: 100%;
+}
+.hemox>ul{
+	display: -webkit-box;
+	-webkit-box-flex: 1;
+	text-align: center;
+}
+.hemox>ul>li{
+	width: 33.33%;
+	-webkit-box-flex: 1;
+	font-size: 3.4vmin;
+}
+.sign{
+	width: 50px;
+	height: 50px;
+	background: url(../images/may/quxiao@2x.png) no-repeat center;
+	background-size: 56%;
+	position: absolute;
+	right: 2%;
+	top: 12%;
+}
+/*我的奖号*/
+.jianghao{
+	width: 86%;
+	background: #fff;
+	margin: 33% auto;
+	border-radius: 8px;
+}
+/*知道了*/
+.over{
+	position:fixed;
+	width:80%;
+	height: 150px;
+	border-radius: 5px;
+	top: 35%;
+	left: 10%;
+	background:#fff;
+	text-align: center;
+}
+.over>p{
+	margin-top: 8%;
+	font-size: 4.4vmin;
+	color: #888;
+}
+.know{
+	width: 100%;
+	height: 50px;
+	border-top: 1px solid #eee;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: #f3475f;
+	font-size: 3.8vmin;
+}
+/*您的菠萝不够*/
+.togg_two{
+	position:fixed;
+	width:80%;
+	height: 180px;
+	border-radius: 5px;
+	top: 35%;
+	left: 10%;
+	background:#fff;
+	text-align: center;
+}
+.togg_two>p:nth-child(2){
+	color: #666;
+	font-size: 1.6rem;
+}
+.reset{
+	margin-top: 1.5rem;
+}
+.reset>img{
+	width: 15%;
+}
+.bttn{
+	width: 100%;
+	height: 50px;
+	border-top: 1px solid #eee;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: #ffcb0f;
+	font-size: 1.8rem;
+}

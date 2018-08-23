@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+		<title>公司荣誉</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/honor.css') }}"/>
+		<script src="{{ url_for('static', filename='js/zepto_min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/touchslider.js') }}"></script>
+	</head>
+	<body style="background: #fff;">
+		<!--<div class="honor">
+			<div class="honpic">
+				
+			</div>
+		</div>-->
+		<div class="hdp-box">
+			<h1 class="biaoti">公司资质</h1>
+			<div id="slider01" class="swipe">
+				<ul class="piclist">
+					<li class="chang">
+						<img src="{{ url_for('static', filename='images/disclo/img05.jpg') }}">
+						<p>营业执照</p>
+					</li>
+					<li>
+						<img src="{{ url_for('static', filename='images/disclo/gaoxin.jpg') }}?v=2" style="padding-top: 26vmin;">
+						<p>高新技术企业证书</p>
+					</li>
+					<li>
+						<img src="{{ url_for('static', filename='images/disclo/gkj.jpg') }}?v=2">
+						<p>中关村高新技术企业</p>
+					</li>
+					<li>
+						<img src="{{ url_for('static', filename='images/disclo/img06.jpg') }}" style="padding-top: 26vmin;">
+						<p>开户许可证</p>
+					</li>
+					<li>
+						<img src="{{ url_for('static', filename='images/disclo/img07.jpg') }}" style="padding-top: 26vmin;">
+						<p>信用代码证</p>
+					</li>
+					<li>
+						<img src="{{ url_for('static', filename='images/disclo/beian.jpg') }}?v=2" style="padding-top: 26vmin;">
+						<p>信息安全等级保护备案证明</p>
+					</li>
+					<li class="chang">
+						<img src="{{ url_for('static', filename='images/disclo/huopi.jpg') }}?v=2">
+						<p>ICP经营许可证</p>
+					</li>
+				</ul>
+			</div>
+			<div class="title01">营业执照</div>
+		
+			<div class="count">
+				<b class="bi01">1</b>/<b class="bcount01"></b>
+			</div>
+			
+			<h1 class="biaoti">著作版权</h1>
+			<div id="slider02" class="swipe">
+				<ul class="piclist">
+					<li class="chang">
+						<img src="{{ url_for('static', filename='images/disclo/ios.jpg') }}">
+						<p>IOS版权</p>
+					</li>
+					<li class="chang">
+						<img src="{{ url_for('static', filename='images/disclo/and.jpg') }}">
+						<p>Android版权</p>
+					</li>
+					<li class="chang">
+						<img src="{{ url_for('static', filename='images/disclo/kehu.jpg') }}">
+						<p>客户管理系统</p>
+					</li>
+					<li class="chang">
+						<img src="{{ url_for('static', filename='images/disclo/scyx.jpg') }}">
+						<p>手机业务管理系统</p>
+					</li>
+					<li class="chang">
+						<img src="{{ url_for('static', filename='images/disclo/scyx.jpg') }}">
+						<p>市场营销综合平台</p>
+					</li>
+					<li class="chang">
+						<img src="{{ url_for('static', filename='images/disclo/tzgl.jpg') }}">
+						<p>投资管理系统软件</p>
+					</li>
+				</ul>
+			</div>
+			<div class="title02">IOS版权</div>
+		
+			<div class="count">
+				<b class="bi02">1</b>/<b class="bcount02"></b>
+			</div>
+			
+			<h1 class="biaoti">公司荣誉</h1>
+			<div id="slider03" class="swipe duan">
+				<ul class="piclist">
+					<li><img src="{{ url_for('static', filename='images/disclo/hysw.png') }}"></li>
+					<li><img src="{{ url_for('static', filename='images/disclo/hyzs.png') }}"></li>
+					<li><img src="{{ url_for('static', filename='images/disclo/sfdw.jpg') }}"></li>
+					<li><img src="{{ url_for('static', filename='images/disclo/hlw.jpg') }}"></li>
+				</ul>
+			</div>
+			<div class="count">
+				<b class="bi03">1</b>/<b class="bcount03"></b>
+			</div>
+			
+			<h1 class="biaoti">前海股权交易中心挂牌</h1>
+			<div id="slider03" class="swipe duan">
+				<ul class="piclist">
+					<li><img src="{{ url_for('static', filename='images/disclo/gp.jpg') }}"></li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+		$(function(){
+			var num=$('#slider01').find('li').size();
+			$('.bcount01').text(num);	
+			$('.b_btn01').click(function(){
+				$(this).toggleClass('b_btn_active');
+				$('.intro').toggle();
+			})
+		})
+		var tt=new TouchSlider({id:'slider01','auto':'-1',fx:'ease-out',direction:'left',speed:600,timeout:5000,'before':function(index){
+			var es=document.getElementById('slider01').getElementsByTagName('li');
+			var it=$(es[index]).index()+1;	
+			$('.bi01').text(it);	
+			var tx=$(es[index]).find('p').text();	
+			$('.title01').text(tx);
+		}});
+		
+		$(function(){
+			var num=$('#slider02').find('li').size();
+			$('.bcount02').text(num);	
+			$('.b_btn02').click(function(){
+				$(this).toggleClass('b_btn_active');
+				$('.intro').toggle();
+			})
+		})
+		var tt=new TouchSlider({id:'slider02','auto':'-1',fx:'ease-out',direction:'left',speed:600,timeout:5000,'before':function(index){
+			var es=document.getElementById('slider02').getElementsByTagName('li');
+			var it=$(es[index]).index()+1;	
+			$('.bi02').text(it);	
+			var tx=$(es[index]).find('p').text();	
+			$('.title02').text(tx);
+		}});
+		
+		$(function(){
+			var num=$('#slider03').find('li').size();
+			$('.bcount03').text(num);	
+			$('.b_btn03').click(function(){
+				$(this).toggleClass('b_btn_active');
+				$('.intro').toggle();
+			})
+		})
+		var tt=new TouchSlider({id:'slider03','auto':'-1',fx:'ease-out',direction:'left',speed:600,timeout:5000,'before':function(index){
+			var es=document.getElementById('slider03').getElementsByTagName('li');
+			var it=$(es[index]).index()+1;
+			$('.bi03').text(it);	
+			var tx=$(es[index]).find('p').text();	
+			$('.title03').text(tx);
+		}});
+		
+		</script>
+	</body>
+</html>

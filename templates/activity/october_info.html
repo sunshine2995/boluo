@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>情浓中秋，礼惠国庆</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/october.css') }}?v=3"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/octo.css') }}"/>
+		<script src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}"></script>
+
+		<script src="{{ url_for('static', filename='js/october.js') }}"></script>
+	</head>
+	<body>
+		<div class="october">
+			<ul class="popup">
+				<li class="zhongj"><img src="{{ url_for('static', filename='images/october/jilu_btn@2x.png') }}" /> </li>
+				<li class="guize"><img src="{{ url_for('static', filename='images/october/guize_btn@2x.png') }}" /> </li>
+			</ul>
+
+			<!--抽奖-->
+			<div class="myBox">
+				<ul id="cj-a" class="cj">
+					<li><img src="{{ url_for('static', filename='images/october/1.88@2x.png') }}" alt=""/></li>
+					<li><img src="{{ url_for('static', filename='images/october/188.88@2x.png') }}" alt=""/></li>
+					<li><img src="{{ url_for('static', filename='images/october/88.88@2x.png') }}" alt=""/></li>
+					<li><img src="{{ url_for('static', filename='images/october/18.88@2x.png') }}" alt=""/></li>
+					<li><img src="{{ url_for('static', filename='images/october/8.88@2x.png') }}" alt=""/></li>
+					<li><img src="{{ url_for('static', filename='images/october/0.88@2x.png') }}" alt=""/></li>
+				</ul>
+				<div class="baik">
+					<p>剩余次数<br><b>{{renderData.remain}}次</b></p>
+					<button class="btttt">点我抽奖</button>
+				</div>
+			</div>
+			<!--<div class='zt'>未抽奖</div>-->
+
+			<!--获奖名单-->
+			<div class="huojiang">
+				<ul class="huoj">
+					{% for i in renderData.memberPrizeInfoList %}
+
+					<li><span>{{i[0]}}</span> <span>获得</span> <span>{{i[1]}}</span></li>
+
+					{% endfor %}
+
+				</ul>
+			</div>
+			<img src="{{ url_for('static', filename='images/october/huodonger_biaoti@2x.png') }}" class="huod" />
+			<div class="cent">
+				<p>已获得积分：<b>{{renderData.member_store}}</b> 分</p>
+				<a class="ruhe">如何获得积分？</a>
+			</div>
+			<img src="{{ url_for('static', filename='images/october/shangpin_img@2x.png') }}" class="song" />
+
+			<!--投资排名-->
+			<div class="touzi">
+				<ul class="touzipm">
+					<li><span>排名</span></li>
+					<li><span>手机号</span></li>
+					<li><span>积分</span></li>
+				</ul>
+				<div class="lower-screen">
+					{% for i in renderData.rank%}
+					<ul>
+						<li>{{i[2]}}</li>
+						<li>{{i[0]}}</li>
+						<li>{{i[1]}}</li>
+					</ul>
+					{% endfor %}
+				</div>
+				<div class="gang"></div>
+			</div>
+			<img src="{{ url_for('static', filename='images/october/guoqing_btn@2x.png') }}" class="yure" />
+
+			<!--查看活动详情-->
+			<ul class="entical">
+				<li>1、活动时间：9月29日—10月8日；</li>
+				<li>2、本次活动奖品不可折现，获奖用户可在APP上填写收货地址（填写途径：我的账户—点击左上角菠萝头像—收货地址管理），除iPhone 8 plus和小米mix2的奖品会在10月20日前寄出，（10月17日还联系不上的获奖者视为放弃）。</li>
+				<li>3、iPhone 8 plus和小米mix2我们也会尽快发货，还请您耐心等待。</li>
+				<li>4、当满足获奖要求的人数大于奖品限量时，排名靠前的获得该奖品，排名靠后的获得下一等级奖品。</li>
+				<li>5、奖品图片仅展示作用，所有奖品颜色随机，请以实物为准。</li>
+				<li>6、活动只在APP端进行，新手标不参与此活动。</li>
+				<li>7、如有疑问可咨询在线客服或者拨打客服热线：400-032-0596</li>
+			</ul>
+			<p class="arrowa"><img src="{{ url_for('static', filename='images/october/zhankai_img@2x.png') }}" /></p>
+			<p class="arrowb"><img src="{{ url_for('static', filename='images/october/shouqi_img@2x.png') }}" /></p>
+
+			<footer class="foot">本次活动最终解释权归菠萝理财所有</footer>
+		</div>
+
+		<!--弹窗-->
+
+		<!--中奖纪录-->
+		<div class="zjjl">
+			<div class="erjizj">
+				<ol class="jiacu">
+					<li>中奖金额</li>
+					<li>时间</li>
+				</ol>
+				<div class="lower_screen">
+					<div>
+						{% for i in renderData.PersonalList %}
+                        <p>{{i.1}}<span>{{i.0}}</span></p>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			<button class="gbzj"></button>
+		</div>
+
+		<!--活动规则-->
+		<div class="hdgz">
+			<img src="{{ url_for('static', filename='images/october/guize_img@2x.png') }}">
+			<button class="guanb"></button>
+		</div>
+
+		<!--奖品-->
+		<div class="jiangp">
+			<ul class='jieguo'>
+				<li class="cash1"></li>
+				<li class="cash2"></li>
+				<li class="cash3"></li>
+				<li class="cash4"></li>
+				<li class="cash5"></li>
+				<li class="cash6"></li>
+			</ul>
+			<button class="gbjp"></button>
+		</div>
+
+		<!--如何获得积分？-->
+		<div class="huode">
+			<img src="{{ url_for('static', filename='images/october/jifen_img@2x.png') }}">
+			<button class="gbhd"></button>
+		</div>
+
+		<!--理财红包-->
+		<div class="licai">
+			<img src="{{ url_for('static', filename='images/october/hongbao_img@2x.png') }}">
+			<button class="gblc"></button>
+		</div>
+
+
+		<script src="{{ url_for('static', filename='js/iscroll.js') }}"></script>
+		<script>
+
+            $(function () {
+                phone = "{{renderData.phone}}";
+                token = "{{renderData.token}}";
+                enabled = "{{renderData.enabled}}";
+//                ixx = {{renderData.result}};
+
+                $(".arrowa").click(function(){
+                    $(".entical").slideDown("slow");
+                    $(".arrowa").css("display","none");
+                    $(".arrowb").css("display","block");
+                });
+                $(".arrowb").click(function(){
+                    $(".entical").slideUp("slow");
+                    $(".arrowa").css("display","block");
+                    $(".arrowb").css("display","none");
+                });
+                $(".guize").click(function(){
+                    $(".hdgz").css("display","block");
+                    $(".guanb").click(function(){
+                        $(".hdgz").css("display","none");
+                    })
+                });
+
+                $(".zhongj").click(function(){
+                    $(".zjjl").css("display","block");
+
+                    $(".gbzj").click(function(){
+                        $(".zjjl").hide()
+                    })
+                });
+                $(".ruhe").click(function(){
+                    $(".huode").css("display","block");
+                    $(".gbhd").click(function(){
+                        $(".huode").css("display","none");
+                    })
+                });
+                $(".yure").click(function(){
+                    $(".licai").css("display","block");
+                    $(".gblc").click(function(){
+                        $(".licai").css("display","none");
+                    })
+                });
+
+            })
+		</script>
+		<script>
+
+            var doscroll = function(){
+                var $parent = $('.huoj');
+                var $first = $parent.find('li:first');
+                var height = $first.height();
+                $first.animate({
+                    marginTop: -height + 'px'
+//            height: 0   //或者改成： marginTop: -height + 'px'
+                }, 500, function() {// 动画结束后，把它插到最后，形成无缝
+//            $first.css('height', height).appendTo($parent);
+                    $first.css('marginTop', 0).appendTo($parent);
+                });
+            };
+            setInterval(function(){doscroll()}, 1000);
+
+		</script>
+	</body>
+</html>

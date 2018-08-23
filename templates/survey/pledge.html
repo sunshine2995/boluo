@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>质押反担保合同</title>
+		<!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/> -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/media.css') }}">
+		<style>
+			/*@media screen and (min-width:960px){
+			    .elephones{ max-width:640px;}
+			}*/
+			body{
+				margin: 0;padding: 0;
+				color:#606060;
+				font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+			}
+			body,html{
+				font-size: 62.5%;
+			}
+			.pactbox{
+				max-width:64rem;
+				color: #888;
+				background: #fff;
+				font-size: 1.4rem;
+				margin: 0 auto;
+			}
+			.dealtop{
+				width: 90%;
+				margin:0 auto;
+				padding-top: 2.5%;
+				line-height: 32px;
+				margin-bottom: 8px;
+			}
+			.dealbottom{
+				width: 90%;
+				margin:0 auto;
+				line-height: 28px;
+				padding-bottom: 120px;
+			}
+			.dealbottom>li{
+				text-indent: 26px;
+				line-height: 28px;
+			}
+			.dealbottom>li>strong{
+				border-bottom: 1px solid #666;
+				padding-bottom: 3px;
+			}
+			.tablook{
+				width: 100%;
+				height: 100px;
+				border: 1px solid #eee;
+				text-align: center;
+				margin: 0 auto;
+				margin-bottom: 5%;
+			}
+			.tablook tr th{
+				border-bottom: 1px solid #eee;
+				border-right: 1px solid #eee;
+				font-weight: normal;
+				font-size: 3.4vmin;
+				line-height: 22px;
+				padding: 5px;
+			}
+			.tablook tr td{
+				border-right: 1px solid #eee;
+				font-size: 3.2vmin;
+				padding: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="pactbox">
+			<ul class="dealtop">
+				<li style="text-align: center;"><b style="font-size: 4vmin;">质押反担保合同</b></li>
+				<li>甲方(质权人)：***</li>
+				<li>住所地： ******************</li>
+				<li>联系电话：***********</li>
+				<li>乙方（出质人）：{{render_data.borrower_name}}</li>
+				<li>身份证号：{{render_data.borrower_id_card}}</li>
+			</ul>
+
+			<ul class="dealbottom">
+				<li>    鉴于乙方通过北京朴素磐石投资管理有限公司运营的菠萝理财平台进行借款，甲方为乙方向债权人提供担保服务，并向债权人出具了相应的《同意担保函》。为保障甲方担保债权的实现，乙方自愿以合法所有的财产向甲方提供质押反担保。</li>
+				<li>为明确权利义务，依据《物权法》、《合同法》、《担保法》等法律法规的规定，甲、乙双方本着诚信原则、经友好协商，订立本合同，以求共同恪守。</li>
+
+				<p style="text-align: center;font-size: 3.6vmin;font-weight: bold;line-height: 36px;">第一条甲方担保之主债权</p>
+				<li>1.1甲方提保之主债权为主合同项下的相应金额的债权，信息如下：</li>
+				<li>	主合同：《借款合同》（编号为【   <strong>{{render_data.contract_no}}</strong>   】）及相应的补充或修订；</li>
+				<li>	债权人：《借款合同》（编号为【   <strong>{{render_data.contract_no}}</strong>   】）附件《出借信息确认单》所载明的出借人；</li>
+				<li>	被担保之主债权：    <strong>{{render_data.total_mount_chinese}}</strong>（小写：<strong>{{render_data.total_mount}}</strong> 元）的债务本金，及未付利息、复利、罚息、违约金、损害赔偿金和实现债权的费用等，具体以主合同、甲方出具的《同意担保函》为准；</li>
+				<li>	期限： <strong>{{render_data.time_limit_month}}</strong>  个月，自债权人发放被担保主债权对应款项之日起计算。</li>
+				<li>1.2前述担保主债权的其他相关信息以主合同、《同意担保函》等法律文件为准。</li>
+				<p style="text-align: center;font-size: 3.6vmin;font-weight: bold;line-height: 36px;">第二条	质押财产</p>
+				<li>2.1 乙方用作质押反担保的质押财产详见附件一《质押财产清单》。本合同期间产生的孳息均属于本合同项下的质押财产。</li>
+				<li>2.2在本合同签订时，质押财产的价值为     <strong> ****** </strong>    元。本价值仅具参考价值，质押财产的最终价值以质权实现时实际所得价款为准。甲、乙双方声明：《质押财产清单》对质押财产的价值约定及在法定登记机构登记的价值，不作为甲方处分质押财产时的估价依据，也不构成甲方行使反担保质权的限制。</li>
+				<li>2.3 若乙方请求将本合同项下出质的财产先于担保债权到期日（包括被债权人宣布提前到期）转让、出租、赠与、抵押或再质押等处分的，由甲方决定是否接受该请求。若甲方接受该请求的，甲方有权将变卖所得的价款按以下任一方式处理：</li>
+				<li>（1）用于提前清偿被担保之主债权；</li>
+				<li>（2）自行保管或向第三方提存；</li>
+				<li>（3）转为定期存款并将存单质押；</li>
+				<li>（4）乙方提供符合甲方要求且经甲方认可的新的反担保后，可将处分原质押财产所得价款自由处分。</li>
+				<p style="text-align: center;font-size: 3.6vmin;font-weight: bold;line-height: 36px;">第三条 质押反担保的范围</p>
+				<li>乙方质押反担保的范围为甲方向债权人支付的代偿款和其他应付款项。其中：代偿款以被担保之主债权为依据；其他应付款项包括债务人应付的代偿款占用费（自甲方代偿之日起按代偿款日0.1%的标准计算直至代偿款得到清偿之日止）、违约金、甲方为实现担保债权而支出的合理费用（包括处置质押财产的费用、律师费、诉讼费、评估费、拍卖费、差旅费等）和其他应付合理费用。</li>
+				<p style="text-align: center;font-size: 3.6vmin;font-weight: bold;line-height: 36px;">第四条 质押财产的交付和保管</p>
+				<li>4.1本合同签署前应由双方共同核对质押财产及其财产凭证。若已设立在先顺位质权或其他权利的，由乙方负责解除，甲方同意的除外。</li>
+				<li>4.2 法律、法规规定应当办理或者甲方要求办理质押登记的，甲、乙双方应在本合同签订之日起十日内办妥质押登记手续，相关费用由乙方承担。双方特别约定，因任何原因导致未能办理质押登记的，甲方有权按被担保主债权本金的20%向乙方收取违约金。同时，乙方自愿向甲方提供连带责任保证反担保，保证反担保的范围同第三条。</li>
+				<li>4.3 质押财产应在本合同签订之日由乙方交付给甲方保管。</li>
+				<p style="text-align: center;font-size: 3.6vmin;font-weight: bold;line-height: 36px;">第五条 质权的行使</p>
+				<li>5.1 行使质权的条件</li>
+				<li>承担代偿责任后，甲方有权依法行使质权。但是，在发生下列情形之一时，即使未发生代偿的，甲方亦有权提前行使质权，所得款项按第2.3条款处理：</li>
+				<li>（1）质押财产价值明显减少而乙方拒绝恢复其价值或拒不提供其他担保的；</li>
+				<li>（2）拒绝履行第2.3条款（包括参照适用第2.3条款）约定的义务；</li>
+				<li>（3）债务人发生可能导致甲方承担担保责任的违约行为，包括但不限于停止支付利息、改变担保债权用途；</li>
+				<li>（4）债务人或乙方发生经营状况持续恶化、丧失商业信誉、丧失或可能丧失履行合同能力的危险情形，或发生被宣告破产、重整等；</li>
+				<li>（5）乙方擅自不当处分质押财产；</li>
+				<li>（6）其他威胁或可能威胁甲方担保债权实现的任何情形。</li>
+				<li>5.2行使质权的方式</li>
+				<li>甲方有权采取如下方式对质押财产行使质权，乙方须协助甲方行使质权有关的一切必要配合：</li>
+				<li>（1）与乙方协商将质押财产折价抵偿债务；</li>
+				<li>（2）甲方单方依法拍卖、变卖质押财产并以所得价款优先受偿；</li>
+				<li>（3）甲方有权依法提起诉讼，通过司法程序实现质权。</li>
+				<li>5.3 乙方同意其承担的反担保责任不受保证、质押、抵押等其他担保的影响，也不因之而免除或减少。甲方有权选择乙方优先行使担保权，乙方放弃任何其它反担保优先的抗辩权；甲方因任何原因放弃其他抵押权或质权、变更抵押权或质权的顺位、内容，造成甲方在上述抵押权、质权项下的优先受偿权丧失或减少时，乙方承诺对甲方承担的反担保责任也不因之而免除或减少。</li>
+				<p style="text-align: center;font-size: 3.6vmin;font-weight: bold;line-height: 36px;">第六条 保险</p>
+				<li>    6.1 如甲方认为质押财产需投保的，乙方应根据甲方要求就质押财产到甲方认可的保险公司并按甲方认可的险种办理质押财产保险，保险第一受益人为甲方，缴纳保险费，将保险单正本交由丙方保管。保险期限应不短于主合同履行期。</li>
+				<li>    6.2 在本协议有效期内，乙方不得以任何理由中断、终止、修改或者变更保险单，并应采取一切合理必要的措施确保本协议规定的保险持续有效。若乙方未足额、连续投保或者违反前述约定的，甲方有权决定代为投保或继续投保，一切费用和损失由乙方承担。</li>
+				<li>    6.3在本协议有效期内，质押财产若发生保险事故，甲方对于保险赔偿金享有物上代位请求权。保险赔偿金应当全额作为质押财产的代位物提前向甲方清偿或提存，或经甲方书面同意用于恢复质押财产的价值。</li>
+				<p style="text-align: center;font-size: 3.6vmin;font-weight: bold;line-height: 36px;">第七条 双方的陈述与保证</p>
+				<li>7.1 乙方为签订及履行本合同，在此向甲方做出陈述和保证如下：</li>
+				<li>（1）乙方知悉主合同条款，为债务人提供质押反担保完全出于自愿，并保证不以与第三方发生纠纷为由拒绝履行担保义务。</li>
+				<li>（2）乙方保证在签订本合同已得到配偶的同意。若乙方违反法律而签署本合同，责任概由乙方承担，乙方不得以此为由对抗合同项下责任的承担和义务的履行。</li>
+				<li>（3）乙方保证对质押财产具有合法的所有权和处分权，如质押财产为共有的，已取得共有人的同意。</li>
+				<li>（4）乙方保证设立质押不会受到限制或造成不合法的情形，保证向甲方提供的质押财产的全部产权或使用权凭证及其他有效证明文件真实、合法、有效。</li>
+				<li>（5）乙方保证未隐瞒质押财产存在的任何瑕疵，包括但不限于权属争议、被查封、被扣押、已设定质权等。若存在前述情形的，乙方在此特别声明：将相关情况在“其他约定”进行说明。否则属乙方严重违约和欺诈，承担相应责任。</li>
+				<li>（6）未经甲方书面同意，乙方不以任何理由要求对质押财产予以解冻或以任何其他方式处置质押财产。</li>
+				<li>（7）质押担保登记的内容存在遗漏、错误等情形或者登记内容发生变化的，乙方同意继续由甲方按照实际情况和变化后的状况办理变更登记手续。</li>
+				<li>（8）乙方保证没有亦不进行任何有可能使甲方受到损失和使质押财产减值的行为。</li>
+				<li>7.2 甲方为履行及签订本协议，在此做出陈述和保证如下：</li>
+				<li>（1）甲方保证拥有充分的授权订立本合同；</li>
+				<li>（2）甲方承诺保守在履行本合同中知悉的乙方信息、商业秘密，但法律法规另有约定的除外。</li>
+				<p style="text-align: center;font-size: 3.6vmin;font-weight: bold;line-height: 36px;">第八条 甲方的权利和义务</p>
+				<li>8.1 甲方有权保管质押财产但负有妥善保管义务，因保管不善致使质押财产灭失或毁损的，甲方应承担相应的赔偿责任。在合同终止之日起，甲方应协助乙方办理解除质押手续或退回质押财产、权属凭证、有效证明文件等。</li>
+				<li>8.2 乙方的行为足以使质押财产价值减少的，甲方有权要求乙方停止其行为，并要求乙方恢复其价值或者提供相应担保；否则甲方有权提前行使质权或按本合同第十条约定追究乙方违约责任。</li>
+				<li>8.3 为维护出质财产的质量，在保证出质财产安全的条件下，甲方可以适时使用质押财产。</li>
+				<li>8.4 甲方处分质押财产所得款项优先受偿后仍有剩余的，甲方应将剩余部分不计息退还给乙方。</li>
+				<p style="text-align: center;font-size: 3.6vmin;font-weight: bold;line-height: 36px;">第九条 乙方的权利义务</p>
+				<li>9.1 在本合同有效期间内，如发生对乙方正常经营构成危险或对其履行本合同担保义务产生不利影响的任何事件（包括但不限于财务、资产状况发生重大变化，或涉及诉讼、仲裁、行政处罚或发生其它可能影响其担保能力的事件），应立即书面通知甲方。</li>
+				<li>9.2 乙方变更姓名、经常居住地、通讯地址、工作单位、联系方式时，应当在变更后五日内通知甲方。</li>
+				<li>9.3 乙方同意并授权甲方将乙方提供的个人信用信息及相关担保情况提供给中国人民银行个人信用信息基础数据库。</li>
+				<li>9.4未经甲方书面同意，乙方不得对质押财产作出转让、赠与、出租、抵押或再质押等不当处分，但受让人代为清偿债务消灭质权的除外。甲方同意乙方处分质押财产的，乙方须保证甲方有权选择第2.3条款方式处理所得价款。</li>
+				<li>9.5 若因自然灾害、意外事件、第三方侵权行为及其他任何不可归责于甲方的事由导致或可能导致质押财产灭失或价值明显减少的，甲方有权自主采取措施防止损失的扩大，并要求乙方提供甲方认可的新的反担保。</li>
+				<li>9.6 若甲方将本合同项下的权利义务转让给任何第三方，乙方同意无需征得乙方的书面同意。一经第三方向债权人清偿全部债务的，即有权以其名义直接实现本合同项下的反担保质押权并就所得价款优先受偿。</li>
+				<li>9.7 本合同项下登记、公证、保险、鉴定、运输、保管等费用由乙方承担。</li>
+				<p style="text-align: center;font-size: 3.6vmin;font-weight: bold;line-height: 36px;">第十条 通知和送达</p>
+				<li>10.1所有的通知均应发送首页载明的地址，直至一方收到另一方更改该地址的书面通知为止。在被通知方收到有关通知之前，被通知方根据变更前的联系方法所做出的联络和通讯应视为有效。</li>
+				<li>10.2 只要按上述地址发送，则视为在下列日期送达：</li>
+				<li>（1）如是信函，则为按一方挂号信函、EMS等邮寄方式寄发后的第三天。</li>
+				<li>（2）如果是专程送达，则为收件人签收之日。</li>
+				<li>（3）如果为传真或电子邮件，则为传真或电子邮件发送之日。</li>
+				<li>依照上述规定而确定的送达日期与被通知方实际收到的日期或正式签收日期不一致时，以其中最早的日期为准。</li>
+				<p style="text-align: center;font-size: 3.6vmin;font-weight: bold;line-height: 36px;">第十一条 违约责任</p>
+				<li>11.1 乙方应履行合同约定义务，遵守各项承诺与保证。如乙方不履行或者不完全履行本合同的，均构成违约。</li>
+				<li>11.2 本合同对乙方的违约责任做出明确约定的从约定。除此之外，出现本合同违约事项，甲方有权采取以下一项或多项措施：</li>
+				<li>（1）要求乙方限期纠正违约行为；</li>
+				<li>（2）要求乙方按担保主债权本金的20%支付违约金；</li>
+				<li>（3）要求乙方按担保主债权本金追加保证金或其他甲方认可的反担保；</li>
+				<li>（4）要求乙方赔偿损失；</li>
+				<li>（5）甲方有权采取的其他措施。</li>
+				<p style="text-align: center;font-size: 3.6vmin;font-weight: bold;line-height: 36px;">第十二条  法律适用与争议解决</p>
+				<li>本合同适用中国法律并受其管辖。因履行本合同发生争议的，应友好协商解决。经协商不成的，任何一方均有权向甲方所在地有管辖权的人民法院起诉。</li>
+				<p style="text-align: center;font-size: 3.6vmin;font-weight: bold;line-height: 36px;">第十三条  合同的生效、变更、解除和终止</p>
+				<li>本合同自甲、乙双方签字或盖章之日起生效。本合同生效后，任何一方不得擅自变更或提前解除本合同。任何有关本合同的补充、修改、变更、解除等均需由甲、乙双方协商一致并订立书面合同。</li>
+				<p style="text-align: center;font-size: 3.6vmin;font-weight: bold;line-height: 36px;">第十四条 附则</p>
+				<li>14.1 本合同甲、乙双方各执一份，登记机关备案一份，具同等法律效力。本合同的任何附件、修订或补充均构成本合同不可分割的组成部分，与本合同具有同等法律效力。附件包括：《质押财产清单》。</li>
+				<li>14.2 本合同系双方真实意思表示，合同条款对双方均具有法律约束力。双方均仔细阅读了本合同所有条款，且已采取合理的方式提请另一方注意合同中免除或限制对方责任的条款，并按照另一方的要求，对有关条款进行了说明。</li>
+				<li>14.3 若因任何原因使本合同项下的任何条款或内容成为无效或被依法撤销，本合同其他条款或内容的合法性、有效性和可执行性不受影响。</li>
+				（以下无正文）
+				<li>（本页无正文，为《质押反担保合同》（编号：【】）之签署盖章页）</li>
+				<li>甲方： ***</li>
+				<li>签署日期：****年  **月**  日</li>
+				<li>乙方：	{{render_data.borrower_name}}</li>
+				<li>签署日期：***年 ** 月** 日</li>
+			</ul>
+			
+			<ul class="dealbottom">
+				<p style="text-align: center;font-size: 3.6vmin;font-weight: bold;line-height: 36px;">质押财产清单</p>
+
+			    <table class="tablook" border="1" cellspacing="0"> 
+			        <tr> 
+			            <th>质押财产名称</th>
+			            <th>规格</th>
+			            <th>数量级单位</th>
+			            <th>质量及状况</th>
+			            <th>
+							<input type="checkbox">评估价格
+							<br>
+							<input type="checkbox">协议价值
+						</th>
+			        </tr> 
+			        <tr> 
+			            <td>{{render_data.car_message}}</td>
+			            <td></td> 
+			            <td>1</td>
+			            <td>良好</td>
+			            <td>*****</td>
+			        </tr> 
+			    </table>
+
+				<table class="tablook" border="1" cellspacing="0">
+					<tr>
+						<th rowspan="2">权证凭证及编号</th>
+						<th colspan="3">车辆信息</th>
+						<th>备注</th>
+					</tr>
+
+					<tr style="border-bottom: 1px solid #eee">
+						<td>车牌号</td>
+						<td>车辆识别号</td>
+						<td>发动机号</td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td></td>
+						<td>***</td>
+						<td>***</td>
+						<td>***</td>
+						<td></td>
+					</tr>
+
+				 </table>
+
+				<table class="tablook" border="1" cellspacing="0">
+					<tr>
+						<th colspan="2">备注：本清单为《质押反担保协议》（编号：）的组成部分。以上质押财产经出质人和质权人核对无误，并由出质人交付给质权人执管。</th>
+					</tr>
+
+					<tr style="line-height: 22px">
+						<td>
+							出质人（签字或盖章）
+							<br>
+							{{render_data.borrower_name}}
+							<br>
+							****年  **  月 **  日
+						</td>
+						<td>
+							质押权人（签字或盖章）
+							<br>
+							***
+							<br>
+							****年  **  月 **  日
+						</td>
+					</tr>
+
+				</table>
+
+			</ul>
+		</div>
+	</body>
+</html>

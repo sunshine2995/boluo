@@ -1,0 +1,217 @@
+@charset "UTF-8";
+body{
+	background:#f3f3f3;
+	color:#bbbbbb;
+	font-size: 0.346667rem;
+}
+nav {
+	width: 10rem;
+	height: 1.2rem;
+	background: #fff;
+}
+nav>span {
+	display: block;
+	float: left;
+	width: 5.0rem;
+	width: 4.966667rem;
+	line-height: 1.2rem;
+	text-align: center;
+	font-size: 0.373333rem;
+}
+.cont_box{
+	background: #fff;
+	margin:0.266667rem 0 0 0;
+}
+.nav_line {
+	float:left;
+	height:0.8rem;
+	width: 1px;
+	margin-top: 1.5%;
+}
+.active {
+	color:#fd6502;
+	background: url("../../images/xian_img@2x.png") no-repeat center bottom;
+	background-size: 50%;
+}
+/*项目概况*/
+.pro_box {
+	display: none;
+	height: auto;
+}
+.pro_box>div{
+	width: 10rem;
+	/*margin:0.266667rem 0 0.266667rem 0;*/
+	background:#fff;
+}
+.pro_box .same_pro>span {
+	display: block;
+	color:#333333;
+	font-size: 0.36rem;
+	padding-top:0.466667rem;
+	margin:0 0 0.333333rem 0.4rem;
+	color:#333333;
+	font-size: 0.4rem;
+}
+.pro_box .same_pro>p {
+	padding: 0 0.426667rem 0.4rem 0.4rem;
+	line-height:0.666665rem;
+	color:#666;
+	font-size: 0.346667rem;
+}
+/*产品名称*/ 
+.pro_name {
+	height: 1.333333rem;
+}
+.pro_name>span{
+	float:left;
+	color:#333333;
+	font-size: 0.4rem;
+	padding-top:0.466667rem;
+	margin:0 0 0.333333rem 0.4rem;
+}
+.pro_name>p {
+	color:#666;
+	font-size: 0.346667rem;
+	float:left;
+	margin:0.4rem 0 0 4.4rem;
+}
+
+.pro_zhengzhao {
+	/*height: 6.133333rem;*/
+	padding-bottom: 200px;
+}
+.zz_pic_box {
+	margin-left:0.4rem;
+	margin-bottom: 0.466667rem;
+}
+.zz_pic_box>img {
+	width: 2.0rem;
+	height: 2.0rem;
+	margin:0 0.32rem 0.266667rem 0;
+}
+.pro_fanben>p>a {
+	text-decoration:underline;
+	font-size: 0.32rem;
+	color:#333333;
+}
+
+
+/*投资信息*/
+.inform_box {
+	background:#fff;
+	margin:0.266667rem 0 0.32rem 0;
+
+}
+.inform_hid {
+	display: none;
+}
+.inform_table {
+	width: 10rem;
+	background: #fff;
+	border-width: 0.013333rem;
+}
+
+.inform_table td{
+	width: 3.333333rem;
+	height: 1.066667rem;
+    text-align: center;
+    font-size: 0.266667rem;
+   	color:#666;
+   	border-bottom: 1px solid #f3f3f3;
+}
+
+.inform_table tr:first-child>td{
+    color: #333;
+    font-size: 0.333333rem;
+}
+
+
+/*页码*/
+.chose_page {
+	height: 1.866667rem;
+}
+.chose_page>a {
+	float: left;
+	display:block;
+	width: 2.133333rem;
+	height: 1rem;
+	line-height: 1rem;
+	border:1px solid #fd6502;
+	border-radius:0.106667rem;
+	color:#666; 
+	font-size:0.32rem; 
+	text-align: center;
+	margin-top:0.346667rem; 
+}
+
+.chose_page p{
+	float:left;
+	color:#7a7a7a;
+	font-size:0.266667rem; 
+	margin:0.6rem 0.533333rem 0 0;
+}
+.prev {
+	margin:0 0.533333rem 0 2.026667rem;
+}
+
+/*.page_btn_active {*/
+	/*color:#fff!important;*/
+	/*background:#ffcb0f;*/
+/*}*/
+
+
+
+/*证照合同弹出层*/
+.pop_license {
+	display: none;
+	position: fixed;
+	left:0;
+	top:0;
+	right: 0;
+	bottom: 0;
+}
+.pop_license .pop-bg {
+	width: 10rem;
+	height: 100%;
+	background-color:#1a1a1a;
+	opacity: 0.8;
+	position: fixed;
+	left:0;
+	top:0;
+	right: 0;
+	bottom: 0;
+	z-index: 101;
+}
+
+.pop-bg>img{
+	display: block;
+	/*display: none;*/
+	border:0;
+	position: fixed;
+	top:6.633333rem;
+	left:20%;
+	right:20%;
+}
+
+.pop_license .close {
+	width: 0.866667rem;
+	height: 0.866667rem;
+	position: fixed;
+	top:0.2rem;
+	right:0;
+	z-index: 110;
+}
+.close>img {
+	width: 0.866667rem;
+	height: 0.866667rem;
+}
+.hetong{
+	color: #fd6502;
+}
+.hetong>a{
+	color: #fd6502;
+}
+.gallery img{
+	width: 2.8rem !important;
+	height: 2.2rem !important;
+}

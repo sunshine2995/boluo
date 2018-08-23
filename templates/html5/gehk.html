@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=1;">
+		<title>四月加息活动</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/april.css') }}?v=1"/>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}"></script>
+	</head>
+	<body>
+		<div class="april">
+			<div class="april_demo">
+				<div class="gehk">
+					<b>庆菠萝理财安全再升级感恩回馈</b>
+					<p>日前菠萝理财与国内电子数据保全服务品牌易保全达成战略合作，通过第三方电子合同平台实现在线合同的数字签名和合同托管，更有效 的保障投资人的资金安全。又于2017年4月5日携手新网银行正式签订资金存管服务协议，菠萝理财正式接入银行存管业务，合规化建设再上新台阶，为用户资金安全再添一份安全保障。特推出“送你1028元红包和0.18%加息”活动。</p>
+				</div>
+				<img src="{{ url_for('static', filename='images/april/huodongshijian@2x.png') }}" class="huod" />
+				<div class="hdsj">
+					<p>2017年4月14日12：00至2017年4月24日12：00；<br />
+温馨提示：活动到期后若延长期限，菠萝理财将提前通知。</p>
+				</div>
+				<img src="{{ url_for('static', filename='images/april/huodongshuoming@2x.png') }}" class="huod" />
+				<p class="huod_one">活动赠送的回馈红包为抵扣红包，只需直接点击领取，系统将会自动发送至“我的资产-我的红包”；</p>
+				<!--<span>（红包使用时效为活动期间，活动结束后红包将自动失效）</span>-->
+				<div class="huod_top">
+					<ul>
+						<li>红包金额</li>
+						<li>投资限额</li>
+						<li>红包数量</li>
+						<li>有效期</li>
+					</ul>
+					<ul>
+						<li>28元</li>
+						<li>10000元</li>
+						<li>2个</li>
+						<li>10天</li>
+					</ul>
+					<ul>
+						<li>158元</li>
+						<li>50000元</li>
+						<li>2个</li>
+						<li>10天</li>
+					</ul>
+					<ul>
+						<li>328元</li>
+						<li>100000元</li>
+						<li>2个</li>
+						<li>10天</li>
+					</ul>
+				</div>
+				<button class="ljlq"></button>
+				<p class="huod_two">用户每单笔投资满10000元，就可以享受在“每定期项目的基础利率”+“加息利率后”再+0.18%的年化加息；</p>
+				<div class="huod_top">
+					<ul>
+						<li>项目期限</li>
+						<li>基础利率</li>
+						<li>加息利率</li>
+						<li style="line-height: 22px;">单笔投资<br />满10000元<br />可享受</li>
+					</ul>
+					<ul>
+						<li>30天</li>
+						<li>9%</li>
+						<li>1%</li>
+						<li>0.18%</li>
+					</ul>
+					<ul>
+						<li>90天</li>
+						<li>11%</li>
+						<li>2%</li>
+						<li>0.18%</li>
+					</ul>
+					<ul>
+						<li>180天</li>
+						<li>12%</li>
+						<li>3%</li>
+						<li>0.18%</li>
+					</ul>
+				</div>
+				<p class="huod_three">3.新手标不参与此次活动。</p>
+				<ul class="quanx">
+					<li>本活动规则解释权归菠萝理财所有</li>
+					<li>如有任何疑问，请咨询菠萝理财客服：<span>400-032-0596</span>。</li>
+				</ul>
+			</div>
+		</div>
+		<!--请去查看红包！-->
+		<div class="explain">
+			<div class="hongb">
+				<p>活动已结束!</p>
+				<button class="haode">好的</button>
+			</div>
+		</div>
+		<script type="text/javascript">
+				$(".ljlq").click(function(){
+					$(".explain").show();
+					/*if('{{response_data.login_in}}' == 'true'){
+						$('.hongb p').text('领取成功!请到红包里面查看红包!')
+					}else{
+						$('.hongb p').text('请先登录后领取红包!')
+					}*/
+					
+					$(".haode").click(function(){
+						$(".explain").hide();
+						window.jsObj.HtmlcallJava5()
+					})
+				});
+		</script>
+	</body>
+</html>

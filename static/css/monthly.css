@@ -1,0 +1,228 @@
+body,html {
+	position: relative;
+	height: 100%;
+}
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	line-height: 1.5;
+	background: #fff;
+}
+.swiper-pages {
+	height: 100%;
+}
+.scroll-container {
+	height: 100%;
+	width: 100%;
+}
+.scroll-container .swiper-slide {
+	width: 100%;
+}
+.page-inner {
+	padding: 0 15px;
+}
+.swiper-gallery {
+	width: 100%;
+	height: 100%;
+}
+.swiper-gallery .swiper-slide {
+	width: 100%;
+	position: relative;
+	text-align: center;
+}
+.swiper-gallery .swiper-slide img {
+	opacity: 0.2;
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	-webkit-transition: 1000ms;
+	-moz-transition: 1000ms;
+	-ms-transition: 1000ms;
+	-o-transition: 1000ms;
+	transition: 1000ms;
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	-ms-transform: translate3d(0,0,0);
+	-o-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+.swiper-gallery .swiper-slide-visible img {
+	opacity: 1;
+}
+/*排行榜*/
+.hong:first-child{
+	width: 100%;
+	line-height: 168px;
+	margin: 3% auto;
+	background: url(../images/monthly/5@2x.png) no-repeat center top;
+	background-size: 100% 100%;
+	border-radius: 10px;
+	font-size: 8.6vmin;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+}
+.huang{
+	width: 100%;
+	line-height: 168px;
+	margin: 3% auto;
+	background: url(../images/monthly/2@2x.png) no-repeat center top;
+	background-size: 100% 100%;
+	border-radius: 10px;
+	font-size: 8.6vmin;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+}
+.lan{
+	width: 100%;
+	line-height: 168px;
+	margin: 3% auto;
+	background: url(../images/monthly/banner@2x.png) no-repeat center top;
+	background-size: 100% 100%;
+	border-radius: 10px;
+	font-size: 8.6vmin;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+}
+.paim{
+	width: 100%;
+	margin: 0 auto;
+	background: url(../images/monthly/bjone.png) no-repeat center top;
+	background-size: 100% 100%;
+	padding-top: 13.2%;
+    padding-bottom: 1.8vmin;
+    /*margin-bottom: 8vmin;*/
+}
+.paim>ul{
+	width: 93%;
+	margin: 0 auto;
+	display: -webkit-box;
+	-webkit-box-flex: 1;
+	border-bottom: 1px solid #eee;
+}
+.paim>ul:last-child{
+	border-bottom: none;
+}
+.paim>ul>li{
+	width: 33.33%;
+	text-align: center;
+	font-size: 3.6vmin;
+	line-height: 52px;
+	border-right: 1px solid #eee;
+}
+.paim>ul>li:last-child{
+	border-right: none;
+}
+.paim>ul>li>span{
+	font-size: 4vmin;
+	color: #ff9e29;
+}
+.paim>ul>li>img{
+	width: 20%;
+}
+.yuan{
+	width: 11%;
+	background: url(../images/monthly/yuan.png) no-repeat center;
+	background-size: 20%;
+	color: #fff;
+}
+.dabang{
+	width: 20%;
+	position: absolute;
+	top: 5%;
+	right: 3.6%;
+}
+/*弹窗*/
+.phtc{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	z-index: 100;
+	display: none;
+}
+.baidtc{
+	width: 80%;
+	background: #fff;
+	border-radius: 8px;
+	position: absolute;
+	top: 10%;
+	left: 10%;
+}
+.shut{
+	width: 30px;
+	height: 30px;
+	background: url(../images/monthly/x@2x.png) no-repeat center;
+	background-size: 100%;
+	position: absolute;
+	right: 6%;
+	top: 4%;
+}
+.daji>ul{
+	width: 100%;
+	display: -webkit-box;
+	-webkit-box-flex: 1;
+}
+.daji>ul>li{
+	width: 50%;
+	line-height: 34px;
+	text-align: center;
+	-webkit-box-flex: 1;
+	font-size: 3.2vmin;
+	color: #666;
+}
+.daji>ul:nth-child(even){
+	background: #f6f6f8;
+}
+.daji>ul>li>span{
+	font-size: 3.8vmin;
+	color: #ff9e29;
+}
+.daji>ul>li:last-child{
+	width: 80%;
+}
+.dbnav{
+	width: 86.3%;
+	height: 50px;
+	line-height: 50px;
+	background: #ffc602 url(../images/monthly/1@2x.png) no-repeat center left 29vmin;
+	background-size: 7%;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	font-size: 4.2vmin;
+	color: #fff;
+	text-align: center;
+	padding-left: 11vmin;
+}
+.maod{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	background: #fff;
+	overflow: hidden;
+	position: absolute;
+	bottom: 0;
+	z-index: 999;
+    padding-left: 43vmin;
+}
+.maod>li{
+	width: 10px;
+	height: 10px;
+	border: 1px solid #888;
+	border-radius: 20px;
+	float: left;
+	margin-right: 1%;
+	margin-top: 2vmin;
+}
+.shi{
+	background: #888;
+}
+.ciri{
+	font-size: 3.6vmin;
+	color: #666;
+	text-align: center;
+	margin: 3% auto;
+}

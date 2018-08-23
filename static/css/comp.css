@@ -1,0 +1,226 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin: 0;
+    padding: 0;
+    font-family: 'microsoft yahei';
+}
+a {outline: none;}
+.hegui{
+	width: 100%;
+	background:#06142f url(../images/comp/beijing.jpg) no-repeat center top;
+	background-size: 100%;
+	padding-top: 36%;
+}
+#loutinav {
+    width: 18vmin;
+    position: fixed;
+    top: 260px;
+    right: 50px;
+    display: none;
+    border: 2px solid #388dd4;
+	border-radius: 6px;
+	background: #2a4583;
+	box-shadow:0px 0px 9px #388dd4;
+}
+#loutinav>ul>li{
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+    background: url(../images/comp/jian.png) no-repeat center bottom;
+    list-style: none;
+    font-size: 12px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    padding: 10px 0;
+    color: #fff;
+}
+#loutinav>ul>li.last {
+    margin: 0 auto;
+    background: none;
+}
+/*#header {
+    width: 1000px;
+    height: 1000px;
+    background: #cc6633;
+    margin: 0 auto;
+    font-size: 50px;
+    line-height: 1000px;
+    text-align: center;
+    color: #000;
+}*/
+
+#main {
+    /*width: 1200px;*/
+    width: 86%;
+    margin: 0 auto;
+}
+.louti {
+	width: 100%;
+}
+.louti>h1{
+	color: #fff;
+	text-align: center;
+	background: url(../images/comp/xiant.png) no-repeat center bottom;
+	background-size: 12%;
+	padding-bottom: 1.6%;
+	margin: 6% 0;
+	font-size: 2.2vmin;
+	clear: both;
+	text-align: center;
+	line-height: 32px;
+}
+.xinf{
+	width: 86%;
+	border: 2px solid #388dd4;
+	border-radius: 6px;
+	box-shadow:0px 0px 9px #388dd4;
+	margin: 0 auto;
+	font-size: 2.1vmin;
+	color: #fff;
+	padding: 3% 3.8%;
+	line-height: 6.5vmin;
+	margin-bottom: 6%;
+}
+.xinf>h2{
+	text-align: center;
+}
+.xinf>ul>li{
+	text-indent: 26px;
+	border-bottom: 1px solid #193171;
+}
+.xinf>ul>li>b{
+	color: #2ee3fe;
+}
+
+.jindu{
+	width: 100%;
+	height: 180px;
+	margin: 0 auto;
+	background: url(../images/comp/si.png) no-repeat center top;
+	background-size: 96%;
+	margin-bottom: 8%;
+}
+.jindu>li{
+	width: 25%;
+	text-align: center;
+	float: left;
+	padding-top: 13%;
+	font-size: 1.8vmin;
+	line-height: 28px;
+	color: #2ee3fe;
+}
+.jindu>li>span{
+	color: #fff;
+}
+.jianx>dl{
+	width: 20%;
+	float: left;
+	text-align: center;
+	margin-bottom: 6%;
+}
+.jianx>dl>dd{
+	line-height: 28px;
+	color: #fff;
+	font-size: 1.8vmin;
+}
+.jianx>dl>dd>span{
+	color: #2ee3fe;
+}
+.onepic>li{
+	width: 22%;
+	float: left;
+	text-align: center;
+	margin: 0 1.3%;
+	margin-bottom: 6%;
+}
+.onepic>li>img{
+	width: 100%;
+}
+/*.onepic>li:first-child{
+	background: url(../images/heg.png) no-repeat center;
+	background-size: 100% 100%;
+}
+.onepic>li:nth-child(2){
+	background: url(../images/zy.png) no-repeat center;
+	background-size: 100%;
+}
+.onepic>li:nth-child(3){
+	background: url(../images/tm.png) no-repeat center;
+	background-size: 100%;
+}
+.onepic>li:last-child{
+	background: url(../images/lh.png) no-repeat center;
+	background-size: 100%;
+}*/
+/*公司荣誉*/
+#slider{
+	width:80%;
+	height:260px;
+	overflow:hidden;
+	padding:20px 15px;
+	position:relative;
+	margin:0 auto;
+}
+.scroll{
+	width:620px;
+	height:260px;
+	margin:0 auto;
+	overflow:hidden;
+	position:relative;
+}
+.scrollContainer{
+	position: relative;
+	width:1815px;
+	left:0px;
+}
+.scrollContainer .current .panel{
+	width:230px;
+	height:180px;
+}
+.scrollContainer .panel{
+	width:170px;
+	height:235px;
+	float: left;
+	margin-right:25px;
+	display:inline;
+}
+.panel{
+	display:block;
+	position:relative; 
+}
+.panel img{
+	width:100%;
+	height: 130px;
+	cursor: pointer;
+}
+.btnMode a.btn{
+	width:20px; 
+	height:39px;
+	position:absolute;
+	top:66px; 
+	cursor: pointer;
+}
+.btnMode a.prev{
+	left:0;
+	background: url(../images/comp/zuo.png) no-repeat center left;
+	background-size: 100%;
+}
+.btnMode a.next{
+	right:0;
+	background: url(../images/comp/you.png) no-repeat center right;
+	background-size: 100%;
+}
+
+
+
+/*#footer {
+    width: 1200px;
+    height: 100px;
+    line-height: 100px;
+    background: red;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+}*/

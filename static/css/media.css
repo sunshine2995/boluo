@@ -1,0 +1,179 @@
+@charset "utf-8";
+/* CSS Document */
+html{
+	font-size:62.5%;
+	}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figcaption, figure, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+}
+html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {
+	-webkit-text-size-adjust: none;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+	clear: both;
+}
+body {
+	font:normal 1.4rem/37px Arial,Helvetica,"Microsoft Yahei";
+	-webkit-text-size-adjust: none;
+	color: #333;
+	background: #f3f3f3;
+	-webkit-text-size-adjust: none;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+form {
+	display: inline;
+}
+textarea {
+	resize: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+ul, ol {
+	list-style: none;
+}
+input, select, button {
+	font-family: 'Microsoft YaHei', arial, helvetica, sans-serif;
+	font-size: 100%;
+	vertical-align: middle;
+	outline: none;
+}
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+	cursor: pointer;
+	-webkit-appearance: button;
+	-moz-appearance: button;
+}
+input:focus:-moz-placeholder, input:focus::-webkit-input-placeholder {
+color:transparent;
+}
+button::-moz-focus-inner, input::-moz-focus-inner {
+border:0;
+padding:0;
+}
+ input[type="button"], input[type="submit"], input[type="reset"] {
+	vertical-align: middle;
+	-webkit-appearance: none;
+
+}
+input[type="text"],input[type="password"]{
+	vertical-align: middle;
+	background-color: #fff;
+	-webkit-appearance: none;
+	-webkit-transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+	transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+		padding:0;
+		border-radius:0;
+}
+input, button, textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    border: 0px none;
+    background: transparent none repeat scroll 0px 0px;
+    outline: 0px none;
+}
+a {
+	color: #333;
+	text-decoration: none;
+}
+a:hover {
+	color: #333;
+	text-decoration: none;
+}
+img {
+	font-size: 0;
+	vertical-align: middle;
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+}
+.glImg img{
+	width: 100%;
+}
+.f-fl {
+	float: left;
+}
+.f-fr {
+	float: right;
+}
+.f-fn {
+	float: none;
+}
+.f-cf:before, .f-cf:after {
+	height: 0;
+	content: '.';
+	font-size: 0;
+	line-height: 0;
+	display: block;
+	overflow: hidden;
+	clear: both;
+}
+.f-cf {
+*zoom:1;
+}
+.f-cb {
+	height: 0;
+	content: '.';
+	font-size: 0;
+	line-height: 0;
+	display: block;
+	overflow: hidden;
+	clear: both;
+}
+.f-tal {
+	text-align: left;
+}
+.f-tac {
+	text-align: center;
+}
+.f-tar {
+	text-align: right;
+}
+.f-vam {
+	vertical-align: middle;
+}
+.f-dn {
+	display: none;
+}
+.f-di {
+	display: inline;
+}
+.f-db {
+	display: block;
+}
+.f-dib {
+	display: inline-block;
+}
+.f-oh {
+	overflow: hidden;
+}
+.f-ellipsis {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.f-break {
+	word-break: break-all;
+	word-wrap: break-word;
+}
+.f-blank {
+	height: 8px;
+	font-size: 0;
+	line-height: 0;
+	display: block;
+	overflow: hidden;
+}
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+-webkit-appearance:none !important;
+}
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+

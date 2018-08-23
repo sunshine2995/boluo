@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>平台数据</title>
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/disclo.css') }}"/>
+		<script src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/map/chinaMapConfig.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/map/map-min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/map/raphael-min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/amcharts.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/serial.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/echarts.min.js') }}"></script>
+	</head>
+	<body>
+		<div class="disclo" id="wrap">
+            <ul class="tabClick">
+                <li class="static">机构信息</li>
+                <li class="static">风险教育</li>
+                <li class="static">法律法规</li>
+                <li class="active">平台数据</li>
+            </ul>
+            <div class="lineBorder">
+                <div class="lineDiv"><!--移动的div--></div>
+            </div>
+            <div class="tabCon">
+                <div class="tabBox">
+                    <div class="tabList tabone">
+                    	<!--数据总览-->
+                    	<div class="plattop">
+                    		<p class="zongl">数据总览</p>
+                    		<p class="jiez">截止{{response_data.time}}</p>
+                    		<dl class="zonge">
+                    			<dt><img src="{{ url_for('static', filename='images/disclo/huang.png') }}" /> </dt>
+                    			<dd>
+                    				<p>交易总额：<span>{{response_data.invest_total}}元</span></p>
+                    				<p>加入的投资人总数：<span>{{response_data.person_num}}人</span></p>
+                    			</dd>
+                    		</dl>
+                    	</div>
+                    	<!--累计投资金额-->
+                    	<div class="tongjit">
+                    		<p class="leiji">累计投资金额</p>
+                    		<a class="unit">(单位:亿元)</a>
+                    		<div id="chartdiv"></div>
+                    		<p class="seven">2017年</p>
+                    	</div>
+                    	<!--投资数据-->
+                    	<div class="tzshuju">
+                    		<p class="zongl">投资数据</p>
+                    		<p class="jiez">用户单笔投资金额</p>
+                    		
+                    			<!--进度条-->
+                    		<div class="jindu">
+
+								<div class="progress_bar">
+									<div class="pro-bar">
+										<small class="progress_bar_title">
+											1万以下
+											<span class="progress_number" style="color: #ff2d2d;">%</span>
+										</small>
+										<span id="tzsj0" class="progress-bar-inner" style="background-color: #ff2d2d;" data-value=''></span><!--data-percentage-value="80"-->
+									</div>
+								</div>
+
+								<div class="progress_bar">
+									<div class="pro-bar">
+										<small class="progress_bar_title">
+											1~3万
+											<span class="progress_number" style="color: #fc8d45;">%</span>
+										</small>
+										<span id="tzsj1" class="progress-bar-inner" style="background-color: #fc8d45;" data-value=''></span>
+									</div>
+								</div>
+
+								<div class="progress_bar">
+									<div class="pro-bar">
+										<small class="progress_bar_title">
+											3~5万
+											<span class="progress_number" style="color: #ffae21;">%</span>
+										</small>
+										<span id="tzsj2" class="progress-bar-inner" style="background-color: #ffae21;" data-value=''></span>
+									</div>
+								</div>
+
+								<div class="progress_bar">
+									<div class="pro-bar">
+										<small class="progress_bar_title">
+											5~10万
+											<span class="progress_number" style="color: #3dbff8;">%</span>
+										</small>
+										<span id="tzsj3" class="progress-bar-inner" style="background-color: #3dbff8;" data-value=''></span>
+									</div>
+								</div>
+
+							</div>
+							<div class="tishi">*菠萝理财已经撮成合同笔数：{{response_data.pro_num}}笔</div>
+                    	</div>
+                    		<!--地域分布-->
+                    	<div class="regional">
+                    		<p class="zongl">地域分布</p>
+					        <div id="ChinaMap"></div>
+					        <div id="stateTip"></div>
+				        	<h1 class="shouhy">菠萝理财最受欢迎地区</h1>
+					        <div class="paiming">
+					        	<ul>
+					        		<span>排名</span>
+					        		<li>1</li>
+					        		<li>2</li>
+					        		<li>3</li>
+					        		<li>4</li>
+					        		<li>5</li>
+					        	</ul>
+
+					        	<ul>
+					        		<span>地区</span>
+									{% for i in response_data.percentage %}
+					        		<li>{{i[0]}}</li>
+									{% endfor %}
+					        	</ul>
+					        	<ul>
+					        		<span>占比</span>
+									{% for i in response_data.percentage %}
+					        		<li>{{i[1]}} %</li>
+					        		{% endfor %}
+					        	</ul>
+					        </div>
+                    	</div>
+                    <!--投资人数据-->
+                    	<div class="touzir">
+                    		<p class="leiji">投资人数据</p>
+                    		<p class="jiez">年龄比例分布</p>
+                    		<!--进度条-->
+                    		<div class="jindu">
+
+								<div class="progress_bar">
+									<div class="pro-bar">
+										<small class="progress_bar_title">
+											60后
+											<span class="progress_number" style="color: #ff2d2d;">%</span>
+										</small>
+
+										<span id="age0" class="progress-bar-inner"  style="background-color: #ff2d2d;" data-value=""></span><!--data-percentage-value="80"-->
+									</div>
+								</div>
+
+								<div class="progress_bar">
+									<div class="pro-bar">
+										<small class="progress_bar_title">
+											70后
+											<span class="progress_number" style="color: #fc8d45;">%</span>
+										</small>
+										<span id="age1" class="progress-bar-inner" style="background-color: #fc8d45;" data-value=""></span>
+									</div>
+								</div>
+
+								<div class="progress_bar">
+									<div class="pro-bar">
+										<small class="progress_bar_title">
+											80后
+											<span class="progress_number" style="color: #ffae21;">%</span>
+										</small>
+										<span id="age2" class="progress-bar-inner" style="background-color: #ffae21;" data-value=""></span>
+									</div>
+								</div>
+
+								<div class="progress_bar">
+									<div class="pro-bar">
+										<small class="progress_bar_title">
+											90后
+											<span class="progress_number" style="color: #3dbff8;">%</span>
+										</small>
+										<span id="age3" class="progress-bar-inner" style="background-color: #3dbff8;" data-value=""></span>
+									</div>
+								</div>
+							</div>
+							<p class="jiez">性别比例分布</p>
+							<div id="myChart"></div>
+						    <ul class="bili">
+						    	<li><span class="nan"></span>男性</li>
+						    	<li><span class="nv"></span>女性</li>
+						    </ul>
+                    	</div>
+                    </div>
+                </div>
+            </div>
+		</div>
+
+        <script charset="utf-8">
+			window.onload = function (){
+                var windowWidth = document.body.clientWidth; //window 宽度;
+				var wrap = document.getElementById('wrap');
+                var tabClick = wrap.querySelectorAll('.tabClick')[0];
+                var tabLi = tabClick.getElementsByTagName('li');
+
+                var tabBox =  wrap.querySelectorAll('.tabBox')[0];
+                var tabList = tabBox.querySelectorAll('.tabList');
+
+                var lineBorder = wrap.querySelectorAll('.lineBorder')[0];
+                var lineDiv = lineBorder.querySelectorAll('.lineDiv')[0];
+
+                var tar = 0;
+                var endX = 0;
+                var dist = 0;
+
+                tabBox.style.overflow='hidden';
+                tabBox.style.position='relative';
+                tabBox.style.width=windowWidth*tabList.length+"px";
+
+                for(var i = 0 ;i<tabLi.length; i++ ){
+                      tabList[i].style.width=windowWidth+"px";
+                      tabList[i].style.float='left';
+                      tabList[i].style.float='left';
+                      tabList[i].style.padding='0';
+                      tabList[i].style.margin='0';
+                      tabList[i].style.verticalAlign='top';
+                      tabList[i].style.display='table-cell';
+                }
+
+                for(var i = 0 ;i<tabLi.length; i++ ){
+                    tabLi[i].start = i;
+                    tabLi[i].onclick = function(){
+                        var star = this.start;
+                        for(var i = 0 ;i<tabLi.length; i++ ){
+                            tabLi[i].className='';
+                        };
+                        tabLi[star].className='active';
+                        init.lineAnme(lineDiv,windowWidth/tabLi.length*star)
+                        init.translate(tabBox,windowWidth,star);
+                        endX= -star*windowWidth;
+                    }
+                }
+
+                function OnTab(star){
+                    if(star<0){
+                        star=0;
+                    }else if(star>=tabLi.length){
+                        star=tabLi.length-1
+                    }
+                    for(var i = 0 ;i<tabLi.length; i++ ){
+                        tabLi[i].className='';
+                    };
+
+					tabLi[star].className='active';
+                    init.translate(tabBox,windowWidth,star);
+                    endX= -star*windowWidth;
+                };
+			};
+
+            var init={
+                translate:function(obj,windowWidth,star){
+                    obj.style.webkitTransform='translate3d('+-star*windowWidth+'px,0,0)';
+                    obj.style.webkitTransition='all 0.3s ease-in-out';
+                },
+                touchs:function(obj,windowWidth,tar,distance,endX){
+                    obj.style.webkitTransform='translate3d('+(distance+endX)+'px,0,0)';
+                    obj.style.webkitTransition='all 0.1s ease-in-out';
+                },
+                lineAnme:function(obj,stance){
+                    obj.style.webkitTransform='translate3d('+stance+'px,0,0)';
+                    obj.style.webkitTransition='all 0.1s ease-in-out';
+                },
+                back:function(obj,windowWidth,tar,distance,endX,time){
+                    obj.style.webkitTransform='translate3d('+(distance+endX)+'px,0,0)';
+                    obj.style.webkitTransition='all '+time+'s ease-in-out';
+                },
+            }
+
+        $(function () {
+            $(".static").click(function(){
+					location.href="/v1/html5/expose/info"
+				});
+//            var invest_month = '{{response_data.lingshi_array}}'.split(',');
+//            var invest_array_list = new Array([]);
+//            var invest_array = '{{response_data.lingshi_array}}'.split(',');
+//			for(i=0; i<invest_array.length; i++){
+//			  invest_array_list[i] = invest_array[i]
+//			}
+
+			//统计图
+
+			var chartData = [{
+                "country": "{{response_data.invest_month.0}}月",
+                    "visits": 14.38
+            }, {
+                "country": "{{response_data.invest_month.1}}月",
+                    "visits": 15.24
+            }, {
+                "country": "{{response_data.invest_month.2}}月",
+                    "visits": 16.60
+            },{
+                "country": "{{response_data.invest_month.3}}月",
+                    "visits": 17.79
+            }, {
+                "country": "{{response_data.invest_month.4}}月",
+                    "visits": 19.07
+            },{
+                "country": "{{response_data.invest_month.5}}月",
+                    "visits": '{{response_data.invest_total_bill}}'
+            }];
+            var chart = AmCharts.makeChart("chartdiv", {
+                type: "serial",
+                dataProvider: chartData,
+                categoryField: "country",
+
+                graphs: [{
+                    valueField: "visits",
+                    colorField: "color",
+                    type: "column",
+                    lineAlpha: 0,
+                    fillAlphas: 1
+                }],
+
+                chartCursor: {
+                    cursorAlpha: 0,
+                    zoomable: false,
+                    categoryBalloonEnabled: false
+                },
+            });
+
+
+
+	        //地图
+	        $('#ChinaMap').SVGMap({
+
+            });
+
+
+		});
+
+
+        </script>
+		<script>
+			//定时器 异步运行
+			function hello(){
+				$.ajax({
+                        url: '/v1/html5/expose/data/info/ajax',
+                        type: 'GET',
+                        cache: false,
+                        success: function (response_data) {
+							var str0=response_data['stroke_count_list'][0] + '%';
+							var str1=response_data['stroke_count_list'][1] + '%';
+							var str2=response_data['stroke_count_list'][2] + '%';
+							var str3=response_data['stroke_count_list'][3] + '%';
+							$('#tzsj0').css('width', str0);
+							$('#tzsj1').css('width', str1);
+							$('#tzsj2').css('width', str2);
+							$('#tzsj3').css('width', str3);
+
+							$('#tzsj0').attr('data-value', str0);
+							$('#tzsj1').attr('data-value', str1);
+							$('#tzsj2').attr('data-value', str2);
+							$('#tzsj3').attr('data-value', str3);
+
+							$('#age0').css('width', response_data['ages'][0] + '%');
+							$('#age1').css('width', response_data['ages'][1] + '%');
+							$('#age2').css('width', response_data['ages'][2] + '%');
+							$('#age3').css('width', response_data['ages'][3] + '%');
+
+							$('#age0').attr('data-value', response_data['ages'][0] + '%');
+							$('#age1').attr('data-value', response_data['ages'][1] + '%');
+							$('#age2').attr('data-value', response_data['ages'][2] + '%');
+							$('#age3').attr('data-value', response_data['ages'][3] + '%');
+
+							//男女比例
+							var myChart = echarts.init(document.getElementById('myChart'));
+
+							option = {
+								series: [
+									{
+										type:'pie',
+										radius: [0],
+
+										label: {
+											normal: {
+												position: 'inner'
+											}
+										},
+									},
+									{
+										type:'pie',
+										radius: ['45%', '55%'],
+
+										data:[
+											{value: 45, name: '45%'},
+											{value: 55, name: '55%'},
+										]
+									}
+								]
+							};
+							myChart.setOption(option);
+
+
+
+                        }
+                    });
+			}
+			function hello02(){
+				//进度条
+				var progress = $(".progress-bar-inner");
+				progress.each(function (i){
+					var data = $(this).attr('data-value');
+					$(this).prev().find("span").html(data);
+				});
+			}
+			//使用方法名字执行方法
+			var t1 = window.setTimeout(hello,100);
+			var t4 = window.setTimeout(hello02,3000);
+			var t3 = window.setTimeout(hello02,5000);
+			var t2 = window.setTimeout(hello02, 10500);
+		</script>
+	</body>
+</html>

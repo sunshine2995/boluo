@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>五一七天乐</title>
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/labor.css') }}"/>
+		<script src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}"></script>
+	</head>
+	<body>
+		<div class="labor">
+			<p class="quan">五一小长假，独乐乐不如众乐乐，菠萝理财推出“我劳动，我光荣；我理财，赢收益”的活动，用户每天在菠萝理财完成当天的任务后即可获取当天的奖励。</p>
+			<p class="onetop">
+				1.连续做完六天任务即可直接完成终极任务。<br />
+				2.连续完成六天任务，累计需要141,000元。
+			</p>
+			<h2 class="dejl">完成任务得奖励</h2>
+			
+			<div class="seven">
+				{% if response_data.dict['1'].0 == 1 %}
+				<ul class="orange">
+					<li>第<b>1</b>天</li>
+					<li>
+						参与活动并分享即可直接领取该红包<br />
+						即获20元理财红包（起投金额6000元）和51菠萝币
+					</li>
+					<li>
+						{% if response_data.dict['1'].1 == 1%}
+						<div class="state"><button>待完成</button></div>
+
+						{% elif response_data.dict['1'].1 == 2%}
+						<div class="quyaoqing"><button>去邀请</button></div>
+
+						{% elif response_data.dict['1'].1 == 3%}
+						<div class="state"><button>已完成</button></div>
+
+						{% endif %}
+					</li>
+
+				</ul>
+				{% elif response_data.dict['1'].1 == 0 %}
+				<ul class="orange_copy">
+					<li>第<b>1</b>天</li>
+					<li>
+						参与活动并分享即可直接领取该红包<br />
+						即获***元理财红包（起投金额***元）和***菠萝币
+					</li>
+				</ul>
+				{% elif response_data.dict['1'].1 == 3 %}
+				<ul class="orange_cotwo">
+					<li>第<b>1</b>天</li>
+					<li>
+						参与活动并分享即可直接领取该红包<br />
+						即获20元理财红包（起投金额6000元）和51菠萝币
+					</li>
+					<li>
+						<div class="state"><button>已完成</button></div>
+					</li>
+				</ul>
+				{% else %}
+				<ul class="orange_copy">
+					<li>第<b>1</b>天</li>
+					<li>
+						参与活动并分享即可直接领取该红包<br />
+						即获20元理财红包（起投金额6000元）和51菠萝币
+					</li>
+				</ul>
+				{% endif %}
+				{% if response_data.dict['2'].0 == 1 %}
+				<ul class="orange">
+					<li>第<b>2</b>天</li>
+					<li>
+						单笔投资满6000元任何期限的标<br />
+						即获58元理财红包（起投16000元）和88菠萝币
+					</li>
+
+					<li>
+						{% if response_data.dict['2'].1 == 1%}
+						<div class="state"><button>待完成</button></div>
+
+						{% elif response_data.dict['2'].1 == 2%}
+						<div class="qu"><button>去完成</button></div>
+
+						{% elif response_data.dict['2'].1 == 3%}
+						<div class="state"><button>已完成</button></div>
+
+						{% endif %}
+					</li>
+				</ul>
+				{% elif response_data.dict['2'].1 == 0 %}
+				<ul class="orange_copy">
+					<li>第<b>2</b>天</li>
+					<li>
+						单笔投资满***元任何期限的标<br />
+						即获***元理财红包（起投金额***元）和***菠萝币
+					</li>
+				</ul>
+				{% elif response_data.dict['2'].1 == 3 %}
+				<ul class="orange_cotwo">
+					<li>第<b>2</b>天</li>
+					<li>
+						单笔投资满6000元任何期限的标<br />
+						即获58元理财红包（起投16000元）和88菠萝币
+					</li>
+					<li>
+						<div class="state"><button>已完成</button></div>
+					</li>
+				</ul>
+				{% else %}
+				<ul class="orange_copy">
+					<li>第<b>2</b>天</li>
+					<li>
+						单笔投资满6000元任何期限的标<br />
+						即获58元理财红包（起投16000元）和88菠萝币
+					</li>
+				</ul>
+				{% endif %}
+
+				{% if response_data.dict['3'].0 == 1 %}
+				<ul class="orange">
+					<li>第<b>3</b>天</li>
+					<li>
+						单笔投资满16000元90天期限的标<br />
+						即获0.5%加息券（起投金额28000元）和
+						88元理财红包（起投金额28000元）
+					</li>
+					<li>
+						{% if response_data.dict['3'].1 == 1%}
+						<div class="state"><button>待完成</button></div>
+
+						{% elif response_data.dict['3'].1 == 2%}
+						<div class="qu"><button>去完成</button></div>
+
+						{% elif response_data.dict['3'].1 == 3%}
+						<div class="state"><button>已完成</button></div>
+
+						{% endif %}
+					</li>
+				</ul>
+				{% elif response_data.dict['3'].1 == 0 %}
+				<ul class="orange_copy">
+					<li>第<b>3</b>天</li>
+					<li>
+						单笔投资满***元***天期限的标<br />
+						即获***%加息券（起投金额***元）和
+						***元理财红包（起投金额***元）
+					</li>
+				</ul>
+				{% elif response_data.dict['3'].1 == 3 %}
+				<ul class="orange_cotwo">
+					<li>第<b>3</b>天</li>
+					<li>
+						单笔投资满16000元90天期限的标<br />
+						即获0.5%加息券（起投金额28000元）和
+						88元理财红包（起投金额28000元）
+					</li>
+					<li>
+						<div class="state"><button>已完成</button></div>
+					</li>
+				</ul>
+				{% else %}
+				<ul class="orange_copy">
+					<li>第<b>3</b>天</li>
+					<li>
+						单笔投资满16000元90天期限的标<br />
+						即获0.5%加息券（起投金额28000元）和
+						88元理财红包（起投金额28000元）
+					</li>
+				</ul>
+				{% endif %}
+
+				{% if response_data.dict['4'].0 == 1 %}
+				<ul class="orange">
+					<li>第<b>4</b>天</li>
+					<li>
+						单笔投资满28000元90天期限标<br />
+						即获0.6%加息卷（起投金额40000元）和
+						128元理财红包（起投金额40000元）
+					</li>
+					<li>
+						{% if response_data.dict['4'].1 == 1%}
+						<div class="state"><button>待完成</button></div>
+
+						{% elif response_data.dict['4'].1 == 2%}
+						<div class="qu"><button>去完成</button></div>
+
+						{% elif response_data.dict['4'].1 == 3%}
+						<div class="state"><button>已完成</button></div>
+
+						{% endif %}
+					</li>
+				</ul>
+				{% elif response_data.dict['4'].1 == 0 %}
+				<ul class="orange_copy">
+					<li>第<b>4</b>天</li>
+					<li>
+						单笔投资满***元***天期限标<br />
+						即获***%加息卷（起投金额***元）和
+						***元理财红包（起投金额***元）
+					</li>
+				</ul>
+				{% elif response_data.dict['4'].1 == 3 %}
+				<ul class="orange_cotwo">
+					<li>第<b>4</b>天</li>
+					<li>
+						单笔投资满28000元90天期限标<br />
+						即获0.6%加息卷（起投金额40000元）和
+						128元理财红包（起投金额40000元）
+					</li>
+					<li>
+						<div class="state"><button>已完成</button></div>
+					</li>
+				</ul>
+				{% else %}
+				<ul class="orange_copy">
+					<li>第<b>4</b>天</li>
+					<li>
+						单笔投资满28000元90天期限标<br />
+						即获0.6%加息卷（起投金额40000元）和
+						128元理财红包（起投金额40000元）
+					</li>
+				</ul>
+				{% endif %}
+				{% if response_data.dict['5'].0 == 1 %}
+				<ul class="orange">
+					<li>第<b>5</b>天</li>
+					<li>
+						单笔投资满40000元180天期限标<br />
+						即获0.8 %加息券（起投金额51000元）、
+						268元理财红包（起投金额51000元）和300菠萝币
+					</li>
+					<li>
+						{% if response_data.dict['5'].1 == 1%}
+						<div class="state"><button>待完成</button></div>
+
+						{% elif response_data.dict['5'].1 == 2%}
+						<div class="qu"><button>去完成</button></div>
+
+						{% elif response_data.dict['5'].1 == 3%}
+						<div class="state"><button>已完成</button></div>
+
+						{% endif %}
+					</li>
+				</ul>
+				{% elif response_data.dict['5'].1 == 0 %}
+				<ul class="orange_copy">
+					<li>第<b>5</b>天</li>
+					<li>
+						单笔投资满***元***天期限标<br />
+						即获***%加息券（起投金额***元）、
+						***元理财红包（起投金额***元）和***菠萝币
+					</li>
+				</ul>
+				{% elif response_data.dict['5'].1 == 3 %}
+				<ul class="orange_cotwo">
+					<li>第<b>5</b>天</li>
+					<li>
+						单笔投资满40000元180天期限标<br />
+						即获0.8 %加息券（起投金额51000元）、
+						268元理财红包（起投金额51000元）和300菠萝币
+					</li>
+					<li>
+						<div class="state"><button>已完成</button></div>
+					</li>
+				</ul>
+				{% else %}
+				<ul class="orange_copy">
+					<li>第<b>5</b>天</li>
+					<li>
+						单笔投资满40000元180天期限标<br />
+						即获0.8 %加息券（起投金额51000元）、
+						268元理财红包（起投金额51000元）和300菠萝币
+					</li>
+				</ul>
+				{% endif %}
+				{% if response_data.dict['6'].0 == 1 %}
+				<ul class="orange">
+					<li>第<b>6</b>天</li>
+					<li>
+						单笔投资满51000元180天期限标<br />
+						即获1.2%加息券（起投金额80000元）、
+						308元理财红包（起投金额80000元）和510菠萝币
+					</li>
+					<li>
+						{% if response_data.dict['6'].1 == 1%}
+						<div class="state"><button>待完成</button></div>
+
+						{% elif response_data.dict['6'].1 == 2%}
+						<div class="qu"><button>去完成</button></div>
+
+						{% elif response_data.dict['6'].1 == 3%}
+						<div class="state"><button>已完成</button></div>
+
+						{% endif %}
+					</li>
+				</ul>
+				{% elif response_data.dict['6'].1 == 0 %}
+				<ul class="orange_copy">
+					<li>第<b>6</b>天</li>
+					<li>
+						单笔投资满***元***天期限标<br />
+						即获***%加息券（起投金额***元）、
+						***元理财红包（起投金额***元）和***菠萝币
+					</li>
+				</ul>
+				{% elif response_data.dict['6'].1 == 3 %}
+				<ul class="orange_cotwo">
+					<li>第<b>6</b>天</li>
+					<li>
+						单笔投资满51000元180天期限标<br />
+						即获1.2%加息券（起投金额80000元）、
+						308元理财红包（起投金额80000元）和510菠萝币
+					</li>
+					<li>
+						<div class="state"><button>已完成</button></div>
+					</li>
+				</ul>
+				{% else %}
+				<ul class="orange_copy">
+					<li>第<b>6</b>天</li>
+					<li>
+						单笔投资满51000元180天期限标<br />
+						即获1.2%加息券（起投金额80000元）、
+						308元理财红包（起投金额80000元）和510菠萝币
+					</li>
+				</ul>
+				{% endif %}
+				{% if response_data.dict['7'].0 == 1 %}
+				<ul class="orange">
+					<li>第<b>7</b>天</li>
+					<li>
+						连续完成6天任务即可直接领取<br />
+						即获1.5%加息券（起投金额100000元）、
+						510元理财红包（起投金额100000元）和5100菠萝币
+					</li>
+					<li>
+						{% if response_data.dict['7'].1 == 1%}
+						<div class="state"><button>待完成</button></div>
+
+						{% elif response_data.dict['7'].1 == 2%}
+						<div class="qu"><button>去完成</button></div>
+
+						{% elif response_data.dict['7'].1 == 3%}
+						<div class="state"><button>已完成</button></div>
+
+						{% endif %}
+					</li>
+				</ul>
+				{% elif response_data.dict['7'].1 == 0 %}
+				<ul class="orange_copy">
+					<li>第<b>7</b>天</li>
+					<li>
+						第七天直接可领取<br />
+						即获***%加息券（起投金额***元）、
+						***元理财红包（起投金额***元）和***菠萝币
+					</li>
+				</ul>
+				{% elif response_data.dict['7'].1 == 3 %}
+				<ul class="orange_cotwo">
+					<li>第<b>7</b>天</li>
+					<li>
+						连续完成6天任务即可直接领取<br />
+						即获1.5%加息券（起投金额100000元）、
+						510元理财红包（起投金额100000元）和5100菠萝币
+					</li>
+					<li>
+						<div class="state"><button>已完成</button></div>
+					</li>
+				</ul>
+				{% else %}
+				<ul class="orange_copy">
+					<li>第<b>7</b>天</li>
+					<li>
+						连续完成6天任务即可直接领取<br />
+						即获1.5%加息券（起投金额100000元）、
+						510元理财红包（起投金额100000元）和5100菠萝币
+					</li>
+				</ul>
+				{% endif %}
+			</div>
+
+			<div class="picwz"></div>
+			<ul class="activities">
+				<li>活动时间：4月29日0:00——5月5日23:59</li>
+				<li>活动内容：本活动持续七天，每天都有对应的任务，完成任务可领取相应的奖励。第一天可直接领取当天奖励，之后每天需完成相应的任务才可领取对应的奖励；前六天的任务全部完成，到第七天可直接领取奖励。活动奖励包括抵扣红包、加息券、菠萝币。</li>
+				<li>活动规则</li>
+				<li>1、完成每日指定任务领取每日奖励；任务中断则失去第七天大奖资格，每日完成任务奖励仍可领取。</li>
+				<li>2、奖励说明：活动领取的红包和加息券都可在“我的账户—我的优惠券”中查看，<span>投标时当加息券和红包都满足要求只能选一个使用</span>，红包有效期为七天，加息券有效期一个月；活动领取的菠萝币可在“积分商城—我的菠萝”中查看。</li>
+				<li>3、新手标不参与此次活动，PC端不参与此活动。</li>
+				<li>本次活动最终解释权归菠萝理财所有。</li>
+				<li>如有任何疑问，请咨询菠萝理财客服：400-032-0596。</li>
+			</ul>
+		</div>
+		<div class="explain">
+			<div class="invitation">
+				<p>您还没有登录!</p>
+				<button class="denglu">登录</button>
+				<button class="quxiao">取消</button>
+			</div>
+		</div>
+		<script>
+			$(function(){
+				$(".qu").click(function(){
+					if ('{{response_data.is_login}}' =='True'){
+					    if ('{{response_data.day}}' == '7'){
+					        $.ajax({
+                                url: '/v1/activity/labour/' + '{{response_data.phone}}',
+                                type: 'GET',
+                                cache: false,
+                                success: function (response_data) {
+									 window.jsObj.HtmlcallJava5();
+                                }
+                            })
+
+					    }else{
+						    window.jsObj.HtmlcallJava5();
+						}
+					} else {
+					    $(".explain,.invitation").css("display","block");
+						$(".registered").hide();
+						$(".quxiao").click(function(){
+							$(".explain").hide();
+						});
+						$(".denglu").click(function () {
+                              window.jsObj.HtmlcallJava2();
+                    	});
+					}
+
+				})
+
+				$(".quyaoqing").click(function () {
+				    if ('{{response_data.is_login}}' =='True'){
+						try{
+							window.jsObj.HtmlcallJava4();
+						}catch(error){
+							window.location.href = "/v1/activity/labour/invate?phone=" + '{{response_data.phone}}'
+						}
+
+                    } else {
+						$(".explain,.invitation").css("display","block");
+						$(".registered").hide();
+						$(".quxiao").click(function(){
+						$(".explain").hide();
+						});
+						$(".denglu").click(function () {
+                              window.jsObj.HtmlcallJava2();
+                    	});
+					}
+                })
+			})
+			/*function caa(i,y){
+				$(".orange").hide();
+			    $(".orange").eq(i-1).show();
+			    $(".orange_copy").eq(i-1).hide();
+			    $(".orange").eq(i).show();
+			    $(".orange_copy").eq(i).hide();
+			    
+			    $(".orange li:last-child").eq(y).text('待完成').css({"background-color":"#ae5110","color":"#fff"});
+			}
+			caa(3,3);*/
+			
+			/*$(function(){
+				$.ajax({
+				    type : "get",
+				    async:false,
+				    url : "",
+				    dataType : "jsonp",
+				    jsonp: "",
+				    jsonpCallback:"success_jsonpCallback",
+				    success : function(json){
+				        alert(json);
+				        alert(json[0].name);
+				    },
+				    error:function(){
+				        alert('AAA');
+				       
+				    }
+				});
+			});*/
+		</script>
+	</body>
+</html>

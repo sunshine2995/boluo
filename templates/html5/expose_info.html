@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>信息披露</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/disclosure.css') }}"/>
+		<script src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/map/chinaMapConfig.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/map/map-min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/map/raphael-min.js') }}"></script>
+	</head>
+	<body>
+		<div class="disclo" id="wrap">
+            <ul class="tabClick">
+                <li class="active">机构信息</li>
+                <li>风险教育</li>
+                <li>法律法规</li>
+                <li>平台数据</li>
+            </ul>
+            <div class="lineBorder">
+                <div class="lineDiv"><!--移动的div--></div>
+            </div>
+            <div class="tabCon">
+                <div class="tabBox">
+                    <div class="tabList">
+                    	<ul class="jigou">
+                    		<li class="basic">1、菠萝理财基本信息</li>
+                    		<li class="archite">2、菠萝理财组织架构</li>
+                    		<li class="matters">3、菠萝理财重大事项信息</li>
+                    		<li class="agree">4、菠萝理财注册协议</li>
+                    	</ul>
+                    </div>
+                    <div class="tabList">
+                    	<ul class="jiaoyu">
+                    		<b>1、正确认识与规范发展互联网金融</b>
+                    		<li>2013年以来，互联网金融在国内风生水起、备受追捧。然而随着互联网金融潜在风险的逐步暴露，特别是e租宝、泛亚等事件的接连发生，社会舆论出现了一定程度的转向。在当前众说纷纭、莫衷一是的情况下，笔者认为有必要廓清两个基本问题：一是如何正确认识互联网金融，二是如何规范发展互联网金融。</li>
+                    		<b>2、互联网金融的概念</b>
+                    		<li>互联网金融是传统金融机构与互联网企业利用互联网技术和信息通信技术实现资金融通、支付、投资和信息中介服务的新型金融业务模式。互联网与金融深度融合是大势所趋，将对金融产品、业务、组织和服务等方面产生更加深刻的影响。</li>
+                    		<b>3、以教育促理性 以规范促创新 推动互联网金融健康发展</b>
+                    		<li>过去几年，互联网金融已成为市场热点与创新热词，信息技术与互联网将许多看似不可能的变成可能，甚至是现实。商业银行电子银行快速发展，主要机构的电子化业务替代率、分流率已逾八成；电子商务的快速发展，推动了电子支付与移动支付的迅速普及。</li>
+                    		<b>4、立足服务实体经济 推动互联网金融规范健康发展</b>
+                    		<li>自2014年以来，“互联网金融”一词已经连续3年被写进《政府工作报告》，从“促进健康发展”变为“规范发展”。目前，全国范围正在开展互联网金融风险专项整治，促进互联网金融规范发展已成为当前主旋律，也是互联网金融能够长期健康发展的坚实基础。规范发展互联网金融，其立足点是服务实体经济，解决金融服务短板，提高金融供给能力。规范发展互联网金融也必须从有效供给入手，多管齐下。</li>
+                    		<b>5、互联网金融监管体制的法治化建议</b>
+                    		<li>近年来，中国互联网金融呈现出高速发展势头与乱象丛生的局面，P2P、股权众筹、第三方支付、互联网保险、共享经济等平台不断拓展着互联网金融的领域，给社会各个层面带来了巨大冲击。既为“双创”提供了前所未有的动力，也对监管带来了前所未有的压力。</li>
+                    	</ul>
+                    </div>
+                    <div class="tabList">
+                    	<ul class="flfg">
+                    		<p>用户在菠萝理财上合法投资的收益受法律保护菠萝理财聘用了泽大律师事务所、京师律师事务所两个律所为常年法律顾问。 </p>
+                    		<img src="{{ url_for('static', filename='images/disclosure/zeda.png') }}" />
+                    		<b>泽大律师事务所</b>
+                    		
+                    		<li>浙江泽大律师事务所于2001年由浙江浙大律师事务所改制设立。    浙江泽大律师事务所是浙江省规模最大的综合型律师事务所之一，2005年获得中华全国律协评选的首批“全国优秀律师事务所”。依托浙江大学光华法学院的学术底蕴和人文积累，泽大所在竞争激烈的法律服务市场中领先，并形成了鲜明的性格与文化。泽大律师恪守法律精神与传统，同时保持对社会生活的关切，不断创新服务。泽大律师对中国的法律环境和社会现实有着深入的了解，具备高度的敬业精神、专业能力和职业素养，是客户合法权益的可靠保障。</li>
+                    		<img src="{{ url_for('static', filename='images/disclosure/jings.png') }}" />
+                    		<b>京师律师事务所</b>
+                    		
+                    		<li>京师律师事务所是一家具有22年历史的大型综合性律师事务所，肇造于1994年，总部设在北京，是传统与新型管理模式相结合的中国合伙制律师事务所,京师拥有一批实战经验丰富的精英律师，大多数在国内外著名大学的法学院系接受过系统的法学教育，获得法学博士、硕士学位，许多律师还具有注册会计师、税务师或高级人力资源管理师等资格。京师律师事务所还聘请了一批国内外著名院校专家、学者、各界名流担任顾问，为京师战略和具体案件提供有力支持。 </li>
+                    		<b>关于菠萝理财提供居间服务的法律基础及互联网个人借贷合同的合法性，请参阅下文：</b>
+                    		<b>.关于投资人及借款人双方民间借贷的合法性：明确合法</b>
+                    		<li>根据《合同法》第196条规定"借款合同是借款人向贷款人借款，到期返还借款并支付利息的合同"，《合同法》允许普通民事主体之间发生借贷关系，并允许出借方到期可以收回本金和符合法律规定的利息。</li>
+                    		<b>.关于菠萝理财提供居间撮合服务的合法性：明确合法</b>
+                    		<li>根据《合同法》第23章关于"居间合同"的规定，特别是第424条规定的"居间合同是居间人向委托人报告订立合同的机会或者提供订立合同的媒介服务，委托人支付报酬的合同"，菠萝理财为民间借贷提供撮合借贷双方形成借贷关系的居间服务有着明确的法律基础。</li>
+                    		<b>.关于电子合同的合法性及可执行性：现行法律明确确定了合同效力</b>
+                    		<li>根据《电子签名法》的规定，民事活动中的合同或者其他文件、单证等文书，当事人可以约定使用电子签名、数据电文，不能因为合同采用电子签名、数据电文就否定其法律效力。同时，《电子签名法》中还规定，可靠的电子签名与手写签名或者盖章具有同等的法律效力。明确肯定了符合条件的电子签名与手写签名或盖章具有同等的效力。</li>
+                    		<b>.关于投资人在菠萝理财获得的出借投资收益的合法性:为合法收益,受到法律保护</b>
+                    		<li>根据最高人民法院《关于人民法院审理借贷案件的若干意见》第6条："民间借贷的利率可以适当高于银行的利率，各地人民法院可以根据本地区的实际情况具体掌握，但最高不得超过银行同类贷款利率的四倍，（包含利率本款）。超出此限度的，超出部分的利息不予保护。"当期人民银行一年期基准贷款利率为6.00%，则当期基准贷款利率的四倍为24.00%，菠萝理财的出借投资收益低于24.00%，为合法利息收益，受到法律保护。</li>
+                    	</ul>
+                    </div>
+                    <div class="tabList tabone">
+                    	<!--数据总览-->
+                    	<div class="plattop">
+                    		<p class="zongl">数据总览</p>
+                    		<p class="jiez">截止{{response_data.time}}</p>
+                    		<dl class="zonge">
+                    			<dt><img src="{{ url_for('static', filename='images/disclosure/huang.png') }}" /> </dt>
+                    			<dd>
+                    				<p>交易总额：<span>{{response_data.invest_total}}元</span></p>
+                    				<p>加入的投资人总数：<span>{{response_data.person_num}}人</span></p>
+                    			</dd>
+                    		</dl>
+                    	</div>
+                    	<!--累计投资金额-->
+                    	<div class="tongjit">
+                    		<p class="leiji">累计投资金额</p>
+                    		<a class="unit">(单位:亿元)</a>
+                    		<div id="chartdiv"></div>
+                    		<p class="seven">2017年</p>
+                    	</div>
+                    	<!--投资数据-->
+                    	<div class="shuju">
+                    		<p class="zongl">投资数据</p>
+                    		<p class="jiez">用户投资金额</p>
+                    		
+                    		<!--进度条-->
+                    		<div class="jindu">
+
+								<div class="progress_bar">
+									<div class="pro-bar">
+										<small class="progress_bar_title">
+											1万以下
+											<span class="progress_number" style="color: #ff2d2d;">%</span>
+										</small>
+										<span id="tzsj0" class="progress-bar-inner" style="background-color: #ff2d2d;" data-value={{response_data.stroke_count_list[0]}}></span><!--data-percentage-value="80"-->
+									</div>
+								</div>
+
+								<div class="progress_bar">
+									<div class="pro-bar">
+										<small class="progress_bar_title">
+											1~3万
+											<span class="progress_number" style="color: #fc8d45;">%</span>
+										</small>
+										<span id="tzsj1" class="progress-bar-inner" style="background-color: #fc8d45;" data-value={{response_data.stroke_count_list[1]}}></span>
+									</div>
+								</div>
+
+								<div class="progress_bar">
+									<div class="pro-bar">
+										<small class="progress_bar_title">
+											3~5万
+											<span class="progress_number" style="color: #ffae21;">%</span>
+										</small>
+										<span id="tzsj2" class="progress-bar-inner" style="background-color: #ffae21;" data-value={{response_data.stroke_count_list[2]}}></span>
+									</div>
+								</div>
+
+								<div class="progress_bar">
+									<div class="pro-bar">
+										<small class="progress_bar_title">
+											5~10万
+											<span class="progress_number" style="color: #3dbff8;">%</span>
+										</small>
+										<span id="tzsj3" class="progress-bar-inner" style="background-color: #3dbff8;" data-value={{response_data.stroke_count_list[3]}}></span>
+									</div>
+								</div>
+
+							</div>
+							<div class="tishi">*菠萝理财已经撮成合同笔数：{{response_data.pro_num}}笔</div>
+                    	</div>
+                    	
+                    	<!--地域分布-->
+                    	<div class="regional">
+                    		<p class="zongl">地域分布</p>
+					        <div id="ChinaMap"></div>
+					        <div id="stateTip"></div>
+				        	<h1 class="shouhy">菠萝理财最受欢迎地区</h1>
+					        <div class="paiming">
+					        	<ul>
+					        		<span>排名</span>
+					        		<li>1</li>
+					        		<li>2</li>
+					        		<li>3</li>
+					        		<li>4</li>
+					        		<li>5</li>
+					        	</ul>
+
+					        	<ul>
+					        		<span>地区</span>
+									{% for i in response_data.percentage %}
+					        		<li>{{i[0]}}</li>
+									{% endfor %}
+					        	</ul>
+					        	<ul>
+					        		<span>占比</span>
+									{% for i in response_data.percentage %}
+					        		<li>{{i[1]}} %</li>
+					        		{% endfor %}
+					        	</ul>
+					        </div>
+                    	</div>
+                    	
+                    	<!--投资人数据-->
+                    	<div class="touzir">
+                    		<p class="leiji">投资人数据</p>
+                    		<p class="jiez">年龄比例分布</p>
+                    		<!--进度条-->
+                    		<div class="jindu">
+
+								<div class="progress_bar">
+									<div class="pro-bar">
+										<small class="progress_bar_title">
+											60后
+											<span class="progress_number" style="color: #ff2d2d;">%</span>
+										</small>
+
+										<span id="age0" class="progress-bar-inner"  style="background-color: #ff2d2d;" data-value="{{response_data.ages.0}}"></span><!--data-percentage-value="80"-->
+									</div>
+								</div>
+				
+								<div class="progress_bar">
+									<div class="pro-bar">
+										<small class="progress_bar_title">
+											70后
+											<span class="progress_number" style="color: #fc8d45;">%</span>
+										</small>
+										<span id="age1" class="progress-bar-inner" style="background-color: #fc8d45;" data-value="{{response_data.ages.1}}"></span>
+									</div>
+								</div>
+				
+								<div class="progress_bar">
+									<div class="pro-bar">
+										<small class="progress_bar_title">
+											80后
+											<span class="progress_number" style="color: #ffae21;">%</span>
+										</small>
+										<span id="age2" class="progress-bar-inner" style="background-color: #ffae21;" data-value="{{response_data.ages.2}}"></span>
+									</div>
+								</div>
+				
+								<div class="progress_bar">
+									<div class="pro-bar">
+										<small class="progress_bar_title">
+											90后
+											<span class="progress_number" style="color: #3dbff8;">%</span>
+										</small>
+										<span id="age3" class="progress-bar-inner" style="background-color: #3dbff8;" data-value="{{response_data.ages.3}}"></span>
+									</div>
+								</div>
+							</div>
+							<p class="jiez">性别比例分布</p>
+							<div id="myChart"></div>
+						    <ul class="bili">
+						    	<li><span class="nan"></span>男性</li>
+						    	<li><span class="nv"></span>女性</li>
+						    </ul>
+                    	</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!--弹出-->
+            
+            <!--基本信息-->
+            <div class="ljbasic">
+            	<h1>基本信息</h1>
+            	<div class="tuica"></div>
+            	<table class="biaog" border="1" cellpadding="0" cellspacing="0" width="100%">
+            		<!--<tr>
+						<th height="100" colspan="2" style="font-size:18px;text-align:center">总表头</th>
+					</tr>-->
+					<tr>
+						<th>全称及简称</th>
+						<td>菠萝理财（www.boluolc.com）隶属于北京朴素磐石投资管理有限公司。（简称“菠萝理财”）</td>
+					</tr>
+					<tr>
+						<th>注册/实缴资本</th>
+						<td>5,000万元</td>
+					</tr>
+					<tr>
+						<th>注册地址</th>
+						<td>北京市海淀区高梁桥斜街59号中坤大厦13层1301室</td>
+					</tr>
+					<tr>
+						<th>成立时间</th>
+						<td>2014年8月8日</td>
+					</tr>
+					<tr>
+						<th>法定代表人</th>
+						<td>孙志远</td>
+					</tr>
+					<tr>
+						<th>经营范围</th>
+						<td>投资管理；资产管理；投资咨询；财务咨询（不得开展审计、验资、查帐、评估、会计咨询、代理记账等需经专项审批的业务，不得出具相应的审计报告、验资报告、查帐报告、评估报告等文字材料）；经济贸易咨询；技术推广、技术服务；数据处理（数据处理中的银行卡中心、PUE值在1.5以上的云计算数据中心除外）；经营电信业务。
+（“1、未经有关部门批准，不得以公开方式募集资金；2、不得公开开展证券类产品和金融衍生品交易活动；3、不得发放贷款；4、不得对所投资企业以外的其他企业提供担保；5、不得向投资者承诺投资本金不受损失或者承诺最低收益”；经营电信业务以及依法须经批准的项目，经相关部门批准后依批准的内容开展经营活动。）</td>
+					</tr>
+					<tr>
+						<th>联系方式</th>
+						<td>地址：北京市海淀区高梁桥斜街59号中坤大厦13层1301室<br />电话：400-032-0596<br>邮编：100089</td>
+					</tr>
+					<tr>
+						<th>网站或平台信息</th>
+						<td>
+							网站或平台地址：www.boluolc.com
+							<br />
+							平台名称：菠萝理财
+							<br />
+							平台上线运营时间：2015年10月15日正式上线运营
+							<br />
+							相应电信业务经营许可信息：京ICP备15006762号-2
+						</td>
+					</tr>
+					<tr>
+						<th>注册协议模板</th>
+						<td style="color: #fec400;">注册协议</td>
+					</tr>
+					<tr>
+						<th>资金存管情况</th>
+						<td>2017年3月，菠萝理财宣布，平台与新网银行正式签订资金存管服务协议，标志着菠萝理财正式接入银行存管业务，合规化建设再上新台阶，为用户资金安全再添了一份安全保障。菠萝理财接入资金存管后，新网银行能够完整记录网络借贷用户信息、交易信息及其他关键信息，新网银行将为菠萝理财开设独立的银行存管账户系统，并为出借人和借款人开设独立的个人银行存管账户，进行分账式管理，操作透明。</td>
+					</tr>
+				</table>
+            </div>
+            
+            <!--组织架构-->
+            <div class="jiag">
+            	<h1>组织架构</h1>
+            	<div class="tuicb"></div>
+            	<ul class="hemox">
+            		<li class="hong">风控委员会</li>
+            		<li class="huang">运营中心</li>
+            		<li class="lan">研发中心</li>
+            	</ul>
+            	<ul class="hemox">
+            		<li class="shen">战略合作部</li>
+            		<li class="lv">人力资源部</li>
+            		<li class="hong">财务部</li>
+            	</ul>
+            	<ul class="hemox">
+            		<li class="huang">法务部</li>
+            		<li class="lan">行政部</li>
+            	</ul>
+            	<table class="biaog" border="1" cellpadding="0" cellspacing="0" width="100%">
+            		<tr>
+						<th height="30" colspan="2" style="font-size:3.6vmin;text-align:center;font-weight: bold;">实际控制人与持股5%以上的股东名单</th>
+					</tr>
+					<tr>
+						<th>实际控制人</th>
+						<td>孙志远</td>
+					</tr>
+					<tr>
+						<th>持股5%以上的股东</th>
+						<td>孙志远、李保萍</td>
+					</tr>
+				</table>
+				<table class="biaog" border="1" cellpadding="0" cellspacing="0" width="100%">
+            		<tr>
+						<th height="30" colspan="2" style="font-size:3.6vmin;text-align:center;font-weight: bold;">董事、监事人员名单</th>
+					</tr>
+					<tr>
+						<th>执行董事/<br />总经理</th>
+						<td>孙志远</td>
+					</tr>
+					<tr>
+						<th>监事</th>
+						<td>于海员</td>
+					</tr>
+				</table>
+        	</div>
+        	
+        	<!--重大事件-->
+            <div class="zhongd">
+            	<h1>重大事项信息</h1>
+            	<div class="tuicc"></div>
+        		<div class="ty-wq clearfix">
+                	<div class="ty-center">
+                    	<p class="word-positions">今天</p>
+                    	<ul>
+                    		<li>2017年3月
+                    			<p>菠萝理财携手新网银行正式签订资金存管服务协议</p>
+                    		</li>
+							<li>2017年3月
+								<p>菠萝理财与国内电子数据保全服务品牌易保全达成战略合作</p>
+							</li>
+                    		<li>2017年1月19日
+                    			<p>荣获“中关村高新技术企业认证”证书</p>
+                    		</li>
+							<li>2016年12月21日
+								<p>深圳前海股权交易中心正式挂牌</p>
+							</li>
+						    <li>2016年10月
+						    	<p>中能资本战略投资菠萝理财</p>
+						    </li>
+						    <li>2016年6月
+						    	<p>菠萝理财APP2.0上线</p>
+						    </li>
+                            <li>2016年1月15日
+                            	<p>菠萝理财手机APP上线</p>
+                            </li>
+                            <li>2016年1月9日
+                            	<p>菠萝理财荣获2015年度互联网金融消费者权益保护示范单位奖</p>
+                            </li>
+                            <li>2016年1月9日
+                            	<p>菠萝理财和数据保全机构安存网络科技有限公司达成合作</p>
+                            </li>
+                            <li>2015年10月27日
+                            	<p>菠萝理财和第三方支付连连银通电子支付有限公司达成合作</p>
+                            </li>
+                    		<li>2015年10月15日
+                    			<p>菠萝理财PC端上线运营</p>
+                    		</li>
+                    		<li>2015年9月19日
+                    			<p>理财平台首次改版升级，菠萝理财测试运营</p>
+                    		</li>
+                            <li>2015年8月26日
+                            	<p>菠萝理财和征信机构北京安融惠众征信有限公司达成合作</p>
+                            </li>
+                            <li>2015年6月22日
+                            	<p>马可波罗网战略投资菠萝理财</p>
+                            </li>
+                            <li>2015年3月15日
+                            	<p>理财平台上线运营</p>
+                            </li>
+                            <li>2015年2月26日
+                            	<p>菠萝理财和第三方支付天津融宝支付网络有限公司达成合作</p>
+                            </li>
+                            <li>2014年12月18日
+                            	<p>1号员工孔双双入职</p>
+                            </li>
+                            <li>2014年11月10日
+                            	<p>团队核心成员全职创业</p>
+                            </li>
+                            <li>2014年8月8日
+                            	<p>平台运营方北京朴素磐石投资管理有限公司成立</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ty-middle">
+                    	<p class="fz-positions"><img src="{{ url_for('static', filename='images/disclosure/fzlc.png') }}"/></p>
+                    	<ul>
+                        	<li class="stepR"><span>0</span></li>
+                            <li class="stepR"><span>1</span></li>
+                            <li class="stepR"><span>2</span></li>
+                            <li class="stepR"><span>3</span></li>
+                            <li class="stepR"><span>4</span></li>
+                            <li class="stepR"><span>5</span></li>
+                            <li class="stepR"><span>6</span></li>
+                            <li class="stepR"><span>7</span></li>
+                            <li class="stepR"><span>8</span></li>
+                            <li class="stepR"><span>9</span></li>
+                            <li class="stepR"><span>10</span></li>
+                            <li class="stepR"><span>11</span></li>
+                            <li class="stepR"><span>12</span></li>
+							<li class="stepR"><span>13</span></li>
+                            <li class="stepR"><span>14</span></li>
+                            <li class="stepR"><span>15</span></li>
+                            <li class="stepR"><span>16</span></li>
+                            <li class="stepR"><span>17</span></li>
+                            <li class="stepR"><span>18</span></li>
+                        </ul>
+                    </div>
+                </div>
+            	<p class="hebing">
+            		合并、分立、解散或者申请破产：无<br />
+					从业机构受到刑事处罚：无<br />
+					从业机构受到重大行政处罚：无<br />
+					实际控制人与持股 5%以上的股东、董事、监事、高级管理 人员的变更信息：无
+            	</p>
+        	</div>
+        	
+        	<!--注册协议-->
+            <div class="zhuce">
+            	<h1>注册协议</h1>
+            	<div class="tuicd"></div>
+            	<ul class="xieyi">
+            		<li>菠萝理财（www.boluolc.com）隶属于北京朴素磐石投资管理有限公司。（简称“菠萝理财”）
+在您注册成为菠萝理财用户前，请您确认已认真、仔细阅读并充分理解本《菠萝理财注册协议》（以下简称“本协议”）的所有条款、内容。在您同意以下条款并注册后，您有权依据本协议的条款享受本平台的服务，同时有义务接受本协议条款的约束。</li>
+					<b>一、本协议的签署和修订</b>
+					<li>1.1 本协议的内容包括以下全部条款以及本平台已经发布的及将来可能发布的与注册用户有关的各项规则、协议（以下统称为“规则”），该等规则均为本协议不可分割的一部分，与本协议具有同等法律效力。</li>
+					<li>1.2 本平台有权根据需要修改本协议的内容，如本协议条款或本平台各项规则有任何变更，本平台将发布公告。经修订的内容一经公告，即于公告规定的特定生效日期自动生效。请您适时关注本平台公告，如不同意该等变更，请您在该等变更的公告刊载之日起72小时内联系本平台客服明确表明希望终止本协议，本平台收到申请后将与您协商本协议的终止以及终止后双方义务的履行。如您未在本款所述时限内提出申请，则视为您已经同意接受该等变更，经修订的规则一经公告，即于公告规定的特定生效日期自动生效将对您产生法律约束力。</li>
+					<li>1.3 您注册或使用本服务，即视为您已经充分理解和同意本协议全部条款、内容及各类规则。在您按照本平台的流程成功注册后，本协议即产生法律效力，您在此同意将全面接受和履行以电子形式签订本协议，您不得以未签署纸质协议为由否认本协议的效力。本协议是由您与本平台共同签订的，适用于您在本平台的全部活动。在您成功注册成为本平台用户时，您已经阅读、理解并接受本协议的全部条款及各类规则，如有违反而导致的任何法律后果，您将以自己的名义独立承担相应的法律责任。</li>
+					<li>1.4 本协议不涉及您与本平台的其他注册用户之间因网上交易而产生的法律关系及法律纠纷，相关纠纷由您自行解决，本平台不承担任何责任。</li>
+					<li>1.5 您在此同意将全面接受和履行与本平台以电子形式签订的任何法律文件，并承诺按该等法律文件享有和/或放弃相应的权利、承担和/或豁免相应的义务。</li>
+					<b>二、用户注册</b>
+					<li>2.1 作为本平台注册用户，您必须是符合中华人民共和国（以下简称“中国”）法律规定的具有完全民事权利能力及民事行为能力的自然人，或是经国家主管部门合法登记注册的、且具有完全民事权利能力及民事行为能力的法人。否则，您应立即停止注册、停止使用本平台服务，本平台有权随时终止您的注册进程、停止提供服务，您应对您的注册行为给本平台带来的全部损失承担赔偿责任，且您的监护人（适用于自然人）应承担连带责任。</li>
+					<li>2.2 您应提供真实身份信息且通过本平台认证后方可完成注册，您应保证向本平台提供的资料（包括但不限于电子邮箱地址、联系电话、联系地址、邮政编码、个人身份信息、征信信息、营业执照、组织机构代码证、税务登记证等）是真实、准确、完整、最新的。如您的资料发生变更，您应及时向本网站更新相应的资料，如因您未及时更新资料导致本平台无法向您提供服务或发生错误，由此导致的全部法律责任和后果将由您自行承担。</li>
+					<li>2.3 您承诺，在提交用户名、头像和简介等注册信息中不得出现违法和不良信息，不得有下列情形：<br />
+						（1）违反宪法或法律法规规定的；<br />
+						（2）危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；<br />
+						（3）损害国家荣誉和利益的，损害公共利益的；<br />
+						（4）煽动民族仇恨、民族歧视，破坏民族团结的；<br />
+						（5）破坏国家宗教政策，宣扬邪教和封建迷信的；<br />
+						（6）散布谣言，扰乱社会秩序，破坏社会稳定的；<br />
+						（7）散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；<br />
+						（8）侮辱或者诽谤他人，侵害他人合法权益的；<br />
+						（9）含有法律、行政法规禁止的其他内容的。<br />
+						对含以上或其他违法和不良信息的，本平台有权采取不予注册、通知您限期改正、暂停账号使用、关闭账户等措施。
+					</li>
+					<li>2.4 如您使用他人资料注册、使用本网站服务或向本平台提供的资料不符合2.2款、2.3款规定，由此引起的一切责任和后果均由您本人承担，本平台不承担任何法律责任。如因此给本平台及相关方造成任何损失，您应当承担赔偿责任。同时，本平台有权向互联网信息内容主管部门报告。</li>
+					<li>2.5 本平台只允许每位用户使用一个菠萝理财账户。如有证据证明或本平台有理由相信您存在不当注册或不当使用多个本平台账户的情形，本平台可采取关闭账户、拒绝提供服务等措施，如给本平台及相关方造成损失的，您还应承担赔偿责任。</li>
+					<li>2.6 您承诺，应履行下列义务：<br />
+						（1）向本平台提供真实、准确、完整的身份等信息；<br />
+						（2）出借资金为来源合法的自有资金；<br />
+						（3）了解融资项目信贷风险，确认具有相应的风险认知和承受能力；<br />
+						（4）自行承担借贷产生的本息损失；<br />
+						（5）借贷合同及有关协议约定的其他义务。
+					</li>
+					<b>三、 本平台的服务内容</b>
+					<li>3.1 本平台将向您提供以下服务中的一项或多项：(1) 撮合您与借款人形成直接借贷交易的居间服务；(2) 您与借款人的信息采集整理、甄别筛选、网上发布；（3）您与借款人的风险承受能力及资信评估； （4）您对借款人的既有债权的转让； (5) 其他相关服务。本网站向您提供服务的具体内容由本网站与您另行签署的《菠萝理财投资咨询与管理服务协议》及其他协议约定。</li>
+					<li>3.2 部分服务内容需要您根据本平台要求完成银行卡认证，未进行银行卡认证的用户将无法使用该部分服务。因未能完成认证而无法享受服务造成的损失，本平台不承担任何责任。</li>
+					<li>3.3 对于本平台向您提供的服务是否收取服务费、服务费的具体标准和规则以本平台不时公布的规则为准。</li>
+					<b>四、 用户使用限制</b>
+					<li>4.1 您不得利用本平台或本平台服务从事任何不符合中国法律法规或侵犯他人权益的活动。本平台在发现您从事该等活动时，有权不经通知而立即停止您使用本平台的全部或部分功能。</li>
+					<li>4.2 在使用本平台提供的服务过程中，您不得发送、公布或展示任何垃圾邮件或其他可能违反中国法律法规及本协议内容的信息。本平台在发现您从事该行为时，有权不经您同意而阻止该活动、删除相关内容，并立即暂停或停止您使用本平台的全部或部分功能。</li>
+					<li>4.3 您向本平台提交的用户名、密码、手机号及安全问题答案是您在本平台的身份识别信息，您应妥善保管。您注册成功后，除非本协议另有约定，否则不得将身份识别信息转让或授权给第三方使用。您确认，使用您的身份识别信息登陆本平台后在本平台的一切行为均代表您本人并由您承担相应的法律后果。</li>
+					<li>4.4 本平台的所有内容，包括但不限于文本、数据、图片、音频、视频、源代码和其他所有信息，均由本平台享有知识产权。未经本平台事先书面同意，您或其他任何人不得复制、改编、传播、公布、展示或以任何其他方式侵犯本平台的知识产权。</li>
+					<b>五、 用户信息的保护及披露</b>
+					<li>5.1 您同意本平台在业务运营中收集和储存您的用户信息，包括但不限于您自行提供的资料和信息，以及本平台自行收集、取得的您在本平台的交易记录和使用信息等。本平台收集和储存您的用户信息的主要目的在于提高为您提供服务的效率和质量。</li>
+					<li>5.2 您同意本平台在业务运营中使用您的用户信息，包括但不限于(1)根据双方另行签署的《菠萝理财投资咨询与管理服务协议》在本平台公示您的相关信息；(2)向本平台的合作机构（该合作机构仅限于本平台为了完成拟向您提供的服务而合作的机构）提供您的用户信息；(3)由人工或程序自动对您的信息进行评估、分类、研究；(4)使用您的用户信息以改进本平台的推广；以及(5)使用您提供的联系方式与您联络并向您发送有关业务和管理方面的信息。本平台将不定期对用户信息进行抽查、核实以识别问题或解决争议，特别是本平台将审查您的资料以区分使用多个用户名或别名的同一用户。</li>
+					<li>5.3 本平台将采用行业标准惯例以保护您的用户信息，包括建立相应的信息保护制度和机制等，但您应了解，上述保护措施可能受技术水平限制而不能确保您的信息不会通过本协议中未列明的途径泄露出去，本平台不承担因此而导致的任何损失或责任。</li>
+					<li>5.4 本平台有义务在行政、司法等有权机关要求时向该等机关提供您的用户信息。</li>
+					<b>六、 免责条款</b>
+					<li>6.1 您应了解，无论您通过本平台形成的借贷关系是否存在第三方担保，本平台及本平台的关联方董事、员工、代理人均未以任何明示或默示的方式对您通过本平台形成的借贷交易及其履行提供任何担保或承诺。本平台接受信息发布方的委托进行信息发布，仅对发布的信息承担形式审查责任，不对信息的准确、完整、合法性作出任何保证，也不承担相关责任，您应依据独立判断及自身风险承受能力衡量相关信息并选择相应的投资产品，您通过本平台形成的任何借贷交易所产生的直接及间接的损失均由您自行承担。</li>
+					<li>6.2 因非本平台原因造成您的身份识别信息泄露，或您发现有他人冒用或盗用您的菠萝理财账户或进行任何其他未经合法授权行为之情形时，您应立即以书面形式通知本平台并要求本平台暂停服务，以减少可能发生的损失。本平台将积极响应您的要求；但您理解，对您的要求采取行动需要合理期限，在此之前，本平台对已执行的指令及所导致的您的损失不承担任何责任。</li>
+					<li>6.3 您在使用本平台服务过程中涉及由第三方提供相关服务的责任由第三方承担，本平台不承担该等责任。您应自行对第三方提供相关服务的内容、产品及其他任何信息进行判断，并承担相应风险。</li>
+					<li>6.4 如果由于本平台及相关第三方的设备、系统故障或缺陷、病毒、黑客攻击、网络故障、网络中断、地震、台风、水灾、海啸、雷电、火灾、瘟疫、流行病、战争、恐怖主义、敌对行为、暴动、罢工、交通中断、停止供应主要服务、电力中断、经济形势严重恶化、政府管制或其它类似事件，致使本平台未能履行本协议或履行本协议不符合约定，不构成本平台的违约，对于因此导致的损失，本平台将不承担任何责任。</li>
+					<b>七、 通知及信息接收</b>
+					<li>7.1 本协议项下的通知如以公示方式作出，一经在本平台公示即视为已经送达。除此之外，其他具有专属性的通知将发送至您菠萝理财账户中的“通知中心”（名称以本平台显示为准）、或您在注册时绑定的手机号、或您提供的电子邮箱地址（如已提供），一经发送即视为已经送达。请您密切关注相关信息。</li>
+					<li>7.2 您注册成为本平台用户及您实际使用本平台提供的各项服务时，即视为您已同意本平台向您发送电子信息，此类信息所涉及的内容包括但不限于以文字、图片、照片、音视频形式表现的各类产品信息、宣传信息、促销信息、商业信息等，本平台将通过包括但不限于本平台内信、电子邮件、短信息等形式向您发送此类信息。若您不希望接收来自本平台的此类信息，则可按照信息中注明的方法自助完成退订或联系本平台客服协助处理。</li>
+					<b>八、 违约责任</b>
+					<li>如果您违反了您在本协议中所作的陈述、保证、承诺或任何其他义务，致使本平台或本平台的股东、实际控制人、员工、其他用户承受任何损失，您应向受损失的一方做出全额赔偿。</li>
+					<b>九、 适用法律和管辖</b>
+					<li>本协议的订立、执行和解释适用中国大陆地区适用的法律（但不包括其冲突法规则），与本协议的解释和履行有关的争议应由北京朴素磐石投资管理有限公司住所地具有管辖权的人民法院管辖。</li>
+					<b>十、 终止</b>
+					<li>10.1 除非本平台终止本协议、您申请终止本协议并关闭您的菠萝理财账户且经本平台同意，否则本协议始终有效。在您违反了本协议、相关规则，或在相关法律法规、政府部门的要求下，本平台有权通过本协议第七条约定的通知方式通知您终止本协议、关闭您的菠萝理财账户或者限制您使用本平台。</li>
+					<li>10.2 当您不再符合本协议第二条约定的注册用户身份条件（包括但不限于因故身亡、丧失民事行为能力、解散或注销等）致使本协议无法继续履行时，本协议依法终止。您的合法授权代表、继承人、监护人、直系亲属在提交相关证明文件后，可向本平台申请查询您在本平台注册的用户信息及交易信息，并办理资产的转移。同时，本平台有权关闭您的菠萝理财账户。</li>
+					<li>10.3 您同意，本协议终止后，本平台仍享有下列权利：（1）继续保存您留存于本平台的各类信息；（2）对于您过往的违约行为，本平台仍可依据本协议向您追究违约责任。</li>
+					<b>十一、 其他</b>
+					<li>11.1 若本协议的部分条款被认定为无效或者无法实施时，本协议中的其他条款仍然有效</li>
+					<li>11.2 本平台可将本协议项下的权利义务转让给本平台的关联方。</li>
+					<li>11.3 北京朴素磐石投资管理有限公司有权在法律允许的范围内对本协议的各条款做出解释。</li>
+            	</ul>
+        	</div>
+        </div>
+		
+		<script src="{{ url_for('static', filename='js/amcharts.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/serial.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/echarts.min.js') }}"></script>
+		<script charset="utf-8">
+			window.onload = function (){
+                var windowWidth = document.body.clientWidth; //window 宽度;
+				var wrap = document.getElementById('wrap');
+                var tabClick = wrap.querySelectorAll('.tabClick')[0];
+                var tabLi = tabClick.getElementsByTagName('li');
+                
+                var tabBox =  wrap.querySelectorAll('.tabBox')[0];
+                var tabList = tabBox.querySelectorAll('.tabList');
+                
+                var lineBorder = wrap.querySelectorAll('.lineBorder')[0];
+                var lineDiv = lineBorder.querySelectorAll('.lineDiv')[0];
+                
+                var tar = 0;
+                var endX = 0;
+                var dist = 0;
+                
+                tabBox.style.overflow='hidden';
+                tabBox.style.position='relative';
+                tabBox.style.width=windowWidth*tabList.length+"px";
+                
+                for(var i = 0 ;i<tabLi.length; i++ ){
+                      tabList[i].style.width=windowWidth+"px";
+                      tabList[i].style.float='left';
+                      tabList[i].style.float='left';
+                      tabList[i].style.padding='0';
+                      tabList[i].style.margin='0';
+                      tabList[i].style.verticalAlign='top';
+                      tabList[i].style.display='table-cell';
+                }
+                
+                for(var i = 0 ;i<tabLi.length; i++ ){
+                    tabLi[i].start = i;
+                    tabLi[i].onclick = function(){
+                        var star = this.start;
+                        for(var i = 0 ;i<tabLi.length; i++ ){
+                            tabLi[i].className='';
+                        };
+                        tabLi[star].className='active';
+                        init.lineAnme(lineDiv,windowWidth/tabLi.length*star)
+                        init.translate(tabBox,windowWidth,star);
+                        endX= -star*windowWidth;
+                    }
+                }
+                
+                function OnTab(star){
+                    if(star<0){
+                        star=0;
+                    }else if(star>=tabLi.length){
+                        star=tabLi.length-1
+                    }
+                    for(var i = 0 ;i<tabLi.length; i++ ){
+                        tabLi[i].className='';
+                    };
+                    
+					tabLi[star].className='active';
+                    init.translate(tabBox,windowWidth,star);
+                    endX= -star*windowWidth;
+                };
+			};
+			
+            var init={
+                translate:function(obj,windowWidth,star){
+                    obj.style.webkitTransform='translate3d('+-star*windowWidth+'px,0,0)';
+                    obj.style.webkitTransition='all 0.3s ease-in-out';
+                },
+                touchs:function(obj,windowWidth,tar,distance,endX){
+                    obj.style.webkitTransform='translate3d('+(distance+endX)+'px,0,0)';
+                    obj.style.webkitTransition='all 0.1s ease-in-out';
+                },
+                lineAnme:function(obj,stance){
+                    obj.style.webkitTransform='translate3d('+stance+'px,0,0)';
+                    obj.style.webkitTransition='all 0.1s ease-in-out';
+                },
+                back:function(obj,windowWidth,tar,distance,endX,time){
+                    obj.style.webkitTransform='translate3d('+(distance+endX)+'px,0,0)';
+                    obj.style.webkitTransition='all '+time+'s ease-in-out';
+                },
+            }
+            
+        $(function () {
+//            var invest_month = '{{response_data.lingshi_array}}'.split(',');
+            var invest_array_list = new Array([]);
+            var invest_array = '{{response_data.lingshi_array}}'.split(',');
+			for(i=0; i<invest_array.length; i++){
+			  invest_array_list[i] = invest_array[i]
+			}
+
+			//统计图
+
+			var chartData = [{
+                "country": "{{response_data.invest_month.0}}月",
+                    "visits": 11.5
+            }, {
+                "country": "{{response_data.invest_month.1}}月",
+                    "visits": 12
+            }, {
+                "country": "{{response_data.invest_month.2}}月",
+                    "visits": 12.8
+            }, {
+                "country": "{{response_data.invest_month.3}}月",
+                    "visits": 13.3
+            }, {
+                "country": "{{response_data.invest_month.4}}月",
+                    "visits": 17.79
+            },{
+                "country": "{{response_data.invest_month.5}}月",
+                    "visits": '{{response_data.invest_total_bill}}'
+            }];
+            var chart = AmCharts.makeChart("chartdiv", {
+                type: "serial",
+                dataProvider: chartData,
+                categoryField: "country",
+
+                graphs: [{
+                    valueField: "visits",
+                    colorField: "color",
+                    type: "column",
+                    lineAlpha: 0,
+                    fillAlphas: 1
+                }],
+
+                chartCursor: {
+                    cursorAlpha: 0,
+                    zoomable: false,
+                    categoryBalloonEnabled: false
+                },
+            });
+
+		    //进度条
+		    var progress = $(".progress-bar-inner");
+	        progress.each(function (i)
+	        {
+	            var data = $(this).attr('data-value');
+	            $(this).prev().find("span").html(data+"%");
+	        });
+	        //地图
+	        $('#ChinaMap').SVGMap({
+	        	
+            });
+            //链接
+            $(".basic").on("click", function(e){
+
+				if($(".ljbasic").is(":hidden")){
+			    	$(".ljbasic").show();
+			   }else{
+					$(".tuica").on("click", function(e){
+					    e.stopPropagation();
+					});
+			    }
+			
+			    $(document).one("click", function(){
+			        $(".ljbasic").hide();
+			    });
+			
+			    e.stopPropagation();
+			});
+			
+            $(".archite").on("click", function(e){
+				if($(".jiag").is(":hidden")){
+			    	$(".jiag").show();
+			   }else{
+					$(".tuicb").on("click", function(e){
+					    e.stopPropagation();
+					});
+			    }
+			
+			    $(document).one("click", function(){
+			        $(".jiag").hide();
+			    });
+			
+			    e.stopPropagation();
+			});
+			
+            $(".matters").on("click", function(e){
+				if($(".zhongd").is(":hidden")){
+			    	$(".zhongd").show();
+			   }else{
+					$(".tuicc").on("click", function(e){
+					    e.stopPropagation();
+					});
+			    }
+			
+			    $(document).one("click", function(){
+			        $(".zhongd").hide();
+			    });
+			
+			    e.stopPropagation();
+			});
+			
+            $(".agree").on("click", function(e){
+				if($(".zhuce").is(":hidden")){
+			    	$(".zhuce").show();
+			   }else{
+					$(".tuicd").on("click", function(e){
+					    e.stopPropagation();
+					});
+			    }
+			
+			    $(document).one("click", function(){
+			        $(".zhuce").hide();
+			    });
+			
+			    e.stopPropagation();
+			});
+
+			$('#tzsj0').css('width', '{{response_data.stroke_count_list.0}}%');
+            $('#tzsj1').css('width', '{{response_data.stroke_count_list.1}}%');
+            $('#tzsj2').css('width', '{{response_data.stroke_count_list.2}}%');
+            $('#tzsj3').css('width', '{{response_data.stroke_count_list.3}}%');
+
+			$('#age0').css('width', '{{response_data.ages.0}}%');
+            $('#age1').css('width', '{{response_data.ages.1}}%');
+            $('#age2').css('width', '{{response_data.ages.2}}%');
+            $('#age3').css('width', '{{response_data.ages.3}}%');
+
+		});
+		
+		//男女比例
+		var myChart = echarts.init(document.getElementById('myChart'));
+
+		option = {
+		    series: [
+		        {
+		            type:'pie',
+		            radius: [0],
+		
+		            label: {
+		                normal: {
+		                    position: 'inner'
+		                }
+		            },
+		        },
+		        {
+		            type:'pie',
+		            radius: ['40%', '55%'],
+		
+		            data:[
+		                {value:parseInt('{{response_data.sex.women}}'), name:'{{response_data.sex.women}}%'},
+		                {value:parseInt('{{response_data.sex.man}}'), name:'{{response_data.sex.man}}%'}
+		            ]
+		        }
+		    ]
+		};
+		myChart.setOption(option);
+		
+		</script>
+	</body>
+</html>

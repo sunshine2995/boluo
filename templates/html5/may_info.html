@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>母亲节活动</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/may.css') }}?v=3"/>
+		<script src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/iscroll.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/may_file.js') }}?v=2"></script>
+	</head>
+	<body>
+		<div class="may">
+			<div class="topbtn">
+				<button class="presson">获奖公布</button>
+				<button class="presstw">我的奖号</button>
+				<h2><img src="{{ url_for('static', filename='images/may/bol.png') }}" />{{response_data.score}}个</h2>
+			</div>
+
+
+			<!-- ************************   shop !!!!!!!!************************-->
+			<div class="drop-down">
+				<div class="entical modity1">
+					<p class="onetop"><span>期号：{{response_data.product.0.0.issue}}</span>{{response_data.product.0.0.name}}</p>
+					<ul class="oncent">
+						<li><img src="{{ url_for('static', filename='images/may/jiashiqi@2x.png') }}" /> </li>
+						<li>
+							<div class="progress_bar">
+								<div class="pro-bar">
+									<small>
+										<span class="progress_number" style="color: #efa043;">%</span>
+									</small>
+									<span id="jd1" class="progress-bar-inner" style="background-color: #efa043; width: 36%;" data-value="进度：{{response_data.product.0.1}}"></span>
+								</div>
+							</div>
+						</li>
+						<li>
+							<button class="canyu" sss="{{response_data.product.0.0.issue}}" num="{{productToSingle(response_data.product.0.0.issue)}}" >立即参与</button>
+						</li>
+					</ul>
+					<p class="onbot">
+						<span>总需<a>{{response_data.product.0.0.total}}</a>菠萝币</span>
+						<span>剩余<a>{{response_data.product.0.0.remain}}</a>菠萝币</span>
+					</p>
+				</div>
+				<div class="entical modity1">
+					<p class="onetop"><span>期号：{{response_data.product.1.0.issue}}</span>充电宝</p>
+					<ul class="oncent">
+						<li><img src="{{ url_for('static', filename='images/may/chongdianbao@2x.png') }}" /> </li>
+						<li>
+							<div class="progress_bar">
+								<div class="pro-bar">
+									<small>
+										<span class="progress_number" style="color: #efa043;">%</span>
+									</small>
+									<span id="jd2" class="progress-bar-inner" style="background-color: #efa043; width: 36%;" data-value="进度：{{response_data.product.1.1}}"></span>
+								</div>
+							</div>
+						</li>
+						<li>
+							<button class="canyu" sss="{{response_data.product.1.0.issue}}" num="{{productToSingle(response_data.product.1.0.issue)}}" >立即参与</button>
+						</li>
+					</ul>
+					<p class="onbot">
+						<span>总需<a>{{response_data.product.1.0.total}}</a>菠萝币</span>
+						<span>剩余<a>{{response_data.product.1.0.remain}}</a>菠萝币</span>
+					</p>
+				</div>
+			</div>
+			<div class="panel">
+				<div class="entical modity1">
+					<p class="onetop"><span>期号：{{response_data.product.2.0.issue}}</span>{{response_data.product.2.0.name}}</p>
+					<ul class="oncent">
+						<li><img src="{{ url_for('static', filename='images/may/jiandai@2x.png') }}" /> </li>
+						<li>
+							<div class="progress_bar">
+								<div class="pro-bar">
+									<small>
+										<span class="progress_number" style="color: #efa043;">%</span>
+									</small>
+									<span id="jd3" class="progress-bar-inner" style="background-color: #efa043; width: 36%;" data-value="进度：{{response_data.product.2.1}}"></span>
+								</div>
+							</div>
+						</li>
+						<li>
+							<button class="canyu" sss="{{response_data.product.2.0.issue}}" num="{{productToSingle(response_data.product.2.0.issue)}}" >立即参与</button>
+						</li>
+					</ul>
+					<p class="onbot">
+						<span>总需<a>{{response_data.product.2.0.total}}</a>菠萝币</span>
+						<span>剩余<a>{{response_data.product.2.0.remain}}</a>菠萝币</span>
+					</p>
+				</div>
+				<div class="entical modity1">
+					<p class="onetop"><span>期号：{{response_data.product.3.0.issue}}</span>{{response_data.product.3.0.name}}</p>
+					<ul class="oncent">
+						<li><img src="{{ url_for('static', filename='images/may/fangdaqi@2x.png') }}" /> </li>
+						<li>
+							<div class="progress_bar">
+								<div class="pro-bar">
+									<small>
+										<span class="progress_number" style="color: #efa043;">%</span>
+									</small>
+									<span id="jd4" class="progress-bar-inner" style="background-color: #efa043; width: 36%;" data-value="进度：{{response_data.product.3.1}}"></span>
+								</div>
+							</div>
+						</li>
+						<li>
+							<button class="canyu" sss="{{response_data.product.3.0.issue}}" num="{{productToSingle(response_data.product.3.0.issue)}}">立即参与</button>
+						</li>
+					</ul>
+					<p class="onbot">
+						<span>总需<a>{{response_data.product.3.0.total}}</a>菠萝币</span>
+						<span>剩余<a>{{response_data.product.3.0.remain}}</a>菠萝币</span>
+					</p>
+				</div>
+				<div class="entical modity1">
+					<p class="onetop"><span>期号：{{response_data.product.4.0.issue}}</span>雨花石足垫</p>
+					<ul class="oncent">
+						<li><img src="{{ url_for('static', filename='images/may/zudian@2x.png') }}" /> </li>
+						<li>
+							<div class="progress_bar">
+								<div class="pro-bar">
+									<small>
+										<span class="progress_number" style="color: #efa043;">%</span>
+									</small>
+									<span id="jd5" class="progress-bar-inner" style="background-color: #efa043; width: 36%;" data-value="进度：{{response_data.product.4.1}}"></span>
+								</div>
+							</div>
+						</li>
+						<li>
+							<button class="canyu" sss="{{response_data.product.4.0.issue}}" num="{{productToSingle(response_data.product.4.0.issue)}}">立即参与</button>
+						</li>
+					</ul>
+					<p class="onbot">
+						<span>总需<a>{{response_data.product.4.0.total}}</a>菠萝币</span>
+						<span>剩余<a>{{response_data.product.4.0.remain}}</a>菠萝币</span>
+					</p>
+				</div>
+				<div class="entical modity1">
+					<p class="onetop"><span>期号：{{response_data.product.5.0.issue}}</span>足浴盆</p>
+					<ul class="oncent">
+						<li><img src="{{ url_for('static', filename='images/may/zyp.png') }}" /> </li>
+						<li>
+							<div class="progress_bar">
+								<div class="pro-bar">
+									<small>
+										<span class="progress_number" style="color: #efa043;">%</span>
+									</small>
+									<span id="jd6" class="progress-bar-inner" style="background-color: #efa043; width: 36%;" data-value="进度：{{response_data.product.5.1}}"></span>
+								</div>
+							</div>
+						</li>
+						<li>
+							<button class="canyu" sss="{{response_data.product.5.0.issue}}" num="{{productToSingle(response_data.product.5.0.issue)}}" >立即参与</button>
+						</li>
+					</ul>
+					<p class="onbot">
+						<span>总需<a>{{response_data.product.5.0.total}}</a>菠萝币</span>
+						<span>剩余<a>{{response_data.product.5.0.remain}}</a>菠萝币</span>
+					</p>
+				</div>
+			</div>
+
+						<!-- ************************  end  shop !!!!!!!!************************-->
+
+			<p class="flip">
+				<img src="{{ url_for('static', filename='images/may/xia.png') }}" class="arrowa" />
+				<img src="{{ url_for('static', filename='images/may/shang.png') }}" class="arrowb" />
+			</p>
+
+			<div class="fopink">
+				<h1>活动内容</h1>
+				<ul>
+					<li>1、每20人次进行一次抽奖，不同的奖品需用掉的菠萝币不同，用户每日每期可以参加的抽奖次数不限。点击“立即参与”即可参加活动，每期活动产生20个奖券号码，当抽奖人次数到达20时，系统会自动从这20个奖券号码中随机抽取一个为获奖者，获奖者名单在获奖公布可查看。</li>
+					<li>2、获得奖品的用户可以把平时想对妈妈说又不好意思说的话通过微信公众号（菠萝理财或者菠萝理财微服务）发给我们，我们将制作成卡片和奖品一起帮您寄给您的妈妈。</li>
+					<li>3、奖品会在5月26日前全部寄出。</li>
+					<li>4、新手标和PC端不参与此次活动，活动仅限APP端。</li>
+					<li>5、如有任何疑问，请咨询菠萝理财客服：400-032-0596。</li>
+					<li>本次活动最终解释权归菠萝理财所有</li>
+				</ul>
+			</div>
+		</div>
+		<input type="hidden" value="" id="hdqihao" />
+		<input type="hidden" value="{{response_data.phone}}" id="phone" />
+		<input type="hidden" value="{{response_data.token}}" id="token" />
+		<input type="hidden" value="{{response_data.is_login}}" id="islogin" />
+		<!--弹出层-->
+		<div class="eject">
+
+			<div class="participate">
+				<p>亲、您尚未登录！</p>
+				<button class="denglu" onclick="login()">登录</button>
+				<button class="quxiao">取消</button>
+			</div>
+
+			<!--立即参与-->
+			<div class="toggls">
+				<h2 class="resets">
+					<p>选择参与次数</p>
+					<img src="{{ url_for('static', filename='images/may/cha@2x.png') }}" class="resets_tag" />
+				</h2>
+		    	<table id="tab" class="surepay_tab">
+				    <tr>
+				        <td>
+				            <form class="surepay_fom">
+				            	<input class="min" name="" type="button" />
+					            <input class="text_box" name="" type="text" value="1" readonly />
+					            <input class="add" name="" type="button" />
+				            </form>
+				        </td>
+				    </tr>
+				</table>
+				<p class="balance">每次参与会消耗<span id="boluobi000"></span> 菠萝币</p>
+				<button class="sum">确定</button>
+			</div>
+
+			<!--奖品公布-->
+			<div class="publish">
+				<dl class="awardtop">
+					<dt><img src="{{ url_for('static', filename='images/may/nan.png') }}" /> </dt>
+					<dd>获奖公布</dd>
+				</dl>
+				<ol class="fixed">
+					<li>商品名称</li>
+					<li>获奖号码</li>
+					<li>手机号码</li>
+				</ol>
+				<div class="award">
+					<div class="hemox">
+						{% for i in response_data.gongbu%}
+						<ul>
+							<li>{{i.1}}</li>
+							<li>{{i.2}}</li>
+							<li>{{i.0}}</li>
+						</ul>
+						{% endfor %}
+					</div>
+				</div>
+				<div class="sign"></div>
+			</div>
+
+			<!--我的奖号-->
+			<div class="jianghao">
+				<dl class="awardtop">
+					<dt><img src="{{ url_for('static', filename='images/may/nan.png') }}" /> </dt>
+					<dd>我的奖号</dd>
+				</dl>
+				<ol class="fixed">
+					<li>商品名称</li>
+					<li>我的奖号</li>
+					<li>单号状态</li>
+				</ol>
+				<div class="ward">
+					<div class="hemox">
+						{% for i in response_data.myprize%}
+						<ul>
+
+							<li>{{i.1}}</li>
+							<li>{{i.0}}</li>
+							<li>{% if i.2 == '1'%}
+								已中奖
+								{% elif i.2 == '2' %}
+								活动中{% else %}
+								未中奖{% endif %}</li>
+
+						</ul>
+						{% endfor %}
+
+					</div>
+				</div>
+				<div class="sign"></div>
+			</div>
+
+			<!--知道了-->
+			<div class="over overone">
+				<p>您已成功参与本期活动</p>
+				<button class="know">知道了</button>
+			</div>
+
+			<div class="over overtwo">
+				<p></p>
+				<button class="know">知道了</button>
+			</div>
+			
+			<!--您的菠萝不够-->
+			<!--<div class="togg_two">-->
+				<!--<p class="reset"><img src="{{ url_for('static', filename='images/may/icon_shibai@2x.png')}}" /> </p>-->
+				<!--<p>您的菠萝不够哦</p>-->
+				<!--<button id="jiangpinqc" class="bttn">取消</button>-->
+			<!--</div>-->
+			<!--<div class="over overtwo">-->
+				<!--<p>您的菠萝不够哦</p>-->
+				<!--<button class="know">知道了</button>-->
+			<!--</div>-->
+		</div>
+		<script>
+			$('#jd1').css('width', '{{response_data.product.0.1}}%');
+			$('#jd2').css('width', '{{response_data.product.1.1}}%');
+			$('#jd3').css('width', '{{response_data.product.2.1}}%');
+			$('#jd4').css('width', '{{response_data.product.3.1}}%');
+			$('#jd5').css('width', '{{response_data.product.4.1}}%');
+			$('#jd6').css('width', '{{response_data.product.5.1}}%');
+
+			function login() {
+				window.jsObj.HtmlcallJava2();
+            }
+		</script>
+	</body>
+</html>

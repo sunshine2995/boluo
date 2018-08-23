@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<title>已购记录</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link href="{{ url_for('static', filename='css/survey/photoswipe.css') }}" rel="stylesheet" />
+	<link href="{{ url_for('static', filename='css/survey/default-skin.css') }}" rel="stylesheet" />
+	<script src="{{ url_for('static', filename='js/survey/jquery-1.11.2.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/survey/photoswipe.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/survey/photoswipe-ui-default.min.js') }}"></script>
+
+	<script src="{{ url_for('static', filename='js/survey/jquery.transit.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/survey/hammer.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/survey/jquery.hammer.js') }}"></script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/survey/reset.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/survey/project.css') }}">
+	<script>
+		//设置rem所需的html字号大小
+		var docEl = document.documentElement,
+    	resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+    	recalc = function() {
+        	document.getElementsByTagName("html")[0].style.fontSize = docEl.clientWidth / 10 + "px";
+   		 };
+		window.addEventListener(resizeEvt, recalc, false);
+		document.addEventListener('DOMContentLoaded', recalc, false);
+	</script>
+	<style type="text/css">
+		.gallery img{
+			width: 2.0rem;
+			height: 2.0rem;
+			margin:0 0.30rem 0.266667rem 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="cont_box">
+
+		<div class="tab_box inform_box">
+
+			<table class="inform_table" border="0" cellpadding="0" cellspacing="0" >
+				<tr id="show_tab_one">
+					<td>投资人</td>
+					<td>投资金额</td>
+					<td>投资时间</td>
+				</tr>
+
+				{% for result in response_data.borrower_list %}
+				<tr>
+					<td>{{result[0]}}</td>
+					<td>{{result[1]}}</td>
+					<td>{{result[2]}}</td>
+				</tr>
+				{% endfor %}
+
+			</table>
+
+			<div class="chose_page">
+				<a href="javascript:;" class="prev">上一页</a>
+				<p>
+					<span class="current_page">1</span>/<span class="title_page"></span>
+				</p>
+				<a href="javascript:;" class="next page_btn_active">下一页</a>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+    <script type="text/javascript">
+//		$(function() {
+//
+//			$(".pro_box").show();
+//			$("nav>span:first-child").click(function() {
+//				$(".pro_box").show().siblings().hide();
+//				$(this).addClass("active").siblings("span").removeClass("active")
+//			});
+//
+//			$("nav>span:last-child").click(function() {
+//				$(".inform_box").show().siblings().hide();
+//				$(this).addClass("active").siblings("span").removeClass("active")
+//			})
+//
+//		});
+
+
+		// 分页
+		var pageSize=9;  //每页显示的记录条数
+        var curPage=0;   //显示第curPage页
+        var len;         //总行数
+        var page;        //总页数
+       $(function(){    
+	        len =$(".inform_table tr").length-1;   //去掉表头     
+	        page=len % pageSize==0 ? len/pageSize : Math.floor(len /pageSize)+1;//根据记录条数，计算页数
+	        console.log(len+"   "+page);
+	        // 显示总页数
+	        $(".title_page").html(page);
+	        curPage=1;
+	        displayPage();//显示第一页
+	      $(".prev").click(function(){
+	          if(curPage>1){
+	              curPage-=1;
+	          }
+	          $(this).addClass("page_btn_active").siblings().removeClass("page_btn_active");
+	         console.log(curPage);
+	         $(".current_page").html(curPage);
+	          displayPage();
+	          });
+	      $(".next").click(function(){
+	          if(curPage<page){
+	              curPage+=1;
+	          }
+	           $(this).addClass("page_btn_active").siblings().removeClass("page_btn_active");
+	          // console.log(curPage)
+	           $(".current_page").html(curPage);
+	         displayPage();
+	         });
+ 	});
+ 
+	 function displayPage(){  
+	     var begin=(curPage-1)*pageSize;//起始记录号
+	     var end = begin + pageSize;
+	  if(end > len ) end=len;
+	     $(".inform_table tr").hide();
+	     $(".inform_table tr").each(function(i){
+	         if(i-1>=begin && i-1<end)//显示第page页的记录
+	             {
+	             $("#show_tab_one").show();
+	             $(this).show();
+	             }         
+	     });
+
+	 }	
+
+	</script>
+	<script src="{{ url_for('static', filename='js/survey/initPhotoSwipeFromDOM.js') }}"></script>
+	<script>initPhotoSwipeFromDOM('.gallery');</script>
+</html>

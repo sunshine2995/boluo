@@ -1,0 +1,203 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	width: 100%;
+	height: 100%;
+	margin: 0;padding: 0;
+	color:#606060;
+	font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+}
+body,html{
+	font-size: 62.5%;
+}
+.yaoq{
+	max-width:64rem;
+	margin:0 auto;
+	background:#ffba25 url(../images/hbgl.jpg) no-repeat center top;
+	background-size: 100%;
+	overflow: hidden;
+}
+.step1{
+	width: 100%;
+	margin-top: 38vmin;
+}
+.step1>h1{
+	background: url(../images/step1.png) no-repeat left bottom 0.6vmin;
+	background-size: 15%;
+	font-size: 4.2vmin;
+	color: #933700;
+	font-weight: bold;
+	margin-left: 13vmin;
+	padding: 2% 0 1% 16vmin;
+}
+.step2>h1{
+	background: url(../images/step2.png) no-repeat left bottom 0.6vmin;
+	background-size: 15%;
+	font-size: 4.2vmin;
+	color: #933700;
+	font-weight: bold;
+	margin-left: 13vmin;
+	padding: 2% 0 1% 16vmin;
+}
+.step3>h1{
+	background: url(../images/step3.png) no-repeat left bottom 0.6vmin;
+	background-size: 15%;
+	font-size: 4.2vmin;
+	color: #933700;
+	font-weight: bold;
+	margin-left: 13vmin;
+	padding: 2% 0 1% 16vmin;
+}
+.step{
+	width: 90%;
+	height: 61vmin;
+	background: url(../images/lqbz.png) no-repeat center top;
+	background-size: 100%;
+	margin: 0 auto;
+}
+.fourgz{
+	width: 73%;
+	background: url(../images/lqbz.png) no-repeat center top;
+	background-size: 100%;
+	margin: 0 auto;
+	color: #fff;
+	line-height: 6vmin;
+	padding: 10vmin;
+	font-size: 3vmin;
+	margin-top: 2%;
+}
+.fourgz>span{
+	color: #ffcc00;
+}
+.stepdl{
+	width: 85%;
+	margin: 0 auto;
+	padding-top: 8vmin;
+	text-align: center;
+	line-height: 23px;
+	font-size: 3.2vmin;
+	color: #fff;
+}
+.stepdl>dt>img{
+	width: 100%;
+	margin-top: 2%;
+}
+.dta{
+	width: 50%;
+	margin: 1% auto;
+}
+.lingqu{
+	width: 50%;
+	height: 10vmin;
+	background: #ffcc00;
+	box-shadow: 0 3px 0 #ffae00;
+	border-radius: 5px;
+	text-align: center;
+	color: #85530d;
+	font-size: 4.6vmin;
+	font-weight: bold;
+	margin: 3% 0 0 25%;
+}
+.stepyaoq{
+	width: 85%;
+	margin: 0 auto;
+	padding-top: 8vmin;
+	text-align: center;
+	line-height: 23px;
+	font-size: 3.2vmin;
+	color: #fff;
+}
+.stepyaoq>dd{
+	width: 50%;
+	float: left;
+	margin: 5% 0;
+}
+.stepyaoq>dt>img{
+	width: 30%;
+	float: right;
+	margin: 5vmin;
+}
+.yaoqing{
+	width: 100%;
+	height: 8vmin;
+	background: #ffcc00;
+	box-shadow: 0 3px 0 #ffae00;
+	border-radius: 5px;
+	text-align: center;
+	color: #85530d;
+	font-size: 4.4vmin;
+	font-weight: bold;
+	margin: 10% 0;
+}
+/*弹窗*/
+.explain{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+}
+.registered{
+	position:fixed;
+	width:80%;
+	height: 180px;
+	border-radius: 5px;
+	top: 35%;
+	left: 10%;
+	background:#fff;
+	text-align: center;
+	display: none;
+}
+.registered>p{
+	color: #666;
+	font-size: 1.8rem;
+	margin-top: 12vmin;
+}
+.bttn{
+	width: 100%;
+	height: 50px;
+	border-top: 1px solid #eee;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: #ffcb0f;
+	font-size: 1.8rem;
+}
+.invitation{
+	position:fixed;
+	width:80%;
+	height: 160px;
+	border-radius: 5px;
+	top: 35%;
+	left: 10%;
+	background:#fff;
+	text-align: center;
+	display: none;
+}
+.invitation>p{
+	color: #666;
+	font-size: 1.6rem;
+	padding: 6%;
+}
+.denglu{
+	width: 50%;
+	height: 50px;
+	border-top: 1px solid #eee;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: #ffcb0f;
+	font-size: 1.8rem;
+	border-right: 1px solid #eee;
+}
+.quxiao{
+	width: 50%;
+	height: 50px;
+	border-top: 1px solid #eee;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	color: #ffcb0f;
+	font-size: 1.8rem;
+}

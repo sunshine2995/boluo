@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>每日签到</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/xinnian.css') }}?v=19">
+		<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}"></script>
+	</head>
+	<body>
+		<div class="sign">
+			<!--<div class="nav">-->
+				<!--<a href="###" class="turn"><img src="{{ url_for('static', filename='images/icon_jiantou@2x.png') }}" /> </a>-->
+				<!--<h1>每日签到</h1>-->
+				<!--<a href="###" class="qd_rule" style="color: #fff;">签到规则</a>-->
+			<!--</div>-->
+			<header class="qiand">
+				<dl class="qian">
+					<dt><img src="{{ url_for('static', filename='images/icon_boluo1@2x.png') }}" /> </dt>
+					<dd>
+						<p>已连续签到：{{renderData.days}}天</p>
+						<p>明日可领菠萝：{{renderData.tomorrow}}个</p>
+					</dd>
+				</dl>
+				<button class="checkBtn">{% if renderData.isSigned %}已签到{% else %}签到{% endif %}</button>
+			</header>
+			<a href="/v1/activity/zill/index?phone={{renderData.phone}}&token={{renderData.token}}">
+				<img src="{{ url_for('static', filename='images/summer_dfw.png') }}" class="ban_b" />
+			</a>
+
+			<div class="commodity">
+				<em class="icons_rook"></em>
+				<h2 class="int"><span><a href="/v1/activity/store?phone={{renderData.phone}}&token={{renderData.token}}">更多</a></span>积分商城有好货</h2>
+				<div class="int_jifen">
+					{% for p in renderData['prize_list'] %}
+					<dl class="int_gral" onclick="jumpToDetails('{{p.id}}')">
+						<dt><img src="/static{{p.images.0}}"/></dt>
+						<dd>
+							<p>{{p.name}}</p>
+							<dl class="jif">
+								<dt><img src="{{ url_for('static', filename='images/icon_boluo2@2x.png')}}" /> </dt>
+								<dd>{{p.score}}</dd>
+							</dl>
+							<button class="duih">兑换</button>
+						</dd>
+					</dl>
+					{%endfor%}
+				</div>
+			</div>
+
+		</div>
+		<div class="qtan">
+			<div class="checkin">
+		
+			</div>
+			<div class="modal">
+				<h1 class="title_h1 clearfix"><em>已签到</em> <i>您已签到2天</i></h1>
+			</div>
+		</div>
+		<script>
+			;
+			(function($) {
+				var Checkin = function(ele, options) {
+					this.ele = ele;
+					this.opt = options;
+					this.defaults = {
+						background: '#fff',
+						radius: 10,
+						padding: 10,
+						dateArray: {{renderData.dateArray}}, // 假设已签到的天数+1
+					};
+					this.obj = $.extend({}, this.defaults, this.opt);
+				}
+				Checkin.prototype.init = function() {
+					var _self = this.ele,
+						html = '',
+						myDate = new Date(),
+						year = myDate.getFullYear(),
+						month = myDate.getMonth(),
+						day = myDate.getDate(),
+						weekText = ['日', '一', '二', '三', '四', '五', '六'];
+					_self.css({
+						width: this.obj.width + 'px',
+						height: this.obj.height,
+						background: this.obj.background,
+						borderRadius: this.obj.radius,
+						color: this.obj.color,
+						padding: this.obj.padding
+					}).append("<div class='title'><p class='return'>{% if renderData['isSigned'] %}今日已签到，已领到菠萝 {% else %}今天还没有签到哦{% endif %}</p><a class=\'checkBtn\' href=\"javascript:;\">签到</a></div>");
+					$("<ul class='week clearfix'></ul><ul class='calendarList clearfix'></ul>").appendTo(_self);
+					for (var i = 0; i < 7; i++) {
+						_self.find(".week").append("<li>" + weekText[i] + "</li>")
+					};
+					for (var i = 0; i < 42; i++) {
+						html += "<li></li>"
+					};
+					_self.find(".calendarList").append(html);
+					var $li = _self.find(".calendarList").find("li");
+					_self.find(".week li").css({
+						width: (_self.width() / 7) + 'px',
+						height: 50 + 'px',
+						boxSizing: 'border-box',
+						background: '#ffcb0f'
+					});
+					$li.css({
+						width: (_self.width() / 7) + 'px',
+						height: 40 + 'px',
+						boxSizing: 'border-box',
+						color: "#333"
+					});
+					_self.find(".calendarList").find("li:nth-child(7n)").css('borderRight', 'none');
+					_self.find(".week li:nth-child(7n)").css('borderRight', 'none');
+					var monthFirst = new Date(year, month, 1).getDay();
+					var d = new Date(year, (month + 1), 0)
+					var totalDay = d.getDate(); //获取当前月的天数
+					for (var i = 0; i < totalDay; i++) {
+						$li.eq(i + monthFirst).html(i + 1);
+						$li.eq(i + monthFirst).addClass('data' + (i + 1))
+						if (isArray(this.obj.dateArray)) {
+							for (var j = 0; j < this.obj.dateArray.length; j++) {
+								if (i == this.obj.dateArray[j]) {
+									// 假设已经签到的
+									$li.eq(i + monthFirst).addClass('checked');
+								}
+							}
+						}
+					}
+					//$li.eq(monthFirst+day-1).css('background','#f7ca8e')
+					_self.find($(".data" + day)).addClass('able-qiandao');
+				}
+				var isChecked = false;
+				Checkin.prototype.events = function() {
+					var _self = this.ele;
+					var $li = _self.find(".calendarList").find("li");
+					$li.on('click', function(event) {
+						event.preventDefault();
+						/* Act on the event */
+						if ($(this).hasClass('able-qiandao')) {
+							$(this).addClass('checked');
+							modal(_self);
+							isChecked = true;
+						}
+					});
+					var checkBtn = _self.find(".checkBtn");
+					checkBtn.click(function(event) {
+						modal(_self);
+						_self.find('.able-qiandao').addClass('checked');
+						isChecked = true;
+					});
+				}
+				var modal = function(e) {
+					/*var close = e.parents().find(".closeBtn");*/
+					e.parents().find('.checkBtn').text("已签到");
+				}
+				$.fn.Checkin = function(options) {
+					var checkin = new Checkin(this, options);
+					var obj = [checkin.init(), checkin.events()]
+					return obj
+				}
+				var isArray = function(arg) {
+					return Object.prototype.toString.call(arg) === '[object Array]';
+				};
+			})(jQuery);
+			$(function(){
+				
+				$(".checkBtn").click(function(){
+					$(".checkBtn").text('已签到')
+					$(".checkin").show();
+					$(".qtan").show();
+
+				})
+				$(".return").click(function(){
+					$(".qtan").css('display','none')
+				})
+				$(".int-left").click(function(){
+					location.href="../../Downloads/Activity/details.html"
+				})
+				$(".int-right").click(function(){
+					location.href="../../Downloads/Activity/details.html"
+				})
+				$(".qp>li:first-child").click(function(){
+					location.href="../../Downloads/Activity/detail.html"
+				})
+				$(".qp>li:last-child").click(function(){
+					location.href="../../Downloads/Activity/conversion.html"
+				})
+			})
+			// 插件调用
+			$(".checkin").Checkin();
+			// 元素居中显示，与插件无关，根本自己需要修改；
+			$(".checkin").css('marginTop',parseInt(($(window).innerHeight()-$(".checkin").outerHeight())/2)+'px');
+			$(".checkBtn").click(function(){
+				if('{{renderData.isSigned}}' == 'False'){
+					$.ajax({
+						url: '/v1/activity/signrecord/{{renderData.phone}}/{{renderData.token}}',
+						type:'GET',
+						cache: false,
+	//					data: $('#editsecurityrules_post').serialize(),
+						success: function(response_data){
+							window.location.href = "";
+	//						$(".checkBtn").css('background', '#d2c8a5');
+	//						$(".checkBtn").attr("disabled","disabled");
+						}
+					});
+				}
+			})
+
+			function jumpToDetails(d) {
+				window.location.href= "/v1/activity/store/detail/{{renderData.phone}}/"+d+"/{{renderData.token}}"
+            }
+		</script>
+	</body>
+</html>

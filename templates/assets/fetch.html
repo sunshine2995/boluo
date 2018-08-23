@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>限额说明</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bank.css') }}"/>
+	</head>
+	<body style="background: #fff;">
+		<div class="pactbox">
+			<div class="fetch-top">
+				<img src="{{ url_for('static', filename='images/quchuguize@2x.png') }}" />
+			</div>
+			<ul class="fetch-bottom">
+				<li><b>1.</b> 最低提现金额100元</li>
+				<li><b>2.</b> 充值未投资金额提现收取1%手续费</li>
+				<li><b>3.</b> 工作日提现：14：00前申请提现当日到账；14：00后申请提现次日到账（星期五除外）</li>
+				<li><b>4.</b> 周末提现：目前支持中国银行、工商银行、建设银行、农业银行、招商银行。提现到账时间与工作日提现一致。其他银行周末申请提现将顺延在下一个工作日到账</li>
+				<p>注：根据收款银行的不同，实际到账需根据银行入账时间为准。</p>
+			</ul>
+		</div>
+	</body>
+</html>

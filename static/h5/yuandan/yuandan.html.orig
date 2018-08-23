@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>元旦活动</title>
+    <link rel="stylesheet" type="text/css" href="css/media.css"/>
+    <link rel="stylesheet" type="text/css" href="css/yuandan.css?v=2"/>
+    <link rel="stylesheet" href="css/huad.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<div class="yuandan">
+    <div class="liang">
+        <ul class="dongtai">
+            <li><b>累计投资额：￥<span id="integral">---</span></b></li>
+            <li>
+                当前排名：<span id="pm">---</span> <span id="juqym">距前一名相差￥</span><span id="pm_ce">---</span>
+                <br>
+                当前最高可获得奖品：<span id="prize">---</span>
+            </li>
+        </ul>
+        <div class="denglong">
+            <div id="8">
+                <img src="images/denglongliang_img@2x.png">
+                <img src="images/denglong_img@2x.png">
+            </div>
+            <div id="7">
+                <img src="images/denglongliang_img@2x.png">
+                <img src="images/denglong_img@2x.png">
+            </div>
+            <div id="6">
+                <img src="images/denglongliang_img@2x.png">
+                <img src="images/denglong_img@2x.png">
+            </div>
+            <div id="5">
+                <img src="images/denglongliang_img@2x.png">
+                <img src="images/denglong_img@2x.png">
+            </div>
+            <div id="4">
+                <img src="images/denglongliang_img@2x.png">
+                <img src="images/denglong_img@2x.png">
+            </div>
+            <div id="3">
+                <img src="images/denglongliang_img@2x.png">
+                <img src="images/denglong_img@2x.png">
+            </div>
+            <div id="2">
+                <img src="images/denglongliang_img@2x.png">
+                <img src="images/denglong_img@2x.png">
+            </div>
+            <div id="1">
+                <img src="images/denglongliang_img@2x.png">
+                <img src="images/denglong_img@2x.png">
+            </div>
+        </div>
+    </div>
+
+    <div class="paiming">
+        <ol>
+            <li><span>排名</span></li>
+            <li><span>手机号</span></li>
+            <li><span>累计投资金额</span></li>
+        </ol>
+        <div class="lower-screen">
+            <div class="paim">
+                <ul>
+                    <li><img src="images/jin_img@2x.png"/></li>
+                    <li>
+                        <sban id="jin1">---</sban>
+                    </li>
+                    <li>￥
+                        <sban id="jin2">---</sban>
+                    </li>
+                </ul>
+                <ul>
+                    <li><img src="images/yin_img@2x.png"/></li>
+                    <li>
+                        <sban id="yin1">---</sban>
+                    </li>
+                    <li>￥
+                        <sban id="yin2">---</sban>
+                    </li>
+                </ul>
+                <ul>
+                    <li><img src="images/tong_img@2x.png"/></li>
+                    <li>
+                        <sban id="tong1">---</sban>
+                    </li>
+                    <li>￥
+                        <sban id="tong2">---</sban>
+                    </li>
+                </ul>
+                <!--<ul>-->
+                <!--<li class="yuan">4</li>-->
+                <!--<li>130******80</li>-->
+                <!--<li>￥88，8888</li>-->
+                <!--</ul>-->
+            </div>
+        </div>
+    </div>
+
+    <img src="images/shuoming_img@2x.png" class="acti">
+    <ul class="huodsm">
+        <li>活动说明：</li>
+        <li>1、活动时间为12月23号－1月4号</li>
+        <li>2、活动内容：当累计投资额达到标准后，会点亮该灯笼，要想获得该阶段奖品，需在活动结束后，<b style="color: #fff">必须同时满足排名和累计投资额条件的才可获得</b>。每个节点的实物奖品有限，每人只限领一份奖品。
+        </li>
+        <li>3、当累计投资额相同时，先达到该额度的用户排名靠前。当达到该获奖要求，但是人数多于奖品数量时，排名靠前的得该奖品，排名靠后的得下一个奖品。</li>
+        <li>4、活动期间累计投资额=30天标累计投资额/6+90天标投资额/2+180天标累计投额+360天累计投资额*2。</li>
+        <li>5、兑换实物奖品的用户请在1月 10日前在APP上填写收货地址。填写途径：我的账户—点击左上角菠萝头像—收货地址管理，奖品会在1月 20 日前全部寄出（1月17 日还联系不上的兑换用户视为放弃）；</li>
+        <li>6、现金红包可在“我的账户—资金记录”中查看；<b style="color: #fff">加息券有效期为当天</b>，加息券可在“我的账户—我的优惠券”中查看</li>
+        <li>7、奖品图片仅展示作用，所有奖品颜色随机，请以实物为准；</li>
+        <li>8、活动只在APP端进行，新手标不参与此活动；</li>
+        <li>如有疑问可咨询APP在线客服或者拨打客服热线：<span style="color: #fff;">400-032-0596</span>.</li>
+        <li>本次活动最终解释权菠萝理财所有</li>
+    </ul>
+</div>
+
+<script src="../conf.js?v=3"></script>
+<script>
+    var qstr = getQueryStringArgs();
+    var phone = qstr['phone'];
+    var token = qstr['token'];
+    var rl = [];  //新旧平台合并列表
+    var rl_a = [];  //旧平台列表
+    var rl_b = [];  //新平台列表
+    var rl_a_is = false;  //是否取到旧平台列表
+    var rl_b_is = false;  //是否取到新平台列表
+    var pm=0;  //名次
+    var pm_ce = 0;  //与前一名差额
+    var integral;  //投资额
+    var latern;  //亮灯笼数
+    var prize;  //奖品名
+    var is_login = '0';  //是否登录
+
+    //获取查询字符串
+    function getQueryStringArgs() {
+        var qs = location.search.length > 0 ? location.search.substring(1) : "",
+            args = {},
+            items = qs.split("&"),
+            len = items.length,
+            name = null,
+            value = null;
+        if (qs.length == 0) {
+            return;
+        }
+        for (var i = 0; i < len; i++) {
+            item = items[i].split("=");
+            name = decodeURIComponent(item[0]);
+            value = decodeURIComponent(item[1]);
+            args[name] = value;
+        }
+        return args;
+    }
+
+    // 验证token
+    function check_token() {
+        $.ajax({
+            type: "GET",
+            url: mypath + "/v1/activity/check/token",
+            dataType: "json",
+            async: false,
+            data: {'phone': phone, 'token': token},
+            error: function () {
+                alert('网络请求错误！token验证');
+            },
+            success: function (result) {
+                console.log(result);
+                if (result['code'] === '10000') {
+                    is_login = '1';
+                }
+            }
+        });
+    }
+
+    // 排序
+    function by(name) {
+        return function (o, p) {
+            var x = -1;  //  -1：从大到小排， 1：从小到大排
+            var a, b;
+            if (typeof o === "object" && typeof p === "object" && o && p) {
+                a = o[name];
+                b = p[name];
+                if (a === b) {
+                    return 0;
+                }
+                if (typeof a === typeof b) {
+                    return a < b ? -1 * x : 1 * x;
+                }
+                return typeof a < typeof b ? -1 * x : 1 * x;
+            }
+            else {
+                throw ("error");
+            }
+        }
+    }
+
+    // 获取个人活动数据
+    function get_member_integral() {
+        $.ajax({
+            type: "GET",
+            url: mypath + "/v1/activity/january_member",
+            async: false,
+            dataType: "json",
+            data: {'phone': phone, 'token': token},
+            error: function () {
+                alert('网络请求错误！个人活动数据');
+            },
+            success: function (result) {
+                if (result['code'] == '10000') {
+                    integral = result['content']['integral'];
+                    latern = result['content']['latern'];
+                    prize = result['content']['prize'];
+//                    integral = 0;
+//                    latern = 8;
+//                    prize = 'wl';
+//                    console.log(result);
+                } else {
+                    alert(result['desc']);
+                }
+            }
+        });
+    }
+
+    // 获取旧版排行榜
+    function get_paihangbang_old() {
+        $.ajax({
+            type: "GET",
+            url: mypath_old + "/v1/activity/january_rank_list",
+            async: false,
+            dataType: "json",
+            error: function () {
+                alert('网络请求错误！获取排行榜！');
+            },
+            success: function (result) {
+                if (result['code'] == '10000') {
+                    rl_a = result['content']['rank_list'];
+                    rl_a_is = true;
+//                    console.log(result);
+                } else {
+                    alert(result['desc']);
+                }
+            }
+        });
+    }
+
+    // 获取新版排行榜
+    function get_paihangbang_new() {
+        $.ajax({
+            type: "GET",
+            url: mypath_new + "/v1/activity/january_rank_list",
+            async: false,
+            dataType: "json",
+            error: function () {
+                alert('网络请求错误！获取排行榜！！');
+            },
+            success: function (result) {
+                if (result['code'] == '10000') {
+                    rl_b = result['content']['rank_list'];
+                    rl_b_is = true;
+//                    console.log(result);
+                } else {
+                    alert(result['desc']);
+                }
+            }
+        });
+    }
+
+    // 合并排行榜
+    function hebing_phb() {
+        rl = rl_a.concat(rl_b);
+//        rl = rl_a.concat(rl_b).concat(rl_b).concat(rl_b).concat(rl_b).concat(rl_b).concat(rl_b).concat(rl_b).concat(rl_b);
+        rl.sort(by('integral'));
+        for(var i=0;i<rl.length;i++){
+            if(rl[i]['integral']==0){
+                rl = rl.slice(0,88);
+                return
+            }
+        }
+<<<<<<< working copy
+=======
+        rl = rl.slice(0,68);
+>>>>>>> merge rev
+//        rl[0]['phone']='17610991092';
+//        console.log(rl);
+        for(var i=0;i<rl.length;i++){
+            if(rl[i]['integral']==0){
+                rl = rl.slice(0,88);
+                return
+            }
+        }
+    }
+
+    // 亮灯笼
+    function ldl(t) {
+        $($(t).children('img')[0]).css('display', 'block');
+        $($(t).children('img')[1]).css('display', 'none');
+    }
+
+    // 计算排名和差额
+    function get_pm() {
+        for (var i = 0; i < rl.length; i++) {
+            if (rl[i]['phone'] == phone) {
+//                console.log(rl[i]);
+                pm = i + 1;
+                if(i==0){}
+                else{pm_ce = rl[i - 1]['integral'] - rl[i]['integral'];}
+//                console.log(pm);
+//                console.log(pm_ce);
+            }
+        }
+        if(pm==0){
+            pm_ce=rl[rl.length-1]['integral']-integral;
+        }
+    }
+    // 手机号打星
+    function jiaxing(phone) {
+        return phone.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2');
+    }
+
+    // 渲染个人数据
+    function xr() {
+        for (var i = 1; i <= latern; i++) {
+            ldl($('#' + i));
+        }
+        $('#integral').html(integral);
+        $('#prize').html(prize);
+        $('#pm').html(pm);
+        if(pm==0){
+            $('#pm').html('未上榜');
+            $('#juqym').html('距离上榜差￥');
+        }else if(pm==1){
+            $('#juqym').hide();
+            $('#pm_ce').hide();
+        }
+        pm_ce = pm_ce.toFixed(2);
+        $('#pm_ce').html(pm_ce);
+    }
+
+    // 渲染排行榜
+    function xrphb() {
+        if (rl_a_is && rl_b_is) {
+            for (var i = 0; i < rl.length; i++) {
+                if (i == 0) {
+                    $('#jin1').html(jiaxing(rl[i]['phone']));
+                    $('#jin2').html(rl[i]['integral'].toLocaleString());
+                }
+                if (i == 1) {
+                    $('#yin1').html(jiaxing(rl[i]['phone']));
+                    $('#yin2').html(rl[i]['integral'].toLocaleString());
+                }
+                if (i == 2) {
+                    $('#tong1').html(jiaxing(rl[i]['phone']));
+                    $('#tong2').html(rl[i]['integral'].toLocaleString());
+                }
+                if (i > 2) {
+                    var ii = i + 1;
+                    $('.paim').append('<ul><li class="yuan">' + ii + '</li><li>' + jiaxing(rl[i]['phone']) + '</li><li>￥' + rl[i]['integral'].toLocaleString() + '</li></ul>');
+                }
+//                console.log(rl[i]);
+            }
+        }
+
+    }
+
+    // 打开页面，初始化
+    $(function () {
+        check_token();
+        if (is_login === '0') {
+            //hd_dengl();
+            var u = navigator.userAgent;
+            if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {
+                window.jsObj.HtmlcallJava2();
+            } else if (u.indexOf('iPhone') > -1) {
+                window.webkit.messageHandlers.hd_dengl.postMessage({body: 'call js alert in js'});
+            }
+        }
+        else {
+            get_member_integral();
+            get_paihangbang_old();
+            get_paihangbang_new();
+            hebing_phb();
+            get_pm();
+            xr();
+            xrphb();
+        }
+    });
+</script>
+</body>
+</html>

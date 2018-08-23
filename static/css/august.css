@@ -1,0 +1,508 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	width: 100%;
+	height: 100%;
+	margin: 0;padding: 0;
+	color:#606060;
+	font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+	-webkit-text-size-adjust: 100%;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body,html{
+	font-size: 62.5%;
+}
+.more{
+	max-width:64rem;
+	margin:0 auto;
+	overflow: hidden;
+}
+/*幸运大转盘*/
+.turnt{
+	width: 100%;
+	background:#f9edcd url(../images/august/bg@2x.png) no-repeat center top;
+	background-size: 100%;
+	margin: 0 auto;
+}
+.bfb{
+	width: 92%;
+	margin-left: 4%;
+	margin-top: 68vmin;
+}
+.bfenb{
+	width: 89%;
+	margin: 0 auto;
+	background: #f9e2b7;
+}
+.two{
+	width: 100%;
+	height: 30px;
+}
+.two>li{
+	width: 90px;
+	height: 28px;
+	line-height: 28px;
+	background: url(../images/august/mb@2x.png) no-repeat center;
+	background-size: 100%;
+	float: left;
+	text-align: center;
+	margin-left: 5%;
+	font-size: 3.2vmin;
+	color: #5e250a;
+}
+.two>li:last-child{
+	float: right;
+	margin-right: 5%;
+}
+.turnplate{
+	display:block;
+	width:90%;
+	margin: 0 auto;
+	position:relative;
+	background: url(../images/august/turnplate-bg.png) no-repeat center top;
+	background-size: 100%;
+	margin-top: 3vmin;
+}
+.turnplate canvas.item{
+    width: 95.8%;
+    margin-left: 1.8%;
+    margin-top: 2.8%;
+    margin-bottom: 5%;
+}
+.pointer{
+	position:absolute;
+	width: 30%;
+	height: 28vmin;
+    left: 35%;
+    top: 28%;
+    background: url(../images/august/turnplate-pointer.png) no-repeat center;
+    background-size: 100%;
+    font-size: 3.2vmin;
+    color: #f6f6f6;
+    padding-top: 11vmin;
+}
+.myscroll{
+    width: 90%;
+    /*height: 135px;*/
+    background: url(../images/august/zjmd@2x.png) no-repeat center top;
+    background-size: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+	margin-bottom: 5%;
+    line-height: 32px;
+    font-size: 12px;
+    padding-bottom: 20px;
+}
+.myscroll>div{
+	width: 100%;
+	height: 86px;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 10vmin;
+}
+.myscroll>div>ul>li{
+	font-size: 3.4vmin;
+    list-style: none;
+    color: #333;
+    padding-left: 10%;
+}
+.myscroll>div>ul>li>a{
+	font-size: 3.4vmin;
+    list-style: none;
+    color: #333;
+    margin: 0 5%;	
+}
+/*投资送清凉*/
+.qingl{
+	width: 92%;
+	height: 168vmin;
+	margin-left: 3.4%;
+	margin-top: 5px;
+	background: url(../images/august/jp.png?v=1) no-repeat center top;
+	background-size: 100%;
+}
+.qingl>p{
+	text-align: center;
+	color: #333;
+	font-size: 3.6vmin;
+	padding-top: 11%;
+}
+.songql{
+	width: 88%;
+	margin: 0 auto;
+	background: #f9e2b7;
+	padding-bottom: 5%;
+    margin-top: -1px;
+}
+.songql>img{
+	width: 60%;
+	margin: 0 auto;
+	position: relative;
+	top: 16px;
+	left: 20%;
+}
+.xiangq{
+	width: 90%;
+	margin: 0 auto;
+	background: #fdf6ea;
+	border-radius: 8px;
+}
+.xiangq>ul{
+	padding: 5%;
+}
+.xiangq>ul>li{
+	font-size: 3.4vmin;
+	line-height: 32px;
+	color: #333;
+}
+.xiangq>ul>li:nth-child(2){
+	color: #4d5ba7;
+	font-weight: bold;
+}
+.xiangq>ul>li>b{
+	color: #4d5ba7;
+}
+
+.banq{
+	font-size: 3.2vmin;
+	text-align: center;
+	line-height: 44px;
+}
+
+/*规则弹窗*/
+.explain{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+}
+.rule{
+	width: 80%;
+    background: #fff;
+    border-radius: 6px;
+    margin: 0 auto;
+    position: relative;
+    top: 28%;
+    z-index: 1;
+}
+.rule>p{
+	font-size: 4.2vmin;
+	color: #fff;
+	text-align: center;
+	background: #fe5f73;
+	line-height: 50px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+.rulecent{
+	width: 95%;
+	overflow: hidden;
+	margin: 0 auto;
+	padding: 10px;
+}
+.rulecent>ul>li{
+	font-size: 3.2vmin;
+	color: #333;
+	line-height: 30px;
+}
+.fanh{
+	width: 36px;
+	height: 80px;
+	background: url(../images/august/gb@2x.png) no-repeat center;
+    background-size: 68%;
+    position: absolute;
+    right: 6vmin;
+    top: 30vmin;
+}
+
+/*奖励弹窗*/
+.get{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	z-index: 100;
+	display: none;
+}
+.minget{
+	width: 80%;
+	background: url(../images/august/lqjl@2x.png) no-repeat center top;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 30%;
+	left: 10%;
+}
+#content{
+    width: 100%;
+    height: 200px;
+    display: -webkit-box;
+    -webkit-box-flex: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 15%;
+    margin-bottom: 4.2%;
+}
+#content>div>p{
+	line-height: 32px;
+	color: #333;
+	padding: 0 5%;
+	font-size: 3vmin;
+}
+#content>div>p:nth-child(even){
+	background: #f9e2b7;
+}
+#content>div>p>span{
+	float: right;
+}
+.noget{
+	width: 38px;
+	height: 80px;
+	background: url(../images/august/gb@2x.png) no-repeat center;
+    background-size: 65%;
+    position: absolute;
+    top: -13vmin;
+    right: -18px;
+}
+/*恭喜您弹出*/
+.prize{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	z-index: 100;
+	display: none;
+}
+.raunts{
+	width: 90%;
+	height: 60vmin;
+	background: url(../images/august/gxn@2x.png) no-repeat center top;
+	background-size: 90%;
+	position: absolute;
+	top: 30%;
+	left: 5%;
+}
+.wallet{
+	width: 80%;
+	margin: 0 auto;
+	margin-bottom: 8%;
+	margin-top: 8%;
+	text-align: center;
+}
+.wallet>li{
+	width: 100%;
+	margin: 0 auto;
+	color: #fff;
+	font-size: 3.8vmin;
+}
+.wallet>li:first-child{
+	width: 66%;
+	height: 22vmin;
+}
+.wallet>li>p:first-child{
+	font-size: 8.2vmin;
+}
+.wallet>li:last-child{
+	width: 100%;
+	clear: both;
+	font-size: 3.6vmin;
+	line-height: 28px;
+	color: #333;
+}
+.shut{
+    width: 60%;
+    height: 45px;
+    background: #fe5f73;
+    border-radius: 50px;
+    position: absolute;
+    left: 20%;
+    bottom: 0;
+    font-size: 3.6vmin;
+    color: #FFF;
+}
+/*温馨提示*/
+.cozy{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+}
+.prompt{
+	width: 80%;
+    background: #fff;
+    border-radius: 6px;
+    margin: 0 auto;
+    position: relative;
+    top: 32%;
+    padding-bottom: 10vmin;
+}
+.prompt>p{
+	font-size: 4.2vmin;
+	text-align: center;
+    padding: 3% 0;
+}
+.prompt>p:first-child{
+	font-weight: bold;
+}
+.invest{
+    width: 66%;
+    height: 45px;
+    background: #fe5f73;
+    border-radius: 50px;
+    position: absolute;
+    left: 18%;
+    bottom: -5vmin;
+    font-size: 3.6vmin;
+    color: #FFF;
+}
+.tc_info{
+	width: 36px;
+	height: 80px;
+	background: url(../images/august/gb@2x.png) no-repeat center;
+    background-size: 68%;
+    position: absolute;
+    right: 24px;
+    top: 39vmin;
+}
+/*登录*/
+.denglu{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+}
+.dl_info{
+	width: 80%;
+    background: #fff;
+    border-radius: 6px;
+    margin: 0 auto;
+    position: relative;
+    top: 32%;
+    padding-bottom: 18vmin;
+}
+.dl_info>p{
+	font-size: 3.8vmin;
+	text-align: center;
+}
+.dl_info>p:first-child{
+	font-size: 4.4vmin;
+	color: #fe5f73;
+    padding: 6px 0;
+}
+.dl-info{
+    width: 30%;
+    height: 40px;
+    background: #fe5f73;
+    border-radius: 5px;
+    font-size: 3.6vmin;
+    color: #FFF;
+    float: right;
+    margin-right: 15%;
+    margin-top: 3%;
+}
+.dl-qx{
+	width: 30%;
+    height: 40px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    font-size: 3.6vmin;
+    color: #666;
+    float: left;
+    margin-left: 15%;
+    margin-top: 3%;
+}
+/*绑卡*/
+.bangk{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+}
+.bk_info{
+	width: 80%;
+    background: #fff;
+    border-radius: 6px;
+    margin: 0 auto;
+    position: relative;
+    top: 32%;
+    padding-bottom: 18vmin;
+}
+.bk_info>p{
+	font-size: 3.8vmin;
+	text-align: center;
+}
+.bk_info>p:first-child{
+	font-size: 4.4vmin;
+	color: #fe5f73;
+    padding: 6px 0;
+}
+.bk-info{
+    width: 30%;
+    height: 40px;
+    background: #fe5f73;
+    border-radius: 5px;
+    font-size: 3.6vmin;
+    color: #FFF;
+    float: right;
+    margin-right: 15%;
+    margin-top: 3%;
+}
+.bk-qx{
+	width: 30%;
+    height: 40px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    font-size: 3.6vmin;
+    color: #666;
+    float: left;
+    margin-left: 15%;
+    margin-top: 3%;
+}
+
+/*活动已结束*/
+.over{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+}
+.end{
+	width: 80%;
+    background: #fff;
+    border-radius: 6px;
+    margin: 0 auto;
+    position: relative;
+    top: 32%;
+    padding-bottom: 15vmin;
+}
+.end>p{
+	font-size: 4.2vmin;
+	text-align: center;
+    margin-bottom: 5%;
+}
+.end>p:first-child{
+	font-weight: bold;
+	padding-top: 10px;
+}
+.end_qd{
+    width: 60%;
+    height: 40px;
+    background: #ffcb0f;
+    border-radius: 50px;
+    position: absolute;
+    left: 20%;
+    bottom: 5vmin;
+    font-size: 3.8vmin;
+    color: #fff;
+}

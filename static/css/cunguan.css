@@ -1,0 +1,146 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	width: 100%;
+	height: 100%;
+	margin: 0;padding: 0;
+	color:#606060;
+	font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+}
+body,html{
+	font-size: 62.5%;
+}
+.cunguan{
+	max-width:64rem;
+	margin:0 auto;
+	overflow: hidden;
+}
+.cunguan>img{
+	width: 100%;
+}
+.dingwei{
+	width: 86%;
+	background: #fff;
+	margin: 0 auto;
+	line-height: 28px;
+	font-size: 3.2vmin;
+	text-indent: 26px;
+	position: relative;
+	top: -10vmin;
+	padding: 3%;
+}
+.dingwei>b{
+	color: #fcc02e;
+}
+.xinwang{
+	margin: 0 auto;
+	margin-top: -20px;
+}
+.xinwang>p{
+	font-size: 3.6vmin;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 3%;
+	background: url(../images/cunguan/xian.png) no-repeat center bottom;
+}
+.xinw>dt{
+	text-align: center;
+}
+.xinw>dt>img{
+	width: 50%;
+}
+.xinw>dd{
+	line-height: 28px;
+	font-size: 3.2vmin;
+	text-indent: 28px;
+	padding: 3%;
+}
+.shili{
+	width: 100%;
+	background: #fff;
+	clear: both;
+}
+.shili>p{
+	font-size: 3.6vmin;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 2%;
+	background: url(../images/cunguan/xian.png) no-repeat center bottom;
+	padding-top: 10px;
+}
+.fenbu{
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	display: -webkit-box;
+	-webkit-box-flex: 1;
+	padding: 2% 0;
+}
+.fenbu>dl{
+	-webkit-box-flex: 1;
+}
+.fenbu>dl>dt>img{
+	width: 50%;
+}
+.fenbu>dl>dd{
+	font-size: 3.2vmin;
+	padding-top: 3%;
+	line-height: 26px;
+}
+.moshi{
+	width: 95%;
+	margin: 0 auto;
+}
+.moshi>img{
+	width: 100%;
+}
+.moshi>p{
+	font-size: 3.6vmin;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 2%;
+	background: url(../images/cunguan/xian.png) no-repeat center bottom;
+	padding-top: 20px;
+}
+.foot{
+	width: 100%;
+	background: #4287ee;
+	clear: both;
+	margin-top: 5%;
+}
+.foot>p{
+	font-size: 3.6vmin;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 2%;
+	background: url(../images/cunguan/xian.png) no-repeat center bottom;
+	padding-top: 10px;
+	color: #fff;
+}
+.dibu{
+	width: 90%;
+	margin: 0 auto;
+	display: -webkit-box;
+	-webkit-box-flex: 1;
+	padding-bottom: 10px;
+}
+.dibu>dl{
+	width: 30%;
+	background: #fff;
+	box-shadow: 0 5px 0 #79aaf3;
+	border-radius: 8px;
+	text-align: center;
+	margin: 2%;
+}
+.dibu>dl>dt{
+	padding-top: 20px;
+}
+.dibu>dl>dt>img{
+	width: 50%;
+}
+.dibu>dl>dd{
+	padding: 3% 5%;
+	line-height: 22px;
+	margin-top: 3%;
+	font-size: 3vmin;
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>信息披露</title>
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/disclo.css') }}"/>
+		<script src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/sharing.js') }}"></script>
+	</head>
+	<body>
+		<div class="disclo" id="wrap">
+            <ul class="tabClick">
+                <li class="active otop">机构信息</li>
+                <li class="otop">风险教育</li>
+                <li class="otop">法律法规</li>
+                <li class="shuju">平台数据</li>
+            </ul>
+            <div class="lineBorder">
+                <div class="lineDiv"><!--移动的div--></div>
+            </div>
+            <div class="tabCon">
+                <div class="tabBox">
+                    <div class="tabList">
+                    	<div class="ljbasic">
+                    		<h1>机构信息</h1>
+			            	<table class="biaog" border="1" cellpadding="0" cellspacing="0" width="100%">
+			            		<!--<tr>
+									<th height="100" colspan="2" style="font-size:18px;text-align:center">总表头</th>
+								</tr>-->
+								<tr>
+									<th>全称及简称</th>
+									<td>菠萝理财（www.boluolc.com）隶属于北京朴素磐石投资管理有限公司。（简称“菠萝理财”）</td>
+								</tr>
+								<tr>
+									<th>注册/实缴资本</th>
+									<td>5,000万元</td>
+								</tr>
+								<tr>
+									<th>注册地址</th>
+									<td>北京市海淀区高梁桥斜街59号中坤大厦13层1301室</td>
+								</tr>
+								<tr>
+									<th>成立时间</th>
+									<td>2014年8月8日</td>
+								</tr>
+								<tr>
+									<th>法定代表人</th>
+									<td>孙志远</td>
+								</tr>
+								<tr>
+									<th>经营范围</th>
+									<td>投资管理；资产管理；投资咨询；财务咨询（不得开展审计、验资、查帐、评估、会计咨询、代理记账等需经专项审批的业务，不得出具相应的审计报告、验资报告、查帐报告、评估报告等文字材料）；经济贸易咨询；技术推广、技术服务；数据处理（数据处理中的银行卡中心、PUE值在1.5以上的云计算数据中心除外）；经营电信业务。
+			（“1、未经有关部门批准，不得以公开方式募集资金；2、不得公开开展证券类产品和金融衍生品交易活动；3、不得发放贷款；4、不得对所投资企业以外的其他企业提供担保；5、不得向投资者承诺投资本金不受损失或者承诺最低收益”；经营电信业务以及依法须经批准的项目，经相关部门批准后依批准的内容开展经营活动。）</td>
+								</tr>
+								<tr>
+									<th>联系方式</th>
+									<td>地址：北京市海淀区高梁桥斜街59号中坤大厦13层1301室<br />电话：400-032-0596<br>邮编：100089</td>
+								</tr>
+								<tr>
+									<th>网站或平台信息</th>
+									<td>
+										网站或平台地址：www.boluolc.com
+										<br />
+										平台名称：菠萝理财
+										<br />
+										平台上线运营时间：2015年10月15日正式上线运营
+										<br />
+										相应电信业务经营许可信息：京ICP备15006762号-2
+									</td>
+								</tr>
+								<tr>
+									<th>注册协议模板</th>
+									<td class="djxy"><a href="/v1/html5/expose/info/register_agreement">注册协议</a></td>
+								</tr>
+								<tr>
+									<th>组织架构</th>
+									<td class="djjg"><a href="/v1/html5/expose/info/framework">组织架构</a></td>
+								</tr>
+								<tr>
+									<th>重大事项信息</th>
+									<td class="djsx"><a href="/v1/html5/expose/info/important_Things">重大事项</a></td>
+								</tr>
+								<tr>
+									<th>证照荣誉</th>
+									<td class="honnr"><a href="/v1/html5/honor">立即查看</a></td>
+								</tr>
+								<tr>
+									<th>合规认证</th>
+									<td style="text-align: center;">
+										<img src="{{ url_for('static', filename='images/disclo/beian.jpg') }}?v=2" style="width: 100%; margin-bottom: 5px;" />
+										<p>信息安全等级保护备案证明</p>
+										<img src="{{ url_for('static', filename='images/disclo/huopi.jpg') }}?v=2" style="width: 100%;" />
+										<p>ICP经营许可证</p>
+									</td>
+								</tr>
+								<tr>
+									<th>资金存管情况</th>
+									<td>菠萝理财银行存管系统正式上线，实现用户资金和平台自身资金分账管理。新网银行依法对用户交易资金进行监督和管理，每位用户都有专属交易资金管理账户，未经用户输入密码确认，任何人无法动用资金，更大程度保证用户的资金安全。</td>
+								</tr>
+							</table>
+                    	</div>
+                    </div>
+                    <div class="tabList">
+                    	<ul class="jiaoyu">
+                    		<b>1、正确认识与规范发展互联网金融</b>
+                    		<li>2013年以来，互联网金融在国内风生水起、备受追捧。然而随着互联网金融潜在风险的逐步暴露，特别是e租宝、泛亚等事件的接连发生，社会舆论出现了一定程度的转向。在当前众说纷纭、莫衷一是的情况下，笔者认为有必要廓清两个基本问题：一是如何正确认识互联网金融，二是如何规范发展互联网金融。</li>
+                    		<b>2、互联网金融的概念</b>
+                    		<li>互联网金融是传统金融机构与互联网企业利用互联网技术和信息通信技术实现资金融通、支付、投资和信息中介服务的新型金融业务模式。互联网与金融深度融合是大势所趋，将对金融产品、业务、组织和服务等方面产生更加深刻的影响。</li>
+                    		<b>3、以教育促理性 以规范促创新 推动互联网金融健康发展</b>
+                    		<li>过去几年，互联网金融已成为市场热点与创新热词，信息技术与互联网将许多看似不可能的变成可能，甚至是现实。商业银行电子银行快速发展，主要机构的电子化业务替代率、分流率已逾八成；电子商务的快速发展，推动了电子支付与移动支付的迅速普及。</li>
+                    		<b>4、立足服务实体经济 推动互联网金融规范健康发展</b>
+                    		<li>自2014年以来，“互联网金融”一词已经连续3年被写进《政府工作报告》，从“促进健康发展”变为“规范发展”。目前，全国范围正在开展互联网金融风险专项整治，促进互联网金融规范发展已成为当前主旋律，也是互联网金融能够长期健康发展的坚实基础。规范发展互联网金融，其立足点是服务实体经济，解决金融服务短板，提高金融供给能力。规范发展互联网金融也必须从有效供给入手，多管齐下。</li>
+                    		<b>5、互联网金融监管体制的法治化建议</b>
+                    		<li>近年来，中国互联网金融呈现出高速发展势头与乱象丛生的局面，P2P、股权众筹、第三方支付、互联网保险、共享经济等平台不断拓展着互联网金融的领域，给社会各个层面带来了巨大冲击。既为“双创”提供了前所未有的动力，也对监管带来了前所未有的压力。</li>
+                    	</ul>
+                    </div>
+                    <div class="tabList">
+                    	<ul class="flfg">
+                    		<p>用户在菠萝理财上合法投资的收益受法律保护菠萝理财聘用了泽大律师事务所、京师律师事务所两个律所为常年法律顾问。 </p>
+                    		<div class="navcent">
+                    			<img src="{{ url_for('static', filename='images/disclo/zeda.png') }}" />
+                    			<b>泽大律师事务所</b>
+                    		</div>
+                    		<li>浙江泽大律师事务所于2001年由浙江浙大律师事务所改制设立。    浙江泽大律师事务所是浙江省规模最大的综合型律师事务所之一，2005年获得中华全国律协评选的首批“全国优秀律师事务所”。依托浙江大学光华法学院的学术底蕴和人文积累，泽大所在竞争激烈的法律服务市场中领先，并形成了鲜明的性格与文化。泽大律师恪守法律精神与传统，同时保持对社会生活的关切，不断创新服务。泽大律师对中国的法律环境和社会现实有着深入的了解，具备高度的敬业精神、专业能力和职业素养，是客户合法权益的可靠保障。</li>
+                    		<div class="navcent">
+                    			<img src="{{ url_for('static', filename='images/disclo/jings.png') }}" />
+                    			<b>京师律师事务所</b>
+                    		</div>
+                    		<li>京师律师事务所是一家具有22年历史的大型综合性律师事务所，肇造于1994年，总部设在北京，是传统与新型管理模式相结合的中国合伙制律师事务所,京师拥有一批实战经验丰富的精英律师，大多数在国内外著名大学的法学院系接受过系统的法学教育，获得法学博士、硕士学位，许多律师还具有注册会计师、税务师或高级人力资源管理师等资格。京师律师事务所还聘请了一批国内外著名院校专家、学者、各界名流担任顾问，为京师战略和具体案件提供有力支持。 </li>
+                    		<b>关于菠萝理财提供居间服务的法律基础及互联网个人借贷合同的合法性，请参阅下文：</b>
+                    		<b>.关于投资人及借款人双方民间借贷的合法性：明确合法</b>
+                    		<li>根据《合同法》第196条规定"借款合同是借款人向贷款人借款，到期返还借款并支付利息的合同"，《合同法》允许普通民事主体之间发生借贷关系，并允许出借方到期可以收回本金和符合法律规定的利息。</li>
+                    		<b>.关于菠萝理财提供居间撮合服务的合法性：明确合法</b>
+                    		<li>根据《合同法》第23章关于"居间合同"的规定，特别是第424条规定的"居间合同是居间人向委托人报告订立合同的机会或者提供订立合同的媒介服务，委托人支付报酬的合同"，菠萝理财为民间借贷提供撮合借贷双方形成借贷关系的居间服务有着明确的法律基础。</li>
+                    		<b>.关于电子合同的合法性及可执行性：现行法律明确确定了合同效力</b>
+                    		<li>根据《电子签名法》的规定，民事活动中的合同或者其他文件、单证等文书，当事人可以约定使用电子签名、数据电文，不能因为合同采用电子签名、数据电文就否定其法律效力。同时，《电子签名法》中还规定，可靠的电子签名与手写签名或者盖章具有同等的法律效力。明确肯定了符合条件的电子签名与手写签名或盖章具有同等的效力。</li>
+                    		<b>.关于投资人在菠萝理财获得的出借投资收益的合法性:为合法收益,受到法律保护</b>
+                    		<li>根据最高人民法院《关于人民法院审理借贷案件的若干意见》第6条："民间借贷的利率可以适当高于银行的利率，各地人民法院可以根据本地区的实际情况具体掌握，但最高不得超过银行同类贷款利率的四倍，（包含利率本款）。超出此限度的，超出部分的利息不予保护。"当期人民银行一年期基准贷款利率为6.00%，则当期基准贷款利率的四倍为24.00%，菠萝理财的出借投资收益低于24.00%，为合法利息收益，受到法律保护。</li>
+                    	</ul>
+                    </div>
+                    <div class="tabList"></div>
+                </div>
+            </div>
+            
+        </div>
+        <script charset="utf-8">
+            var init={
+                translate:function(obj,windowWidth,star){
+                    obj.style.webkitTransform='translate3d('+-star*windowWidth+'px,0,0)';
+                },
+                lineAnme:function(obj,stance){
+                    obj.style.webkitTransform='translate3d('+stance+'px,0,0)';
+                },
+            }
+            $(function(){
+				$(".shuju").click(function(){
+					location.href="/v1/html5/expose/data/info"
+				});
+				$(".otop").click(function() {
+				    $("html,body").animate({scrollTop:0}, 50);
+				});
+			});
+		</script>
+	</body>
+</html>

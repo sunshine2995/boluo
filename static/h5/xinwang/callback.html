@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Widow-target" Content="_top">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>新网回调</title>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}"></script>
+		<script>
+			$(function () {
+				$(".look-cent").slideUp();
+            })
+		</script>
+	</head>
+    <body>
+<input type="button" onclick="showHtmlcallJava()">
+
+
+    <script type="text/javascript">
+			function showHtmlcallJava(){
+				var str = window.jsObj.HtmlcallJava7();
+			}
+    </script>
+    </body>
+</html>
+

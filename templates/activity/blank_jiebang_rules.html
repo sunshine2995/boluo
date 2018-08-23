@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>帮助中心</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<style>
+			/*@media screen and (min-width:960px){
+			    .elephones{ max-width:640px;}
+			}*/
+			body{
+				margin: 0;padding: 0;
+				background: #fff;
+				color:#606060;
+				font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+			}
+			body,html{
+				font-size: 62.5%;
+			}
+			.pactbox{
+				max-width:64rem;
+				color: #888;
+				font-size: 1.4rem;
+				margin: 0 auto;
+			}
+			.bchange{
+				width: 80%;
+				margin: 0 auto;
+				line-height: 28px;
+				margin-top: 5%;
+				margin-bottom: 5%;
+				text-align: center;
+				color: #ff8b0f;
+				font-size: 1.4rem;
+			}
+			.dealtop{
+				width: 90%;
+				margin:0 auto;
+				padding-top: 2.5%;
+			}
+			.dealtop>li{
+				line-height: 28px;
+			}
+			.dealtop>li>b{
+				font-size: 4vmin;
+				color: #ffcb0f;
+			}
+			.character{
+				width: 90%;
+				margin: 0 auto;
+			}
+			.character dl dt{
+				text-align: center;
+			}
+			.dealbottom{
+				width: 90%;
+				margin:10px auto;
+				line-height: 28px;
+				text-indent: 26px;
+				line-height: 30px;
+				color: #DE2400;
+			}
+			.pdata{
+				float: right;
+				padding: 5%;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="pactbox">
+			<ul class="dealtop">
+				<li><b>更换银行卡</b></li>
+			</ul>
+			<div class="bchange">
+				<span>为了您的资金安全不建议更换银行卡。<br />如果特殊情况、请按以下流程申请解绑。</span>
+			</div>
+			<div class="character">
+				<dl>
+					<dt><img src="{{ url_for('static', filename='images/bank_icon1.png')}}" style="width: 30%;" /> </dt>
+					<dd>1、关注“菠萝理财”微信公众号，联系微信客服提出解绑申请；也可拨打400-032-0596联系客服。</dd>
+				</dl>
+				<dl>
+					<dt><img src="{{ url_for('static', filename='images/bank_icon2.png')}}" style="width: 18%;" /> </dt>
+					<dd>2、提供您的邮箱地址、我们会把您需要准备的资料发送到您的邮箱。请您根据邮件内容提交相关资料。</dd>
+				</dl>
+				<dl>
+					<dt><img src="{{ url_for('static', filename='images/bank_icon3.png')}}" style="width: 18%;" /> </dt>
+					<dd>3、资料审核通过后、一个工作日内为您办理成功。</dd>
+				</dl>
+			</div>
+			<p class="dealbottom">提示：如果卡片注销或遗失、请到银行开具证明、并将原件邮寄给我们、更换同行银行卡需开具“换卡证明”，异行需开具“注销证明”。</p>
+			<p class="pdata"> 北京朴素磐石投资管理有限公司<br />2017年1月18日</p>
+		</div>
+	</body>
+</html>

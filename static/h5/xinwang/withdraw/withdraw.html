@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>提现</title>
+	<link rel="stylesheet" type="text/css" href="../../../css/media.css"/>
+	<script src="../../../js/jquery-3.1.1.min.js"></script>
+	<style>
+		body{
+			width: 100%;
+			height: 100%;
+			margin: 0;padding: 0;
+			color:#606060;
+			font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+			-webkit-text-size-adjust: 100%;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		}
+		body,html{
+			font-size: 62.5%;
+			background: #fff;
+		}
+
+		.tixian{
+			max-width:64rem;
+			margin:0 auto;
+			overflow: hidden;
+			font-size: 3.6vmin;
+		}
+		.gongxi{
+			text-align: center;
+			padding: 6vmin;
+			margin-top: 5%;
+		}
+		.gongxi>dt>img{
+			width: 16%;
+			padding-bottom: 10px;
+		}
+		.gongxi>dd{
+			font-size: 4.2vmin;
+		}
+		.shibai{
+			background: #fff;
+			text-align: center;
+			padding: 8vmin;
+			display: none;
+		}
+		.shibai>dt>img{
+			width: 16%;
+			padding-bottom: 10px;
+		}
+		.shibai>dd{
+			font-size: 4.4vmin;
+		}
+
+		.zhidian{
+			width: 80%;
+			margin: 0 auto;
+			text-align: center;
+		}
+		.zhidian>p:first-child{
+			line-height: 28px;
+			color: #888;
+			margin: 3%;
+		}
+		.zhidian>p>img{
+			width: 8%;
+			margin-right: 5px;
+		}
+		.zhidian>p:last-child{
+			color: #ffcb0f;
+			font-weight: bold;
+		}
+
+		.confirm{
+			width: 90%;
+			background: #fdc32f;
+			border-radius: 5px;
+			color: #fff;
+			line-height: 12vmin;
+			margin-left: 5%;
+			margin-top: 10%;
+			font-size: 4.2vmin;
+		}
+	</style>
+</head>
+<body>
+<div class="tixian">
+	<dl class="gongxi">
+		<dt><img src="../../../images/chengg.png"> </dt>
+		<dd>恭喜您！提现成功：<b id="mn"></b> 元</dd>
+	</dl>
+	<dl class="shibai">
+		<dt><img src="../../../images/shibai.png"> </dt>
+		<dd>对不起! 提现失败</dd>
+	</dl>
+
+	<div class="zhidian">
+		<p>如有疑问，请致电</p>
+		<p class="service"><img src="../../../images/phone@2x.png"> 400-032-0596</p>
+	</div>
+
+	<button class="confirm">确认</button>
+</div>
+<script src="../conf.js?v=1"></script>
+<script>
+    var qstr = getQueryStringArgs();
+    var order_id = qstr['order_id'];
+
+    //var protocol = window.location.protocol;
+    //var token = qstr['token'];
+    //var mypath = 'apitest.boluolicai.com:8012';
+
+    function getQueryStringArgs() {
+        // 获取查询字符串参数，去除该字符串问号开关符号
+        var qs = location.search.length > 0 ? location.search.substring(1) : "",
+            args = {},//存放所有查询字符串参数对
+            items = qs.split("&"),
+            len = items.length,
+            name = null,
+            value = null;
+        if (qs.length == 0) {
+            //alert("没有查询字符串,提前退行！");
+            return;
+        }
+        for (var i = 0; i < len; i++) {
+            item = items[i].split("=");
+            name = decodeURIComponent(item[0]);
+            value = decodeURIComponent(item[1]);
+            args[name] = value;
+        }
+        return args;
+    }
+
+    $(function(){
+        $.ajax({
+            type: "GET",
+            url:  mypath+"/xinwang/invest/order/info/withdraw",
+            dataType: "json",
+            data: {'order_id': order_id}, //, 'token': token},
+            success: function(result){
+                $("#mn").html(result['money']);
+
+                if (result['is_effect'] === '0') {
+                    $(".gongxi").hide();
+                    $(".shibai").show();
+                    $(".confirm").html("返回");
+                }
+                else{
+                    $(".gongxi").show();
+                    $(".shibai").hide();
+                }
+                $(".confirm").click(function(){
+                    buySuc();
+                });
+                $(".service").click(function(){
+                    telePhone();
+                });
+            }
+        });
+    });
+
+    //交互 成功失败
+    function buySuc() {
+        window.jsObj.HtmlcallJava7();
+    }
+    //客服电话
+    function telePhone() {
+        window.jsObj.HtmlcallJava8();
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	width: 100%;
+	height: 100%;
+	margin: 0;padding: 0;
+	color:#606060;
+	background:#f5f5f5;
+	font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+	-webkit-text-size-adjust: 100%;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body,html{
+	font-size: 62.5%;
+}
+.zhinan{
+	max-width:64rem;
+	margin:0 auto;
+	overflow: hidden;
+	background: url("../images/top@2x.png") no-repeat center top;
+	background-size: 100%;
+}
+.lunbo{
+	width: 94%;
+	background: #fff;
+	margin: 3% auto;
+	text-align: center;
+	padding-top: 3vmin;
+}
+.lunbo:first-child{
+	margin-top: 76vmin;
+}
+.lunbo>img{
+	width: 50%;
+}
+
+/* main_img */
+.img_gallery{  width:100%;  height:99vmin;  margin:3vmin auto;  overflow:hidden;  position:relative;  }
+
+/*激活流程*/
+.main_img{  height:100%;  overflow:hidden;  position:relative;  width:100%;  }
+.main_img ul{  width:9999px;  height:100%;  overflow:hidden;  position:absolute;  top:0;left:0;  }
+.main_img li{  float:left;  width:100%;  height:100%;  margin-top: 3%;  }
+.main_img li span{  display:block;  width:100%;  height:100%;  }
+.img_1{  background:url('../images/jihuo1@2x.png') center top no-repeat;  background-size: 50%;  }
+.img_2{  background:url('../images/jihuo2@2x.png') center top no-repeat;  background-size: 50%;  }
+.img_3{  background:url('../images/jihuo3@2x.png') center top no-repeat;  background-size: 50%;  }
+/*.point{  position:absolute;  bottom:3vmin;  left:42%;  z-index:999;  width:50%;  }
+.point a{  float:left;  width:10px;  height:10px;  border-radius: 20px;  margin:5px;  padding:0;  background: #eee;  display:block;  }
+.point a.on{  background-position:0 -21px;  background: #ccc;  }*/
+.btn_prev,.btn_next{  z-index:11111;  position:absolute;  display:block;  width:73px!important;  height:74px!important;  top:30%;  }
+.btn_prev{  background:url(../images/jiantou_icon@2x.png) no-repeat left top;  left:3%;  background-size: 50%;  }
+.btn_next{  background:url(../images/rightjiantou_icon@2x.png) no-repeat right top;  right:3%;  background-size: 50%;  }
+
+/*充值流程*/
+.img_4{  background:url('../images/chongzhi1@2x.png') center top no-repeat;  background-size: 50%;  }
+.img_5{  background:url('../images/chongzhi2@2x.png') center top no-repeat;  background-size: 50%;  }
+.img_6{  background:url('../images/chongzhi3@2x.png') center top no-repeat;  background-size: 50%;  }
+
+/*出借流程*/
+
+.img_7{  background:url('../images/chujie1@2x.png') center top no-repeat;  background-size: 50%;  }
+.img_8{  background:url('../images/chujie2@2x.png') center top no-repeat;  background-size: 50%;  }
+.img_9{  background:url('../images/chujie3@2x.png') center top no-repeat;  background-size: 50%;  }
+.img_10{  background:url('../images/chujie4@2x.png') center top no-repeat;  background-size: 50%;  }
+
+/*提现流程*/
+.img_11{  background:url('../images/tixian1@2x.png') center top no-repeat;  background-size: 50%;  }
+.img_12{  background:url('../images/tixian2@2x.png') center top no-repeat;  background-size: 50%;  }
+.img_13{  background:url('../images/tixian3@2x.png') center top no-repeat;  background-size: 50%;  }
+.wenti{
+	width: 90%;
+	margin: 0 auto;
+}
+.wenti>p{
+	font-size: 4.2vmin;
+	color: #333;
+	line-height: 38px;
+	text-align: center;
+}
+.wenti>ul>b{
+	font-size: 3.8vmin;
+	color: #666;
+	line-height: 36px;
+}
+.wenti>ul>li{
+	font-size: 3.2vmin;
+	color: #666;
+	line-height: 30px;
+}

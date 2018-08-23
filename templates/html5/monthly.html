@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+	<title>投资排行榜</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/idangerous.swiper.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/monthly.css') }}">
+</head>
+<body>
+	<div class="swiper-nav swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"></div>
+			<div class="swiper-slide"></div>
+			<div class="swiper-slide"></div>
+		</div>
+	</div>
+	<div class="swiper-pages swiper-container">
+		<div class="swiper-wrapper">
+			
+			<!--<div class="swiper-slide  rank2">-->
+				<!--<div class="swiper-container scroll-container">-->
+					<!--<div class="swiper-scrollbar"></div>-->
+					<!--<div class="swiper-wrapper">-->
+						<!--<div class="swiper-slide">-->
+							<!--<div class="page-inner">-->
+								<!--<h1 class="huang">五月</h1>-->
+			                	<!--<div class="paim">-->
+									<!--<ul>-->
+										<!--<li><span>排名</span></li>-->
+										<!--<li><span>手机号</span></li>-->
+										<!--<li><span>投资金额</span></li>-->
+									<!--</ul>-->
+									<!--{% for i in response_data.rank %}-->
+				<!--{% if i[1]== '1' %}-->
+				<!--<ul>-->
+					<!--<li><img src="{{ url_for('static', filename='images/jinpai.png') }}" /> </li>-->
+					<!--<li>{{i[0][1]}}</li>-->
+					<!--<li>{{i[0][0]}}元</li>-->
+				<!--</ul>-->
+
+				<!--{% elif i[1]== '2' %}-->
+				<!--<ul>-->
+					<!--<li><img src="{{ url_for('static', filename='images/yinpai.png') }}" /> </li>-->
+					<!--<li>{{i[0][1]}}</li>-->
+					<!--<li>{{i[0][0]}}元</li>-->
+				<!--</ul>-->
+				<!--{% elif i[1]== '3' %}-->
+				<!--<ul>-->
+					<!--<li><img src="{{ url_for('static', filename='images/tongpai.png') }}" /> </li>-->
+					<!--<li>{{i[0][1]}}</li>-->
+					<!--<li>{{i[0][0]}}元</li>-->
+				<!--</ul>-->
+				<!--{% else %}-->
+				<!--<ul>-->
+					<!--<li class="yuan">{{i[1]}}</li>-->
+					<!--<li>{{i[0][1]}}</li>-->
+					<!--<li>{{i[0][0]}}元</li>-->
+				<!--</ul>-->
+				<!--{% endif %}-->
+				<!--{% endfor %}-->
+								<!--</div>-->
+								<!--<p class="ciri">注：打榜者获奖菠萝将于次月一日发放！</p>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
+			<!--</div>-->
+			<!---->
+
+			<div class="swiper-slide  rank3">
+				<div class="swiper-container scroll-container">
+					<div class="swiper-scrollbar"></div>
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="page-inner">
+								<h1 class="lan">{{response_data.month}}</h1>
+			                	<div class="paim">
+									<ul>
+										<li><span>排名</span></li>
+										<li><span>手机号</span></li>
+										<li><span>投资金额</span></li>
+									</ul>
+									{% for i in response_data.rank %}
+				{% if i[1]== '1' %}
+				<ul>
+					<li><img src="{{ url_for('static', filename='images/jinpai.png') }}" /> </li>
+					<li>{{i[0][1]}}</li>
+					<li>{{i[0][0]}}元</li>
+				</ul>
+
+				{% elif i[1]== '2' %}
+				<ul>
+					<li><img src="{{ url_for('static', filename='images/yinpai.png') }}" /> </li>
+					<li>{{i[0][1]}}</li>
+					<li>{{i[0][0]}}元</li>
+				</ul>
+				{% elif i[1]== '3' %}
+				<ul>
+					<li><img src="{{ url_for('static', filename='images/tongpai.png') }}" /> </li>
+					<li>{{i[0][1]}}</li>
+					<li>{{i[0][0]}}元</li>
+				</ul>
+				{% else %}
+				<ul>
+					<li class="yuan">{{i[1]}}</li>
+					<li>{{i[0][1]}}</li>
+					<li>{{i[0][0]}}元</li>
+				</ul>
+				{% endif %}
+				{% endfor %}
+								</div>
+								<p class="ciri">注：打榜者获奖菠萝将于次月一日发放！</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+		</div>
+		
+		<img src="{{ url_for('static', filename='images/monthly/anniu@2x.png') }}" class="dabang" />
+        
+        <div class="phtc">
+        	<div class="baidtc">
+        		<div class="dbnav">
+        			打榜奖励
+				</div>
+        		<div class="daji">
+					<ul>
+						<li><span>投资排行榜</span></li>
+						<li><span>获得奖励</span></li>
+					</ul>
+					<ul>
+						<li>第一名</li>
+						<li>当月投资所得菠萝币的15%</li>
+					</ul>
+					<ul>
+						<li>第二名</li>
+						<li>当月投资所得菠萝币的14%</li>
+					</ul>
+					<ul>
+						<li>第三名</li>
+						<li>当月投资所得菠萝币的13%</li>
+					</ul>
+					<ul>
+						<li>第四名</li>
+						<li>当月投资所得菠萝币的12%</li>
+					</ul>
+					<ul>
+						<li>第五名</li>
+						<li>当月投资所得菠萝币的11%</li>
+					</ul>
+					<ul>
+						<li>第六名</li>
+						<li>当月投资所得菠萝币的10%</li>
+					</ul>
+					<ul>
+						<li>第七名</li>
+						<li>当月投资所得菠萝币的9%</li>
+					</ul>
+					<ul>
+						<li>第八名</li>
+						<li>当月投资所得菠萝币的8%</li>
+					</ul>
+					<ul>
+						<li>第九名</li>
+						<li>当月投资所得菠萝币的7%</li>
+					</ul>
+					<ul>
+						<li>第十名</li>
+						<li>当月投资所得菠萝币的6%</li>
+					</ul>
+				</div>
+        	</div>
+        	<div class="shut"></div>
+        </div>
+		
+	</div>
+	<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/idangerous.swiper-2.0.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/simple-app.js') }}"></script>
+	<script>
+		window.onload = function (){
+			$(".swiper-wrapper").children(".swiper-slide").eq(1).trigger("click");
+                
+                $(".dabang").click(function(){
+                	$(".phtc").css("display","block");
+                	$(".shut").click(function(){
+                		$(".phtc").css("display","none");
+                	})
+                })
+            
+		}
+	</script>
+</body>
+</html>

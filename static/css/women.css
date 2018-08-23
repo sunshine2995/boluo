@@ -1,0 +1,800 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	width: 100%;
+	height: 100%;
+	margin: 0;padding: 0;
+	color:#606060;
+	font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+}
+body,html{
+	font-size: 62.5%;
+}
+.women{
+	max-width:64rem;
+	margin:0 auto;
+	background:#f1e8e3 url(../images/women/beijing.png) no-repeat center top;
+	background-size: 100%;
+	overflow: hidden;
+}
+.navlook{
+	width: 92%;
+	margin: 0 auto;
+	margin-top: 42vmin;
+}
+.navlook>a>img{
+	width: 80px;
+}
+.navlook>a:last-child{
+	float: right;
+}
+.ten{
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+}
+.ten>dd{
+	font-size: 1.6rem;
+	color: #ee3851;
+	font-weight: bold;
+	line-height: 26px;
+}
+.ten>dd>a{
+	color: #8d4900;
+	font-weight: normal;
+}
+.ten>dt>img{
+	width: 60%;
+	margin-top: 2vmin;
+}
+.yun{
+	width: 80%;
+	position: relative;
+	top: -5vmin;
+}
+header{
+	width: 65%;
+	height: 203vmin;
+	margin: 0 auto;
+}
+header>dl>dd{
+	color: #cf3d20;
+	font-size: 1.6rem;	
+}
+
+.treasure9{
+	width: 50%;
+	height: 25vmin;
+	float: left;
+	text-align: center;
+    position: relative;
+    top: -10vmin;
+    right: 4vmin;
+    margin-bottom: 12vmin;
+}
+.treasure9>dt>img{
+	width: 60%;
+	position: absolute;
+	left: 7vmin;
+}
+.treasure9>dd{
+	line-height: 20px;
+	font-size: 3.4vmin;
+	margin-bottom: 1vmin;
+	color: #8d4900;
+}
+.treasure9>dd>a{
+	color: #8d4900;
+}
+
+.treasure8{
+	width: 50%;
+	height: 20vmin;
+	float: right;
+	text-align: center;
+    position: relative;
+    top: 7vmin;
+    left: 3vmin;
+    margin-bottom: 17vmin;
+}
+.treasure8>dt>img{
+	width: 60%;
+	position: absolute;
+	left: 7vmin;
+}
+.treasure8>dd{
+	line-height: 20px;
+	font-size: 3.4vmin;
+	margin-bottom: 1vmin;
+	color: #8d4900;
+}
+.treasure8>dd>a{
+	color: #8d4900;
+}
+
+.treasure7{
+	width: 50%;
+	height: 25vmin;
+	float: left;
+	text-align: center;
+    position: relative;
+    top: -10vmin;
+    right: 4vmin;
+    margin-bottom: 12vmin;
+}
+.treasure7>dt>img{
+	width: 60%;
+	position: absolute;
+	left: 7vmin;
+}
+.treasure7>dd{
+	line-height: 20px;
+	font-size: 3.4vmin;
+	margin-bottom: 1vmin;
+	color: #8d4900;
+}
+.treasure7>dd>a{
+	color: #8d4900;
+}
+
+.treasure6{
+	width: 50%;
+	height: 20vmin;
+	float: right;
+	text-align: center;
+    position: relative;
+    top: 7vmin;
+    left: 3vmin;
+    margin-bottom: 17vmin;
+}
+.treasure6>dt>img{
+	width: 60%;
+	position: absolute;
+	left: 7vmin;
+}
+.treasure6>dd{
+	line-height: 20px;
+	font-size: 3.4vmin;
+	margin-bottom: 1vmin;
+	color: #8d4900;
+}
+.treasure6>dd>a{
+	color: #8d4900;
+}
+
+.treasure5{
+	width: 50%;
+	height: 25vmin;
+	float: left;
+	text-align: center;
+    position: relative;
+    top: -15vmin;
+    right: 4vmin;
+    margin-bottom: 12vmin;
+}
+.treasure5>dt>img{
+	width: 60%;
+	position: absolute;
+	left: 7vmin;
+}
+.treasure5>dd{
+	line-height: 20px;
+	font-size: 3.4vmin;
+	margin-bottom: 1vmin;
+	color: #8d4900;
+}
+.treasure5>dd>a{
+	color: #8d4900;
+}
+
+.treasure4{
+	width: 50%;
+	height: 20vmin;
+	float: right;
+	text-align: center;
+    position: relative;
+    top: 7vmin;
+    left: 3vmin;
+    margin-bottom: 17vmin;
+}
+.treasure4>dt>img{
+	width: 60%;
+	position: absolute;
+	left: 7vmin;
+}
+.treasure4>dd{
+	line-height: 20px;
+	font-size: 3.4vmin;
+	margin-bottom: 1vmin;
+	color: #8d4900;
+}
+.treasure4>dd>a{
+	color: #8d4900;
+}
+
+.treasure3{
+	width: 50%;
+	height: 25vmin;
+	float: left;
+	text-align: center;
+    position: relative;
+    top: -15vmin;
+    right: 4vmin;
+    margin-bottom: 12vmin;
+}
+.treasure3>dt>img{
+	width: 60%;
+	position: absolute;
+	left: 7vmin;
+}
+.treasure3>dd{
+	line-height: 20px;
+	font-size: 3.4vmin;
+	margin-bottom: 1vmin;
+	color: #8d4900;
+}
+.treasure3>dd>a{
+	color: #8d4900;
+}
+
+.treasure2{
+	width: 50%;
+	height: 20vmin;
+	float: right;
+	text-align: center;
+    position: relative;
+    top: 7vmin;
+    left: 3vmin;
+    margin-bottom: 17vmin;
+}
+.treasure2>dt>img{
+	width: 60%;
+	position: absolute;
+	left: 7vmin;
+}
+.treasure2>dd{
+	line-height: 20px;
+	font-size: 3.4vmin;
+	margin-bottom: 1vmin;
+	color: #8d4900;
+}
+.treasure2>dd>a{
+	color: #8d4900;
+}
+
+.treasure1{
+	width: 50%;
+	height: 25vmin;
+	float: left;
+	text-align: center;
+    position: relative;
+    top: -10vmin;
+    right: 4vmin;
+    margin-bottom: 12vmin;
+}
+.treasure1>dt>img{
+	width: 60%;
+	position: absolute;
+	left: 7vmin;
+}
+.treasure1>dd{
+	line-height: 20px;
+	font-size: 3.4vmin;
+	margin-bottom: 1vmin;
+	color: #8d4900;
+}
+.treasure1>dd>a{
+	color: #8d4900;
+}
+
+.prize{
+	width: 78%;
+	height: 50px;
+	margin: 0 auto;
+	background: url(../images/women/jp.png) no-repeat center;
+	background-size: 78%;
+}
+footer{
+	width: 90%;
+	/*height: 250vmin;*/
+	background:url(../images/women/bai.png) no-repeat center;
+	background-size: 100% 100%;
+	margin: 0 auto;
+	margin-bottom: 5vmin;
+	padding-bottom: 10%;
+}
+.foot{
+	width: 86%;
+	height: 95%;
+	margin: 0 auto;
+	padding-top: 10vmin;
+}
+.prize-left{
+	width: 100%;
+	height: 20vmin;
+	margin: 0 auto;
+	line-height: 20vmin;
+	clear: both;
+}
+.prize-left>dt{
+	width: 20%;
+	float: left;
+}
+.prize-left>dt>img{
+	width: 83%;
+}
+.prize-left>dd{
+	width: 80%;
+	line-height: 23px;
+	float: left;
+	text-align: center;
+	font-size: 3.2vmin;
+	margin-top: 2vmin;
+}
+.prize-right{
+	width: 100%;
+	height: 20vmin;
+	margin: 0 auto;
+	line-height: 20vmin;
+	clear: both;
+}
+.prize-right>dd{
+	width: 80%;
+	line-height: 28px;
+	float: left;
+	text-align: center;
+	font-size: 3.2vmin;
+}
+.prize-right>dt{
+	width: 20%;
+	float: right;
+}
+.prize-right>dt>img{
+	width: 83%;
+}
+.btn{
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	clear: both;
+}
+.bttn{
+	width: 80px;
+	height: 30px;
+	background: #f3475f;
+	font-size: 3vmin;
+	color: #fff;
+	border-radius: 3px;
+}
+/*弹窗*/
+.activity{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+}
+.act-bj{
+	position:fixed;
+	width:100%;
+	height: 98vmin;
+	border-radius: 5px;
+	top: 15%;
+	left: 0;
+	background: url(../images/women/huodong.png) no-repeat center top;
+	background-size: 80%;
+}
+.act-wenz{
+	width: 75%;
+	height: 68vmin;
+	margin-top: 25vmin;
+	margin-left: 13%;
+	overflow: hidden;
+}
+.act-wenz>div>li{
+	color: #ad1015;
+	line-height: 28px;
+	font-size: 3.2vmin;
+}
+/*返回按钮*/
+.return{
+	width: 50px;
+	height: 50px;
+	border-radius: 20px;
+	position: absolute;
+	top: 0;
+	right: 6%;	
+}
+.raturn{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	right: 5%;	
+}
+.renking{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	right: 5%;	
+}
+.explain{
+	width: 60px;
+	height: 65px;
+	background:url(../images/women/shuoming.png) no-repeat center;
+	background-size: 80%;
+	position: absolute;
+	top: 0;
+	right: 5%;
+	z-index: 0;
+}
+/*宝箱弹窗*/
+.treasure{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+	z-index: 1;
+}
+.discount{
+	height: 16vmin;
+	background: url(../images/women/zhek.png) no-repeat center;
+	background-size: 100%;
+	position: absolute;
+	top: 16vmin;
+	left: 32%;
+	font-size: 3.6vmin;
+	color: #f3475f;
+	line-height: 16vmin;
+	padding: 2vmin;
+}
+.discount>b{
+	font-size: 6vmin;
+}
+.investment{
+	position: absolute;
+	top: 34vmin;
+	left: 29%;
+	font-size: 3.2vmin;
+	color: #9a2626;
+}
+.get{
+	width: 25%;
+	position: absolute;
+	top: 43vmin;
+	left: 37%;
+}
+.awards{
+	position:fixed;
+	width:100%;
+	height: 250px;
+	border-radius: 5px;
+	top: 30%;
+	left: 0;
+	background: url(../images/women/tishi.png) no-repeat center top;
+	background-size: 90%;
+	display: none;
+	z-index: 2;
+}
+.daj{
+	margin-left: 9.6vmin;
+	text-align: center;
+	line-height: 20px;
+	margin-top: 3.6vmin;
+}
+.login{
+	position:fixed;
+	width:100%;
+	height: 250px;
+	border-radius: 5px;
+	top: 30%;
+	left: 0;
+	background: url(../images/women/tcdl.png) no-repeat center top;
+	background-size: 90%;
+	display: none;
+}
+.sorry{
+	position:fixed;
+	width:100%;
+	height: 250px;
+	border-radius: 5px;
+	top: 30%;
+	left: 0;
+	background: url(../images/women/yihan.png) no-repeat center top;
+	background-size: 90%;
+	display: none;
+}
+.popupk{
+	position:fixed;
+	width:100%;
+	height: 250px;
+	border-radius: 5px;
+	top: 30%;
+	left: 0;
+	background: url(../images/women/kongtc.png) no-repeat center top;
+	background-size: 90%;
+	display: none;
+}
+
+/*我的奖励*/
+.reward{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+	z-index: 1;
+}
+.re-ward{
+	width: 90%;
+	height: 100vmin;
+	background: url(../images/women/jilu.png) no-repeat center;
+	background-size: 90%;
+	position: absolute;
+	top: 16%;
+	left: 5%;
+}
+#content{
+	width: 86%;
+	height: 70%;
+	display: -webkit-box;
+    -webkit-box-flex: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-left: 8%;
+    margin-top: 26vmin;
+}
+#content>div>p{
+	line-height: 32px;
+	color: #333;
+	padding: 0 5%;
+	font-size: 3vmin;
+	border-bottom: 1px solid #eee;
+}
+#content>div>p>span{
+	float: right;
+}
+#content>div>p:nth-child(even){
+	color: #AD1015;
+}
+/*排行榜*/
+.ranking{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+	z-index: 1;
+}
+.ran-king{
+	width: 90%;
+	height: 100vmin;
+	background: url(../images/women/paihangbang.png) no-repeat center;
+	background-size: 90%;
+	position: absolute;
+	top: 16%;
+	left: 5%;
+}
+#rank{
+	width: 86%;
+	height: 68%;
+	display: -webkit-box;
+    -webkit-box-flex: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-left: 7%;
+    margin-top: 27vmin;
+}
+#rank>div>p{
+	line-height: 32px;
+	color: #333;
+	padding: 0 5%;
+	font-size: 3vmin;
+	border-bottom: 1px solid #eee;
+}
+#rank>div>p>span{
+	float: right;
+}
+#rank>div>p:nth-child(even){
+	color: #AD1015;
+}
+.renk{
+	width: 100%;
+	margin: 0 auto;
+	clear: both;
+}
+.renk>ul{
+	width: 33.33%;
+	text-align: center;
+	float: left;
+}
+.renk>ul>li{
+	height: 40px;
+	line-height: 35px;
+	color: #333;
+	font-size: 3.2vmin;
+	border-bottom: 1px solid #eee;
+}
+.renk>ul>li>b{
+	font-size: 3.4vmin;
+	color: #AD1015;
+}
+.paim>li>img{
+	width: 20%;
+}
+
+/*第五重天*/
+.five-heavy{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+	z-index: 1;
+}
+
+/*第六重天*/
+.six-heavy{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+	z-index: 1;
+}
+
+/*第七重天*/
+.seven-heavy{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+	z-index: 1;
+}
+
+/*第八重天*/
+.eight-heavy{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+	z-index: 1;
+}
+
+/*第九重天*/
+.nine-heavy{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+	z-index: 1;
+}
+
+/*第十重天*/
+.ten-heavy{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+	z-index: 1;
+}
+
+.daylook{
+	width: 90%;
+	height: 100vmin;
+	background: url(../images/women/paiming.png) no-repeat center;
+	background-size: 90%;
+	position: absolute;
+	top: 16%;
+	left: 5%;
+}
+.goods{
+	width: 80%;
+	height: 70%;
+	margin: 0 auto;
+	margin-top: 26vmin;
+	text-align: center;
+}
+.goods>dd{
+	font-size: 3.4vmin;
+	color: #AD1015;
+	line-height: 28px;
+}
+/*返回*/
+.fhlook0{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	right: 3%;
+}
+.fhlook1{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	right: 3%;
+}
+.fhlook2{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	right: 3%;
+}
+.fhlook3{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	right: 3%;
+}
+.fhlook4{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	right: 3%;
+}
+.fhlook5{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	right: 3%;
+}
+.total{
+	color: #de2400;
+    font-size: 3.6vmin;
+    font-weight: bold;
+    clear: both;
+    text-align: center;
+}
+.total>a{
+	font-size: 6vmin;
+	color: #de2400;
+}
+
+/*提示*/
+.yiling{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	display: none;
+}
+.yil{
+	position:fixed;
+	width:100%;
+	height: 250px;
+	border-radius: 5px;
+	top: 30%;
+	left: 0;
+	background: url(../images/women/yiling.png) no-repeat center top;
+	background-size: 90%;
+	display: none;
+}
+.invest{
+	position: absolute;
+	top: 26vmin;
+	left: 42%;
+	font-size: 3.4vmin;
+	color: #9a2626;
+}

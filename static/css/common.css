@@ -1,0 +1,26 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body{
+		
+		color: #808080;
+		background:#fff;
+font-family:"微软雅黑";
+	}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,blockquote,th,td,p{margin:0;padding:0;}
+input,button,select,textarea{outline:none}li{list-style:none}img{border:none}textarea{resize:none}
+body{color:#666;word-break:break-all;word-wrap:break-word;}
+body,input,textarea{font-size:12px;}
+a{color:#305999;text-decoration:none;outline:none}
+a:hover{color:#090}
+/*clearfix*/
+.clearfix:after,.wrap:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix,.wrap{*+height:1%}
+a img{border:0;}
+input,select,button{font-family:"微软雅黑";color:#333;vetical-align:middle;font-size:12px;}
+button{cursor:pointer}
+input,button{border:0;}
+th{font-weight:100;}
+a:hover{color:#fff}
+	
+	
+

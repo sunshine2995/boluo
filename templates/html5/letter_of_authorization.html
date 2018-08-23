@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>委托授权书</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<style>
+			body{
+				margin: 0;padding: 0;
+				color:#606060;
+				font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+			}
+			body,html{
+				font-size: 62.5%;
+			}
+			.pactbox{
+				max-width:64rem;
+				color: #888;
+				background: #fff;
+				font-size: 1.4rem;
+				margin: 0 auto;
+			}
+			
+			.dealbottom{
+				width: 90%;
+				margin:10px auto;
+				line-height: 28px;
+				padding-bottom: 23%;
+			}
+			.dealbottom>li{
+				text-indent: 26px;
+				line-height: 30px;
+			}
+			.pdata{
+				padding-left: 5%;
+				margin-top: 3%;
+			}
+			.dealtop{
+				width: 90%;
+				margin:0 auto;
+				padding-top: 2.5%;
+				line-height: 32px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="pactbox">
+			<ul class="dealtop">
+				<li style="text-align: center;"><b style="font-size: 5vmin;">委托授权书</b></li>
+				<li>委托人：<strong>{{render_data.real_name}}</strong></li>
+				<li>证件类型：<strong>身份证</strong></li>
+				<li style="margin-bottom: 8px;">证件号码：<strong>{{render_data.id_card}}</strong></li>
+				
+				<li>受托人：<strong>北京朴素磐石投资管理有限公司 </strong></li>
+				<li>证件类型：<strong>北京市海淀区高梁桥斜街59号中坤大厦13层1301室</strong></li>
+				<li>联系电话：<strong>01053519335</strong></li>
+			</ul>
+			
+			<ul class="dealbottom">
+				
+				<li><strong>鉴于</strong>：委托人作为出借人与相关借款人、保证人通过北京朴素磐石投资管理有限公司经营管理的“菠萝理财平台”（以下简称“平台”）签署了《借款合同》（项目名称：<strong>{{render_data.product_name}}</strong>，以下简称“主合同”），现出借人向平台方做出以下事项的委托：</li>
+				<li>一、委托人委托平台方对其所享有的主合同项下的债权进行日常管理，包括但不限于对借款人资信状况、还款能力以及借款使用情况进行调查和监督，作为接收借款人在主合同项下相关事项通知的联络人。</li>
+				<li>二、委托人委托平台方对其所享有的主合同项下的债权进行催收管理，包括但不限于对借款人还款提醒、逾期催讨等；对保证人代偿提醒、逾期催讨等。</li>
+				<li>三、委托人同意平台方将以上委托转委托给第三方实施。</li>
+				<li>四、委托人授权平台方在线下代为办理借款人与保证人签署纸质版《借款合同》及其附件、补充协议事宜，并对签署后的合同文本进行保管。该纸质版合同与委托人在平台上签署的电子版《借款合同》及其附件、补充协议具有同等法律效力。</li>
+				<li>五、委托人在债权转让时，委托平台方将转让事实通知借款人和保证人。</li>
+				<li>六、本授权书自委托人在平台上签署的《借款合同》生效之日起生效，委托人收回本金及利息之日终止。</li>
+				<li>七、因本授权书引起的纠纷，不能协商解决的，由受托人所在地人民法院管辖。</li>
+
+				<li>（以下无正文，为本协议之签署页）</li>
+				
+				
+				<p class="pdata"> 委托人:&nbsp;<strong>{{render_data.real_name}}</strong><br />日期：&nbsp;<strong>{{render_data.time}}</strong></p>
+				<p class="pdata"> 受托人:&nbsp;<strong>北京朴素磐石投资管理有限公司</strong><br />日期：&nbsp;<strong>{{render_data.time}}</strong></p>
+			</ul>
+		</div>
+	</body>
+</html>

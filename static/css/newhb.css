@@ -1,0 +1,76 @@
+@media screen and (min-width:960px){
+    .elephones{ max-width:640px;}
+}
+body{
+	margin: 0;padding: 0;
+	color:#606060;
+	font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+}
+body,html{
+	font-size: 62.5%;
+}
+.wrap{
+	width: 100%;
+	height: 100%;
+    background: url(../images/hongbao_bg0.png) no-repeat center top;
+    background-size: 100% 100%;
+	overflow: hidden;
+}
+/*body:before {
+  	content: ' ';
+  	position: fixed;
+  	z-index: -1;
+  	top: 0;
+  	right: 0;
+  	bottom: 0;
+  	left: 0;
+ 	background: url(../images/hongbao_bg0.png) center 0 no-repeat;
+  	background-size: cover;
+  	margin-top: 50px;
+}*/
+.newbox{
+	width: 86%;
+	margin: 0 auto;
+	margin-top: 45%;
+	margin-bottom: 16%;
+}
+.loan{
+	font-size: 1.6rem;
+	color: #ffed34;
+	text-align: center;
+}
+.packet{
+	height: 23vmin;
+	background: url(../images/hongbao1@2x.png) no-repeat center top;
+	background-size: 100%;
+	padding-top: 10%;
+}
+.packet>dt{
+	width: 40%;
+	float: left;
+	font-size: 2rem;
+	color: #f53041;
+	text-align: center;
+}
+.packet>dt>span{
+	font-size: 10vmin;
+}
+.packet>dd{
+	width: 60%;
+	float: right;
+	text-align: center;
+	font-size: 4.5vmin;
+	color: #f53041;
+}
+.newfot{
+	width: 100%;
+	height: 50px;
+	background: #ffcb0f;
+	position: relative;
+	position: fixed;
+	z-index: 100;
+	bottom: 0;
+	left: 0;
+	color: #fff;
+	font-size: 1.6rem;
+}

@@ -1,0 +1,23 @@
+#coding:utf8
+
+
+def code_date_to_dict(code, content=None):
+    if isinstance(content, list):
+        data = {'list': content}
+    elif content:
+        pass
+    else:
+        content = {}
+    return {
+        'code': code,
+        'desc': err_code[code],
+        'content': content
+    }
+
+
+err_code = {
+    "10000": u"成功",
+    "10001": u"phone或token参数缺失",
+    "10002": u"phone和token不对应或不存在",
+    "10003": u"token失效",
+}

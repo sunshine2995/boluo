@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>商品详情</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/xinnian.css') }}"/>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}"></script>
+	</head>
+	<body style="background: #fff;">
+		<div class="sign">
+			<!--<div class="nav">-->
+				<!--<a class="turn" onclick="javascript:history.back(-1);"><img src="{{ url_for('static', filename='images/icon_jiantou@2x.png') }}" /> </a>-->
+				<!--<h1>商品详情</h1>-->
+			<!--</div>-->
+			<img src="/static{{renderData.image}}" class="look-ban" />
+			<div class="look-list">
+				<dl class="qdl">
+					<dt><img src="{{ url_for('static', filename='images/icon_boluo2@2x.png')}}" /> </dt>
+					<dd>{{renderData.score}}</dd>
+				</dl>
+				<button class="once">立即兑换</button>
+				
+				{% if renderData.is_xiangou == 'True'%}<p class="kucun">剩余库存:<a>{{renderData.stock}}</a></p>{% endif %}
+				<h3 class="headline">商品介绍</h3>
+				<p class="shangp">{{renderData.introduce|safe}}</p>
+				<h3 class="headline">活动规则</h3>
+				<p class="shangp">
+					{{renderData.exchange_process|safe}}
+				</p>
+			</div>
+		</div>
+		<div class="explain">
+			<div class="togg">
+				<p class="reset"><img src="{{ url_for('static', filename='images/icon_chenggong@2x.png')}}" /> </p>
+				<p>恭喜您兑换成功</p>
+				<button id="chakanjiangp" class="bttn">查看奖品</button>
+			</div>
+			<div class="togg_two">
+				<p class="reset"><img src="{{ url_for('static', filename='images/icon_shibai@2x.png')}}" /> </p>
+				<p>您的菠萝不够哦</p>
+				<button id="jiangpinqc" class="bttn">取消</button>
+			</div>
+		</div>
+
+		<div class="translate">
+		<div class="late">
+		<p>商品已抢购一空</p>
+		<button class="bttn">知道了</button>
+		</div>
+		</div>
+
+
+		<script>
+			$(function(){
+				$(".once").click(function(){
+					$.ajax({
+					url: '/v1/activity/store/exchange/{{renderData.phone}}/{{renderData.prize_id}}/{{renderData.token}}',
+					type:'GET',
+					cache: false,
+					success: function(response_data){
+					    if (response_data['enabled'] === 'True'){
+					        $(".togg_two").hide();
+							$(".explain").show();
+							$(".togg").show();
+						}else {
+					        if (response_data['is_remain'] === 'False') {
+									$(".translate").css("display","block");
+									$(".bttn").click(function(){
+										$(".translate").css("display","none");
+									})
+							}
+							else{
+								 $(".explain").show();
+								 $(".togg").hide();
+					          	 $(".togg_two").show();
+							}
+						}
+					    $(".qdl dd").text(response_data['score']);
+
+				  	}
+				});
+
+
+				});
+				$("#jiangpinqc").click(function(){
+					$(".explain").hide();
+				})
+				$("#chakanjiangp").click(function(){
+					$(".explain").hide();
+					window.location.href = '/v1/activity/prize/order/{{renderData.phone}}/{{renderData.token}}?chakanjiangp=1'
+				});
+			});
+		</script>
+	</body>
+</html>

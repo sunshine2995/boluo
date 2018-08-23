@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>12.12 大狂欢</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/media.css"/>
+    <link rel="stylesheet" href="css/csshake.min.css">
+    <link rel="stylesheet" type="text/css" href="css/december.css"/>
+    <script src="../public/js/jquery-3.1.1.min.js"></script>
+    <!--<script src="js/red.js"></script>-->
+</head>
+<body>
+<div class="december">
+    <div class="tian">
+        <dl>
+            <dd><span>今日投资：</span>
+                <p><span id="invest_sum">---</span>￥</p></dd>
+            <dt>
+                <img src="images/ddengpaohui@2x.png" class="tzdph">
+                <img src="images/dengpao@2x.png" class="tzdpl">
+            </dt>
+        </dl>
+        <dl>
+            <dd><span>今日签到：</span>
+                <p id="is_sign">---</p></dd>
+            <dt>
+                <img src="images/ddengpaohui@2x.png" class="qddph">
+                <img src="images/dengpao@2x.png" class="qddpl">
+            </dt>
+        </dl>
+    </div>
+
+    <!--<div class="hongbao">
+        <img src="images/hongbao@2x.png" id="chai">
+        <img src="images/6.66xianjinhongbao@2x.png">
+        <img src="images/8licaihongbao@2x.png">
+        <img src="images/25licaihongbao@2x.png">
+        <img src="images/30licaihongbao@2x.png">
+        <img src="images/55licaihongbao@2x.png">
+        <img src="images/66.6xianjinhongbao@2x.png">
+        <img src="images/100licaihongbao@2x.png">
+        <img src="images/230licaihongbao@2x.png">
+        <img src="images/275licaihongbao@2x.png">
+        <img src="images/588licaihongbao@2x.png">
+        <img src="images/666xianjinhongbao@2x.png">
+        <img src="images/1212licaihongbao@2x.png">
+        <div class="chou">今日可抽奖： <b> 5 </b> 次</div>
+    </div>-->
+
+    <div class="hongbao">
+        <div class="red">
+				<button class="redbutton">
+					<img src="images/hongbao@2x.png" id="redp">
+				</button>
+            <div class="red-jg">
+                <img src="">
+            </div>
+        </div>
+    </div>
+    <div class="chou">今日可抽奖： <b id="lottery_num_Available">0</b> 次</div>
+
+    <img src="images/mingdan@2x.png" class="hbmd">
+    <div class="huojiang">
+        <ol class="santop">
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日期</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;手机号</li>
+            <li>现金红包</li>
+        </ol>
+        <ul class="huoj">
+            <!--<li class="huoj-list">
+                <span>2017-11-26</span>
+                <span>156****0180</span>
+                <span>199.88元</span>
+            </li>-->
+            <!--<li><span>2017-11-26</span> <span>156****0180</span> <span>199.88元</span></li>
+            <li><span>2017-11-26</span> <span>156****0180</span> <span>199.88元</span></li>
+            <li><span>2017-11-26</span> <span>156****0180</span> <span>199.88元</span></li>
+            <li><span>2017-11-26</span> <span>156****0180</span> <span>199.88元</span></li>
+            <li><span>2017-11-26</span> <span>156****0180</span> <span>199.88元</span></li>
+            <li><span>2017-11-26</span> <span>156****0180</span> <span>199.88元</span></li>
+            <li><span>2017-11-26</span> <span>156****0180</span> <span>199.88元</span></li>
+            <li><span>2017-11-26</span> <span>156****0180</span> <span>199.88元</span></li>
+            <li><span>2017-11-26</span> <span>156****0180</span> <span>199.88元</span></li>
+            <li><span>2017-11-26</span> <span>156****0180</span> <span>199.88元</span></li>
+            <li><span>2017-11-26</span> <span>156****0180</span> <span>199.88元</span></li>
+            <li><span>2017-11-26</span> <span>156****0180</span> <span>199.88元</span></li>
+            <li><span>2017-11-26</span> <span>156****0180</span> <span>199.88元</span></li>-->
+        </ul>
+    </div>
+    <img src="images/huodongguize@2x.png" class="hbmd">
+    <ul class="hdgz">
+        <li>活动内容：</li>
+        <li>一、每天同时满足两个条件即可获得拆红包机会：</li>
+        <li>1.当天累计投资满5000元（不含新手标）</li>
+        <li>2.签到</li>
+        <li>就可获得3次抽奖机会</li>
+        <li>二、如果想拆更多的红包，投资满5000元后，单笔再投资满5000元（若单笔投资是5000元的倍数，即可得相应倍数的抽奖机会），投资不同期限获得的抽奖机会不同。</li>
+        <li style="padding: 3vmin 0">
+            <img src="images/biaoge_img@2x.png?v=2" style="width: 100%">
+        </li>
+        <li>三、拆红包就有机会获得最高666元现金红包和1212元理财红包</li>
+        <li>四、抽奖机会不累计，如不使用，当天凌晨清零。</li>
+        <li>新手标不参与此活动;</li>
+        <li>理财红包可在<b>“我的账户—我的优惠券”</b>中查看（红包有效期为活动期间）；</li>
+        <li>现金红包可在<b>“我的账户—资金记录”</b>中查看；</li>
+        <li>如有疑问可咨询在线客服或者拨打客服热线：400-032-0596</li>
+        <li>本次活动最终解释权归菠萝理财所有。</li>
+    </ul>
+</div>
+<!--<img src="images/guize@2x.png" class="smtc">-->
+
+<!--弹窗-->
+<div class="guize">
+    <img src="images/guize_img@2x.png">
+    <div class="guanbi"></div>
+</div>
+
+<!--签到弹窗-->
+<div class="qiandao">
+    <div class="tcbai">
+        <p>今天没有签到 ! </p>
+        <ul class="liangg">
+            <li class="qxqd">取消</li>
+            <li class="qdd">签到</li>
+        </ul>
+    </div>
+</div>
+
+<!--金额不足-->
+<div class="jinebuz">
+    <div class="tcbai">
+        <p>活动累计投资金额不足 ! </p>
+        <ul class="liangg">
+            <li class="qxtz">取消</li>
+            <li class="qtz">去投资</li>
+        </ul>
+    </div>
+</div>
+
+<!--无抽奖次数-->
+<div class="choujiang">
+    <div class="tcbai">
+        <p>抽奖次数为0</p>
+        <ul class="liangg">
+            <li class="qxcj">取消</li>
+            <li class="qcj">去投资</li>
+        </ul>
+    </div>
+</div>
+
+<!--温馨提示-->
+<div class="over">
+    <div class="end">
+        <p>温馨提示</p>
+        <p>活动已结束</p>
+        <button class="end_qd">确定</button>
+    </div>
+</div>
+
+<!--红包提示-->
+
+<!--<div class="xjhbts">
+    <div class="lchb">
+        <p>现金红包已放入-资金记录</p>
+    </div>
+</div>
+
+<div class="lchbts">
+    <div class="lchb">
+        <p>理财红包已放入-优惠券</p>
+    </div>
+</div>-->
+
+<script src="../conf.js"></script>
+<script>
+    var qstr = getQueryStringArgs();
+    var phone = qstr['phone'];
+    var token = qstr['token'];
+    // phone=
+    // var phone = '18401701179';
+    // var token = '2017-12-06-7343175840';
+
+    function getQueryStringArgs() {
+        var qs = location.search.length > 0 ? location.search.substring(1) : "",
+            args = {},
+            items = qs.split("&"),
+            len = items.length,
+            name = null,
+            value = null;
+        if (qs.length == 0) {
+            return;
+        }
+        for (var i = 0; i < len; i++) {
+            item = items[i].split("=");
+            name = decodeURIComponent(item[0]);
+            value = decodeURIComponent(item[1]);
+            args[name] = value;
+        }
+        return args;
+    }
+
+    var d = {
+        '6.66': '6.66xianjinhongbao@2x.png',
+        '8': '8licaihongbao@2x.png',
+        '25': '25licaihongbao@2x.png',
+        '30': '30licaihongbao@2x.png',
+        '55': '55licaihongbao@2x.png',
+        '66.6': '66.6xianjinhongbao@2x.png',
+        '100': '100licaihongbao@2x.png',
+        '230': '230licaihongbao@2x.png',
+        '275': '275licaihongbao@2x.png',
+        '588': '588licaihongbao@2x.png',
+        '666': '666xianjinhongbao@2x.png',
+        '1212': '1212licaihongbao@2x.png'
+    };  // 奖品图片
+    var i = '5';  // 固定奖品编号
+    var is_login = '0';  //是否登录：0，未登录 1，已登录
+    var is_sign = '未签到';  // 是否签到：0，未签到 1，签到
+    var touzi = 0;  // 投资金额：
+    var type = 1;  // 1 现金红包 2 理财红包
+    var lottery_num_Available = 0;  // 抽奖次数
+
+    // 验证token
+    function check_token() {
+
+        $.ajax({
+            type: "GET",
+            url: mypath+"/v1/activity/check/token",
+            dataType: "json",
+            async: false,
+            data: {'phone': phone, 'token': token},
+            success: function (result) {
+                console.log(result);
+                if (result['code'] === '10000') {
+                    is_login = '1';
+//                    alert(is_login);
+//                    is_login = '0';
+                }
+            }
+        });
+    }
+    // 获取用户签到数据
+    function get_sign() {
+        //今日是否签到
+        $.ajax({
+            type: "GET",
+            url: mypath+"/v1/activity/today/"+phone+"/sign",
+            async: false,
+            dataType: "json",
+            success: function (result) {
+                if (result['is_sign'] === 0) {  //未签到
+                    is_sign = '未签到';
+                }else{
+                    is_sign = '已签到';
+                }
+            }
+        });
+    }
+    // 查询可抽奖次数,投资额
+    function get_touzi() {
+
+        $.ajax({
+            type: "GET",
+            url: mypath+"/v1/activity/lottery/"+phone+"/number",
+            async: false,
+            dataType: "json",
+            success: function (result) {
+                if (result['code']=='10000'){
+                    touzi = result['invest_sum'];
+                    lottery_num_Available = result['lottery_num_Available'];
+//                    touzi = 3000;
+                }else{
+
+                    touzi = 0;
+                    lottery_num_Available = 0;
+                }
+            }
+        });
+    }
+    // 请求抽奖接口
+    function get_packet() {
+        $(".redbutton").attr("disabled", "true");
+        $.ajax({
+            type: "GET",
+            url: mypath+"/v1/activity/lottery/action",
+            dataType: "json",
+            async: false,
+            data: {'phone': phone, 'token': token},
+            success: function (result) {
+                if (result['lottery_num_Available'] === '0') {
+
+                    $(".redbutton").attr("disabled", "true");
+
+                } else {
+                    i = result['money'].toString();
+                    lottery_num_Available=result['lottery_num_Available']-1;
+//                    alert(lottery_num_Available);
+                    $("#lottery_num_Available").html(lottery_num_Available);
+
+                    $('.red').addClass('shake-chunk');
+                    setTimeout(function () {
+                        if(typeof(d[i])=="undefined"){
+                            i=8;
+                        }
+                        $('.red').removeClass('shake-chunk');
+                        $('.redbutton').css("display", "none");
+                        $('.red-jg > img').attr("src", "images/" + d[i]);
+                        $('.red-jg').css("display", "block");
+                    }, 2000);
+
+//                    window.location.reload();
+
+                }
+            }
+        });
+    }
+    // 更新中奖列表
+    function get_list() {
+        //现金红包名单
+        $.ajax({
+            type: "GET",
+            url: mypath+"/v1/activity/lottery/record",
+            dataType: "json",
+            success: function (result) {
+                for (var i = 0; i < result.content.length; i++) {
+                    $(".huoj").append("<li class='huoj-list'>" +
+                        "<span>" + result.content[i]['lottery_time'] + "</span>" +
+                        "<span>" + result.content[i]['phone'] + "</span>" +
+                        "<span>" + result.content[i]['money'] + "</span>" +
+                        "</li>");
+                }
+            }
+        });
+    }
+    // 渲染页面
+    function xr() {
+//        alert(is_login);
+//        alert(lottery_num_Available);
+//        alert('是否签到'+is_sign);
+
+        $("#invest_sum").html(touzi);
+        $("#lottery_num_Available").html(lottery_num_Available);
+        $("#is_sign").html(is_sign);
+        if (is_sign === '未签到') { //未签到
+            $(".qddph").css("display", "block");
+            $(".qddpl").css("display", "none");
+        }
+        if(is_sign === '已签到'){  //签到
+            $(".qddpl").css("display", "block");
+            $(".qddph").css("display", "none");
+        }
+        if (touzi >= 5000) {
+            $(".tzdpl").css("display", "block");
+            $(".tzdph").css("display", "none");
+        }
+        else {
+            $(".tzdph").css("display", "block");
+            $(".tzdpl").css("display", "none");
+        }
+    }
+    // 打开页面，初始化
+    $(function () {
+        check_token();
+        if (is_login === '0') {
+//            hd_dengl();
+        }
+        else {
+            get_sign();
+            get_touzi();
+            xr();
+        }
+        get_list();
+    });
+
+
+    /* 拆 */
+    $('.redbutton').click(function (code) {
+
+        $(".over").css("display","block");
+
+        $(".end_qd").click(function(){
+
+            $(".over").hide();
+
+        });
+
+        if (is_login === '0') {
+//            hd_dengl();
+            var u = navigator.userAgent;
+            if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {
+                window.jsObj.HtmlcallJava2();
+            } else if (u.indexOf('iPhone') > -1) {
+                window.webkit.messageHandlers.hd_dengl.postMessage({body: 'call js alert in js'});
+            }
+        } else {
+            if(is_sign === '未签到'){
+                $(".qiandao").css("display", "block");
+                $(".qxqd").click(function () {
+                    $(".qiandao").css("display", "none");
+                });
+                $(".qdd").click(function () {
+                    window.location.href = mypath+'/v1/activity/sign?phone='+phone+'&token='+token
+                });
+                return false;
+            }
+            if(touzi<5000){
+                $(".jinebuz").css("display", "block");
+                $(".qxtz").click(function () {
+                    $(".jinebuz").css("display", "none");
+                });
+                $(".qtz").click(function () {
+                    /*qutouzi();*/
+                    var u = navigator.userAgent;
+                    if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {
+                        window.jsObj.HtmlcallJava3();
+                    } else if (u.indexOf('iPhone') > -1) {
+                        window.webkit.messageHandlers.qutouzi.postMessage({body: 'call js alert in js'});
+                    }
+                });
+                return false;
+            }
+            if(lottery_num_Available<=0){
+                $(".choujiang").css("display", "block");
+                $(".qxcj").click(function () {
+                    $(".choujiang").css("display", "none");
+                });
+                $(".qcj").click(function () {
+                    /*qutouzi();*/
+                    var u = navigator.userAgent;
+                    if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {
+                        window.jsObj.HtmlcallJava3();
+                    } else if (u.indexOf('iPhone') > -1) {
+                        window.webkit.messageHandlers.qutouzi.postMessage({body: 'call js alert in js'});
+                    }
+                });
+                return false;
+            }
+            get_packet();
+            setTimeout(function () {
+
+                $('.redbutton').css("display", "block");
+                $('.red-jg').css("display", "none");
+                $(".redbutton").removeAttr("disabled");
+                /*if (type === 2){
+                    $(".xjhbts").css("display", "block");
+                    setTimeout(function () {
+                        $(".xjhbts").css("display", "none");
+                    }, 1500);
+                }
+                if(type === 1){
+                    $(".lchbts").css("display", "block");
+                    setTimeout(function () {
+                        $(".lchbts").css("display", "none");
+                    }, 1500);
+                }*/
+            }, 4000);
+        }
+    });
+
+    get_list();
+
+    /*function hd_dengl() {
+        window.jsObj.HtmlcallJava2();
+    }
+    function qutouzi() {
+        window.jsObj.HtmlcallJava3();
+    }*/
+
+    $(".smtc").click(function () {
+        $(".guize").css("display", "block");
+        $(".guanbi").click(function () {
+            $(".guize").hide();
+        });
+    });
+
+    var doscroll = function () {
+        var $parent = $('.huoj');
+        var $first = $parent.find('li:first');
+        var height = $first.height();
+        $first.animate({
+            marginTop: -height + 'px'
+        }, 500, function () {
+            $first.css('marginTop', 0).appendTo($parent);
+        });
+    };
+    setInterval(function () {
+        doscroll()
+    }, 1000);
+
+    /*$("#chai").click(function () {
+        $(this).hide();
+        $(".hongbao img").eq(6).css("display","block");
+    })*/
+
+</script>
+</body>
+</html>
